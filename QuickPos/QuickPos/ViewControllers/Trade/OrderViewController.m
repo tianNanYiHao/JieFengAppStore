@@ -292,6 +292,7 @@
         [SDJQuickVc setOrderData:self.orderData];
         SDJQuickVc.orderId = self.orderData.orderId;
         SDJQuickVc.Amt = self.orderData.orderAmt;
+        NSLog(@"%@  %@",SDJQuickVc.Amt,self.orderData.orderAmt);
         [self.navigationController pushViewController:SDJQuickVc animated:YES];
         
     }else{

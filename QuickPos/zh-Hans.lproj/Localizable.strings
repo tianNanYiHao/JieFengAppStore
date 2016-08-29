@@ -209,17 +209,17 @@
 
 "MyAccount" = "我的账户";
 
-"ImproveInformationForCertified" = "完善我的用户资料(已认证)";
+"ImproveInformationForCertified" = "实名认证(已认证)";
 
-"ImproveInformationForNotThrough" = "完善我的用户资料(审核未通过)";
+"ImproveInformationForNotThrough" = "实名认证(审核未通过)";
 
-"ImproveInformationForReviewing" = "完善我的用户资料(审核中)";
+"ImproveInformationForReviewing" = "实名认证(审核中)";
 
-"ImproveInformationForUnauthorized" = "完善我的用户资料(未认证)";
+"ImproveInformationForUnauthorized" = "实名认证(未认证)";
 
-"ImproveInformationForLackOfPhotos" = "完善我的用户资料(缺少照片)";
+"ImproveInformationForLackOfPhotos" = "实名认证(缺少照片)";
 
-"ImproveInformationForCross" = "完善我的用户资料(图⽚上传中)";
+"ImproveInformationForCross" = "实名认证(图⽚上传中)";
 
 "WithdrawalOfBank" = "提款到银行账户";
 

@@ -74,6 +74,8 @@
 @property (nonatomic,strong) NSString *agentNum;//用户数目
 @property (nonatomic,strong) NSString *agentRate;//分润比例
 
+@property (nonatomic,strong) NSString *authenFlag;
+
 
 @end
 
@@ -90,15 +92,10 @@
     
     self.title = L(@"MyAccount");
     
-//    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//导航栏颜色
-//    self.navigationController.navigationBar.tintColor = [Common hexStringToColor:@"46a7ec"];//返回键颜色
-//    self.navigationController.navigationBar.contentMode = UIViewContentModeScaleAspectFit;
-//    
-//    //设置标题颜色
-//    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor blackColor], UITextAttributeTextColor,
-//                                                                     [UIFont systemFontOfSize:17], UITextAttributeFont,
-//                                                                     nil]];
-
+    availableAmtStr = @"0.00";
+    cashAvailableAmtStr = @"0.00";
+    immCashAmt = @"0.00";
+    
     self.navigationController.navigationBar.barTintColor = [Common hexStringToColor:@"#068bf4"];//导航栏颜色
     self.navigationController.navigationBar.tintColor = [Common hexStringToColor:@"#ffffff"];//返回键颜色
     self.navigationController.navigationBar.contentMode = UIViewContentModeScaleAspectFit;
@@ -111,7 +108,7 @@
     
     [self creatRightBtn];
     
-//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:63/255.0 green:146/255.0 blue:236/255.0 alpha:1];
+
     userDefaults = [NSUserDefaults standardUserDefaults];
     
     self.navigationController.navigationBarHidden = NO;
@@ -202,26 +199,51 @@
         
         info = [[UserInfo alloc]initWithData:getDic[@"resultBean"]];
         
-        realNameStr = info.realName;
-        state = info.authenFlag;
-        stateRemake = info.remark;
-        picStr = info.pic;
-        ID = info.certPid;
-        [self.myAccountTableView reloadData];
+        self.authenFlag = [[[dict objectForKey:@"data"]objectForKey:@"resultBean"]objectForKey:@"authenFlag"];
         
-        //GCD操作
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            // 耗时的操作
+        if ([self.authenFlag isEqualToString:@"0"]) {
+            realNameStr = @"未实名认证";
+            state = info.authenFlag;
+            stateRemake = info.remark;
+            picStr = info.pic;
+            ID = info.certPid;
+            [self.myAccountTableView reloadData];
             
-            image = [UIImage imageWithData:[self headImage:picStr]];
-            
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // 更新界面
-                //[self.myAccountTableView reloadData];
+            //GCD操作
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                // 耗时的操作
                 
+                image = [UIImage imageWithData:[self headImage:picStr]];
+                
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // 更新界面
+                    //[self.myAccountTableView reloadData];
+                    
+                });
             });
-        });
+        }else{
+            realNameStr = info.realName;
+            state = info.authenFlag;
+            stateRemake = info.remark;
+            picStr = info.pic;
+            ID = info.certPid;
+            [self.myAccountTableView reloadData];
+            
+            //GCD操作
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                // 耗时的操作
+                
+                image = [UIImage imageWithData:[self headImage:picStr]];
+                
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // 更新界面
+                    //[self.myAccountTableView reloadData];
+                    
+                });
+            });        }
+        
         
     }
     
@@ -364,6 +386,8 @@
         
         MyAccountHeaderTableViewCell *headerCell =(MyAccountHeaderTableViewCell *) [tableView dequeueReusableCellWithIdentifier:headerCellCellIdentifier];
         
+        headerCell.backgroundColor = [Common hexStringToColor:@"#2196f3"];
+        
         headerCell.usernameLabel.text = realNameStr;
         headerCell.moneyLabel.text = availableAmtStr;
         headerCell.withdrawalLabel.text = cashAvailableAmtStr;
@@ -464,7 +488,7 @@
     if (indexPath.section == 3) {
         //认证状态显示
         if(indexPath.row == 0){
-            if([state isEqual:@"3"]){
+            if([state isEqual:@"3"]){//已通过
                 
                 cell.titleLabel.text = L(@"ImproveInformationForCertified");
                 cell.userInteractionEnabled = NO;
@@ -505,7 +529,7 @@
                 cell.RunSub.hidden = YES;
                 cell.lineView.hidden = YES;
                 
-            }else if ([state isEqual:@"2"]){
+            }else if ([state isEqual:@"2"]){//审核中
                 
                 cell.titleLabel.text = L(@"ImproveInformationForReviewing");
                 cell.userInteractionEnabled = NO;
@@ -527,7 +551,7 @@
                 cell.lineView.hidden = YES;
                 cell.logoImageView.image = [UIImage imageNamed:@"account_Real"];
                 
-            }else if ([state isEqual:@"1"]){
+            }else if ([state isEqual:@"1"]){//缺少照片
                 
                 cell.titleLabel.text = L(@"ImproveInformationForLackOfPhotos");
                 cell.userInteractionEnabled = YES;
@@ -537,7 +561,7 @@
                 cell.RunSub.hidden = YES;
                 cell.lineView.hidden = YES;
                 cell.logoImageView.image = [UIImage imageNamed:@"account_Real"];
-            }else if ([state isEqual:@"5"]){
+            }else if ([state isEqual:@"5"]){//照片上传中
                 
                 cell.titleLabel.text = L(@"ImproveInformationForCross");
                 cell.logoImageView.image = [UIImage imageNamed:@"account_Real"];
@@ -667,7 +691,7 @@
     else if(indexPath.section == 3 && indexPath.row == 0){
         
         PerfectInformationViewController *informationVC = [self.storyboard instantiateViewControllerWithIdentifier:@"informationVC"]; //加载故事板中的viewController
-        
+        informationVC.authenFlag = self.authenFlag;
         informationVC.IDstr = ID;//传值
         informationVC.realNameStr = realNameStr;//传值
         informationVC.hidesBottomBarWhenPushed = YES;//隐藏tabbar

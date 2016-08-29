@@ -64,11 +64,12 @@
 
         requst = [[Request alloc]initWithDelegate:self];
         
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"Uploading")];
         [requst upIDcardPositive:self.imagedata];
 
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"Uploading")];
-        
-        [hud hide:YES afterDelay:5];
+//        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"Uploading")];
+//        
+//        [hud hide:YES afterDelay:5];
       
     }
 }
@@ -124,7 +125,7 @@
     
     self.imagePicker.imagePickerController.sourceType =  UIImagePickerControllerSourceTypeCamera;
     //    self.imagePicker.resizeableCropArea = YES;
-    self.imagePicker.cropSize = CGSizeMake(200, 280);
+    self.imagePicker.cropSize = CGSizeMake(280, 200);
     
     [self presentViewController:self.imagePicker.imagePickerController animated:YES completion:nil];
 }
@@ -136,7 +137,7 @@
         
         self.photoimage = image;
         
-        self.imagedata = UIImageJPEGRepresentation(image, 0.0001);
+        self.imagedata = UIImageJPEGRepresentation(image, 0.01);
         
         self.IDcardPositiveImageView.image = image;
         

@@ -103,7 +103,7 @@
     //如果需要分享回调，请将delegate对象设置self，并实现下面的回调方法
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"57677f6be0f55a8d0a000255"
-                                      shareText:@"捷丰生活,让您生活服务更方便/快捷,http://fir.im/bmjfsh"
+                                      shareText:@"捷丰生活,让您生活服务更方便/快捷,http://www.jiefengpay.com"
                                      shareImage:[UIImage imageNamed:@"icon"]
                                 shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToQzone,UMShareToAlipaySession, nil]
                                        delegate:self];

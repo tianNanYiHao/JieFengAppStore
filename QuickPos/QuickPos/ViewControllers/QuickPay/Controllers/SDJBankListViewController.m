@@ -31,13 +31,13 @@
 @property (nonatomic,strong) NSString *newbindid;
 @property (nonatomic,strong) NSString *customerId;
 @property (nonatomic,strong) NSString *bindID;
-@property (nonatomic,strong) NSString *bankId;
-@property (nonatomic,strong) NSString *cardNo;
+@property (nonatomic,strong) NSString *bankId;//银联号
+@property (nonatomic,strong) NSString *cardNo;//银行卡号
 @property (nonatomic,strong) NSString *cardType;
-@property (nonatomic,strong) NSString *customerName;
-@property (nonatomic,strong) NSString *bankName;
-//@property (nonatomic,strong) NSString *orderId;
-//@property (nonatomic,strong) NSString *Amt;
+@property (nonatomic,strong) NSString *customerName;//开户人姓名
+@property (nonatomic,strong) NSString *bankName;//银行名
+@property (nonatomic,strong) NSString *mobileNo;//银行卡绑定手机号
+@property (nonatomic,strong) NSString *certNo;
 
 @end
 
@@ -107,11 +107,7 @@
     BindingSDJBankCardVc.orderAmt = self.Amt;
     [self.navigationController pushViewController:BindingSDJBankCardVc animated:YES];
     
-//    BankCardBindViewController *addBankcardVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"BankCardBindViewController"];
-//    addBankcardVC.hidesBottomBarWhenPushed = YES;
-//    addBankcardVC.orderData = self.orderData;    
-//    [self.navigationController pushViewController:addBankcardVC animated:YES];
-//    
+  
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -142,8 +138,7 @@
             
             if (resultBeanArr.count == 0) {
                 bankData = [[QuickBankData alloc]initWithData:dict];
-                
-               
+  
             }
             else{
                 bankData = [[QuickBankData alloc]initWithData:dict];
@@ -152,20 +147,12 @@
                     self.bindID = [item objectForKey:@"cardIdx"];
                     self.bankName = [item objectForKey:@"bankName"];
                     self.cardNo = [item objectForKey:@"cardNo"];
+                    self.bankId = [item objectForKey:@"bankId"];
+                    self.mobileNo = [item objectForKey:@"mobile"];
+                    self.customerName = [item objectForKey:@"customerName"];
+                    self.certNo = [item objectForKey:@"certNo"];
                     NSLog(@"%@",self.bindID);
                 }
-                
-//                NSDictionary *resultDict = resultBeanArr[0];
-//                
-//                self.newbindid = [resultDict objectForKey:@"memo"];
-//                self.customerId = [resultDict objectForKey:@"customerId"];
-//                self.bankId = [resultDict objectForKey:@"bankId"];
-////                self.bindID = [resultDict objectForKey:@"bindID"];
-//                self.bankName = [resultDict objectForKey:@"bankName"];
-//                self.customerName = [resultDict objectForKey:@"customerName"];
-//                self.cardType = [resultDict objectForKey:@"cardType"];
-//                
-//                NSLog(@"%@  %@  %@  %@",self.newbindid,self.customerId,self.bankId,self.bindID);
             }
            
             
@@ -238,15 +225,14 @@
     SDJBankPayVc.orderId = self.orderId;
     SDJBankPayVc.bankCardNo = self.cardNo;
     SDJBankPayVc.bankName = self.bankName;
-    NSLog(@"%@  %@",SDJBankPayVc.orderId,SDJBankPayVc.orderAmt);
+    SDJBankPayVc.AccountName = self.customerName;
+    SDJBankPayVc.bankCodes = self.bankId;//银联号
+    SDJBankPayVc.mobileNo = self.mobileNo;
+    SDJBankPayVc.ICCardNo = self.certNo;
+    
+    NSLog(@"%@  %@  %@  %@  %@  %@  %@  %@",SDJBankPayVc.orderId,SDJBankPayVc.orderAmt,SDJBankPayVc.bankCardNo,SDJBankPayVc.bankCodes,SDJBankPayVc.bankName,SDJBankPayVc.AccountName,SDJBankPayVc.mobileNo,SDJBankPayVc.ICCardNo);
     
     [self.navigationController pushViewController:SDJBankPayVc animated:YES];
-    
-//    [self performSegueWithIdentifier:@"NoCardPaySegue" sender:cell];
-//    NSString *payInfo = @"";
-//    Request *req = [[Request alloc]initWithDelegate:self];
-//    //无卡支付申请
-//    [req applyForQuickPay:payInfo orderID:orderData.orderId];
     
 }
 

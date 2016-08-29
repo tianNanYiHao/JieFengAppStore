@@ -29,10 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self creatTableView];
+
     
-    self.title = @"捷丰生活";
-//    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"APP使用说明";
+
     self.navigationController.navigationBar.barTintColor = [Common hexStringToColor:@"#068bf4"];//导航栏颜色
     self.navigationController.navigationBar.tintColor = [Common hexStringToColor:@"#ffffff"];//返回键颜色
     self.navigationController.navigationBar.contentMode = UIViewContentModeScaleAspectFit;
@@ -49,11 +49,12 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-//APP使用说明
+//APP使用必备条件
 - (IBAction)instructionsBtn:(id)sender {
     
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"1.jpg";
+    OperationManualVc.titleName = @"使用条件";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
     
 }
@@ -63,6 +64,7 @@
     
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"2.jpg";
+    OperationManualVc.titleName = @"实名制认证";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
     
 }
@@ -71,6 +73,7 @@
 - (IBAction)WechatBtn:(id)sender {
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"6.jpg";
+    OperationManualVc.titleName = @"微信收款";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
 }
 //账户转账
@@ -78,6 +81,7 @@
     
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"3_2.jpg";
+    OperationManualVc.titleName = @"账户支付";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
 }
 
@@ -86,6 +90,7 @@
     
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"3_4.jpg";
+    OperationManualVc.titleName = @"即时取";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
 
 }
@@ -95,6 +100,7 @@
     
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"3_3.jpg";
+    OperationManualVc.titleName = @"快捷支付";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
 }
 //卡卡转账
@@ -102,6 +108,7 @@
     
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"5.jpg";
+    OperationManualVc.titleName = @"卡卡转账";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
 
 }
@@ -111,6 +118,7 @@
     
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"3_1.jpg";
+    OperationManualVc.titleName = @"刷卡支付";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
 
 }

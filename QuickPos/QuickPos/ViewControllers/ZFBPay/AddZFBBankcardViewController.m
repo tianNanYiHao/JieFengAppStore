@@ -33,6 +33,8 @@
     
     BankCardItem *item;
     
+  
+    
 }
 @property (weak, nonatomic) IBOutlet UIButton *comfirtbtn;
 
@@ -66,6 +68,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *addBankcardScrollView;
 
+@property (nonatomic,strong) NSString *authenFlag;
+
 @end
 
 
@@ -83,8 +87,10 @@
     banktag = 1000;
     provincestag = 1001;
     citytag = 1002;
-    branchtag = 1003; 
+    branchtag = 1003;
     
+    request = [[Request alloc]initWithDelegate:self];
+    [request userInfo:[AppDelegate getUserBaseData].mobileNo];
     
     if(![UIDevice currentDevice].isIOS6){
         
@@ -161,29 +167,21 @@
         
         self.realNameTextField.text = [AppDelegate getUserBaseData].userName;
         self.realNameTextField.userInteractionEnabled = NO;//真实姓名不可编辑
-        if ([self.realNameTextField.text length] <= 0) {
-            [Common showMsgBox:@"" msg:@"请实名认证" parentCtrl:self];
-            self.bankCardNumberTextField.userInteractionEnabled = NO;
-            self.confirmBankCardNumberTextFied.userInteractionEnabled = NO;
-            
-        }
-
     
-    //省份的通知
+//    省份的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tongzhi:) name:@"tongzhi" object:nil];
     
     //银行的通知
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(banktongzhi:) name:@"banktongzhi" object:nil];
-    
+//
     //城市的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(citytongzhi:) name:@"citytongzhi" object:nil];
     
     //支行的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(branchtongzhi:) name:@"branchtongzhi" object:nil];
     
-    //NSString *s = self.banchListButton.titleLabel.text;
-    
+//    NSString *s = self.banchListButton.titleLabel.text;
     
 }
 
@@ -279,48 +277,16 @@
     else if (self.bankCardNumberTextField.text.length > 23){
         [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"InputCorrectBankCardNumber")];
     }
-    else if
-        //        ([self.provincesListButton.titleLabel.text isEqualToString:@"开户行所在省份"] || [self.banchListButton.titleLabel.text isEqualToString:@"银行卡所属银行"] || [self.cityListButton.titleLabel.text isEqualToString:@"开户行所在城市"] || [self.banchListButton.titleLabel.text isEqualToString:@"开户支行信息"])
-        (banktag == 1000 || provincestag == 1001 || citytag == 1002 || branchtag == 1003)
-        
-    {
+    else if(banktag == 1000 || provincestag == 1001 || citytag == 1002 || branchtag == 1003){
         
         [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"ImproveCardInformation")];
-        
-    }else{
+    
+    }
+    else{
         item.accountNo = self.bankCardNumberTextField.text;
+    
         
-        request = [[Request alloc]initWithDelegate:self];
-        
-        
-            
-            //            [request BankCardBind:[self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] andBandType:@"01"];
-            
-            [request BankCardBind:[self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] andMobile:@"" andBandType:@"01"];
-            
-//        else{
-//                
-//                [Common showMsgBox:nil msg:L(@"InputRealName") parentCtrl:self];
-//            }
-//            
-//            
-//        }else if(self.destinationType == CREDIT){
-//            
-//            if (self.realNameTextField.text.length != 0) {
-//                
-//                item.name = self.realNameTextField.text;
-//                
-//                [request checkCreditCardInfo:self.realNameTextField.text cardNum:self.bankCardNumberTextField.text];
-//                
-//            }else{
-//                
-//                [Common showMsgBox:nil msg:L(@"InputRealName") parentCtrl:self];
-//                
-//            }
-        
-            
-//        }
-        
+        [request ZFBBankCardBind:[self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] andMobile:@"" andBandType:@"06" bankName:item.bankName];
     }
     
 }
@@ -350,6 +316,21 @@
             tr.bankCardItem = item;
             
             [self.navigationController pushViewController:tr animated:YES];
+        }else if (type == REQUSET_USERINFOQUERY){
+            
+            self.authenFlag = [[[dict objectForKey:@"data"]objectForKey:@"resultBean"]objectForKey:@"authenFlag"];
+            NSLog(@"%@",self.authenFlag);
+            
+            if ([self.authenFlag isEqualToString:@"3"]) {
+                
+            }else
+            {
+                [Common showMsgBox:nil msg:@"请实名认证后,再进行操作" parentCtrl:self];
+                self.bankCardNumberTextField.userInteractionEnabled = NO;
+                self.confirmBankCardNumberTextFied.userInteractionEnabled = NO;
+                
+                
+            }
         }
     }
     else{

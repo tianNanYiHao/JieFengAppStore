@@ -66,6 +66,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *addBankcardScrollView;
 
+@property (nonatomic,strong) NSString *authenFlag;
+
 @end
 
 
@@ -85,6 +87,9 @@
     citytag = 1002;
     branchtag = 1003; 
     
+    
+    request = [[Request alloc]initWithDelegate:self];
+    [request userInfo:[AppDelegate getUserBaseData].mobileNo];
     
     if(![UIDevice currentDevice].isIOS6){
         
@@ -159,15 +164,9 @@
     
     if (self.destinationType == WITHDRAW){
         
-        self.realNameTextField.text = self.name;
+        self.realNameTextField.text = [AppDelegate getUserBaseData].userName;
         self.realNameTextField.userInteractionEnabled = NO;//真实姓名不可编辑
-        if ([self.name length] <= 0) {
-            [Common showMsgBox:@"" msg:@"请实名认证" parentCtrl:self];
-            self.bankCardNumberTextField.userInteractionEnabled = NO;
-            self.confirmBankCardNumberTextFied.userInteractionEnabled = NO;
-            
-        }
-//
+       
         
     }else if(self.destinationType == TRANSFER){
         self.realNameTextField.text = self.name;
@@ -296,13 +295,13 @@
     }else{
         item.accountNo = self.bankCardNumberTextField.text;
         
-        request = [[Request alloc]initWithDelegate:self];
+        
         
         if (self.destinationType == WITHDRAW) {
             
             //            [request BankCardBind:[self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] andBandType:@"01"];
             
-            [request BankCardBind:[self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] andMobile:@"" andBandType:@"01"];
+            [request ZFBBankCardBind:[self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] andMobile:@"" andBandType:@"01" bankName:item.bankName];
             
         }else if(self.destinationType == TRANSFER){
             
@@ -368,6 +367,21 @@
             tr.bankCardItem = item;
             
             [self.navigationController pushViewController:tr animated:YES];
+        }else if (type == REQUSET_USERINFOQUERY){
+            
+            self.authenFlag = [[[dict objectForKey:@"data"]objectForKey:@"resultBean"]objectForKey:@"authenFlag"];
+            NSLog(@"%@",self.authenFlag);
+            
+            if ([self.authenFlag isEqualToString:@"3"]) {
+                
+            }else
+            {
+                [Common showMsgBox:nil msg:@"请实名认证后,再进行操作" parentCtrl:self];
+                self.bankCardNumberTextField.userInteractionEnabled = NO;
+                self.confirmBankCardNumberTextFied.userInteractionEnabled = NO;
+                
+                
+            }
         }
     }
     else{

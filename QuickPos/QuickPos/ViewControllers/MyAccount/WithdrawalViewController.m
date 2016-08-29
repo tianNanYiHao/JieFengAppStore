@@ -84,12 +84,6 @@
 //    }
 
 //        Notes.hidden = NO;
-    
-
-    
-    
-    
-    
 
     self.navigationController.navigationBarHidden = NO;
     self.view.backgroundColor = [Common hexStringToColor:@"eeeeee"];
@@ -98,9 +92,6 @@
     
     requst = [[Request alloc]initWithDelegate:self];
     [requst userInfo:[AppDelegate getUserBaseData].mobileNo];
-
-    
-    
 }
 
 - (void)chooseType

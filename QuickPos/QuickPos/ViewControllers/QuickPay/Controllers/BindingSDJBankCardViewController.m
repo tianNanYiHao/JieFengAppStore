@@ -13,6 +13,7 @@
 #import "QuickBankData.h"
 #import "BankListViewController.h"
 #import "SDJBankViewController.h"
+#import "Common.h"
 
 @interface BindingSDJBankCardViewController ()<ResponseData,UITextFieldDelegate>
 {
@@ -57,6 +58,8 @@
 
 @property (nonatomic,strong) NSString *message;
 
+@property (nonatomic,strong) NSString *respCode;
+
 
 @end
 
@@ -97,6 +100,7 @@
         
         [self.GetCodeBtn setTitle:[NSString stringWithFormat:L(@"ToResendToSecond"),Second] forState:UIControlStateNormal];
         
+        
     }else
     {
         [self.GetCodeBtn setBackgroundImage:[UIImage imageNamed:@"fasongyanzma2.png"] forState:UIControlStateNormal];
@@ -136,7 +140,10 @@
 //选择银行列表
 - (IBAction)bankList:(id)sender {
     
-    if(![self.bankCardNumTextField.text isEqual:@""]){
+    if ([self.smsTextField.text length] == 0) {
+        [Common showMsgBox:nil msg:@"请先输入短信验证码" parentCtrl:self];
+    }
+    else if(![self.bankCardNumTextField.text isEqual:@""]){
         
         item.accountNo = self.bankCardNumTextField.text;
         
@@ -160,22 +167,29 @@
 - (IBAction)comfirmBtn:(id)sender {
     
     
-    [request QuickBankCardPaySdjWithorderId:self.orderId
-                                     cardNo:[self.bankCardNumTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""]
-                               customerName:self.AccountNameTextField.text
-                              legalCertType:@"1"
-                               legalCertPid:self.ICCardNumTextField.text
-                                   cardType:@"0"
-                           referrerMobileNo:self.smsTextField.text
-                                   mobileNo:self.phoneNumTextField.text
-                                      phone:@""
-                                   bankCode:self.bankCode
-                               unitBankCode:@""
-     ];
     
-//    UIStoryboard *quickStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
-//    SDJBankPayViewController *SDJBankPayVc = [quickStoryboard instantiateViewControllerWithIdentifier:@"SDJBankPayVc"];
-//    [self.navigationController pushViewController:SDJBankPayVc animated:YES];
+    if ([self.smsTextField.text length] == 0) {
+        [Common showMsgBox:nil msg:@"请先输入短信验证码" parentCtrl:self];
+    }else if (banktag == 1000){
+        [Common showMsgBox:nil msg:@"请选择开户银行" parentCtrl:self];
+    }else{
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在绑定银行卡.."];
+        [request QuickBankCardPaySdjWithorderId:self.orderId
+                                         cardNo:[self.bankCardNumTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""]
+                                   customerName:self.AccountNameTextField.text
+                                  legalCertType:@"1"
+                                   legalCertPid:self.ICCardNumTextField.text
+                                       cardType:@"0"
+                               referrerMobileNo:self.smsTextField.text
+                                       mobileNo:self.phoneNumTextField.text
+                                          phone:@""
+                                       bankCode:self.bankCode
+                                   unitBankCode:@""
+         ];
+        
+    }
+    
     
 }
 
@@ -203,23 +217,35 @@
     
     else if (type == REQUSET_QUICKBANKCARDPAYSDJ) {
         
-        UIStoryboard *quickStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
-        SDJBankPayViewController *SDJBankPayVc = [quickStoryboard instantiateViewControllerWithIdentifier:@"SDJBankPayVc"];
-        [SDJBankPayVc setOrderData:self.orderData];
-        SDJBankPayVc.bankCodes = self.bankCode;
-        SDJBankPayVc.ICCardNo = self.ICCardNumTextField.text;
-        SDJBankPayVc.bankCardNo = self.bankCardNumTextField.text;
-        SDJBankPayVc.phoneNo = self.phoneNumTextField.text;
-        SDJBankPayVc.orderId = self.orderId;
-        SDJBankPayVc.orderAmt = self.orderAmt;
-        SDJBankPayVc.bankName = self.bankName;
-        SDJBankPayVc.AccountName = self.AccountNameTextField.text;
-        SDJBankPayVc.mobileNo = self.phoneNumTextField.text;
+        self.respCode = [dict objectForKey:@"respCode"];
+        NSLog(@"%@",self.respCode);
         
-        NSLog(@"%@  %@",SDJBankPayVc.bankCodes,self.bankCode);
+        if ([self.respCode isEqualToString:@"0000"]) {
+            UIStoryboard *quickStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
+            SDJBankPayViewController *SDJBankPayVc = [quickStoryboard instantiateViewControllerWithIdentifier:@"SDJBankPayVc"];
+            [SDJBankPayVc setOrderData:self.orderData];
+            SDJBankPayVc.bankCodes = self.bankCode;
+            SDJBankPayVc.ICCardNo = self.ICCardNumTextField.text;
+            SDJBankPayVc.bankCardNo = self.bankCardNumTextField.text;
+            SDJBankPayVc.phoneNo = self.phoneNumTextField.text;
+            SDJBankPayVc.orderId = self.orderId;
+            SDJBankPayVc.orderAmt = self.orderAmt;
+            SDJBankPayVc.bankName = self.bankName;
+            SDJBankPayVc.AccountName = self.AccountNameTextField.text;
+            SDJBankPayVc.mobileNo = self.phoneNumTextField.text;
+            
+            NSLog(@"%@  %@",SDJBankPayVc.bankCodes,self.bankCode);
+            
+            [self.navigationController pushViewController:SDJBankPayVc animated:YES];
+        }else
+        {
+            
+            [Common showMsgBox:nil msg:@"证书验签失败,请稍后重试" parentCtrl:self];
+        }
         
-        [self.navigationController pushViewController:SDJBankPayVc animated:YES];
+        
     }
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 

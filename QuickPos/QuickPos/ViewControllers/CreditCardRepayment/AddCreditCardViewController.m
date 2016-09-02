@@ -69,6 +69,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *addBankcardScrollView;
 
+@property (nonatomic,strong) NSString *authenFlag;
+
 @end
 
 
@@ -88,6 +90,8 @@
     citytag = 1002;
     branchtag = 1003;
     
+    request = [[Request alloc]initWithDelegate:self];
+    [request userInfo:[AppDelegate getUserBaseData].mobileNo];
     
     if(![UIDevice currentDevice].isIOS6){
         
@@ -111,8 +115,6 @@
     
     self.title = @"添加信用卡";
     self.comfirtbtn.layer.cornerRadius = 5;
-    
-    request = [[Request alloc]initWithDelegate:self];
     
     dataDic = [NSDictionary dictionary];
     item = [[BankCardItem alloc]init];
@@ -168,13 +170,6 @@
     
     self.realNameTextField.text = [AppDelegate getUserBaseData].userName;
     self.realNameTextField.userInteractionEnabled = NO;
-    NSLog(@"%@  %@",self.realNameTextField.text,[AppDelegate getUserBaseData].userName);
-    if ([[AppDelegate getUserBaseData].userName length] == 0) {
-        [Common showMsgBox:nil msg:@"请先实名认证" parentCtrl:self];
-        self.bankCardNumberTextField.userInteractionEnabled = NO;
-        self.confirmBankCardNumberTextFied.userInteractionEnabled = NO;
-        
-    }
     
 }
 
@@ -253,10 +248,25 @@
             item.payMode = [dict objectForKey:@"payMode"];
             
             tr.bankCardItem = item;
-//
             [self.navigationController pushViewController:tr animated:YES];
-//        }
-    }
+
+        }else if (type == REQUSET_USERINFOQUERY){
+            
+            self.authenFlag = [[[dict objectForKey:@"data"]objectForKey:@"resultBean"]objectForKey:@"authenFlag"];
+            NSLog(@"%@",self.authenFlag);
+            
+            if ([self.authenFlag isEqualToString:@"3"]) {
+                
+            }else
+            {
+                [Common showMsgBox:nil msg:@"请实名认证后,再进行操作" parentCtrl:self];
+                self.bankCardNumberTextField.userInteractionEnabled = NO;
+                self.confirmBankCardNumberTextFied.userInteractionEnabled = NO;
+                
+                
+            }
+        }
+    
     else{
         
         [MBProgressHUD showHUDAddedTo:self.view WithString:dict[@"respDesc"]];

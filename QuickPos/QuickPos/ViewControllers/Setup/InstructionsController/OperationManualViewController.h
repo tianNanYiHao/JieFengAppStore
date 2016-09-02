@@ -12,4 +12,6 @@
 
 @property (nonatomic,strong) NSString *str;
 
+@property (nonatomic,strong) NSString *titleName;
+
 @end

@@ -37,23 +37,45 @@
 
 - (void)viewDidLoad {
     
+    
+    
     [super viewDidLoad];
     self.comfirtButton.layer.cornerRadius = 5;
     //self.title = L(@"InputName");
+    
+
     
     self.navigationController.navigationBarHidden = NO;
     
     userDefaults = [NSUserDefaults standardUserDefaults];
     
-    self.accountTextField.text = realNameStr;
-    
-    self.IdTextField.text = IDstr;
-    
+    if ([self.authenFlag isEqualToString:@"0"]) {
+            self.accountTextField.text = @"";
+            self.IdTextField.text = @"";
+    }else{
+        self.accountTextField.text = realNameStr;
+        
+        self.IdTextField.text = IDstr;
+    }
     requst = [[Request alloc]initWithDelegate:self];
     
     
 }
 
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    self.accountTextField.text = @"";
+//    self.IdTextField.text = @"";
+//}
+////- (void)viewDidAppear:(BOOL)animated{
+////    self.accountTextField.text = @"";
+////    self.IdTextField.text = @"";
+////}
+//
+//- (void)viewDidDisappear:(BOOL)animated{
+//    self.accountTextField.text = @"";
+//    self.IdTextField.text = @"";
+//}
 
 
 - (IBAction)TakingPictures:(UIButton *)sender {

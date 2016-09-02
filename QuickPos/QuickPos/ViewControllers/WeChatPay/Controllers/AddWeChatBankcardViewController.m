@@ -76,6 +76,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *addBankcardScrollView;
 
+@property (nonatomic,strong) NSString *authenFlag;
+
 @end
 
 
@@ -95,6 +97,8 @@
     citytag = 1002;
     branchtag = 1003;
     
+    request = [[Request alloc]initWithDelegate:self];
+    [request userInfo:[AppDelegate getUserBaseData].mobileNo];
     
     if(![UIDevice currentDevice].isIOS6){
         
@@ -172,15 +176,6 @@
     
     self.realNameTextField.text = [AppDelegate getUserBaseData].userName;
     self.realNameTextField.userInteractionEnabled = NO;
-    NSLog(@"%@  %@",self.realNameTextField.text,[AppDelegate getUserBaseData].userName);
-    if ([[AppDelegate getUserBaseData].userName length] == 0) {
-        [Common showMsgBox:nil msg:@"请先实名认证" parentCtrl:self];
-        self.bankCardNumberTextField.userInteractionEnabled = NO;
-        self.phoneNumberTextField.userInteractionEnabled = NO;
-        self.IDNumberTextField.userInteractionEnabled = NO;
-        
-    }
-    
     //省份的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tongzhi:) name:@"tongzhi" object:nil];
     
@@ -295,18 +290,6 @@
     }else{
         item.accountNo = self.bankCardNumberTextField.text;
         
-        request = [[Request alloc]initWithDelegate:self];
-        
-        
-      
-//        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        ObtainScanViewController *ObtainScanVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ObtainScanVc"];
-//        
-//        
-//        [self.navigationController pushViewController:ObtainScanVc animated:YES];
-//        
-////
-        
         [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在验证卡信息"];
         [request WeixinCardAuthentcardappUser:@""
                                         cardOwner:[AppDelegate getUserBaseData].userName
@@ -345,6 +328,21 @@
             [self.navigationController pushViewController:ObtainScanVc animated:YES];
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }else if (type == REQUSET_USERINFOQUERY){
+            
+            self.authenFlag = [[[dict objectForKey:@"data"]objectForKey:@"resultBean"]objectForKey:@"authenFlag"];
+            NSLog(@"%@",self.authenFlag);
+            
+            if ([self.authenFlag isEqualToString:@"3"]) {
+                
+            }else
+            {
+                [Common showMsgBox:nil msg:@"请实名认证后,再进行操作" parentCtrl:self];
+                self.bankCardNumberTextField.userInteractionEnabled = NO;
+                self.IDNumberTextField.userInteractionEnabled = NO;
+                self.phoneNumberTextField.userInteractionEnabled = NO;
+                
+            }
         }
 
     }

@@ -139,9 +139,8 @@ enum{
 #define MONILEMAC_ORDERINFO                     @"REQUSET_ORDER"
 #define MONILEMAC_MOBILEMAC                     @"GetMobileMac"
 #define MONILEMAC_LOGIN                         @"UserLogin"
-#define MONILEMAC_USERUPDATAINFO                @"UserUpdateInfo"
+
 #define MONILEMAC_USERIDENTITYPICUPLOAD         @"UserIdentityPicUpload2"
-#define MOBILEMAC_USERINFOQUERY                 @"UserInfoQuery"
 #define MOBILEMAC_ORDER                         @"RequestOrder"
 #define MOBILEMAC_ACCTENQUIRY                   @"JFPalAcctEnquiry"//虚拟账户余额查询接口
 #define MOBILEMAC_COMMODITYLIST                 @"CommodityList"
@@ -157,9 +156,8 @@ enum{
 #define MONILEMAC_ORDERINFO                     @"REQUSET_ORDER"
 #define MONILEMAC_MOBILEMAC                     @"GetMobileMac"
 #define MONILEMAC_LOGIN                         @"UserLogin"
-#define MONILEMAC_USERUPDATAINFO                @"UserUpdateInfo"
+
 #define MONILEMAC_USERIDENTITYPICUPLOAD         @"UserIdentityPicUpload2"
-#define MOBILEMAC_USERINFOQUERY                 @"UserInfoQuery"
 #define MOBILEMAC_ORDER                         @"RequestOrder"
 #define MOBILEMAC_ACCTENQUIRY                   @"JFPalAcctEnquiry"
 #define MOBILEMAC_COMMODITYLIST                 @"CommodityList"
@@ -289,8 +287,9 @@ enum{
 //绑定卡
 -(void):(NSString*)accountNumber andBandType:(NSString*)bandType;
 
-//微信收款绑定银行卡
-//- (void)WeixinCardAuthentcard:(NSString *)cardNo customerName:(NSString *)customerName mobileNo:(NSString *)mobileNo legalCertType:(NSString *)legalCertType legalCertPid:(NSString *)legalCertPid cardType:(NSString *)cardType bandType:(NSString *)bandType phone:(NSString *)phone;
+//绑定支付宝银行卡
+-(void)ZFBBankCardBind:(NSString*)accountNumber andMobile:(NSString *)mobile andBandType:(NSString*)bandType bankName:(NSString *)bankName;
+
 //微信收款绑定银行卡
 - (void)WeixinCardAuthentcardappUser:(NSString *)appUser cardOwner:(NSString *)cardOwner bankId:(NSString *)bankId bankName:(NSString *)bankName bankBranchId:(NSString *)bankBranchId bankBranchName:(NSString *)bankBranchName provinceId:(NSString *)provinceId bankProvince:(NSString *)bankProvince cityId:(NSString *)cityId bankCity:(NSString *)bankCity cardNo:(NSString *)cardNo phone:(NSString *)phone real_name:(NSString *)real_name cmer:(NSString *)cmer cert_no:(NSString *)cert_no mobile:(NSString *)mobile;
 

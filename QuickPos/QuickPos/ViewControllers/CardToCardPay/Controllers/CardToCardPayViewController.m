@@ -170,13 +170,26 @@
     priceVer = [NSString stringWithFormat:@"%.2f",[priceVer doubleValue]];
     NSString *priceVerde = finalPrice.text;
     if ([priceVer length] > 9 || [priceVerde isEqualToString:@""] || ![self matchStringFormat:priceVer withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"]  || [priceVer isEqualToString:@"0.00"]) {
-        [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入充值金额")];
+//        [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入充值金额")];
+        [Common showMsgBox:nil msg:@"请输入充值金额" parentCtrl:self];
     }
     else if (![self matchStringFormat:priceVerde withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"])
     {
-        [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"CorrectPrice")];
-    }
-    else
+//        [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"CorrectPrice")];
+        [Common showMsgBox:nil msg:L(@"CorrectPrice") parentCtrl:self];
+    }else if ([self.BeneficiaryName.text length] == 0){
+        [Common showMsgBox:nil msg:@"请输入收款人姓名" parentCtrl:self];
+    }else if ([self.BeneficiaryAccount.text length] == 0){
+        [Common showMsgBox:nil msg:@"请输入收款方卡号" parentCtrl:self];
+    }else if ([self.BeneficiaryAccount.text length] < 16){
+        [Common showMsgBox:nil msg:@"请输入正确的银行卡号" parentCtrl:self];
+    }else if ([self.BeneficiaryAccount.text length] >19){
+        [Common showMsgBox:nil msg:@"请输入正确的银行卡号" parentCtrl:self];
+    }else if ([self.BeneficiaryPhoneField.text length] == 0){
+        [Common showMsgBox:nil msg:@"请输入收款方手机号" parentCtrl:self];
+    }else if ([self.BeneficiaryPhoneField.text length] != 11){
+        [Common showMsgBox:nil msg:@"请输入正确的手机号" parentCtrl:self];
+    }else
     {
         NSString *price = [priceVer stringByReplacingOccurrencesOfString:@"." withString:@""];
         

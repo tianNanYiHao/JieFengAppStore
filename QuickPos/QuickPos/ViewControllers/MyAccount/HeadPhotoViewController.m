@@ -98,13 +98,13 @@
         
     }else{
     
-     
+     [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"Uploading")];
         [requst upPhotoImage:self.imagedata];
         
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"Uploading")];
-        
-        [hud hide:YES afterDelay:5];
-       
+//        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"Uploading")];
+//        
+//        [hud hide:YES afterDelay:5];
+//       
 
     }
     
@@ -149,7 +149,7 @@
         
         self.photoimage = image;
         
-        self.imagedata = UIImageJPEGRepresentation(image, 0.0001);
+        self.imagedata = UIImageJPEGRepresentation(image, 0.01);
         
         self.headphotoimageview.image = image;
         

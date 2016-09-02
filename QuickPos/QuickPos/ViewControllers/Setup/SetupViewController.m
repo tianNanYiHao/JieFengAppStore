@@ -156,7 +156,7 @@ typedef enum : NSUInteger {
             ////            如果需要分享回调，请将delegate对象设置self，并实现下面的回调方法
             //            [UMSocialSnsService presentSnsController:self
             //                                              appKey:@"57677f6be0f55a8d0a000255"
-            //                                           shareText:@"捷丰生活,让您生活服务更方便/快捷,http://fir.im/bmjfsh"                                          shareImage:[UIImage imageNamed:@"icon"]
+            //                                           shareText:@"捷丰生活,让您生活服务更方便/快捷,http://www.jiefengpay.com"                                          shareImage:[UIImage imageNamed:@"icon"]
             //                                     shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToQzone,UMShareToAlipaySession, nil]
             //                                            delegate:self];
             
@@ -192,7 +192,7 @@ typedef enum : NSUInteger {
 //                        [Common showMsgBox:@"清理缓存" msg:@"清理缓存将删您的账号信息，您确定要这样做吗？" parentCtrl:self];
             
             
-            PSTAlertController *gotoPageController = [PSTAlertController alertWithTitle:@"" message:@"清理缓存将删您的账号信息，您确定要这样做吗？"];
+            PSTAlertController *gotoPageController = [PSTAlertController alertWithTitle:@"" message:@"清理缓存将删除您的账号信息，您确定要这样做吗？"];
             [gotoPageController addAction:[PSTAlertAction actionWithTitle:@"确定" handler:^(PSTAlertAction *action) {
                 
                 dispatch_async(
@@ -225,25 +225,27 @@ typedef enum : NSUInteger {
         }
             break;
         case TipsType:{
-            AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-            NSString *url;
-            if ([[[delegate getConfigDic] objectForKey:@"website"]hasPrefix:@"http"]) {
-                url = [NSString stringWithFormat:@"%@",[[delegate getConfigDic] objectForKey:@"website"]];
-            }else{
-                url = [NSString stringWithFormat:@"http://%@",[[delegate getConfigDic] objectForKey:@"website"]];
-            }
             
-            WebViewController *web = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WebViewController"];
-            web.url = url;
-            web.navigationItem.title = L(@"CommentsAndFeedback");
-            DDMenuController *menuController = (DDMenuController*)[QuickPosTabBarController getQuickPosTabBarController].parentCtrl;
-            
-            UITabBarController *tb = (UITabBarController*)[menuController rootViewController];
-            UINavigationController *ctr = (UINavigationController*)[tb selectedViewController];
-            [menuController showRootController:YES];
-            UIViewController *ctrl = [ctr visibleViewController];
-            [web setHidesBottomBarWhenPushed:YES];
-            [[ctrl navigationController] pushViewController:web animated:YES];
+            [Common showMsgBox:nil msg:@"建设中.." parentCtrl:self];
+//            AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//            NSString *url;
+//            if ([[[delegate getConfigDic] objectForKey:@"website"]hasPrefix:@"http"]) {
+//                url = [NSString stringWithFormat:@"%@",[[delegate getConfigDic] objectForKey:@"website"]];
+//            }else{
+//                url = [NSString stringWithFormat:@"http://%@",[[delegate getConfigDic] objectForKey:@"website"]];
+//            }
+//            
+//            WebViewController *web = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WebViewController"];
+//            web.url = url;
+//            web.navigationItem.title = L(@"CommentsAndFeedback");
+//            DDMenuController *menuController = (DDMenuController*)[QuickPosTabBarController getQuickPosTabBarController].parentCtrl;
+//            
+//            UITabBarController *tb = (UITabBarController*)[menuController rootViewController];
+//            UINavigationController *ctr = (UINavigationController*)[tb selectedViewController];
+//            [menuController showRootController:YES];
+//            UIViewController *ctrl = [ctr visibleViewController];
+//            [web setHidesBottomBarWhenPushed:YES];
+//            [[ctrl navigationController] pushViewController:web animated:YES];
         }
             
             break;

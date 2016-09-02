@@ -123,12 +123,7 @@
     }
     
 }
-- (void)updateVersion{
-//    //启动更新检查SDK蒲公英
-//    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"b5e914f38974c89c0c55416d7f8e51ac"];
-//    [[PgyUpdateManager sharedPgyManager] checkUpdateWithDelegete:self selector:@selector(updateMethod:)];
-//    //    NSLog(@"检查更新");
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -163,9 +158,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self addintro];//引导图
-//    [self checkUpdate];//fir.im检查新版本
-    
-//    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateVersion) userInfo:nil repeats:YES];
+  
     
     
 }
@@ -180,10 +173,6 @@
     CGFloat width = (self.view.frame.size.width - 45)/2;
     layout.itemSize = CGSizeMake(width, width * 100/165.0);
     layout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
-    
-    
-    //    _menuCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 76, width, self.view.frame.size.height-76-49) collectionViewLayout:layout];
-    //    _menuCollectionView.backgroundColor = [UIColor whiteColor];
     _menuCollectionView.delegate = self;
     _menuCollectionView.dataSource = self;
     _menuCollectionView.showsVerticalScrollIndicator = NO;
@@ -194,64 +183,6 @@
 
 
 
-//- (void)checkUpdate{
-//    
-//    NSString *idUrlString = @"http://api.fir.im/apps/latest/579881367e4ff057600004d6?apiToken=37b4ee26a77410374789ac3a0ffde272";
-//    NSURL *requestURL = [NSURL URLWithString:idUrlString];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:requestURL];
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        if (connectionError) {
-//            //do something
-//        }else {
-//            NSError *jsonError = nil;
-//            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-//            if (!jsonError && [object isKindOfClass:[NSDictionary class]]) {
-//                //do something
-//                
-//                NSString *localversion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];//本地版本
-//                localversion = [localversion stringByReplacingOccurrencesOfString:@"." withString:@""];
-//                NSString  *newversion = [object objectForKey:@"versionShort"];//线上版本
-//                newversion = [newversion stringByReplacingOccurrencesOfString:@"." withString:@""];
-//                
-//                if ([newversion doubleValue] > [localversion doubleValue]) {
-//                    
-//                    
-//                    NSString *message = [NSString stringWithFormat:@"有新版本%@,%@,前往更新？",[object objectForKey:@"versionShort"],[object objectForKey:@"changelog"]];
-//                    UIAlertController *newVersion = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-//                    UIAlertAction *comfirt =  [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//                        
-//                        NSString *updateurl = [NSString stringWithFormat:@"%@",[object objectForKey:@"update_url"]];
-//                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:updateurl]];
-//                    }];
-//                    [newVersion addAction:comfirt];
-//                    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//                        
-//                    }];
-//                    [newVersion addAction:cancel];
-//                    [self presentViewController:newVersion animated:YES completion:nil];
-//                    
-//                }
-//                
-//            }
-//        }
-//    }];
-//}
-//- (void)updateMethod:(NSDictionary *)dic{
-//    
-//    if(dic == nil) return;
-//    NSString *message = [NSString stringWithFormat:@"有新版本,是否更新？"];
-//    //    NSString *message = [NSString stringWithFormat:@"有新版本%@,是否更新？",[dic objectForKey:@"versionCode"]];
-//    UIAlertController *newVersion = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction *comfirt =  [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        
-//        NSString *updateurl = [NSString stringWithFormat:@"%@",[dic objectForKey:@"downloadURL"]];
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:updateurl]];
-//    }];
-//    [newVersion addAction:comfirt];
-//    
-//    [self presentViewController:newVersion animated:YES completion:nil];
-//  
-//}
 
 //右上角 rightBtn
 - (void)creatRightBtn
@@ -268,7 +199,7 @@
 
 - (void)rightBtn:(UIButton *)btn
 {
-//    [(DDMenuController*)[(QuickPosTabBarController*)self.tabBarController parentCtrl] showRightController:YES];
+
     
     //登陆判断
     if ([[AppDelegate getUserBaseData].mobileNo length] > 0) {
@@ -365,7 +296,7 @@
                 NSString *channelID = [[channelAllArr objectAtIndex:indexrow] objectAtIndex:indeloc];
                 NSDictionary *dic = @{@"image": image, @"title":title,@"announce":announce,@"channelID":channelID};
                 [self.menuDataArr addObject:dic];
-                NSLog(@"%@  %@",self.menuDataArr,dic);
+                
                 
             }
         }
@@ -380,7 +311,7 @@
             if (isShow.boolValue) {
                
                 [self.menuDataArr addObject:dic];
-                NSLog(@"%@",self.menuDataArr);
+                
                 
             }
         }for (NSDictionary *item in [dict objectForKey:@"channel"]) {
@@ -393,7 +324,7 @@
             if (isShow1.boolValue) {
              
                 [self.menuDataArr1 addObject:dic1];
-                NSLog(@"%@",self.menuDataArr1);
+               
            
             }
         }
@@ -468,7 +399,7 @@
     NSString *image = self.iamgeAllArr[indexPath.section][indexPath.row];
     NSString *title = self.titleAllArr[indexPath.section][indexPath.row];
     
-    NSLog(@"%@  %@",image,title);
+  
     
     if (![image hasPrefix:@"http"]) {
         [cell.imageView setImage:[UIImage imageNamed:image]];
@@ -731,7 +662,7 @@
     [self.navigationController pushViewController:vc animated:YES];
     
     [vc actionDoSomeThing:^(LBXScanResult *info) {
-        NSLog(@"%@ %@ %@",info.strScanned,info.strBarCodeType,info.imgScanned);
+       
         _orderNo = [NSString stringWithString:info.strScanned];
         [request queryScanMoneyWithOrderNo:_orderNo];
     }];
@@ -781,7 +712,7 @@
 }
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type {
-    NSLog(@"dict %@",dict);
+  
     if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
         
         if(type == REQUEST_GETCHANNELAPPLICATION){
@@ -804,16 +735,16 @@
             
             _QRCodeAmt = [NSString stringWithFormat:@"%li",[[[dataDict objectForKey:@"REP_BODY"]objectForKey:@"ordAmt"] longValue]/100];
             
-            NSLog(@"%@",[dataDict objectForKey:@"REP_BODY"]);
+
             
-            NSLog(@"%@",_QRCodeAmt);
+  
             
             rechargeVc.titleNmae = @"扫码支付";
             rechargeVc.moneyTitle = @"输入充值金额";
             rechargeVc.comfirBtnTitle = @"确认充值";
             rechargeVc.orderRemark = _orderNo;//扫码订单号
             rechargeVc.moneyTitle = _QRCodeAmt;
-            NSLog(@"%@  %@",rechargeVc.moneyTitle,_QRCodeAmt);
+
             [self.navigationController pushViewController:rechargeVc animated:YES];
             
         }else
@@ -830,7 +761,7 @@
        
        
         self.state = [[dict objectForKey:@"data"]objectForKey:@"state"];
-        NSLog(@"%@",self.state);
+
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
 //            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

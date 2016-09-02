@@ -45,6 +45,7 @@
 @property (nonatomic, strong)UIBarButtonItem *help;
 @property (weak, nonatomic) IBOutlet UIButton *comfirt;//转账确认按钮
 @property (nonatomic, strong) NSString *isAccount;//是否是账户充值的标准
+@property (nonatomic,strong) NSString *respCode;
 
 @end
 
@@ -296,6 +297,12 @@
     else if (![self matchStringFormat:priceVerde withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"])
     {
         [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"CorrectPrice")];
+    }else if ([self.BeneficiaryName.text length] == 0){
+        [Common showMsgBox:nil msg:@"请输入收款方姓名" parentCtrl:self];
+    }else if ([self.BeneficiaryAccount.text length] == 0){
+        [Common showMsgBox:nil msg:@"请输入收款方账户" parentCtrl:self];
+    }else if ([self.BeneficiaryAccount.text length] != 11){
+        [Common showMsgBox:nil msg:@"收款方账户有误" parentCtrl:self];
     }
     else
     {
@@ -311,7 +318,7 @@
                                orderAmt:price
                               orderDesc:self.BeneficiaryAccount.text
                             orderRemark:@""
-                           commodityIDs:@"29533"
+                           commodityIDs:@""
                                 payTool:payTool];
             
             [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderHasBeenSubmitted-PleaseLater")];
@@ -323,28 +330,12 @@
 }
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
-//    if([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]){
-//        if (type == REQUSET_ORDER) {
-//            orderData = [[OrderData alloc]initWithData:dict];
-//            orderData.orderPayType = payType;
-//            orderData.orderAccount = [(UITextField*)[self.inputTextFields objectAtIndex:2] text];
-//            orderData.productId = productId;
-//            orderData.merchantId = merchantId;
-//  orderData.orderAmt = [Common orderAmtFormat:[(UITextField*)[self.inputTextFields objectAtIndex:0] text]];
-//            [self performSegueWithIdentifier:@"TransferSegue" sender:self.transferToHim];
-//        }
-//    }else{
-//        [Common showMsgBox:@"" msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
-//    }
     
-//    if ([[dict objectForKey:@"respCode"]isEqualToString:@"1001"]) {
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-//    }
-    
-//    if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
-        if (type == REQUSET_ORDER) {
+    if([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]){
+        
+        if (type == REQUSET_ORDER ) {
             UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            OrderViewController *shopVc = [self.storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+            OrderViewController *shopVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
             orderData = [[OrderData alloc]initWithData:dict];
             orderData.orderAccount = [AppDelegate getUserBaseData].mobileNo;
             orderData.orderPayType = payType;
@@ -352,8 +343,6 @@
             orderData.productId = productId;
             //                orderData.mallOrder = YES;
             shopVc.orderData = orderData;
-            
-            NSLog(@"%@ %@ %d %@ %@ %@",orderData,orderData.orderAccount,orderData.orderPayType,orderData.merchantId,orderData.productId,shopVc.orderData);
             for (UIViewController *v in self.navigationController.viewControllers) {
                 if ([v isKindOfClass:[MallViewController class]]) {
                     shopVc.delegate = v;
@@ -361,16 +350,13 @@
             }
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.navigationController pushViewController:shopVc animated:YES];
-            //            [self.navigationController presentViewController:shopVc animated:YES completion:nil];
-//        }
+        }
+        
     }else{
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [MBProgressHUD showHUDAddedTo:self.view WithString:[dict objectForKey:@"respDesc"]];
+        [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
     }
-
-
 }
-
 
 #pragma mark - UitextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

@@ -124,7 +124,7 @@
 
     [super viewWillAppear:animated];
    
-    [requst bankListAndbindType:@"01"];
+    [requst bankListAndbindType:@"06"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"加载中,请稍后."];
     
 

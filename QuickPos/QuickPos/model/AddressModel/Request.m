@@ -238,7 +238,7 @@
                         @"mobileNo":[AppDelegate getUserBaseData].mobileNo,
                         @"img":[Utils base64Encode:imageStr],
                         @"imgApplyType":@"01",
-                        @"imgSign":[Utils md5WithData:imageStr],
+                        @"imgSign":@"",
                         @"token":[AppDelegate getUserBaseData].token,
                         };
     [self requestWithDict:dic requestType:REQUEST_UPHEADIMAGE];
@@ -294,12 +294,12 @@
 -(void)upIDcardPositive:(NSData*)imageStr{
     
     
-    
+    //Utils md5WithData:imageStr], 图片签名
     NSDictionary*dic=@{@"application": MONILEMAC_USERIDENTITYPICUPLOAD,
                        @"mobileNo":[AppDelegate getUserBaseData].mobileNo,
                        @"img" :[Utils base64Encode:imageStr],
                        @"imgApplyType":@"02",
-                       @"imgSign":[Utils md5WithData:imageStr],
+                       @"imgSign":@"",
                        @"token":[AppDelegate getUserBaseData].token,
                        };
     [self requestWithDict:dic requestType:REQUSET_IDCARDPOSITIVE];
@@ -315,7 +315,7 @@
                        @"mobileNo":[AppDelegate getUserBaseData].mobileNo,
                        @"img":[Utils base64Encode:imageStr],
                        @"imgApplyType":@"03",
-                       @"imgSign":[Utils md5WithData:imageStr],
+                       @"imgSign":@"",
                        @"token":[AppDelegate getUserBaseData].token,
                        };
     [self requestWithDict:dic requestType:REQUSET_IDCARDREVERSE];
@@ -435,22 +435,31 @@
     
 }
 
-//微信收款绑定银行卡
-//- (void)WeixinCardAuthentcard:(NSString *)cardNo customerName:(NSString *)customerName mobileNo:(NSString *)mobileNo legalCertType:(NSString *)legalCertType legalCertPid:(NSString *)legalCertPid cardType:(NSString *)cardType bandType:(NSString *)bandType phone:(NSString *)phone{
-//
-//    NSDictionary *dic = @{@"application": MONILEMAC_WEIXINCARDAUTHENT,
-//                          @"cardNo":cardNo,//卡号
-//                          @"customerName":customerName,//户名
-//                          @"mobileNo":mobileNo,//银行卡绑定手机号
-//                          @"legalCertType":legalCertType,//证件类型
-//                          @"legalCertPid":legalCertPid,//证件号码
-//                          @"cardType":cardType,//卡类型
-//                          @"bandType":@"06",//绑定卡类型  固定值 06
-//                          @"phone":[AppDelegate getUserBaseData].mobileNo,//登录用户手机号
-//                          @"token":[AppDelegate getUserBaseData].token,
-//                          };
-//    [self requestWithDict:dic requestType:REQUSET_WEIXINCARDAUTHENT];
-//}
+//绑定银行卡--支付宝,提现,我的分润
+-(void)ZFBBankCardBind:(NSString*)accountNumber andMobile:(NSString *)mobile andBandType:(NSString*)bandType bankName:(NSString *)bankName{
+    NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults];
+    
+    NSString*bankID=[userDefaults objectForKey:branchID];
+    
+    NSDictionary*dic=@{@"application": MOBILEMAC_BANKCARDBIND,
+                       
+                       @"mobileNo":[AppDelegate getUserBaseData].mobileNo,
+                       @"bankId":bankID,
+                       //@"offset":@"0",
+                       @"accountNo":accountNumber,
+                       @"mobile":mobile,
+                       //@"cardIdx":@"00",
+                       @"token":[AppDelegate getUserBaseData].token,
+                       @"bandType":bandType,
+                       @"versionFlag":@"1",
+                       @"bankName":bankName,
+                       };
+    
+    
+    
+    [self requestWithDict:dic requestType:REQUSET_BankCardBind];
+    
+}
 
 //微信收款绑定银行卡
 - (void)WeixinCardAuthentcardappUser:(NSString *)appUser cardOwner:(NSString *)cardOwner bankId:(NSString *)bankId bankName:(NSString *)bankName bankBranchId:(NSString *)bankBranchId bankBranchName:(NSString *)bankBranchName provinceId:(NSString *)provinceId bankProvince:(NSString *)bankProvince cityId:(NSString *)cityId bankCity:(NSString *)bankCity cardNo:(NSString *)cardNo phone:(NSString *)phone real_name:(NSString *)real_name cmer:(NSString *)cmer cert_no:(NSString *)cert_no mobile:(NSString *)mobile{
@@ -1244,10 +1253,10 @@
 
 
 
-
+#pragma makr - 基础网络请求
 // 网络请求 dict:请求参数,type:请求唯一标识
 - (void)requestWithDict:(NSDictionary*)dict requestType:(NSInteger)type {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     XML *Xml = [[XML alloc] init];
     NSString *str = [Xml xmlDataWithDict:dict];
     
@@ -1265,60 +1274,34 @@
     [req setValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     [req setHTTPBody:[str dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
-    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-    [policy setAllowInvalidCertificates:YES];
-    [manager setSecurityPolicy:policy];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    AFHTTPRequestOperation *operaction = [manager HTTPRequestOperationWithRequest:req success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        BOOL achieve = [self.delegate respondsToSelector:@selector(responseWithDict:requestType:)];
-        NSDictionary *d = [Xml deXMLWithData:operation.responseData];
+    NSURLSession*session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *sessionTask = [session dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        if (operation.responseData && achieve) {
-            if ([[d objectForKey:@"respCode"] isEqualToString:@"0001"] || [[d objectForKey:@"respCode"] isEqualToString:@"0002"]) {
-                
-                [MBProgressHUD showHUDAddedTo:[[[UIApplication sharedApplication].keyWindow rootViewController] view] WithString:d[@"respDesc"]];
-                [[QuickPosTabBarController getQuickPosTabBarController] gotoLoginViewCtrl];
-            }else{
-                [self.delegate responseWithDict:d requestType:type];
-            }
-            
-        }
-        NSLog(@"resp %@", d);
-        NSString *respDesc = [NSString stringWithString:[d[@"respDesc"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        
-        NSLog(@"respDesc返回-%@",respDesc);
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (error.code == -1001){
-            NSLog(@"请求超时");
-            NSDictionary *dic = @{@"respCode": @"1001", @"respDesc": @"请求超时,请稍后重试"};
-            [self.delegate responseWithDict:dic requestType:type];
-        }else if (error.code == -1016) {
+        if (data) {
             BOOL achieve = [self.delegate respondsToSelector:@selector(responseWithDict:requestType:)];
-            
-            NSDictionary *d = [Xml deXMLWithData:operation.responseData];
-            
-            
-            if (operation.responseData && achieve) {
+            NSDictionary *d = [Xml deXMLWithData:data];
+            if (data && achieve) {
                 if ([[d objectForKey:@"respCode"] isEqualToString:@"0001"] || [[d objectForKey:@"respCode"] isEqualToString:@"0002"]) {
-
                     [MBProgressHUD showHUDAddedTo:[[[UIApplication sharedApplication].keyWindow rootViewController] view] WithString:d[@"respDesc"]];
                     [[QuickPosTabBarController getQuickPosTabBarController] gotoLoginViewCtrl];
                 }else{
                     [self.delegate responseWithDict:d requestType:type];
                 }
-                
             }
             NSString *desc = [d objectForKey:@"respDesc"];
             NSLog(@"resp %@", d);
             NSLog(@"respDesc返回-%@",desc);
         }
+        else if (error && error.code == -1001){
+            NSLog(@"请求超时");
+            NSDictionary *dic = @{@"respCode": @"1001", @"respDesc": @"请求超时,请稍后重试"};
+            [self.delegate responseWithDict:dic requestType:type];
+        }
         
     }];
+    [sessionTask resume];
     
-    [[manager operationQueue] addOperation:operaction];
+
 }
 
 
@@ -1651,67 +1634,34 @@
     }
 }
 
-
+#pragma mark - 商城网络请求
 // 网络请求 dict:请求参数,type:请求唯一标识
 - (void)requestWithDict:(NSDictionary*)dict requestType:(NSInteger)type  withUrl:(NSString *)url{
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/plain",@"application/json",nil];
-    [manager POST:[NSString stringWithFormat:@"%@%@",SHOP_BASE_URL,url]
-       parameters:dict
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              //              NSLog(@"suceess is:   \n>>>>response data:\n %@",responseObject);
-              //               NSLog(@"suceess is:   \n>>>>response data:\n %@",operation.responseString);
-              NSLog(@"suceess is:   \n>>>>response data:\n %@",operation.responseData);
-              NSLog(@"suceess is:   \n>>>>response data:\n %@", [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]);
-              BOOL achieve = [self.delegate respondsToSelector:@selector(responseWithDict:requestType:)];
-              if (operation.responseData && achieve) {
-                  if ([self toJSONData:operation.responseData]) {
-                      [self.delegate responseWithDict:[self toJSONData:operation.responseData] requestType:type];
-                  }
-              }
-              
-              NSNotification *notifition = [NSNotification notificationWithName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];
-              
-              [[NSNotificationCenter defaultCenter] postNotification:notifition];
-
-          }
-     
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              if (error.code == -1001){
-                  NSLog(@"请求超时");
-                  NSDictionary *dic = @{@"respCode": @"1001", @"respDesc": @"请求超时,请稍后重试"};
-                  [self.delegate responseWithDict:dic requestType:type];
-              }else if (error.code == -1016) {
-                  BOOL achieve = [self.delegate respondsToSelector:@selector(responseWithDict:requestType:)];
-                  
-                  NSDictionary *d = [self toJSONData:operation.responseData];
-
-                  
-                  if (operation.responseData && achieve) {
-                      if ([[d objectForKey:@"respCode"] isEqualToString:@"0001"] || [[d objectForKey:@"respCode"] isEqualToString:@"0002"]) {
-                          
-                      }else{
-                          [self.delegate responseWithDict:d requestType:type];
-                      }
-                      
-                  }
-                  NSString *desc = [d objectForKey:@"respDesc"];
-                  NSLog(@"resp %@", d);
-                  NSLog(@"respDesc返回-%@",desc);
-              }
-              
-//              [[NSNotificationCenter defaultCenter] postNotificationName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];
-              
-              
-              NSNotification *notifition = [NSNotification notificationWithName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];
-              
-              [[NSNotificationCenter defaultCenter] postNotification:notifition];
-              
-          }];
+    AFHTTPSessionManager *manager  = [AFHTTPSessionManager manager];
+    manager.requestSerializer =[AFHTTPRequestSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"text/html",@"text/plain",@"application/json",nil];
+    [manager POST:[NSString stringWithFormat:@"%@%@",SHOP_BASE_URL,url] parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@ %@",responseObject,[responseObject class]);
+        BOOL achieve = [self.delegate respondsToSelector:@selector(responseWithDict:requestType:)];
+        if (responseObject && achieve) {
+                [self.delegate responseWithDict:responseObject requestType:type];
+        }
+        NSNotification *notifition = [NSNotification notificationWithName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];
+        [[NSNotificationCenter defaultCenter] postNotification:notifition];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@ %@",task,error);
+        NSNotification *notifition = [NSNotification notificationWithName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];
+        [[NSNotificationCenter defaultCenter] postNotification:notifition];
+    }];
     
+
 
 }
 
@@ -1838,13 +1788,13 @@
 
 
 
-
+#pragma mark - 理财网络请求(换afn3.0后 未测试)
 //理财功能网络请求
 -(void)requestMangeWithString:(NSString*)string requestType:(NSInteger)type withuRl:(NSString*)url{
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     NSURL *urltt = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",MANGE_BASW_URL,url]];
     
@@ -1854,64 +1804,38 @@
     [req setValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     [req setHTTPBody:[string dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
-    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-    [policy setAllowInvalidCertificates:YES];
-    [manager setSecurityPolicy:policy];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/plain",@"application/json",nil];
-    AFHTTPRequestOperation *operaction = [manager HTTPRequestOperationWithRequest:req success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionTask *sessionTask = [session dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        
-        NSLog(@"operation1: %@", operation.responseString);
-        NSString *jsonString = [[NSString alloc] initWithData:[GTMBase64 decodeString:operation.responseString] encoding:NSUTF8StringEncoding];
+        NSLog(@"operation1: %@",data);
+        NSString* ss = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *jsonString = [[NSString alloc] initWithData:[GTMBase64 decodeString:ss] encoding:NSUTF8StringEncoding];
         
         NSDictionary *dict = [jsonString objectFromJSONString];
         NSLog(@"%%%%%%%%%%%%%%%%%%%%%%%@",dict);
         NSLog(@"++%li",(long)type);
         
-        
-        
         BOOL achieve = [self.delegate respondsToSelector:@selector(responseWithDict:requestType:)];
         
-        if (operation.responseString && achieve) {
+        if (data && achieve) {
             if (dict) {
-              
+                
                 [self.delegate responseWithDict:dict requestType:type];
             }
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@",error);
-        NSLog(@"operation2 :%@",operation.responseString);
+        if (error) {
+            NSLog(@"%@",error);
+        }
         
     }];
+    [sessionTask resume];
     
-    [[manager operationQueue] addOperation:operaction];
+
     
     
 }
 
-
-//NSArray *timeZoneNames = [NSTimeZone knownTimeZoneNames];
-//NSLog(@"array_%@",timeZoneNames);
-//NSString *startTime = @"2015-07-11 12:30";
-//NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//[formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-//[formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Shanghai"]];
-////转化为东八区的时间，即背景时间NSLog(@"北京时间 %@",[formatter stringFromDate:[NSDate date]]);
-//
-//可以通过timeZoneNames数组查询各个时区的名字，都是以各大洲划分的。
-//某一时区时间转化为手机本地系统时间
-//- (void)day{
-//    NSString *startTime = @"2015-07-11 12:30";
-//    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
-//    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-//    NSDate *startDate = [dateformatter dateFromString:startTime];
-//    NSDate *startTime = [self getNowDateFromatAnDate:startDate];
-//    NSString *startDateStr = [dateformatter stringFromDate:startTime];    NSLog(@"%@",startDateStr);
-//    //这是最终转好的时间}- (NSDate *)getNowDateFromatAnDate:(NSDate *)anyDate{    //设置源日期时区    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];//或GMT    //设置转换后的目标日期时区    NSTimeZone* destinationTimeZone = [NSTimeZone localTimeZone];    //得到源日期与世界标准时间的偏移量    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:anyDate];    //目标日期与本地时区的偏移量    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:anyDate];    //得到时间偏移量的差值    NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;    //转为现在时间    NSDate* destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:anyDate];    return destinationDateNow;
-//}
-/*********************************************************************************************************************************************************************************************************/
 
 #pragma mark - 商品朔源接口集
 
@@ -1995,24 +1919,30 @@
      NSString *url = [NSString stringWithFormat:@"%@product=&parentCategory=%@&pageNo=%@&pageSize=%@",urlBef,name,pageNo,pageSize];
      [self requestWihtdictSY:url requestType:REQUSET_categoriesProduct];
 }
-
+#pragma makr - 溯源GET网络请求
 -(void)requestWihtdictSY:(NSString*)url requestType:(NSInteger)payType{
-    AFHTTPRequestOperationManager *manger = [AFHTTPRequestOperationManager manager];
+    
+    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
+    manger.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     NSString *urlC = [NSString stringWithFormat:@"%@%@",SHOPSUOYUAN_BASEURL,url];
     urlC = [urlC stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    manger.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    [manger GET:urlC parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manger GET:urlC parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dictReq = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         if (dictReq && [_delegate respondsToSelector:@selector(responseWithDict:requestType:)]) {
             [self.delegate responseWithDict:dictReq requestType:payType];
             NSLog(@"tk%@",dictReq);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@,%@",operation,[operation class]);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@,%@",task,[task class]);
         NSLog(@"%@",error);
     }];
+
+
 
 }
 
@@ -2025,10 +1955,13 @@
     [self requestWihtdictSY2:c requestType:REQUSET_snCode];
     
 }
+#pragma mark - 溯源Get请求(特殊)
 -(void)requestWihtdictSY2:(NSString*)url requestType:(NSInteger)payType{
-    AFHTTPRequestOperationManager *manger = [AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     manger.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manger GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manger GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *aString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         
         NSDictionary *dictReq = [Request dictionaryWithJsonString:aString];
@@ -2036,9 +1969,8 @@
             [self.delegate responseWithDict:dictReq requestType:payType];
             NSLog(@"tk%@",dictReq);
         }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@,%@",operation,[operation class]);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@,%@",task,[task class]);
         NSLog(@"%@",error);
     }];
     
@@ -2116,19 +2048,22 @@
     [self requestWithDictSYpost:dict requestType:REQUSET_Complaint withUrl:@"complaints"];
     
 }
+#pragma mark - 溯源投诉请求(特殊)
 - (void)requestWithDictSYpost:(NSDictionary*)dict requestType:(NSInteger)type  withUrl:(NSString *)url{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/plain",@"application/json",nil];
-    NSString *sss = [NSString stringWithFormat:@"%@%@",SHOPSUOYUAN_BASEURL,url];
-    NSLog(@"sss== %@",sss);
-    [manager POST:sss parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"operation== %@responseObject== %@",operation,responseObject);
-            }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"operation== %@ error== %@",operation,error);
-              NSLog(@"%@",operation.responseString);
-            }];
+    
+    
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+////    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/plain",@"application/json",nil];
+//    NSString *sss = [NSString stringWithFormat:@"%@%@",SHOPSUOYUAN_BASEURL,url];
+//    NSLog(@"sss== %@",sss);
+//    [manager POST:sss parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"operation== %@responseObject== %@",operation,responseObject);
+//            }
+//          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//              NSLog(@"operation== %@ error== %@",operation,error);
+//              NSLog(@"%@",operation.responseString);
+//            }];
 }
 @end

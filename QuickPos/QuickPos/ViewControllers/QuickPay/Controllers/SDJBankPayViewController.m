@@ -111,7 +111,7 @@
     }
     else
     {
-        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在交易中.."];
         [request QuickBankCardComfirmSdjWithorderId:self.orderId
                                            orderAmt:self.orderAmt
                                              cardNo:self.bankCardNo
@@ -128,15 +128,21 @@
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type
 {
+    if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
+        if (type == REQUSET_QUICKBANKCARDPAYSDJSMS) {
+            
+        }
+        else if (type == REQUSET_QUICKBANKCARDCOMFIRMSDJ){
+            
+            [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
+            
+        }
+
+    }else{
+        [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
+    }
     
-    if (type == REQUSET_QUICKBANKCARDPAYSDJSMS) {
-        
-    }
-    else if (type == REQUSET_QUICKBANKCARDCOMFIRMSDJ){
-        
-        
-        
-    }
+       [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

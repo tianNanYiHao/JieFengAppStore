@@ -14,6 +14,7 @@
 #import "Request.h"
 #import "ZFBViewController.h"
 #import "MBProgressHUD+Add.h"
+#import "Common.h"
 
 @interface ZFBReceivablesViewController ()<ResponseData>
 {
@@ -53,6 +54,9 @@
     
     payTool = @"01";
     req = [[Request alloc]initWithDelegate:self];
+    
+    [req quickPayCodeState];
+    
     self.AmtTextField.layer.masksToBounds = YES;
     self.AmtTextField.layer.cornerRadius = 1;
     self.AmtTextField.layer.borderColor = [[UIColor greenColor] CGColor];
@@ -149,15 +153,23 @@
     if (type == REQUSET_ORDER) {
         self.orderId = [dict objectForKey:@"orderId"];
         
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//
-//        ZFBViewController *ZFBVc = [[ZFBViewController alloc]init];
-        ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-        ZFBVc.orderId = self.orderId;
-        ZFBVc.AmtNO = self.AmtNum;
-        [self.navigationController pushViewController:ZFBVc animated:YES];
+        if ([self.orderId isEqualToString:@"null"]) {
+            [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
+        }else{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            //
+            //        ZFBViewController *ZFBVc = [[ZFBViewController alloc]init];
+            
+            
+            ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+            ZFBVc.orderId = self.orderId;
+            ZFBVc.AmtNO = self.AmtNum;
+            [self.navigationController pushViewController:ZFBVc animated:YES];
+            
+            NSLog(@"%@",self.orderId);
+        }
         
-        NSLog(@"%@",self.orderId);
+       
         
     }
     [MBProgressHUD hideHUDForView:self.view animated:YES];

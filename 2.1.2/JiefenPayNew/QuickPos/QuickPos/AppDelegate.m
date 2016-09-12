@@ -238,8 +238,6 @@
     
     [[[Request alloc] initWithDelegate:self] userAgreement];
     
-    [[[Request alloc] initWithDelegate:self] ClientUpdateInstrVersion:[Common getCurrentVersion] dateType:@"json"];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//状态栏白色
     
     if(![UIDevice currentDevice].isIOS6){

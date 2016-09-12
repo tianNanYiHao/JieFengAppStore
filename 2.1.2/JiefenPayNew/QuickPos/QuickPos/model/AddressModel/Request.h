@@ -54,7 +54,7 @@ enum{
     REQUSET_JFPalCash,//提现
     REQUSET_AGENTCASH,//我的分润提现
     REQUSET_WftAliPay,    //威富通支付宝获取二维码
-    REQUEST_CLIENTUPDATE,//版本更新
+
     REQUEST_GETQUICKBANKCARD,//获取无卡支付绑定银行卡
     REQUEST_UNBINDQUICKBANKCARD,//解绑无卡支付银行卡
     REQUEST_QUICKBANKCARDQUERY,//查询银行卡信息
@@ -135,7 +135,7 @@ enum{
     
 };
 
-#define MOBILEMAC_CLIENTUPDATE                  @"ClientUpdate2"
+
 #define MOBILEMAC_RETPWD                        @"RetrievePassword"
 #define MOBILEMAC_CARDPAY                       @"JFPalCardPay"
 #define MOBILEMAC_ACCTPAY                       @"JFPalAcctPay"
@@ -235,8 +235,7 @@ enum{
 - (void)userLoginWithAccount:(NSString*)account password:(NSString*)password;
 // 获取验证码
 - (void)getMobileMacWithAccount:(NSString*)account appType:(NSString*)type;
-//版本更新
--(void)ClientUpdateInstrVersion:(NSString *)instrVersion dateType:(NSString *)dateType;
+
 //注册
 - (void)userSignWithAccount:(NSString *)account password:(NSString *)password mobileMac:(NSString *)mobileMac;
 //用户协议

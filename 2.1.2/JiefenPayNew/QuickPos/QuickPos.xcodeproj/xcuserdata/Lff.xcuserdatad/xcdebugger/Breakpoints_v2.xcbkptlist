@@ -155,6 +155,38 @@
             endingLineNumber = "181"
             landmarkName = "-responseWithDict:requestType:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZFBReceivablesViewController responseWithDict:requestType:]"
+                  moduleName = "QuickPos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lff/Desktop/JieFengAppStore/2.1.2/JiefenPayNew/QuickPos/QuickPos/ViewControllers/ZFBPay/ZFBReceivablesViewController.m"
+                  timestampString = "495350873.289079"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "688">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZFBReceivablesViewController responseWithDict:requestType:]"
+                  moduleName = "QuickPos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lff/Desktop/JieFengAppStore/2.1.2/JiefenPayNew/QuickPos/QuickPos/ViewControllers/ZFBPay/ZFBReceivablesViewController.m"
+                  timestampString = "495350873.289208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "720">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

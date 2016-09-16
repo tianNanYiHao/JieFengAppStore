@@ -77,7 +77,7 @@
     [root addAttribute:nAppUser];
     //版本号
 //    NSString *strVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] ;
-    NSString *strVersion = @"2.0.7";
+    NSString *strVersion = @"2.0.6";
     
     DDXMLNode *nVersion = [DDXMLNode attributeWithName:@"version" stringValue:strVersion];
     [root addAttribute:nVersion];

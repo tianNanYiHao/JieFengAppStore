@@ -280,7 +280,7 @@
     
     
     //右上角按钮--费率说明
-    [self creatRightBtn];
+//    [self creatRightBtn];
     
     //判断是否充值页面 赋值
     if (_isRechargeView) {

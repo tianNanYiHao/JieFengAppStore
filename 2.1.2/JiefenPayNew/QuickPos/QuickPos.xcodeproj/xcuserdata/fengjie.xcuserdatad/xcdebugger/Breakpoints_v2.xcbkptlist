@@ -271,8 +271,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "-showScanCodeViewController"
-            landmarkType = "5">
+            landmarkName = "@implementation FoodQueryViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -431,7 +431,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "-showScanCodeViewController"
+            landmarkName = "-HelpButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -447,8 +447,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
             endingLineNumber = "122"
-            landmarkName = "-showScanCodeViewController"
-            landmarkType = "5">
+            landmarkName = "@implementation FoodQueryViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -463,7 +463,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "-showScanCodeViewController"
+            landmarkName = "-didReceiveMemoryWarning"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -607,70 +607,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1765"
             endingLineNumber = "1765"
-            landmarkName = "-requesPhoneRechargeWithDict:requestType:ulr:"
+            landmarkName = "-getManageListWithBranchname:userid:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__55-[Request requesPhoneRechargeWithDict:requestType:ulr:]_block_invoke_3"
-                  moduleName = "QuickPos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/model/AddressModel/Request.m"
-                  timestampString = "495342900.30768"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1765"
-                  endingLineNumber = "1765"
-                  offsetFromSymbolStart = "636">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.726"
-                  moduleName = "QuickPos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/model/AddressModel/Request.m"
-                  timestampString = "495342900.30795"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1765"
-                  endingLineNumber = "1765"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.727"
-                  moduleName = "QuickPos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/model/AddressModel/Request.m"
-                  timestampString = "495342900.308138"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1765"
-                  endingLineNumber = "1765"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__55-[Request requesPhoneRechargeWithDict:requestType:ulr:]_block_invoke.729"
-                  moduleName = "QuickPos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/model/AddressModel/Request.m"
-                  timestampString = "495342900.308305"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1766"
-                  endingLineNumber = "1766"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -823,8 +761,8 @@
                   symbolName = "-[MallViewController responseWithDict:requestType:]"
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
-                  timestampString = "495342900.321037"
+                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.2/JiefenPayNew/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
+                  timestampString = "495690768.201764"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "899"
@@ -838,8 +776,8 @@
                   symbolName = "__51-[MallViewController responseWithDict:requestType:]_block_invoke"
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
-                  timestampString = "495342900.321265"
+                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.2/JiefenPayNew/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
+                  timestampString = "495690768.201945"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "899"
@@ -903,8 +841,8 @@
                   symbolName = "-[BankCardBindViewController responseWithDict:requestType:]"
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
-                  timestampString = "495342900.323509"
+                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.2/JiefenPayNew/QuickPos/QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
+                  timestampString = "495690768.204569"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -918,8 +856,8 @@
                   symbolName = "-[BankCardBindViewController responseWithDict:requestType:]"
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
-                  timestampString = "495342900.323612"
+                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.2/JiefenPayNew/QuickPos/QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
+                  timestampString = "495690768.204712"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -1415,8 +1353,8 @@
                   symbolName = "-[OriginQueryViewController openScanVCWithStyle:]"
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
-                  timestampString = "495342900.33659"
+                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.2/JiefenPayNew/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
+                  timestampString = "495690768.217941"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -1430,8 +1368,8 @@
                   symbolName = "__49-[OriginQueryViewController openScanVCWithStyle:]_block_invoke"
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFenFengApp/JiefenPayNew/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
-                  timestampString = "495342900.33669"
+                  urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.2/JiefenPayNew/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
+                  timestampString = "495690768.218054"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "184"
@@ -1725,7 +1663,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "907"
             endingLineNumber = "907"
-            landmarkName = "-QuickBankCardComfirmSdjSmsWithbindID:mobileNo:"
+            landmarkName = "-QuickBankCardPaySdjWithorderId:cardNo:customerName:legalCertType:legalCertPid:cardType:referrerMobileNo:mobileNo:phone:bankCode:unitBankCode:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1741,7 +1679,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "939"
             endingLineNumber = "939"
-            landmarkName = "-QuickBankCardPaySdjSmsWithorderAmt:mobileNo:"
+            landmarkName = "-QuickBankCardComfirmSdjWithorderId:orderAmt:cardNo:customerName:legalCertPid:bankCode:mobileNo:referrerMobileNo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1805,8 +1743,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "468"
             endingLineNumber = "468"
-            landmarkName = "@implementation Request"
-            landmarkType = "3">
+            landmarkName = "-ZFBBankCardBind:andMobile:andBandType:bankName:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1821,8 +1759,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "484"
             endingLineNumber = "484"
-            landmarkName = "-ZFBBankCardBind:andMobile:andBandType:bankName:"
-            landmarkType = "5">
+            landmarkName = "@implementation Request"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2029,7 +1967,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "929"
             endingLineNumber = "929"
-            landmarkName = "-QuickBankCardPaySdjWithorderId:cardNo:customerName:legalCertType:legalCertPid:cardType:referrerMobileNo:mobileNo:phone:bankCode:unitBankCode:"
+            landmarkName = "-QuickBankCardPaySdjSmsWithorderAmt:mobileNo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2045,7 +1983,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "933"
             endingLineNumber = "933"
-            landmarkName = "-QuickBankCardPaySdjWithorderId:cardNo:customerName:legalCertType:legalCertPid:cardType:referrerMobileNo:mobileNo:phone:bankCode:unitBankCode:"
+            landmarkName = "-QuickBankCardPaySdjSmsWithorderAmt:mobileNo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2269,7 +2207,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "515"
             endingLineNumber = "515"
-            landmarkName = "-WeixinCardAuthentcardappUser:cardOwner:bankId:bankName:bankBranchId:bankBranchName:provinceId:bankProvince:cityId:bankCity:cardNo:phone:real_name:cmer:cert_no:mobile:"
+            landmarkName = "-prepayAllowtotalFee:orderId:Info:acctNo2:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2285,6 +2223,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "279"
             endingLineNumber = "279"
+            landmarkName = "-responseWithDict:requestType:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/WeChatPay/Controllers/ObtainScanViewController.m"
+            timestampString = "495690726.932868"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "-responseWithDict:requestType:"
             landmarkType = "5">
          </BreakpointContent>

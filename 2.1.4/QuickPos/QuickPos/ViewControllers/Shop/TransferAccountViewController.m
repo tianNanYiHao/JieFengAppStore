@@ -59,7 +59,7 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController setNavigationBarHidden:NO];
-    [self creatRightBtn];
+//    [self creatRightBtn];
 
     //使用账户支付 id
     merchantId = @"0002000002";

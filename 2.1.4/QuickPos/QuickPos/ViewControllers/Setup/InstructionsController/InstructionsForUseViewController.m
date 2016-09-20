@@ -162,7 +162,7 @@
     
     OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
     OperationManualVc.str = @"账户转账.png";
-    OperationManualVc.titleName = @"账户转账";
+    OperationManualVc.titleName = @"账户充值";
     [self.navigationController pushViewController:OperationManualVc animated:YES];
     
     //    [self gotoviewstr:@"账户充值.png" strname:@"账户充值"];

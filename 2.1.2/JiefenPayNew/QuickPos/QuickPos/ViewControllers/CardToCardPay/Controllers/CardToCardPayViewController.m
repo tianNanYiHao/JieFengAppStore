@@ -69,7 +69,7 @@
     UIView *tip = [Common tipWithStr:@"2小时内到账 手续费1% 15元封顶" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+50, self.view.frame.size.width, 40)];
     [self.view addSubview:tip];
     
-    [self creatRightBtn];
+//    [self creatRightBtn];//右上角点击btn
     
     numArr = @[@"实时还款",@"普通还款"];
 //    payType = CardPayType;

@@ -59,7 +59,7 @@
 //    payType = CardPayType;
     
     self.comfirt.layer.cornerRadius = 5;
-    [self creatRightBtn];
+//    [self creatRightBtn];//右上角点击btn
     
     numArr = @[@"实时还款",@"普通还款"];
     payType = CardPayType;

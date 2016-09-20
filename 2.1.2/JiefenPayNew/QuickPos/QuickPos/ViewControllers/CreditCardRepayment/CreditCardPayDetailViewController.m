@@ -53,8 +53,8 @@
 //    NumberKeyBoard *keyBoard = [[NumberKeyBoard alloc]init];
 //    [keyBoard setTextView:self.sumTextField];
 //
-    self.help = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help"] style:UIBarButtonItemStylePlain target:self action:@selector(helpClick)];
-    [self.navigationItem setRightBarButtonItem:self.help];
+//    self.help = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help"] style:UIBarButtonItemStylePlain target:self action:@selector(helpClick)];
+//    [self.navigationItem setRightBarButtonItem:self.help];
     
     numArr = @[@"实时还款",@"普通还款"];
     payType = CardPayType;

@@ -177,7 +177,7 @@
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController setNavigationBarHidden:NO];
     
-    [self creatRightBtn];
+//    [self creatRightBtn];//右上角点击btn
     
     commodityIDArr = [NSMutableArray array];
     orderDesc = [NSMutableString string];

@@ -546,7 +546,7 @@
     NSDictionary*dic=@{@"application": MOBILEMAC_BANKCARDBIND,
                        
                        @"mobileNo":[AppDelegate getUserBaseData].mobileNo,
-                       @"bankId":bankID,
+                       @"bankId":@"",
                        @"accountNo":accountNumber,
                        @"mobile":mobile,
                        @"token":[AppDelegate getUserBaseData].token,

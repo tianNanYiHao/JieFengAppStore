@@ -137,7 +137,7 @@
                                                                      nil]];
     
     
-    [self creatRightBtn];
+//    [self creatRightBtn];
     
     contentY = 0;
     self.menuCollectionView.alwaysBounceVertical = YES;

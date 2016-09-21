@@ -22,6 +22,7 @@
 #define XZTrainTicket_Base_Url @"http://xizheng.jiefengpay.com:8080/hdcctp/" //习正火车票BaseUrl
 
 
+#define MANGE_BASW_URL @"http://192.168.1.184:8888/api/" //理财基础URL
 #define SHOPSUOYUAN_BASEURL @"http://www.shfda.org/platform/rest/v2/" //商品朔源BaseUrl
 #define SHOPSUOYUAN_BASEURL2 @"http://www.shfda.org/platform/rest/v1/tag/validation/" //手动商品朔源
 

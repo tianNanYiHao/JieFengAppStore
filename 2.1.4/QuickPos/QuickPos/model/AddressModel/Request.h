@@ -131,7 +131,10 @@ enum{
     
     REQUSET_XZPhoneRecharge1, //习正手机充值1
     REQUSET_XZPhoneRecharge2, //习正手机充值2
-    
+    REQUSET_XZTK1003, //习正查询车次
+    REQUSET_XZTK1009, //习正登录12306
+    REQUSET_XZTK1010, //习正下单接口
+    REQUSET_XZTK1011, //习正支付完成后 火车票(后台出票)业务
     
 };
 
@@ -468,7 +471,16 @@ enum{
 -(void)postPhoneRechargeTwoOrderId:(NSString*)orderId;
 
 
-
+//``````````````````````````````````````````````````````````````````````习正火车票查询``````````````````
+//3.1 查询车次
+- (void)checkTrainInfoBusType:(NSString*)busType orgID:(NSString*)orgId termID:(NSString*)termId trainDate:(NSString*)traindate fromStation:(NSString*)fromstation toStation:(NSString*)tostation purposeCodes:(NSString*)purposecodes;
+//3.2 登录12306
+-(void)logIN12306TermId:(NSString*)termID orgID:(NSString*)orgid busType:(NSString*)busType userName:(NSString*)username password:(NSString*)password;
+//3.3下单接口
+-(void)getProOrdNoWithtermId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE checi:(NSString*)checI from_station_code:(NSString*)from_station_codE from_station_name:(NSString*)from_station_namE to_station_code:(NSString*)to_station_codE to_station_name:(NSString*)to_station_namE train_date:(NSString*)train_datE
+                  passengers:(NSString*)passengerS mobile:(NSString*)mobilE zmoney:(NSString*)zmoneY uprice:(NSString*)upricE fee:(NSString*)feE count:(NSString*)counT;
+//3.4 习正业务处理接口(出票)
+-(void)getTrainTicketsWithprdOrdNo:(NSString*)prdOrdNO termId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE isGrab:(NSString*)isGraB deadline:(NSString*)deadlinE;
 
 
 

@@ -90,7 +90,14 @@
         }
         // 这里处理获取的频道信息
         //        [[UserBaseData getInstance] setDevice:device];
+        
     }
+//    if (type == REQUEST_CLIENTUPDATE && [@"0000" isEqualToString:[dict objectForKey:@"respCode"]]) {
+//        
+//        if([[dict objectForKey:@"application"] isEqualToString:@"ClientUpdate2.Rsp"]) {
+//            return [self handleClientUpdate2:dict];
+//        }
+//    }
 }
 
 
@@ -361,6 +368,70 @@
     return self.configDic;
 }
 
-
+////手动版本更新
+//-(void)handleClientUpdate2:(NSDictionary *)respData{
+//    NSDictionary *summary = [[respData objectForKey:@"data"] objectForKey:@"summary"];
+//    NSString *sVersion = [summary objectForKey:@"version"];
+//    NSString *appVersion = [Common getCurrentVersion];
+//    int intSV = [[sVersion stringByReplacingOccurrencesOfString:@"." withString:@""] intValue];
+//    int intAV = [[appVersion stringByReplacingOccurrencesOfString:@"." withString:@""] intValue];
+//    if([sVersion length]!=0 && intSV > intAV) {
+//        later = nil;
+//        updateUrl = [summary objectForKey:@"updateUrl"];
+//        if( [[summary objectForKey:@"must"] isEqualToString:@"y"] ) {
+//            later = nil;
+//            [[NSNotificationCenter defaultCenter]postNotificationName:@"IsLoginNotification" object:[NSNumber numberWithBool:YES]];
+//        }
+//        else {
+//            later = L(@"Later");
+//            [[NSNotificationCenter defaultCenter]postNotificationName:@"IsLoginNotification" object:[NSNumber numberWithBool:NO]];
+//        }
+//        self.versionUrl = [NSString stringWithString:[summary objectForKey:@"updateUrl"]];
+//        
+//        NSArray *desc = [respData objectForKey:@"resultBean"];
+//        NSMutableArray *s = [NSMutableArray array];
+//        
+//        [s addObject:L(@"Update")];
+//        for (NSDictionary *d in desc) {
+//            [s addObject:[d objectForKey:@"updateContent"]];
+//        }
+//        
+//        if(iOS8){
+//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:L(@"NewVersion") message:[s componentsJoinedByString:@"\n"]  preferredStyle:UIAlertControllerStyleAlert];
+//            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:L(@"Confirm") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+//                //版本更新url
+//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:updateUrl]];
+//                
+//                exit(0);
+//                
+//            }];
+//            if (later != nil) {
+//                UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:later style:UIAlertActionStyleCancel handler:nil];
+//                [alert addAction:cancelAction];
+//            }
+//            
+//            [alert addAction:defaultAction];
+//            [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+//        }else{
+//            
+//            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:L(@"NewVersion") message:nil delegate:self cancelButtonTitle:later otherButtonTitles:L(@"Confirm"), nil];
+//            //            alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+//            [alert show];
+//        }
+//    }
+//    else {
+//        NSLog(@"暂时没有更新!");
+//        [[NSNotificationCenter defaultCenter]postNotificationName:@"IsLoginNotification" object:[NSNumber numberWithBool:NO]];
+//    }
+//}
+//
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    
+//    
+//    if (buttonIndex == 1 || (buttonIndex == 0 && !later)) {
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:updateUrl]];
+//        exit(0);
+//    }
+//}
 
 @end

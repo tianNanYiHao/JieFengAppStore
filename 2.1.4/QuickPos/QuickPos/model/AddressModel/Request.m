@@ -19,6 +19,8 @@
 
 #define XZSHOP_BASE_URL @"http://xizheng.jiefengpay.com:8080/hdcctp/"  //习正商城baseUrl
 #define XZPhoneRecharge_Base_Url @"http://xizheng.jiefengpay.com:8888/hdcctp/" //习正手机充值BaseUrl
+#define XZTrainTicket_Base_Url @"http://xizheng.jiefengpay.com:8890/hdcctp/" //习正火车票BaseUrl
+
 
 
 #define MANGE_BASW_URL @"http://192.168.1.184:8888/api/" //理财基础URL
@@ -1283,7 +1285,7 @@
 
 
 
-#pragma  makr -  基础网络请求
+#pragma  mark  ------------  基础网络请求
 // 网络请求 dict:请求参数,type:请求唯一标识
 - (void)requestWithDict:(NSDictionary*)dict requestType:(NSInteger)type {
 //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -1760,8 +1762,108 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@ %@",task,error);
     }];
+}
+
+
+//``````````````````````````````````````````````````````````````````````习正火车票查询````````````````````````````````````````````````````
+//3.1 查询车次
+- (void)checkTrainInfoBusType:(NSString*)busType orgID:(NSString*)orgId termID:(NSString*)termId trainDate:(NSString*)traindate fromStation:(NSString*)fromstation toStation:(NSString*)tostation purposeCodes:(NSString*)purposecodes{
+    NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
+                       @"REQ_BODY":
+                           @{@"busType":@"000002" ,
+                             @"orgId":@"A00000008" ,
+                             @"termId":@"80000001",
+                             @"train_date":@"20161210",
+                             @"from_station":@"BJP",
+                             @"to_station":@"CQW",
+                             @"purpose_codes":@"12",
+                             }
+                       };
+    [self trainRequestWithDict:dic requestType:REQUSET_XZTK1003 withUrl:@"TK1003.json"];
+}
+
+//3.2 登录12306
+-(void)logIN12306TermId:(NSString*)termID orgID:(NSString*)orgid busType:(NSString*)busType userName:(NSString*)username password:(NSString*)password{
+    NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
+                       @"REQ_BODY":
+                           @{@"termId":@"" ,
+                             @"orgId":@"" ,
+                             @"busType":@"",
+                             @"username":@"",
+                             @"password":@"",
+                             }
+                       };
     
+    [self trainRequestWithDict:dic requestType:REQUSET_XZTK1009 withUrl:@"TK1009.json"];
     
+}
+
+//3.3下单接口
+-(void)getProOrdNoWithtermId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE checi:(NSString*)checI from_station_code:(NSString*)from_station_codE from_station_name:(NSString*)from_station_namE to_station_code:(NSString*)to_station_codE to_station_name:(NSString*)to_station_namE train_date:(NSString*)train_datE
+                  passengers:(NSString*)passengerS mobile:(NSString*)mobilE zmoney:(NSString*)zmoneY uprice:(NSString*)upricE fee:(NSString*)feE count:(NSString*)counT{
+    NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
+                       @"REQ_BODY":
+                           @{@"termId":@"" ,
+                             @"orgId":@"" ,
+                             @"busType":@"",
+                             @"checi":@"" ,
+                             @"from_station_code":@"",
+                             @"from_station_name":@"" ,
+                             @"to_station_code":@"",
+                             @"to_station_name":@"" ,
+                             @"train_date":@"",
+                             @"passengers":@"" ,
+                             @"mobile":@"",
+                             @"zmoney":@"" ,
+                             @"uprice":@"",
+                             @"fee":@"" ,
+                             @"count":@"",
+                             }
+                       };
+    [self trainRequestWithDict:dic requestType:REQUSET_XZTK1010 withUrl:@"TK1010.json"];
+}
+//3.4 习正业务处理接口(出票)
+-(void)getTrainTicketsWithprdOrdNo:(NSString*)prdOrdNO termId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE isGrab:(NSString*)isGraB deadline:(NSString*)deadlinE{
+    
+    NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
+                       @"REQ_BODY":
+                           @{@"prdOrdNo":@"" ,
+                             @"termId":@"" ,
+                             @"orgId":@"",
+                             @"busType":@"" ,
+                             @"isGrab":@"",
+                             @"deadline":@"" ,
+                             }
+                       };
+    [self trainRequestWithDict:dic requestType:REQUSET_XZTK1011 withUrl:@"TK1011.json"];
+}
+
+
+
+#pragma mark - 习正火车票处理
+// 网络请求 dict:请求参数,type:请求唯一标识
+- (void)trainRequestWithDict:(NSDictionary*)dict requestType:(NSInteger)type  withUrl:(NSString *)url{
+    AFHTTPSessionManager *manager  = [AFHTTPSessionManager manager];
+    manager.requestSerializer =[AFHTTPRequestSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"text/html",@"text/plain",@"application/json",nil];
+    [manager POST:[NSString stringWithFormat:@"%@%@",XZTrainTicket_Base_Url,url] parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@ %@",responseObject,[responseObject class]);
+        BOOL achieve = [self.delegate respondsToSelector:@selector(responseWithDict:requestType:)];
+        if (responseObject && achieve) {
+            [self.delegate responseWithDict:responseObject requestType:type];
+        }
+        NSNotification *notifition = [NSNotification notificationWithName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];
+        [[NSNotificationCenter defaultCenter] postNotification:notifition];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@ %@",task,error);
+        NSNotification *notifition = [NSNotification notificationWithName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];
+        [[NSNotificationCenter defaultCenter] postNotification:notifition];
+    }];
 }
 
 

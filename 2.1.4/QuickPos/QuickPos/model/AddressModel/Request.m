@@ -18,12 +18,10 @@
 
 
 #define XZSHOP_BASE_URL @"http://xizheng.jiefengpay.com:8080/hdcctp/"  //习正商城baseUrl
-#define XZPhoneRecharge_Base_Url @"101.231.98.131:8888/hdcctp/" //习正手机充值BaseUrl
-#define XZTrainTicket_Base_Url @"http://101.231.98.131:8080/hdcctp/" //习正火车票BaseUrl
+#define XZPhoneRecharge_Base_Url @"xizheng.jiefengpay.com:8888/hdcctp/" //习正手机充值BaseUrl
+#define XZTrainTicket_Base_Url @"http://xizheng.jiefengpay.com:8080/hdcctp/" //习正火车票BaseUrl
 
 
-
-#define MANGE_BASW_URL @"http://192.168.1.184:8888/api/" //理财基础URL
 #define SHOPSUOYUAN_BASEURL @"http://www.shfda.org/platform/rest/v2/" //商品朔源BaseUrl
 #define SHOPSUOYUAN_BASEURL2 @"http://www.shfda.org/platform/rest/v1/tag/validation/" //手动商品朔源
 

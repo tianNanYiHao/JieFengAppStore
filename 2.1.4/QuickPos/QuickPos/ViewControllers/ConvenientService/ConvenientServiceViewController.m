@@ -158,8 +158,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self addintro];//引导图
-    
-    [request postPhoneRechargeOnwOrderId:@"201608151025147" moneyAmt:@"1000" mobileNo:@"15151474388"];
 }
 
 #pragma mark  创建collectionView

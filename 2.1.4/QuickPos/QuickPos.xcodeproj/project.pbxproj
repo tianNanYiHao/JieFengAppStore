@@ -4766,7 +4766,7 @@
 				TargetAttributes = {
 					88E6BBF01AB029BD00AD89E0 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 67S48FE7QB;
+						DevelopmentTeam = YS27375FC6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -5568,7 +5568,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				DEVELOPMENT_TEAM = 67S48FE7QB;
+				DEVELOPMENT_TEAM = YS27375FC6;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5613,7 +5613,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JieFengPay.bmjfsh.Distribution;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiefeng.js;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -5630,7 +5630,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				DEVELOPMENT_TEAM = 67S48FE7QB;
+				DEVELOPMENT_TEAM = YS27375FC6;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5675,7 +5675,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JieFengPay.bmjfsh.Distribution;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiefeng.js;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

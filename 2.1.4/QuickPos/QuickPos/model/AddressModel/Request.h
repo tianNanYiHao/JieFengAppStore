@@ -135,7 +135,10 @@ enum{
     REQUSET_XZTK1009, //习正登录12306
     REQUSET_XZTK1010, //习正下单接口
     REQUSET_XZTK1011, //习正支付完成后 火车票(后台出票)业务
-    
+    REQUSET_XZALIPAY0001,//习正支付宝预下单
+    REQUSET_XZALIPAY0002,//习正支付宝支付结果查询
+    REQUSET_XZWeixinPay0001,//习正微信预下单
+    REQUSET_XZWeixinPay0002,//习正微信支付结果查询
 };
 
 
@@ -483,6 +486,15 @@ enum{
                   passengers:(NSString*)passengerS mobile:(NSString*)mobilE zmoney:(NSString*)zmoneY uprice:(NSString*)upricE fee:(NSString*)feE count:(NSString*)counT;
 //3.4 习正业务处理接口(出票)
 -(void)getTrainTicketsWithprdOrdNo:(NSString*)prdOrdNO termId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE isGrab:(NSString*)isGraB deadline:(NSString*)deadlinE;
+//4.1支付宝 / 微信 预下单接口
+-(void)trainTicketPayBuyZFBOrderWithID:(NSString*)orderID type:(NSInteger)type;
+//4.2 支付宝 / 微信 支付结果查询
+-(void)trainTicketPayBuyZFBOrderWithID:(NSString*)orderID readeID:(NSString*)tradeId type:(NSInteger)type;
+
+
+
+
+
 
 
 

@@ -164,7 +164,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lff/Desktop/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/ZFBPay/ZFBReceivablesViewController.m"
-                  timestampString = "496119902.628979"
+                  timestampString = "496207722.128078"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "181"
@@ -179,7 +179,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lff/Desktop/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/ZFBPay/ZFBReceivablesViewController.m"
-                  timestampString = "496119902.631166"
+                  timestampString = "496207722.129959"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "181"
@@ -227,61 +227,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/ConvenientService/ConvenientServiceViewController.m"
-            timestampString = "496119787.534933"
+            filePath = "QuickPos/model/AddressModel/Request.m"
+            timestampString = "496207579.649294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "1783"
+            endingLineNumber = "1783"
+            landmarkName = "-checkTrainInfoBusType:orgID:termID:trainDate:fromStation:toStation:purposeCodes:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/model/AddressModel/Request.m"
+            timestampString = "496207579.649294"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1910"
+            endingLineNumber = "1910"
+            landmarkName = "-trainRequestWithDict:requestType:withUrl:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/MyAccount/MyAccountViewController.m"
+            timestampString = "496207599.215045"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickPos/model/AddressModel/Request.m"
-            timestampString = "496119795.239387"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1705"
-            endingLineNumber = "1705"
-            landmarkName = "@implementation Request"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickPos/model/AddressModel/Request.m"
-            timestampString = "496119799.919619"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1752"
-            endingLineNumber = "1752"
-            landmarkName = "-requesPhoneRechargeWithDict:requestType:ulr:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickPos/model/AddressModel/Request.m"
-            timestampString = "496119801.167509"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1761"
-            endingLineNumber = "1761"
-            landmarkName = "-requesPhoneRechargeWithDict:requestType:ulr:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

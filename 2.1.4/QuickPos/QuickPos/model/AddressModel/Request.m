@@ -18,9 +18,8 @@
 
 
 #define XZSHOP_BASE_URL @"http://xizheng.jiefengpay.com:8080/hdcctp/"  //习正商城baseUrl
-#define XZPhoneRecharge_Base_Url @"http://xizheng.jiefengpay.com:8888/hdcctp/" //习正手机充值BaseUrl
-#define XZTrainTicket_Base_Url @"http://xizheng.jiefengpay.com:8890/hdcctp/" //习正火车票BaseUrl
-
+#define XZPhoneRecharge_Base_Url @"xizheng.jiefengpay.com:8888/hdcctp/" //习正手机充值BaseUrl
+#define XZTrainTicket_Base_Url @"http://xizheng.jiefengpay.com:8080/hdcctp/" //习正火车票BaseUrl
 
 
 #define MANGE_BASW_URL @"http://192.168.1.184:8888/api/" //理财基础URL
@@ -1734,7 +1733,6 @@
 //手机充值业务付款后业务流程接口2
 //支付成功后调用此接口处理手机充值业务
 -(void)postPhoneRechargeTwoOrderId:(NSString*)orderId{
-    
     NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SUCCESS":@"1"},
                        @"REQ_BODY":@{
                                @"orgId":@"A00000008",
@@ -1777,18 +1775,25 @@
 //``````````````````````````````````````````````````````````````````````习正火车票查询````````````````````````````````````````````````````
 //3.1 查询车次
 - (void)checkTrainInfoBusType:(NSString*)busType orgID:(NSString*)orgId termID:(NSString*)termId trainDate:(NSString*)traindate fromStation:(NSString*)fromstation toStation:(NSString*)tostation purposeCodes:(NSString*)purposecodes{
+    
+    NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+    [dateFormatter1 setDateFormat:@"HHmmss"];
+     NSString *currenttime = [dateFormatter1 stringFromDate:[NSDate date]];  //获取系统时间1
     NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
                        @"REQ_BODY":
-                           @{@"busType":@"000002" ,
-                             @"orgId":@"A00000008" ,
+                           @{@"TransTime":currenttime,
+                             @"busType":@"000002",
                              @"termId":@"80000001",
-                             @"train_date":@"20161210",
+                             @"orgId":@"A00000008",
                              @"from_station":@"BJP",
-                             @"to_station":@"CQW",
-                             @"purpose_codes":@"12",
+                             @"TransDate":@"20160929",
+                             @"train_date":@"2016-09-29",
+                             @"to_station":@"SHH",
+                             @"purpose_codes":@"ADULT"
                              }
                        };
-    [self trainRequestWithDict:dic requestType:REQUSET_XZTK1003 withUrl:@"TK1003.json"];
+     NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};
+    [self trainRequestWithDict:dict requestType:REQUSET_XZTK1003 withUrl:@"TK1003.json"];
 }
 
 //3.2 登录12306
@@ -1802,8 +1807,8 @@
                              @"password":@"",
                              }
                        };
-    
-    [self trainRequestWithDict:dic requestType:REQUSET_XZTK1009 withUrl:@"TK1009.json"];
+    NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};
+    [self trainRequestWithDict:dict requestType:REQUSET_XZTK1009 withUrl:@"TK1009.json"];
     
 }
 
@@ -1829,7 +1834,8 @@
                              @"count":@"",
                              }
                        };
-    [self trainRequestWithDict:dic requestType:REQUSET_XZTK1010 withUrl:@"TK1010.json"];
+    NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};
+    [self trainRequestWithDict:dict requestType:REQUSET_XZTK1010 withUrl:@"TK1010.json"];
 }
 //3.4 习正业务处理接口(出票)
 -(void)getTrainTicketsWithprdOrdNo:(NSString*)prdOrdNO termId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE isGrab:(NSString*)isGraB deadline:(NSString*)deadlinE{
@@ -1844,8 +1850,49 @@
                              @"deadline":@"" ,
                              }
                        };
-    [self trainRequestWithDict:dic requestType:REQUSET_XZTK1011 withUrl:@"TK1011.json"];
+    NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};
+    [self trainRequestWithDict:dict requestType:REQUSET_XZTK1011 withUrl:@"TK1011.json"];
 }
+//4.1支付宝 / 微信 预下单接口
+-(void)trainTicketPayBuyZFBOrderWithID:(NSString*)orderID type:(NSInteger)type{
+    NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
+                       @"REQ_BODY":
+                           @{@"orderId":orderID ,
+                             @"termId":@"" ,
+                             @"orgId":@"",
+                             @"busType":@"" ,
+                             }
+                       };
+    NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};
+    
+    if (type == 01) {
+         [self trainRequestWithDict:dict requestType:REQUSET_XZALIPAY0001 withUrl:@"ALIPAY0001.json"];
+    }else if (type == 02){
+         [self trainRequestWithDict:dict requestType:REQUSET_XZWeixinPay0001 withUrl:@"WeixinPay0001.json"];
+    }
+   
+}
+
+//4.2 支付宝 / 微信 支付结果查询
+-(void)trainTicketPayBuyZFBOrderWithID:(NSString*)orderID readeID:(NSString*)tradeId type:(NSInteger)type{
+    NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
+                       @"REQ_BODY":
+                           @{@"orderId":orderID ,
+                             @"tradeId":tradeId,
+                             @"termId":@"" ,
+                             @"orgId":@"",
+                             @"busType":@"" ,
+                             }
+                       };
+    NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};
+    if (type == 01) {
+        [self trainRequestWithDict:dict requestType:REQUSET_XZALIPAY0002 withUrl:@"ALIPAY0002.json"];
+    }else if (type == 02){
+        [self trainRequestWithDict:dict requestType:REQUSET_XZWeixinPay0002 withUrl:@"WeixinPay0002.json"];
+    }
+
+}
+
 
 
 

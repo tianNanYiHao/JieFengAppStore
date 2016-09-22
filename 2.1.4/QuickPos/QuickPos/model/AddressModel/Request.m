@@ -1733,7 +1733,6 @@
 //手机充值业务付款后业务流程接口2
 //支付成功后调用此接口处理手机充值业务
 -(void)postPhoneRechargeTwoOrderId:(NSString*)orderId{
-    
     NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SUCCESS":@"1"},
                        @"REQ_BODY":@{
                                @"orgId":@"A00000008",
@@ -1776,15 +1775,21 @@
 //``````````````````````````````````````````````````````````````````````习正火车票查询````````````````````````````````````````````````````
 //3.1 查询车次
 - (void)checkTrainInfoBusType:(NSString*)busType orgID:(NSString*)orgId termID:(NSString*)termId trainDate:(NSString*)traindate fromStation:(NSString*)fromstation toStation:(NSString*)tostation purposeCodes:(NSString*)purposecodes{
+    
+    NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+    [dateFormatter1 setDateFormat:@"HHmmss"];
+     NSString *currenttime = [dateFormatter1 stringFromDate:[NSDate date]];  //获取系统时间1
     NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
                        @"REQ_BODY":
-                           @{@"busType":@"000002" ,
-                             @"orgNo":@"A00000008" ,
+                           @{@"TransTime":currenttime,
+                             @"busType":@"000002",
                              @"termId":@"80000001",
-                             @"train_date":@"20161210",
+                             @"orgId":@"A00000008",
                              @"from_station":@"BJP",
-                             @"to_station":@"CQW",
-                             @"purpose_codes":@"ADULT",
+                             @"TransDate":@"20160929",
+                             @"train_date":@"2016-09-29",
+                             @"to_station":@"SHH",
+                             @"purpose_codes":@"ADULT"
                              }
                        };
      NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};
@@ -1796,7 +1801,7 @@
     NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
                        @"REQ_BODY":
                            @{@"termId":@"" ,
-                             @"orgNo":@"" ,
+                             @"orgId":@"" ,
                              @"busType":@"",
                              @"username":@"",
                              @"password":@"",
@@ -1813,7 +1818,7 @@
     NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
                        @"REQ_BODY":
                            @{@"termId":@"" ,
-                             @"orgNo":@"" ,
+                             @"orgId":@"" ,
                              @"busType":@"",
                              @"checi":@"" ,
                              @"from_station_code":@"",
@@ -1839,7 +1844,7 @@
                        @"REQ_BODY":
                            @{@"prdOrdNo":@"" ,
                              @"termId":@"" ,
-                             @"orgNo":@"",
+                             @"orgId":@"",
                              @"busType":@"" ,
                              @"isGrab":@"",
                              @"deadline":@"" ,

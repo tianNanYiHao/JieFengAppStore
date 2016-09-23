@@ -70,16 +70,16 @@
     [self requestWithDict:dic requestType:REQUEST_GETMOBILEMAC];
     
 }
-////版本更新
-//-(void)ClientUpdateInstrVersion:(NSString *)instrVersion dateType:(NSString *)dateType
-//{
-//    NSDictionary *dic = @{@"application":MOBILEMAC_CLIENTUPDATE,
-//                          @"instrVersion":instrVersion,
-//                          @"dateType":dateType,
-//                          @"token":@"0000"
-//                          };
-//    [self requestWithDict:dic requestType:REQUEST_CLIENTUPDATE];
-//}
+//版本更新
+-(void)ClientUpdateInstrVersion:(NSString *)instrVersion dateType:(NSString *)dateType
+{
+    NSDictionary *dic = @{@"application":MOBILEMAC_CLIENTUPDATE,
+                          @"instrVersion":instrVersion,
+                          @"dateType":dateType,
+                          @"token":@"0000"
+                          };
+    [self requestWithDict:dic requestType:REQUEST_CLIENTUPDATE];
+}
 //注册
 - (void)userSignWithAccount:(NSString *)account password:(NSString *)password mobileMac:(NSString *)mobileMac
 {

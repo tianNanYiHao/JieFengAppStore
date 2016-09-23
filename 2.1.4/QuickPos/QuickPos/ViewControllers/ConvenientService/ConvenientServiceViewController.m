@@ -566,8 +566,6 @@
                 [self.navigationController pushViewController:phoneRechargeVc animated:YES];
                 
             }
-        
-            
             else
             {//正在努力建设中...
                 NoteViewController *noteVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"NoteViewController"];

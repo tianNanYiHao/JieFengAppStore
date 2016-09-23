@@ -993,7 +993,7 @@
 		591BC1DF1AEDFE690037199A /* UIDevice+iOS7AndIphone5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+iOS7AndIphone5.m"; sourceTree = "<group>"; };
 		591BC1E01AEDFE690037199A /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		591BC1E11AEDFE690037199A /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		591BC1E41AEDFE690037199A /* BalanceEnquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceEnquiryViewController.h; sourceTree = "<group>"; };
+		591BC1E41AEDFE690037199A /* BalanceEnquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BalanceEnquiryViewController.h; path = ConvenientService/BalanceEnquiryViewController.h; sourceTree = "<group>"; };
 		591BC1E51AEDFE690037199A /* BalanceEnquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceEnquiryViewController.m; sourceTree = "<group>"; };
 		591BC1E61AEDFE690037199A /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		591BC1E71AEDFE690037199A /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
@@ -2947,6 +2947,7 @@
 				AE8EA4151C5F698E00823760 /* FoodTraceability */,
 				87012B671C43A77000049D52 /* Mange */,
 				8753E8341BDF808F002B893F /* include */,
+				591BC1E41AEDFE690037199A /* BalanceEnquiryViewController.h */,
 				D5AE39BA1BCB547A00D7E11A /* Setting */,
 				591BC1E31AEDFE690037199A /* ConvenientService */,
 				591BC1FE1AEDFE690037199A /* Login */,
@@ -2964,7 +2965,6 @@
 		591BC1E31AEDFE690037199A /* ConvenientService */ = {
 			isa = PBXGroup;
 			children = (
-				591BC1E41AEDFE690037199A /* BalanceEnquiryViewController.h */,
 				591BC1E51AEDFE690037199A /* BalanceEnquiryViewController.m */,
 				591BC1E61AEDFE690037199A /* CollectionCell.h */,
 				591BC1E71AEDFE690037199A /* CollectionCell.m */,

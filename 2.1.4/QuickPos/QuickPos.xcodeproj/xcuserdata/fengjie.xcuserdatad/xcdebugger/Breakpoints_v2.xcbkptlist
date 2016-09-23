@@ -160,7 +160,7 @@
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "-CheckCardInfo:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,7 +176,7 @@
             startingLineNumber = "66"
             endingLineNumber = "66"
             landmarkName = "-responseWithDict:requestType:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,7 +192,7 @@
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "-responseWithDict:requestType:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -208,7 +208,7 @@
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "-responseWithDict:requestType:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -224,7 +224,7 @@
             startingLineNumber = "94"
             endingLineNumber = "94"
             landmarkName = "-responseWithDict:requestType:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -608,7 +608,7 @@
             startingLineNumber = "1765"
             endingLineNumber = "1765"
             landmarkName = "-requesPhoneRechargeWithDict:requestType:ulr:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -624,7 +624,7 @@
             startingLineNumber = "154"
             endingLineNumber = "154"
             landmarkName = "-responseWithDict:requestType:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -640,7 +640,7 @@
             startingLineNumber = "188"
             endingLineNumber = "188"
             landmarkName = "-responseWithDict:requestType:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -656,7 +656,7 @@
             startingLineNumber = "63"
             endingLineNumber = "63"
             landmarkName = "-Verified:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -672,7 +672,7 @@
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "-Verified:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -762,7 +762,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
-                  timestampString = "496301861.469233"
+                  timestampString = "496320708.986739"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "899"
@@ -777,7 +777,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
-                  timestampString = "496301861.470733"
+                  timestampString = "496320708.988353"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "899"
@@ -816,7 +816,7 @@
             startingLineNumber = "122"
             endingLineNumber = "122"
             landmarkName = "-responseWithDict:requestType:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -832,7 +832,7 @@
             startingLineNumber = "146"
             endingLineNumber = "146"
             landmarkName = "-responseWithDict:requestType:"
-            landmarkType = "5">
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -842,7 +842,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
-                  timestampString = "496301861.478973"
+                  timestampString = "496320709.073167"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -857,7 +857,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
-                  timestampString = "496301861.48053"
+                  timestampString = "496320709.074904"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -1136,7 +1136,7 @@
             startingLineNumber = "1570"
             endingLineNumber = "1570"
             landmarkName = "-getCrossBorderProductWithCardId:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1354,7 +1354,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
-                  timestampString = "496301861.542189"
+                  timestampString = "496320709.274518"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -1369,7 +1369,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
-                  timestampString = "496301861.5436"
+                  timestampString = "496320709.275959"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "184"
@@ -1664,7 +1664,7 @@
             startingLineNumber = "907"
             endingLineNumber = "907"
             landmarkName = "-QuickBankCardComfirmSdjSmsWithbindID:mobileNo:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1680,7 +1680,7 @@
             startingLineNumber = "939"
             endingLineNumber = "939"
             landmarkName = "-QuickBankCardPaySdjSmsWithorderAmt:mobileNo:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1696,7 +1696,7 @@
             startingLineNumber = "952"
             endingLineNumber = "952"
             landmarkName = "-QuickBankCardComfirmSdjWithorderId:orderAmt:cardNo:customerName:legalCertPid:bankCode:mobileNo:referrerMobileNo:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1760,7 +1760,7 @@
             startingLineNumber = "484"
             endingLineNumber = "484"
             landmarkName = "-ZFBBankCardBind:andMobile:andBandType:bankName:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1776,7 +1776,7 @@
             startingLineNumber = "265"
             endingLineNumber = "265"
             landmarkName = "-shouldPerformSegueWithIdentifier:sender:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1792,7 +1792,7 @@
             startingLineNumber = "249"
             endingLineNumber = "249"
             landmarkName = "-shouldPerformSegueWithIdentifier:sender:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1808,7 +1808,7 @@
             startingLineNumber = "462"
             endingLineNumber = "462"
             landmarkName = "-posResponseDataWithCardInfoModel:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1824,7 +1824,7 @@
             startingLineNumber = "173"
             endingLineNumber = "173"
             landmarkName = "-actionPay:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1840,7 +1840,7 @@
             startingLineNumber = "181"
             endingLineNumber = "181"
             landmarkName = "-actionPay:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1968,7 +1968,7 @@
             startingLineNumber = "929"
             endingLineNumber = "929"
             landmarkName = "-QuickBankCardPaySdjWithorderId:cardNo:customerName:legalCertType:legalCertPid:cardType:referrerMobileNo:mobileNo:phone:bankCode:unitBankCode:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1984,7 +1984,7 @@
             startingLineNumber = "933"
             endingLineNumber = "933"
             landmarkName = "-QuickBankCardPaySdjWithorderId:cardNo:customerName:legalCertType:legalCertPid:cardType:referrerMobileNo:mobileNo:phone:bankCode:unitBankCode:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2192,7 +2192,7 @@
             startingLineNumber = "496"
             endingLineNumber = "496"
             landmarkName = "-WeixinCardAuthentcardappUser:cardOwner:bankId:bankName:bankBranchId:bankBranchName:provinceId:bankProvince:cityId:bankCity:cardNo:phone:real_name:cmer:cert_no:mobile:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2208,7 +2208,7 @@
             startingLineNumber = "515"
             endingLineNumber = "515"
             landmarkName = "-WeixinCardAuthentcardappUser:cardOwner:bankId:bankName:bankBranchId:bankBranchName:provinceId:bankProvince:cityId:bankCity:cardNo:phone:real_name:cmer:cert_no:mobile:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2241,6 +2241,144 @@
             endingLineNumber = "27"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
+            timestampString = "496319062.941333"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/QucikPay/CreditCardBindViewController.m"
+            timestampString = "496319155.975431"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-responseWithDict:requestType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/QucikPay/CreditCardBindViewController.m"
+            timestampString = "496319158.094033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-responseWithDict:requestType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/QucikPay/CreditCardBindViewController.m"
+            timestampString = "496319162.00085"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-responseWithDict:requestType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/QucikPay/CreditCardBindViewController.m"
+            timestampString = "496319168.118118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/model/AddressModel/Request.m"
+            timestampString = "496319187.078912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1023"
+            endingLineNumber = "1023"
+            landmarkName = "-QuickBankAuthent:ValiDate:CustomerName:CustomerId:LegalCertPid:Cvn:orderTime:LegalCertType:CardNo:CardType:OrderId:BankName:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/model/AddressModel/Request.m"
+            timestampString = "496319189.209491"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1040"
+            endingLineNumber = "1040"
+            landmarkName = "-QuickBankAuthent:ValiDate:CustomerName:CustomerId:LegalCertPid:Cvn:orderTime:LegalCertType:CardNo:CardType:OrderId:BankName:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/QucikPay/CreditQuickPayOrderViewController.m"
+            timestampString = "496320635.575561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

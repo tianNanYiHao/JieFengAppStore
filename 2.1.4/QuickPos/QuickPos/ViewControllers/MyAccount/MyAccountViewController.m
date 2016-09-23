@@ -124,7 +124,6 @@
     self.myAccountTableView.tableFooterView = self.OutFootView;
     
     requst = [[Request alloc]initWithDelegate:self];
-    [requst checkTrainInfoBusType:@"" orgID:@"" termID:@"" trainDate:@"" fromStation:@"" toStation:@"" purposeCodes:@""];
     
     self.tuichu.layer.cornerRadius = 5;
     self.tuichu.titleLabel.textColor = [UIColor whiteColor];

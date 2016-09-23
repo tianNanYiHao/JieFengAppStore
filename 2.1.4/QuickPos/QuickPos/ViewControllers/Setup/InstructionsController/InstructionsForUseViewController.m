@@ -19,7 +19,7 @@
 @interface InstructionsForUseViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 {
-    UITableView *_instructionsTableView;
+        UITableView *_instructionsTableView;
 }
 @property (weak, nonatomic) IBOutlet UITableView *InstructionsForUseTableView;
 

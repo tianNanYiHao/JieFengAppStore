@@ -97,7 +97,7 @@
             creditQuickPayOrderVc.customerName = self.name.text;
             creditQuickPayOrderVc.cardType = self.cardType;
             creditQuickPayOrderVc.customerId = self.customerId;
-            
+            creditQuickPayOrderVc.newbindid = self.NewBindNo;
             creditQuickPayOrderVc.CardValids = self.CardValid.text;
             creditQuickPayOrderVc.SecurityCodes = self.SecurityCode.text;
             NSLog(@"%@  %@  %@  %@",self.NewBindNo,creditQuickPayOrderVc.bankName,creditQuickPayOrderVc.cardNums,creditQuickPayOrderVc.newbindid);

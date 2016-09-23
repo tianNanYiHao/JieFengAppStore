@@ -113,10 +113,8 @@
 
 
 -(void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
-    
+     [MBProgressHUD hideHUDForView:self.view animated:YES];
     //有数据返回
-   
-    
     
     if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
         if(type == REQUEST_GETQUICKBANKCARD){
@@ -156,10 +154,10 @@
             //无卡支付申请
 //            orderData = [[OrderData alloc]initWithData:dict];
 //            [self performSegueWithIdentifier:@"NoCardPaySegue" sender:nil];
-        
+    
         }else if(type == REQUEST_UNBINDQUICKBANKCARD){
-            [bankData.bankCardArr removeObjectAtIndex:indexpath.row];
-            [self.bankTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//            [bankData.bankCardArr removeObjectAtIndex:indexpath.row];
+//            [self.bankTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
             [self.bankTableView reloadData];
         
         }
@@ -172,7 +170,7 @@
 #pragma mark - TableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return bankData.bankCardArr.count>0? bankData.bankCardArr.count:0;
+    return  bankData.bankCardArr.count>0? bankData.bankCardArr.count:0;
 }
 
 
@@ -244,14 +242,15 @@
     {
         indexpath = indexPath;
         bankItem = [bankData.bankCardArr objectAtIndex:indexPath.row];
-//        [self.arrayValue removeObjectAtIndex:[indexPath row]];  //删除数组里的数据
-//        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];  //删除对应数据的cell
+        [bankData.bankCardArr removeObjectAtIndex:[indexPath row]];  //删除数组里的数据
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];  //删除对应数据的cell
         Request *req = [[Request alloc]initWithDelegate:self];
 //        [req quickPayBankCardUnbind:bankItem.bindID newbindid:self.newbindid];
         [req quickPayBankCardUnbind:self.bindID
                           newBindId:self.newbindid
                             orderId:self.orderData.orderId
          ];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"数据删除中,请稍后..."];
     }
 }
 

@@ -285,7 +285,9 @@
             
         }
         
-    }else if (self.orderData.orderPayType == SDJQuickPayType){//盛迪嘉快捷支付(无卡支付)
+    }
+    //盛迪嘉快捷支付(无卡支付)
+    else if (self.orderData.orderPayType == SDJQuickPayType){
     
         UIStoryboard *SDJQuickStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
         SDJBankListViewController *SDJQuickVc = [SDJQuickStoryboard instantiateViewControllerWithIdentifier:@"SDJBankListVc"];
@@ -298,7 +300,7 @@
     }else{
         
     
-        //快捷支付
+        //快捷支付(无卡支付)
         UIStoryboard *quick = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
     
         MyBankListViewController *myBankListCtrl = [quick instantiateViewControllerWithIdentifier:@"MyBankListViewController"];

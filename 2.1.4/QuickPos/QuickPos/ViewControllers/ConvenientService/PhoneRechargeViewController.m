@@ -60,7 +60,7 @@
         
     }
     if (sender.tag == 22) {
-         payType = SDJQuickPayType;
+         payType = QuickPayType;
         _merchID = @"0001000001";
         _productID = @"0000000001";
     }

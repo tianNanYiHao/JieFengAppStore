@@ -148,11 +148,11 @@
         self.radioBottom2.hidden = YES;
         if (_isRechargeView) {
             merchantId = @"0004000001";
-            productId = @"0000000000";
+            productId = @"0000000001";
             payTool = @"03";
             self.phoneView.hidden = YES;
             self.isAccount = @"0";
-            payType = SDJQuickPayType; //快捷充值/支付 0
+            payType = QuickPayType; //快捷充值/支付 0
         }
         else
         {

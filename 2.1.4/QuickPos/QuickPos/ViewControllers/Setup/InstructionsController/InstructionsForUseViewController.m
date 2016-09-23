@@ -14,7 +14,7 @@
 #import "QuickPosTabBarController.h"
 #import "WebViewController.h"
 
-#define INFORMATION_URL @"http://www.jiefengtechnology.com/jfpay_display/image/help/"
+#define INFORMATION_URL @"http://www.jiefengpay.com:7071/jfpay_display/image/help/"
 
 @interface InstructionsForUseViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     
-    
+  
     self.title = @"APP使用说明";
     
     self.navigationController.navigationBar.barTintColor = [Common hexStringToColor:@"#068bf4"];//导航栏颜色
@@ -54,12 +54,12 @@
 //APP使用必备条件
 - (IBAction)instructionsBtn:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"app使用必备条件.png";
-    OperationManualVc.titleName = @"使用条件";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"app使用必备条件.png";
+//    OperationManualVc.titleName = @"使用条件";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"app使用必备条件.png" strname:@"使用条件"];
+        [self gotoviewstr:@"app使用必备条件.png" strname:@"使用条件"];
     
 }
 
@@ -68,115 +68,115 @@
 //激活码使用.png
 - (IBAction)VerifiedBtn:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"激活码使用.png";
-    OperationManualVc.titleName = @"激活码使用";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"激活码使用.png";
+//    OperationManualVc.titleName = @"激活码使用";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"激活码使用.png" strname:@"激活码使用"];
+        [self gotoviewstr:@"激活码使用.png" strname:@"激活码使用"];
 }
 
 //即时取
 - (IBAction)CardPayment:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"即时取.png";
-    OperationManualVc.titleName = @"即时取";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"即时取.png";
+//    OperationManualVc.titleName = @"即时取";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"即时取.png" strname:@"即时取"];
+        [self gotoviewstr:@"即时取.png" strname:@"即时取"];
 }
 
 
 //卡卡转账.png
 - (IBAction)TransferInstructions:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"卡卡转账.png";
-    OperationManualVc.titleName = @"卡卡转账";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"卡卡转账.png";
+//    OperationManualVc.titleName = @"卡卡转账";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"卡卡转账.png" strname:@"卡卡转账"];
+        [self gotoviewstr:@"卡卡转账.png" strname:@"卡卡转账"];
 }
 
 //快捷支付.png
 - (IBAction)QuickPayment:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"快捷支付.png";
-    OperationManualVc.titleName = @"快捷支付";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"快捷支付.png";
+//    OperationManualVc.titleName = @"快捷支付";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"快捷支付.png" strname:@"快捷支付"];
+        [self gotoviewstr:@"快捷支付.png" strname:@"快捷支付"];
 }
 
 //快捷支付认证码.png
 - (IBAction)WithdrawalBtn:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"快捷支付认证码.png";
-    OperationManualVc.titleName = @"快捷支付认证码";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"快捷支付认证码.png";
+//    OperationManualVc.titleName = @"快捷支付认证码";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"快捷支付认证码.png" strname:@"快捷支付认证码"];
+        [self gotoviewstr:@"快捷支付认证码.png" strname:@"快捷支付认证码"];
     
 }
 
 //实名认证.png
 - (IBAction)AccountTransfer:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"实名认证.png";
-    OperationManualVc.titleName = @"实名认证";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"实名认证.png";
+//    OperationManualVc.titleName = @"实名认证";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"实名认证.png" strname:@"实名认证"];
+        [self gotoviewstr:@"实名认证.png" strname:@"实名认证"];
     
 }
 
 
 //刷卡支付.png
 - (IBAction)WechatBtn:(id)sender {
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"刷卡支付.png";
-    OperationManualVc.titleName = @"刷卡支付";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"刷卡支付.png";
+//    OperationManualVc.titleName = @"刷卡支付";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"刷卡支付.png" strname:@"刷卡支付"];
+        [self gotoviewstr:@"刷卡支付.png" strname:@"刷卡支付"];
 }
 
 //微信收款
 - (IBAction)clickBtn:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"微信收款.png";
-    OperationManualVc.titleName = @"微信收款";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"微信收款.png";
+//    OperationManualVc.titleName = @"微信收款";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"微信收款.png" strname:@"微信收款"];
+        [self gotoviewstr:@"微信收款.png" strname:@"微信收款"];
 }
 
 
 //账户充值
 - (IBAction)clickBtn1:(id)sender {
     
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"账户转账.png";
-    OperationManualVc.titleName = @"账户充值";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"账户转账.png";
+//    OperationManualVc.titleName = @"账户充值";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"账户充值.png" strname:@"账户充值"];
+        [self gotoviewstr:@"账户充值.png" strname:@"账户充值"];
 }
 
 //支付宝收款
 - (IBAction)clickBtn2:(id)sender {
     //
-    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
-    OperationManualVc.str = @"支付宝收款.png";
-    OperationManualVc.titleName = @"支付宝收款";
-    [self.navigationController pushViewController:OperationManualVc animated:YES];
+//    OperationManualViewController *OperationManualVc = [[OperationManualViewController alloc]init];
+//    OperationManualVc.str = @"支付宝收款.png";
+//    OperationManualVc.titleName = @"支付宝收款";
+//    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-    //    [self gotoviewstr:@"支付宝收款.png" strname:@"支付宝收款"];
+        [self gotoviewstr:@"支付宝收款.png" strname:@"支付宝收款"];
     
 }
 

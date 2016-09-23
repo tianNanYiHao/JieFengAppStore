@@ -51,7 +51,7 @@
     merchantId = @"0001000006";
     productId = @"0000000000";
     
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     UIView *tip = [Common tipWithStr:@"手续费:千分之五" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+300, self.view.frame.size.width, 40)];
     [self.view addSubview:tip];
     

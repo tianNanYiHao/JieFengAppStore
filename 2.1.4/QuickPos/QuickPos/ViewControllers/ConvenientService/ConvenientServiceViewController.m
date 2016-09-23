@@ -131,7 +131,7 @@
     self.navigationController.navigationBar.barTintColor = [Common hexStringToColor:@"#068bf4"];//导航栏颜色
     self.navigationController.navigationBar.tintColor = [Common hexStringToColor:@"#ffffff"];//返回键颜色
     self.navigationController.navigationBar.contentMode = UIViewContentModeScaleAspectFit;
-    //设置标题颜色
+    //设置标题颜色 
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [Common hexStringToColor:@"#ffffff"], UITextAttributeTextColor,
                                                                      [UIFont systemFontOfSize:17], UITextAttributeFont,
                                                                      nil]];

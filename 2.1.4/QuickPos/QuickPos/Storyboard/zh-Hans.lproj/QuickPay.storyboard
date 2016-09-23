@@ -36,7 +36,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCardCell" rowHeight="71" id="hws-GC-kCZ">
-                                        <rect key="frame" x="0.0" y="53.5" width="373" height="71"/>
+                                        <rect key="frame" x="0.0" y="54" width="373" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hws-GC-kCZ" id="7Xd-Ix-EwT">
                                             <frame key="frameInset" minX="10" minY="1" width="353" height="68"/>

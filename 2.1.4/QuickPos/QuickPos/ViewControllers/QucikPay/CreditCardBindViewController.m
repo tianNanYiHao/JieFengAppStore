@@ -98,8 +98,8 @@
             creditQuickPayOrderVc.cardType = self.cardType;
             creditQuickPayOrderVc.customerId = self.customerId;
             creditQuickPayOrderVc.newbindid = self.NewBindNo;
-            creditQuickPayOrderVc.CardValids = self.CardValid.text;
-            creditQuickPayOrderVc.SecurityCodes = self.SecurityCode.text;
+            creditQuickPayOrderVc.cardValids = self.CardValid.text;
+            creditQuickPayOrderVc.securityCodes = self.SecurityCode.text;
             NSLog(@"%@  %@  %@  %@",self.NewBindNo,creditQuickPayOrderVc.bankName,creditQuickPayOrderVc.cardNums,creditQuickPayOrderVc.newbindid);
             
             [self.navigationController pushViewController:creditQuickPayOrderVc animated:YES];

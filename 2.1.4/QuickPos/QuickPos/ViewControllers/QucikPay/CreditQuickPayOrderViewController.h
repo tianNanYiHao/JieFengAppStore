@@ -22,6 +22,6 @@
 @property (nonatomic,strong) NSString *customerName;
 @property (nonatomic,strong) NSString *cardType;
 
-@property (nonatomic,strong) NSString *CardValids;
-@property (nonatomic,strong) NSString *SecurityCodes;
+@property (nonatomic,strong) NSString *cardValids;
+@property (nonatomic,strong) NSString *securityCodes;
 @end

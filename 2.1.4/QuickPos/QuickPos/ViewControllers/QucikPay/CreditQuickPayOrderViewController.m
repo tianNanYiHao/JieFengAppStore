@@ -64,8 +64,8 @@
     
     self.transBank.text = self.bankName;//支付银行
     self.bankNo.text = self.cardNums;//银行卡号
-    self.CardValid.text = self.CardValid;//卡有效期
-    self.SecurityCode.text = self.SecurityCode;//卡安全码
+    self.CardValid.text = self.cardValids;//卡有效期
+    self.SecurityCode.text = self.securityCodes;//卡安全码
     
     NSLog(@"%@  %@  %@  %@  %@",self.orderId.text,self.transAccount.text,self.transAmt.text,self.transBank.text,self.bankNo.text);
     

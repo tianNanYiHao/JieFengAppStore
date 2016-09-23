@@ -15,7 +15,6 @@
 @end
 // 请求标识定义
 enum{
-    MOBILEMAC_CLIENTUPDATE,
     REQUEST_USERLOGIN,
     REQUEST_USERREGISTER,
     REQUEST_GETMOBILEMAC,
@@ -142,7 +141,7 @@ enum{
     REQUSET_XZWeixinPay0002,//习正微信支付结果查询
 };
 
-
+#define MOBILEMAC_CLIENTUPDATE                  @"ClientUpdate2"
 #define MOBILEMAC_RETPWD                        @"RetrievePassword"
 #define MOBILEMAC_CARDPAY                       @"JFPalCardPay"
 #define MOBILEMAC_ACCTPAY                       @"JFPalAcctPay"

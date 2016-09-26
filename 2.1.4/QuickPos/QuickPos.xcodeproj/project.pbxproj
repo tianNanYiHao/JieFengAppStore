@@ -1859,6 +1859,7 @@
 		BF581EBC1D4F2E3E0073A8F6 /* ManualSearchSYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManualSearchSYViewController.h; sourceTree = "<group>"; };
 		BF581EBD1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManualSearchSYViewController.m; sourceTree = "<group>"; };
 		BF581EBE1D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManualSearchSYViewController.xib; sourceTree = "<group>"; };
+		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFC041F31D70120A0090CAFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
@@ -3342,6 +3343,7 @@
 		88E6BBF31AB029BD00AD89E0 /* QuickPos */ = {
 			isa = PBXGroup;
 			children = (
+				BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */,
 				591BC0F91AEDFE690037199A /* model */,
 				591BC1CE1AEDFE690037199A /* Storyboard */,
 				591BC1D11AEDFE690037199A /* Util */,
@@ -4768,6 +4770,11 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = YS27375FC6;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

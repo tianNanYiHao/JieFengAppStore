@@ -125,7 +125,7 @@
 
 -(void)Jpush:(NSDictionary*)launchOptions{
     //启动JPushSDK
-    [JPUSHService setupWithOption:launchOptions appKey:@"48b28f9b4c17f6f3c4f53497" channel:nil apsForProduction:NO];
+    [JPUSHService setupWithOption:launchOptions appKey:@"fb10b762495e885be4b29433" channel:nil apsForProduction:NO];
     
     //注册通知类型
     //方式一
@@ -157,7 +157,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //一句代码实现检测更新
-    [self hsUpdateApp];
+    [self hsupdateAppFromAppStore];
     [Bugly startWithAppId:@"900050866"];
     [self Jpush:launchOptions];
     [IQKeyboardManager sharedManager];
@@ -436,42 +436,40 @@
 //    }
 //}
 
--(void)hsUpdateApp
-{
+
+-(void)hsupdateAppFromAppStore{
     //2先获取当前工程项目版本号
     NSDictionary *infoDic=[[NSBundle mainBundle] infoDictionary];
     NSString *currentVersion=infoDic[@"CFBundleShortVersionString"];
-    
-    //3从网络获取appStore版本号
-    NSError *error;
-    NSData *response = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/cn/lookup?id=%@",STOREAPPID]]] returningResponse:nil error:nil];
-    if (response == nil) {
-        NSLog(@"你没有连接网络哦");
-        return;
-    }
-    NSDictionary *appInfoDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
-    if (error) {
-        NSLog(@"hsUpdateAppError:%@",error);
-        return;
-    }
-    NSArray *array = appInfoDic[@"results"];
-    NSDictionary *dic = array[0];
-    NSString *appStoreVersion = dic[@"version"];
-    //打印版本号
-    NSLog(@"当前版本号:%@\n商店版本号:%@",currentVersion,appStoreVersion);
-    //4当前版本号小于商店版本号,就更新
-    int intSV = [[currentVersion stringByReplacingOccurrencesOfString:@"." withString:@""] intValue];
-    int intAV = [[appStoreVersion stringByReplacingOccurrencesOfString:@"." withString:@""] intValue];
-    
-    if(intSV < intAV)
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"版本有更新" message:[NSString stringWithFormat:@"检测到新版本(%@),是否更新?",appStoreVersion] delegate:self cancelButtonTitle:@"取消"otherButtonTitles:@"更新",nil];
-        [alert show];
+    AFHTTPSessionManager *manager  = [AFHTTPSessionManager manager];
+    manager.requestSerializer =[AFHTTPRequestSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"text/html",@"text/plain",@"application/json",@"text/javascript",nil];
+    NSString *urlStr = [NSString stringWithFormat:@"http://itunes.apple.com/cn/lookup?id=%@",STOREAPPID];
+    [manager POST:urlStr parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
-    }else{
-        NSLog(@"版本号好像比商店大噢!检测到不需要更新");
-    }
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *array = responseObject[@"results"];
+        NSDictionary *dic = array[0];
+        NSString *appStoreVersion = dic[@"version"];
+        //打印版本号
+        NSLog(@"当前版本号:%@\n商店版本号:%@",currentVersion,appStoreVersion);
+        //4当前版本号小于商店版本号,就更新
+        int intSV = [[currentVersion stringByReplacingOccurrencesOfString:@"." withString:@""] intValue];
+        int intAV = [[appStoreVersion stringByReplacingOccurrencesOfString:@"." withString:@""] intValue];
+        
+        if(intSV < intAV)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"版本有更新" message:[NSString stringWithFormat:@"检测到新版本(%@),是否更新?",appStoreVersion] delegate:self cancelButtonTitle:@"退出App"otherButtonTitles:@"更新",nil];
+            [alert show];
+            
+        }else{
+            NSLog(@"版本号好像比商店大噢!检测到不需要更新");
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     
+    }];
 }
 
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -482,6 +480,8 @@
         //6此处加入应用在app store的地址，方便用户去更新，一种实现方式如下：
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/us/app/id%@?ls=1&mt=8", STOREAPPID]];
         [[UIApplication sharedApplication] openURL:url];
+    }else{
+        exit(0);
     }
 }
 

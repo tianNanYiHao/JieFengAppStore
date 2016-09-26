@@ -201,11 +201,12 @@
             [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"respDesc"];
         }
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
     }
 }
 
 
-- (void)goBack{
+- (void)gobackRootCtrl{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

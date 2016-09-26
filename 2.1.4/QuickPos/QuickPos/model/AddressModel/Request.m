@@ -1032,7 +1032,7 @@
                            @"cardType":cardType,//卡类型
                            @"orderId":OrderId,//订单编号
                            @"bankName":bankName,//银行名称
-                           @"accType":@"00",
+                           @"accType":@"01",
                            @"merNo":@"",
                            @"productId":@"",
                            @"merchantId":@"",

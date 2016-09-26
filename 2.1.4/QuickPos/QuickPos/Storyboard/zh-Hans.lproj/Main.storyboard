@@ -4824,28 +4824,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sOf-fe-bKf">
-                                        <frame key="frameInset" minY="25" width="70.10%" height="21" maxX="13"/>
+                                        <frame key="frameInset" minY="25" width="70.45%" height="21" maxX="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.24983558058738708" green="0.25857910513877869" blue="0.31078270077705383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lCH-9H-zYX">
-                                        <frame key="frameInset" minY="97" width="70.10%" height="21" maxX="13"/>
+                                        <frame key="frameInset" minY="97" width="70.45%" height="21" maxX="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.24983558058738708" green="0.25857910513877869" blue="0.31078270077705383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ofa-7j-RBh">
-                                        <frame key="frameInset" minY="137" width="70.10%" height="21" maxX="13"/>
+                                        <frame key="frameInset" minY="137" width="70.45%" height="21" maxX="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.24983558058738708" green="0.25857910513877869" blue="0.31078270077705383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xI6-tN-Ubp">
-                                        <frame key="frameInset" minY="61" width="70.10%" height="21" maxX="13"/>
+                                        <frame key="frameInset" minY="61" width="70.45%" height="21" maxX="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.24983558058738708" green="0.25857910513877869" blue="0.31078270077705383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -5246,10 +5246,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jNz-cQ-CE6">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jNz-cQ-CE6" id="X9w-2p-AgO">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -5682,6 +5682,13 @@
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="刷卡费率 千7 单笔手续费最低1元  刷卡完成后需手动提现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5L-68-BeX">
+                                        <frame key="frameInset" minX="20" minY="158" width="300" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -5689,6 +5696,8 @@
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="ExplainLabel1" destination="h5L-68-BeX" id="mR2-rV-4Vc"/>
+                        <outlet property="ExplainLabel2" destination="L5z-qS-m4U" id="ptA-ao-T7J"/>
                         <outlet property="bottomView" destination="kBw-Dx-uSd" id="yNT-5W-BDT"/>
                         <outlet property="button1" destination="AYe-bg-Cmv" id="9ah-3A-zaX"/>
                         <outlet property="button2" destination="kqb-Mv-bxb" id="jHR-aZ-BHf"/>
@@ -5698,7 +5707,7 @@
                         <outlet property="button6" destination="8Bf-vF-pgm" id="jP3-14-Rvo"/>
                         <outlet property="button7" destination="WFc-Rq-5hF" id="8t4-yM-hZU"/>
                         <outlet property="button8" destination="a0r-vV-iau" id="mA9-ol-2Xr"/>
-                        <outlet property="comfirt" destination="rhj-cc-VvZ" id="ICb-OK-PjT"/>
+                        <outlet property="comfirted" destination="rhj-cc-VvZ" id="3kN-1X-End"/>
                         <outlet property="finalPrice" destination="wQc-P6-gGq" id="rk2-uY-q5n"/>
                         <outlet property="moneyLab" destination="9SP-0p-JkH" id="fcs-5b-5Hc"/>
                         <outlet property="phone" destination="Qdl-ww-Fzj" id="L1j-Zz-bxt"/>

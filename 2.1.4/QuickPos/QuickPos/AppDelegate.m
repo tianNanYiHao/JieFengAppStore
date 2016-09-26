@@ -125,7 +125,7 @@
 
 -(void)Jpush:(NSDictionary*)launchOptions{
     //启动JPushSDK
-    [JPUSHService setupWithOption:launchOptions appKey:@"48b28f9b4c17f6f3c4f53497" channel:nil apsForProduction:NO];
+    [JPUSHService setupWithOption:launchOptions appKey:@"fb10b762495e885be4b29433" channel:nil apsForProduction:NO];
     
     //注册通知类型
     //方式一

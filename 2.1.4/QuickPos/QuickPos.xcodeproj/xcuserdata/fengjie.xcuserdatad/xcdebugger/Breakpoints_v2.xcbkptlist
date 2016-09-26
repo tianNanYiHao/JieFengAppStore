@@ -762,7 +762,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
-                  timestampString = "496551672.506698"
+                  timestampString = "496551946.29551"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "899"
@@ -777,7 +777,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
-                  timestampString = "496551672.508122"
+                  timestampString = "496551946.296936"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "899"
@@ -842,7 +842,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
-                  timestampString = "496551672.517656"
+                  timestampString = "496551946.317927"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -857,7 +857,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/QucikPay/BankCardBindViewController.m"
-                  timestampString = "496551672.519094"
+                  timestampString = "496551946.319462"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -1338,7 +1338,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
-                  timestampString = "496551672.576014"
+                  timestampString = "496551946.386774"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -1353,7 +1353,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
-                  timestampString = "496551672.577447"
+                  timestampString = "496551946.388234"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "184"
@@ -2363,54 +2363,6 @@
             continueAfterRunningActions = "No"
             scope = "0"
             stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/Shop/RechargeViewController.m"
-            timestampString = "496551658.36543"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-typeAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/Shop/RechargeViewController.m"
-            timestampString = "496551668.062583"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "-typeAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/Shop/RechargeViewController.m"
-            timestampString = "496551671.16414"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "-typeAction:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -162,8 +162,6 @@
             self.phoneView.hidden = YES;
             self.isAccount = @"0";
             payType = QuickPayType; //快捷充值/支付 0
-//            UIView *tip = [Common tipWithStr:@"刷卡费率 千7 单笔手续费最低1元  刷卡完成后需手动提现" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirted.frame)+300, self.view.frame.size.width, 40)];
-//            [self.view addSubview:tip];
         }
         else
         {

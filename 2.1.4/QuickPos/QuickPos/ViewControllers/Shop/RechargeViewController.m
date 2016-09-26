@@ -72,8 +72,11 @@
 @property (weak, nonatomic) IBOutlet RadioButton *button8;
 @property (weak, nonatomic) IBOutlet UIView *radioBottom2;
 
+@property (weak, nonatomic) IBOutlet UIButton *comfirted;
 
+@property (weak, nonatomic) IBOutlet UILabel *ExplainLabel1;//快捷支付费率说明
 
+@property (weak, nonatomic) IBOutlet UILabel *ExplainLabel2;//说明
 
 @property (nonatomic, strong) NSString *isAccount;//是否是账户充值的标准
 @property (nonatomic,assign) BOOL isQuick; //再增加一个判断  是否是快捷支付的标准
@@ -98,6 +101,8 @@
         //刷卡支付
          self.radioBottomView.hidden = NO;
         self.radioBottom2.hidden = NO;
+        self.ExplainLabel1.hidden = YES;
+        self.ExplainLabel2.hidden = YES;
         if (_isRechargeView) {
             merchantId = @"0002000002";
             productId = @"0000000000";
@@ -121,6 +126,8 @@
         //账户支付
         self.radioBottomView.hidden = YES;
         self.radioBottom2.hidden = YES;
+        self.ExplainLabel1.hidden = YES;
+        self.ExplainLabel2.hidden = YES;
           //如果是充值页
         if (_isRechargeView) {
             merchantId = @"0002000002";
@@ -146,6 +153,8 @@
         //快捷支付
         self.radioBottomView.hidden = YES;
         self.radioBottom2.hidden = YES;
+        self.ExplainLabel1.hidden = NO;
+        self.ExplainLabel2.hidden = YES;
         if (_isRechargeView) {
             merchantId = @"0004000001";
             productId = @"0000000001";
@@ -153,6 +162,8 @@
             self.phoneView.hidden = YES;
             self.isAccount = @"0";
             payType = QuickPayType; //快捷充值/支付 0
+//            UIView *tip = [Common tipWithStr:@"刷卡费率 千7 单笔手续费最低1元  刷卡完成后需手动提现" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirted.frame)+300, self.view.frame.size.width, 40)];
+//            [self.view addSubview:tip];
         }
         else
         {
@@ -302,6 +313,8 @@
     payTool = @"01";
     payType = CardPayType;  //支付方式 刷卡支付
     request = [[Request alloc]initWithDelegate:self];
+    self.ExplainLabel1.hidden = YES;
+    self.ExplainLabel2.hidden = YES;
     
 
     

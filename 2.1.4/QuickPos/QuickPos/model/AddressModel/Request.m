@@ -1066,7 +1066,7 @@
     NSString *OrderTime = [[NSString alloc]initWithFormat:@"%@%@",currentDate,currenttime];
     
     NSDictionary *dict = @{@"application":MONILEMAC_QUICKBANKCARDCONFIRM,
-                           @"mobileNo": [AppDelegate getUserBaseData].mobileNo,
+                           @"mobileNo": mobileNo,
                            @"token": [AppDelegate getUserBaseData].token,
                            @"cardNo":cardNo,
                            @"password":password,
@@ -1097,7 +1097,7 @@
 - (void)SendDynamicCode:(NSString *)newbindid mobileNo:(NSString *)mobileNo
 {
     NSDictionary *dict = @{@"application": MONILEMAC_SENDDYNAMICCODE,
-                           @"mobileNo": [AppDelegate getUserBaseData].mobileNo,
+                           @"mobileNo":mobileNo,
                            @"token": [AppDelegate getUserBaseData].token,
                            @"newbindid": newbindid,
                     
@@ -1110,7 +1110,7 @@
 - (void)CheckDynamicCode:(NSString *)newbindid mobileNo:(NSString *)mobileNo dynameic:(NSString *)dynameic
 {
     NSDictionary *dict = @{@"application": MONILEMAC_CHECKDYNAMICCODE,
-                           @"mobileNo": [AppDelegate getUserBaseData].mobileNo,
+                           @"mobileNo": mobileNo,
                            @"token": [AppDelegate getUserBaseData].token,
                            @"newbindid": newbindid,
                            @"dynameic":dynameic,

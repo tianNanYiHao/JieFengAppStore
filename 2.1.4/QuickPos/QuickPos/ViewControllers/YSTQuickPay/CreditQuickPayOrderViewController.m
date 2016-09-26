@@ -137,68 +137,65 @@
             
         }else if (type == REQUSET_CHECKDYNAMICCODE){
             
-                    if (iOS8) {
-                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:L(@"PleaseEnterTradingPassword") preferredStyle:UIAlertControllerStyleAlert];
-                        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-                            textField.placeholder = L(@"TradePassword");
-                            textField.secureTextEntry = YES;
-                            
-                        }];
-                        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:L(@"Confirm") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                            if ([(UITextField*)[alert.textFields objectAtIndex:0] text].length == 0) {
-                                [Common showMsgBox:nil msg:L(@"PasswordCannotBeEmpty") parentCtrl:self];
-                            }else{//账户支付
-                                hud = [MBProgressHUD showMessag:@"正在交易中，请稍后" toView:[[QuickPosTabBarController getQuickPosTabBarController] view]];
-                                Request *req = [[Request alloc]initWithDelegate:self];
-                                
-                                [request QuickBankCardConfirmCardNo:self.cardNums
-                                 mobileNo:self.bankMobileNo
-                                  password:[(UITextField*)[alert.textFields objectAtIndex:0] text]
-                                   newbindid:self.newbindid
-                                    transDate:@""
-                                     transTime:@""
-                                      orderTime:@""
-                                       customerId:self.customerId
-                                        customerName:self.customerName
-                                         cardType:self.cardType
-                                          bankName:self.bankName
-                                           orderAmt:self.orderData.orderAmt
-                                            orderId:self.orderData.orderId
-                                             PinBlk:[(UITextField*)[alert.textFields objectAtIndex:0] text]
-                                 ];
-                                
-                                
-                                
-                            }
-                        }];
-                        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:L(@"cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                        }];
-                        [alert addAction:defaultAction];
-                        [alert addAction:cancelAction];
-                        [self presentViewController:alert animated:YES completion:nil];
-                    }else{
-                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:L(@"PleaseEnterPayPassword") message:nil delegate:self cancelButtonTitle:L(@"cancel") otherButtonTitles:L(@"Confirm"), nil];
-                        alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
-                        [[alert textFieldAtIndex:0] setPlaceholder:L(@"PayPassword")];
-                        alert.tag = AccountPayType;
-                        [alert show];
+            if (iOS8) {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:L(@"PleaseEnterTradingPassword") preferredStyle:UIAlertControllerStyleAlert];
+                [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                    textField.placeholder = L(@"TradePassword");
+                    textField.secureTextEntry = YES;
+                    
+                }];
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:L(@"Confirm") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    if ([(UITextField*)[alert.textFields objectAtIndex:0] text].length == 0) {
+                        [Common showMsgBox:nil msg:L(@"PasswordCannotBeEmpty") parentCtrl:self];
+                    }else{//账户支付
+                        hud = [MBProgressHUD showMessag:@"正在交易中，请稍后" toView:[[QuickPosTabBarController getQuickPosTabBarController] view]];
+                        Request *req = [[Request alloc]initWithDelegate:self];
+                        
+                        [request QuickBankCardConfirmCardNo:self.cardNums
+                                                   mobileNo:self.bankMobileNo
+                                                   password:[(UITextField*)[alert.textFields objectAtIndex:0] text]
+                                                  newbindid:self.newbindid
+                                                  transDate:@""
+                                                  transTime:@""
+                                                  orderTime:@""
+                                                 customerId:self.customerId
+                                               customerName:self.customerName
+                                                   cardType:self.cardType
+                                                   bankName:self.bankName
+                                                   orderAmt:self.orderData.orderAmt
+                                                    orderId:self.orderData.orderId
+                                                     PinBlk:[(UITextField*)[alert.textFields objectAtIndex:0] text]
+                         ];
                     }
-               
-//            }
+                }];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:L(@"cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                }];
+                [alert addAction:defaultAction];
+                [alert addAction:cancelAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            }else{
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:L(@"PleaseEnterPayPassword") message:nil delegate:self cancelButtonTitle:L(@"cancel") otherButtonTitles:L(@"Confirm"), nil];
+                alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+                [[alert textFieldAtIndex:0] setPlaceholder:L(@"PayPassword")];
+                alert.tag = AccountPayType;
+                [alert show];
+            }
+            
+            //            }
             
             
         }else if (type == REQUSET_QUICKBANKCARDCONFIRM){
             if ([[[dict objectForKey:@"data"]objectForKey:@"respCode"] isEqualToString:@"0000"]) {
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
-                 [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
+                [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
             }else
             {
-             [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
-                 [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
+                [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
             }
-    }
+        }
         else
         {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"respDesc"];

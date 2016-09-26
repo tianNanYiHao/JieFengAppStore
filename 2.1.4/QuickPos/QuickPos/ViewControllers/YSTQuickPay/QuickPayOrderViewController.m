@@ -112,7 +112,8 @@
     
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(repeats) userInfo:nil repeats:YES];
     
-    [request SendDynamicCode:self.newbindid];
+//    [request SendDynamicCode:self.newbindid];
+    [request SendDynamicCode:self.newbindid mobileNo:self.bankMobileNo];
     NSLog(@"%@",self.newbindid);
     
 }
@@ -152,7 +153,8 @@
     
     self.CheckDynamicCode = YES;
     
-    [request CheckDynamicCode:self.newbindid dynameic:self.SMSVerification.text];
+//    [request CheckDynamicCode:self.newbindid dynameic:self.SMSVerification.text];
+    [request CheckDynamicCode:self.newbindid mobileNo:self.bankMobileNo dynameic:self.SMSVerification.text];
     NSLog(@"%@",self.newbindid);
     
 
@@ -163,10 +165,12 @@
       [hud hide:YES];
     if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
         if (type == REQUSET_SENDDYNAMICCODE) {
+         [MBProgressHUD hideHUDForView:self.view animated:YES];
             self.dynameic = [dict objectForKey:@"dynameic"];
             NSLog(@"%@",self.dynameic);
         }
         else if (type == REQUSET_CHECKDYNAMICCODE){
+         [MBProgressHUD hideHUDForView:self.view animated:YES];
             PSTAlertController *past = [PSTAlertController alertWithTitle:nil message:L(@"PleaseEnterTradingPassword")];
             [past addTextFieldWithConfigurationHandler:^(UITextField *textField) {
                 textField.placeholder = L(@"TradePassword");
@@ -178,21 +182,24 @@
                     }
                     else{//快捷支付
                         hud = [MBProgressHUD showMessag:@"正在交易中，请稍后" toView:[[QuickPosTabBarController getQuickPosTabBarController] view]];
-                        Request *req = [[Request alloc]initWithDelegate:self];
-                        [req QuickBankCardConfirmCardNo:self.cardNums
-                                               password:action.alertController.textField.text
-                                              newbindid:self.newbindid
-                                              transDate:@""
-                                              transTime:@""
-                                              orderTime:@""
-                                             customerId:self.customerId
-                                           customerName:self.customerName
-                                               cardType:self.cardType
-                                               bankName:self.bankName
-                                               orderAmt:self.orderData.orderAmt
-                                                orderId:self.orderData.orderId
-                                                 PinBlk:action.alertController.textField.text
+
+                        [request QuickBankCardConfirmCardNo:self.cardNums
+                                                   mobileNo:self.bankMobileNo
+                                                   password:action.alertController.textField.text
+                                                  newbindid:self.newbindid
+                                                  transDate:@""
+                                                  transTime:@""
+                                                  orderTime:@""
+                                                 customerId:self.customerId
+                                               customerName:self.customerName
+                                                   cardType:self.cardType
+                                                   bankName:self.bankName
+                                                   orderAmt:self.orderData.orderAmt
+                                                    orderId:self.orderData.orderId
+                                                     PinBlk:action.alertController.textField.text
                          ];
+
+
                     }
                 }
                 ]];
@@ -202,7 +209,12 @@
         }
         else if (type == REQUSET_QUICKBANKCARDCONFIRM){
             if ([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]) {
-                [Common showMsgBox:@"" msg:L(@"SuccessfulDeal") parentCtrl:self];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
+                [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
+            }else{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
                 [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
             }
        }
@@ -217,15 +229,6 @@
             [Common showMsgBox:@"" msg:L(@"SuccessfulDeal") parentCtrl:self];
             [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
         }
-//        if (self.CheckDynamicCode) {
-//            self.CheckDynamicCode = NO;
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//        }
-//        else
-//        {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            
-//        }
     }
 }
 

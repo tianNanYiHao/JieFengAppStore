@@ -21,6 +21,7 @@
 @property (nonatomic,strong) NSString *customerId;
 @property (nonatomic,strong) NSString *customerName;
 @property (nonatomic,strong) NSString *cardType;
+@property (nonatomic,strong) NSString *bankMobileNo;
 
 
 @end

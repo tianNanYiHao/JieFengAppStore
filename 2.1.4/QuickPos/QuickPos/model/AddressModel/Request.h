@@ -232,6 +232,8 @@ enum{
 
 #define MONILEMAC_QUICKBANKCARDCOMFIRMSDJ       @"QuickBankCardComfirmSdj"//盛迪嘉无卡支付--支付接口
 
+#define MONILEMAC_SZHCPTicketPay                                @"TicketPay" //习正火车票最后锁票成功后发送捷丰后台
+
 
 @interface Request : NSObject
 
@@ -490,7 +492,8 @@ enum{
 -(void)trainTicketPayBuyZFBOrderWithID:(NSString*)orderID type:(NSInteger)type;
 //4.2 支付宝 / 微信 支付结果查询
 -(void)trainTicketPayBuyZFBOrderWithID:(NSString*)orderID readeID:(NSString*)tradeId type:(NSInteger)type;
-
+//5.1 锁票成功 发送数据到捷丰后台
+-(void)trainTicketPayToJiefengWithorderId:(NSString*)orderID orderNo:(NSString*)orderNO;
 
 
 

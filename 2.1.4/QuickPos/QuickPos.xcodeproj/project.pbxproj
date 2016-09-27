@@ -341,6 +341,7 @@
 		AEE5F6341C4E1C0B006FAF60 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE5F6331C4E1C0A006FAF60 /* libstdc++.tbd */; };
 		AEE5F6361C4E1C17006FAF60 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE5F6351C4E1C17006FAF60 /* libz.tbd */; };
 		AEED5D621C0410AC00F2F2EB /* RechargeFixedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEED5D611C0410AC00F2F2EB /* RechargeFixedViewController.m */; };
+		BF39373F1D9A5705003C035A /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39373E1D9A5705003C035A /* PFYSDK.a */; };
 		BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */; };
 		BF3C8D3C1D581D810092AC19 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */; };
 		BF3C8D411D5820110092AC19 /* ZFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C8D3F1D5820110092AC19 /* ZFBViewController.m */; };
@@ -1320,6 +1321,10 @@
 		AEE5F6351C4E1C17006FAF60 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		AEED5D601C0410AC00F2F2EB /* RechargeFixedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeFixedViewController.h; sourceTree = "<group>"; };
 		AEED5D611C0410AC00F2F2EB /* RechargeFixedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeFixedViewController.m; sourceTree = "<group>"; };
+		BF39373B1D9A5705003C035A /* MyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
+		BF39373C1D9A5705003C035A /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
+		BF39373D1D9A5705003C035A /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
+		BF39373E1D9A5705003C035A /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
 		BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		BF3C8D3E1D5820110092AC19 /* ZFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBViewController.h; sourceTree = "<group>"; };
@@ -2005,6 +2010,7 @@
 				C36E38701ABA5FF20004BE78 /* SystemConfiguration.framework in Frameworks */,
 				C3696F0B1AC11378003B04B4 /* CoreTelephony.framework in Frameworks */,
 				339B9A5E1D7D68A6004D0E1B /* ShareSDKConnector.framework in Frameworks */,
+				BF39373F1D9A5705003C035A /* PFYSDK.a in Frameworks */,
 				BF4EA7791D7D3F7800E8B95D /* CoreFoundation.framework in Frameworks */,
 				D599F21F1BCCB7CE006D5F6B /* CFNetwork.framework in Frameworks */,
 				AEE5F6361C4E1C17006FAF60 /* libz.tbd in Frameworks */,
@@ -2590,6 +2596,7 @@
 		591BBFC21AEDFE320037199A /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				BF3937391D9A5705003C035A /* PFYSDK */,
 				339B9A1C1D7D68A6004D0E1B /* ShareSDK */,
 				BF4EA7741D7D3D4800E8B95D /* JpushSDK */,
 				BF3C8D431D5834A40092AC19 /* LBXAlertAction */,
@@ -3595,6 +3602,25 @@
 				AEE5F62F1C4E19D8006FAF60 /* UMSocialSinaHandler.h */,
 			);
 			path = Sina;
+			sourceTree = "<group>";
+		};
+		BF3937391D9A5705003C035A /* PFYSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BF39373A1D9A5705003C035A /* include */,
+				BF39373E1D9A5705003C035A /* PFYSDK.a */,
+			);
+			path = PFYSDK;
+			sourceTree = "<group>";
+		};
+		BF39373A1D9A5705003C035A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				BF39373B1D9A5705003C035A /* MyAlertView.h */,
+				BF39373C1D9A5705003C035A /* PFYInterface.h */,
+				BF39373D1D9A5705003C035A /* PFYProgressHUD.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		BF3C8D381D581D760092AC19 /* AlipaySDK */ = {
@@ -5617,6 +5643,7 @@
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/YiXinSDK",
+					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -5679,6 +5706,7 @@
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/YiXinSDK",
+					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";

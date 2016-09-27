@@ -68,7 +68,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lff/Desktop/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/ZFBPay/ZFBReceivablesViewController.m"
-                  timestampString = "496635156.095534"
+                  timestampString = "496638959.972792"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "181"
@@ -83,7 +83,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lff/Desktop/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/ZFBPay/ZFBReceivablesViewController.m"
-                  timestampString = "496635156.097208"
+                  timestampString = "496638959.974531"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "181"
@@ -137,22 +137,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
-            landmarkName = "-typeAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/Shop/RechargeViewController.m"
-            timestampString = "496307264.45875"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
             landmarkName = "-typeAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -227,13 +211,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/Shop/RechargeViewController.m"
-            timestampString = "496316500.888572"
+            filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
+            timestampString = "496638957.851379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "-typeAction:"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-GetVerificationCode:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

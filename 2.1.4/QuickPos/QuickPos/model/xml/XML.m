@@ -104,24 +104,8 @@
     if (!strPhone) {
         strPhone = @"";
     }
-    if ([[dic objectForKey:@"application"] isEqualToString:@"QuickBankAuthent"]) {
-        strPhone = [AppDelegate getUserBaseData].mobileNo;
-    }if ([[dic objectForKey:@"application"] isEqualToString:@"QuickBankCardConfirm"]) {
-        strPhone = [AppDelegate getUserBaseData].mobileNo;
-    }if ([[dic objectForKey:@"application"] isEqualToString:@"SendDynamicCode"]) {
-        strPhone = [AppDelegate getUserBaseData].mobileNo;
-    }if ([[dic objectForKey:@"application"] isEqualToString:@"CheckDynamicCode"]) {
-        strPhone = [AppDelegate getUserBaseData].mobileNo;
-    }if ([[dic objectForKey:@"application"] isEqualToString:@"QuickBankCardComfirmSdjSms"]) {
-        strPhone = [AppDelegate getUserBaseData].mobileNo;
-    }if ([[dic objectForKey:@"application"] isEqualToString:@"QuickBankCardPaySdj"]) {
-        strPhone = [AppDelegate getUserBaseData].mobileNo;
-    }if ([[dic objectForKey:@"application"] isEqualToString:@"QuickBankCardPaySdjSms"]) {
-        strPhone = [AppDelegate getUserBaseData].mobileNo;
-    }if ([[dic objectForKey:@"application"] isEqualToString:@"QuickBankCardComfirmSdj"]) {
-        strPhone = [AppDelegate getUserBaseData].mobileNo;
-    }
     
+   strPhone = [self returnStrPhone:dic string:strPhone];
     DDXMLNode *nPhone = [DDXMLNode attributeWithName:@"phone" stringValue:strPhone];
     [root addAttribute:nPhone];
     // 流水号
@@ -209,6 +193,22 @@
     return strUUID;
 }
 
-
+- (NSString*)returnStrPhone:(NSDictionary*)dict string:(NSString*)strPhoneOrigin{
+    
+    NSArray *searcgArr = @[@"QuickBankAuthent",@"QuickBankCardConfirm",@"SendDynamicCode",@"CheckDynamicCode",@"QuickBankCardComfirmSdjSms",@"QuickBankCardPaySdj",@"QuickBankCardPaySdjSms",@"QuickBankCardComfirmSdj"];
+    
+    NSString *str = [dict objectForKey:@"application"];
+    NSString *strphone = [[NSString alloc] init];
+    for (NSString *c in searcgArr) {
+        if ([str isEqualToString:c]) {
+            strphone = [AppDelegate getUserBaseData].mobileNo;
+            return strphone;
+        }else{
+            
+            return strPhoneOrigin;
+        }
+    }
+    return nil;
+}
 
 @end

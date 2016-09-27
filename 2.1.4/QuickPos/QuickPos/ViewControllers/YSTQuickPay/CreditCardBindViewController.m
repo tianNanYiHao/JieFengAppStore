@@ -60,35 +60,47 @@
 
 - (IBAction)Verified:(id)sender {
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在实名认证..."];
-    [request QuickBankAuthent:self.phone.text
-                     ValiDate:self.CardValid.text
-                 CustomerName:self.name.text
-                   CustomerId:self.customerId
-                 LegalCertPid:self.icCard.text
-                          Cvn:self.SecurityCode.text
-                    orderTime:@""
-                LegalCertType:@"01"
-                       CardNo:self.cardNum.text
-                     CardType:self.cardType
-                      OrderId:self.orderIds
-                     BankName:self.bankName
-     ];
-    
-    
+    if (_name.text.length == 0 ) {
+        [Common showMsgBox:@"" msg:@"请填写正确姓名" parentCtrl:self];
+    }else
+    if (_icCard.text.length == 0) {
+        [Common showMsgBox:@"" msg:@"请填写正确身份信息" parentCtrl:self];
+    }else
+    if (_CardValid.text.length == 0) {
+        [Common showMsgBox:@"" msg:@"请填写正确有效期" parentCtrl:self];
+    }else
+    if (_SecurityCode.text.length == 0) {
+        [Common showMsgBox:@"" msg:@"请填写正确卡安全码" parentCtrl:self];
+    }else
+    if (_phone.text.length == 0) {
+        [Common showMsgBox:@"" msg:@"请填写正确预留手机号" parentCtrl:self];
+    }
+    else{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在实名认证..."];
+        [request QuickBankAuthent:self.phone.text
+                         ValiDate:self.CardValid.text
+                     CustomerName:self.name.text
+                       CustomerId:self.customerId
+                     LegalCertPid:self.icCard.text
+                              Cvn:self.SecurityCode.text
+                        orderTime:@""
+                    LegalCertType:@"01"
+                           CardNo:self.cardNum.text
+                         CardType:self.cardType
+                          OrderId:self.orderIds
+                         BankName:self.bankName
+         ];
+    }
+
 }
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
-    
-    if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
-        
-        if (type == REQUSET_QUICKBANKAUTHENT) {
-            
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+      if (type == REQUSET_QUICKBANKAUTHENT) {
+            if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
             CreditQuickPayOrderViewController *creditQuickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CreditQuickPayOrderViewController"];
-            
 //            creditQuickPayOrderVc.newbindid = [dict objectForKey:@"newBindId"];
-            
             self.NewBindNo = [dict objectForKey:@"newBindId"];
             [creditQuickPayOrderVc setOrderData:self.orderData];
             creditQuickPayOrderVc.bankName = self.bankName;
@@ -102,20 +114,14 @@
             creditQuickPayOrderVc.securityCodes = self.SecurityCode.text;
             creditQuickPayOrderVc.bankMobileNo = self.phone.text;
             NSLog(@"%@  %@  %@  %@",self.NewBindNo,creditQuickPayOrderVc.bankName,creditQuickPayOrderVc.cardNums,creditQuickPayOrderVc.newbindid);
-            
             [self.navigationController pushViewController:creditQuickPayOrderVc animated:YES];
-            
-            
-        }else
-        {
-            [MBProgressHUD showHUDAddedTo:self.view WithString:@"respDesc"];
         }
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
+            else
+            {
+                [MBProgressHUD showHUDAddedTo:self.view WithString:[dict objectForKey:@"respDesc"]];
+            }
     }
-
-        
-    }
+}
     
     
     

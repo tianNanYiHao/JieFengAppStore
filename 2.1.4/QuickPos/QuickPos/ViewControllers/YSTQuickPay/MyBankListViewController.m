@@ -16,6 +16,7 @@
 #import "AddBankcardViewController.h"
 #import "CheckCardInfoViewController.h"
 #import "QuickPayOrderViewController.h"
+#import "CreditQuickPayOrderViewController.h"
 
 @interface MyBankListViewController ()<UITableViewDataSource,UITableViewDelegate,ResponseData>{
     QuickBankData *bankData;
@@ -208,26 +209,45 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     bankItem = bankData.bankCardArr[indexPath.row];
     bankItem.isBind = YES;
+    if ([self.cardType integerValue] == 0) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
+        QuickPayOrderViewController *QuickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"QuickPayOrderViewController"];
+        
+        [QuickPayOrderVc setOrderData:self.orderData];
+        
+        
+        
+        QuickPayOrderVc.newbindid = self.newbindid;
+        QuickPayOrderVc.bankName = bankItem.bankName;
+        QuickPayOrderVc.cardNums = bankItem.cardNo;
+        QuickPayOrderVc.customerId = self.customerId;
+        QuickPayOrderVc.customerName = self.customerName;
+        QuickPayOrderVc.cardType = self.cardType;
+        QuickPayOrderVc.bankMobileNo = self.bankMobileNo;
+        
+        //    NSLog(@"%@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.customerName,quickPayOrderVc.bankMobileNo);
+        
+        [self.navigationController pushViewController:QuickPayOrderVc animated:YES];
+    }else{
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
+    CreditQuickPayOrderViewController *CreditQuickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CreditQuickPayOrderViewController"];
     
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
-    QuickPayOrderViewController *quickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"QuickPayOrderViewController"];
-    
-    [quickPayOrderVc setOrderData:self.orderData];
+    [CreditQuickPayOrderVc setOrderData:self.orderData];
     
   
     
-    quickPayOrderVc.newbindid = self.newbindid;
-    quickPayOrderVc.bankName = bankItem.bankName;
-    quickPayOrderVc.cardNums = bankItem.cardNo;
-    quickPayOrderVc.customerId = self.customerId;
-    quickPayOrderVc.customerName = self.customerName;
-    quickPayOrderVc.cardType = self.cardType;
-    quickPayOrderVc.bankMobileNo = self.bankMobileNo;
+    CreditQuickPayOrderVc.newbindid = self.newbindid;
+    CreditQuickPayOrderVc.bankName = bankItem.bankName;
+    CreditQuickPayOrderVc.cardNums = bankItem.cardNo;
+    CreditQuickPayOrderVc.customerId = self.customerId;
+    CreditQuickPayOrderVc.customerName = self.customerName;
+    CreditQuickPayOrderVc.cardType = self.cardType;
+    CreditQuickPayOrderVc.bankMobileNo = self.bankMobileNo;
     
-    NSLog(@"%@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.customerName,quickPayOrderVc.bankMobileNo);
+//    NSLog(@"%@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.customerName,quickPayOrderVc.bankMobileNo);
     
-    [self.navigationController pushViewController:quickPayOrderVc animated:YES];
-    
+    [self.navigationController pushViewController:CreditQuickPayOrderVc animated:YES];
+}
 //    [self performSegueWithIdentifier:@"NoCardPaySegue" sender:cell];
 //    NSString *payInfo = @"";
 //    Request *req = [[Request alloc]initWithDelegate:self];

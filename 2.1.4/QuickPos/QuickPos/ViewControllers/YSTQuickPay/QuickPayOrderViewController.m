@@ -112,7 +112,8 @@
     
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(repeats) userInfo:nil repeats:YES];
     
-    [request SendDynamicCode:self.newbindid];
+//    [request SendDynamicCode:self.newbindid];
+    [request SendDynamicCode:self.newbindid mobileNo:self.bankMobileNo];
     NSLog(@"%@",self.newbindid);
     
 }
@@ -151,8 +152,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"验证短信并支付."];
     
     self.CheckDynamicCode = YES;
-    
-    [request CheckDynamicCode:self.newbindid dynameic:self.SMSVerification.text];
+    [request CheckDynamicCode:self.newbindid mobileNo:self.bankMobileNo dynameic:self.SMSVerification.text];
     NSLog(@"%@",self.newbindid);
     
 
@@ -160,74 +160,83 @@
 
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
-      [hud hide:YES];
+    
     if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
         if (type == REQUSET_SENDDYNAMICCODE) {
             self.dynameic = [dict objectForKey:@"dynameic"];
             NSLog(@"%@",self.dynameic);
-        }
-        else if (type == REQUSET_CHECKDYNAMICCODE){
-            PSTAlertController *past = [PSTAlertController alertWithTitle:nil message:L(@"PleaseEnterTradingPassword")];
-            [past addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-                textField.placeholder = L(@"TradePassword");
-                textField.keyboardType = UIKeyboardTypeNumberPad;
-            }];
-            [past addAction:[PSTAlertAction actionWithTitle:L(@"Confirm") handler:^(PSTAlertAction * _Nonnull action) {
-                    if ([action.alertController.textField.text length] == 0) {
+            
+            
+        }else if (type == REQUSET_CHECKDYNAMICCODE){
+            
+            if (iOS8) {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:L(@"PleaseEnterTradingPassword") preferredStyle:UIAlertControllerStyleAlert];
+                [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                    textField.placeholder = L(@"TradePassword");
+                    textField.secureTextEntry = YES;
+                    
+                }];
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:L(@"Confirm") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    if ([(UITextField*)[alert.textFields objectAtIndex:0] text].length == 0) {
                         [Common showMsgBox:nil msg:L(@"PasswordCannotBeEmpty") parentCtrl:self];
-                    }
-                    else{//快捷支付
+                    }else{//账户支付
                         hud = [MBProgressHUD showMessag:@"正在交易中，请稍后" toView:[[QuickPosTabBarController getQuickPosTabBarController] view]];
                         Request *req = [[Request alloc]initWithDelegate:self];
-                        [req QuickBankCardConfirmCardNo:self.cardNums
-                                               password:action.alertController.textField.text
-                                              newbindid:self.newbindid
-                                              transDate:@""
-                                              transTime:@""
-                                              orderTime:@""
-                                             customerId:self.customerId
-                                           customerName:self.customerName
-                                               cardType:self.cardType
-                                               bankName:self.bankName
-                                               orderAmt:self.orderData.orderAmt
-                                                orderId:self.orderData.orderId
-                                                 PinBlk:action.alertController.textField.text
+                        
+                        [request QuickBankCardConfirmCardNo:self.cardNums
+                                                   mobileNo:self.bankMobileNo
+                                                   password:[(UITextField*)[alert.textFields objectAtIndex:0] text]
+                                                  newbindid:self.newbindid
+                                                  transDate:@""
+                                                  transTime:@""
+                                                  orderTime:@""
+                                                 customerId:self.customerId
+                                               customerName:self.customerName
+                                                   cardType:self.cardType
+                                                   bankName:self.bankName
+                                                   orderAmt:self.orderData.orderAmt
+                                                    orderId:self.orderData.orderId
+                                                     PinBlk:[(UITextField*)[alert.textFields objectAtIndex:0] text]
                          ];
                     }
-                }
-                ]];
-                [past addAction:[PSTAlertAction actionWithTitle:L(@"cancel") handler:^(PSTAlertAction * _Nonnull action) {
-                }]];
-                [past showWithSender:nil controller:self animated:YES completion:NULL];
-        }
-        else if (type == REQUSET_QUICKBANKCARDCONFIRM){
-            if ([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]) {
-                [Common showMsgBox:@"" msg:L(@"SuccessfulDeal") parentCtrl:self];
+                }];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:L(@"cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                }];
+                [alert addAction:defaultAction];
+                [alert addAction:cancelAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            }else{
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:L(@"PleaseEnterPayPassword") message:nil delegate:self cancelButtonTitle:L(@"cancel") otherButtonTitles:L(@"Confirm"), nil];
+                alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+                [[alert textFieldAtIndex:0] setPlaceholder:L(@"PayPassword")];
+                alert.tag = AccountPayType;
+                [alert show];
+            }
+            
+            //            }
+            
+            
+        }else if (type == REQUSET_QUICKBANKCARDCONFIRM){
+            if ([[[dict objectForKey:@"data"]objectForKey:@"respCode"] isEqualToString:@"0000"]) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
+                [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
+            }else
+            {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
                 [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
             }
-       }
-        
-        
-        
-        if (self.QuickBankCardConfirm) {
-            self.QuickBankCardConfirm = NO;
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"ClearShoppingCartNotification" object:[NSString stringWithFormat:@"%d",YES]];
-            //账户支付成功
-            [hud hide:YES];
-            [Common showMsgBox:@"" msg:L(@"SuccessfulDeal") parentCtrl:self];
-            [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
         }
-//        if (self.CheckDynamicCode) {
-//            self.CheckDynamicCode = NO;
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//        }
-//        else
-//        {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            
-//        }
+        else
+        {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"respDesc"];
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
 }
+
+
 
 - (void)gobackRootCtrl{
     [self.navigationController popToRootViewControllerAnimated:NO];

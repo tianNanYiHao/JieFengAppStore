@@ -34,6 +34,7 @@
 @property (nonatomic,strong) NSString *cardType;
 @property (nonatomic,strong) NSString *customerName;
 @property (nonatomic,strong) NSString *bankName;
+@property (nonatomic,strong) NSString *bankMobileNo;
 
 @end
 
@@ -142,7 +143,7 @@
                 self.bankName = [resultDict objectForKey:@"bankName"];
                 self.customerName = [resultDict objectForKey:@"customerName"];
                 self.cardType = [resultDict objectForKey:@"cardType"];
-                
+                self.bankMobileNo = [resultDict objectForKey:@"mobile"];
                 NSLog(@"%@  %@  %@  %@",self.newbindid,self.customerId,self.bankId,self.bindID);
             }
            
@@ -155,7 +156,8 @@
 //            orderData = [[OrderData alloc]initWithData:dict];
 //            [self performSegueWithIdentifier:@"NoCardPaySegue" sender:nil];
     
-        }else if(type == REQUEST_UNBINDQUICKBANKCARD){
+        }
+        else if(type == REQUEST_UNBINDQUICKBANKCARD){
 //            [bankData.bankCardArr removeObjectAtIndex:indexpath.row];
 //            [self.bankTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
             [self.bankTableView reloadData];
@@ -220,8 +222,9 @@
     quickPayOrderVc.customerId = self.customerId;
     quickPayOrderVc.customerName = self.customerName;
     quickPayOrderVc.cardType = self.cardType;
+    quickPayOrderVc.bankMobileNo = self.bankMobileNo;
     
-    NSLog(@"%@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.customerName,quickPayOrderVc.cardType);
+    NSLog(@"%@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.customerName,quickPayOrderVc.bankMobileNo);
     
     [self.navigationController pushViewController:quickPayOrderVc animated:YES];
     

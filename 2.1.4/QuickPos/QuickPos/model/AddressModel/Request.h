@@ -361,11 +361,11 @@ enum{
 //绑定快捷支付银行卡
 - (void)QuickBankAuthent:(NSString *)mobileNo ValiDate:(NSString *)valiDate CustomerName:(NSString *)customerName CustomerId:(NSString *)customerId LegalCertPid:(NSString *)legalCertPid Cvn:(NSString *)cvn orderTime:(NSString *)orderTime  LegalCertType:(NSString *)legalCertType CardNo:(NSString *)cardNo CardType:(NSString *)cardType OrderId:(NSString *)orderId BankName:(NSString *)bankName;
 //快捷支付--支付接口
-- (void)QuickBankCardConfirmCardNo:(NSString *)cardNo password:(NSString *)password newbindid:(NSString *)newbindid transDate:(NSString *)transDate transTime:(NSString *)transTime orderTime:(NSString *)orderTime customerId:(NSString *)customerId customerName:(NSString *)customerName cardType:(NSString *)cardType bankName:(NSString *)bankName orderAmt:(NSString *)orderAmt orderId:(NSString *)orderId PinBlk:(NSString *)PinBlk;
+- (void)QuickBankCardConfirmCardNo:(NSString *)cardNo mobileNo:(NSString *)mobileNo password:(NSString *)password newbindid:(NSString *)newbindid transDate:(NSString *)transDate transTime:(NSString *)transTime orderTime:(NSString *)orderTime customerId:(NSString *)customerId customerName:(NSString *)customerName cardType:(NSString *)cardType bankName:(NSString *)bankName orderAmt:(NSString *)orderAmt orderId:(NSString *)orderId PinBlk:(NSString *)PinBlk;
 //获取快捷支付短信验证码
-- (void)SendDynamicCode:(NSString *)newbindid;
+- (void)SendDynamicCode:(NSString *)newbindid mobileNo:(NSString *)mobileNo;
 //验证快捷支付短信验证码
-- (void)CheckDynamicCode:(NSString *)newbindid dynameic:(NSString *)dynameic;
+- (void)CheckDynamicCode:(NSString *)newbindid mobileNo:(NSString *)mobileNo dynameic:(NSString *)dynameic;
 
 //快捷支付验证银行卡信息
 - (void)checkBankCardNo:(NSString*)cardNo;

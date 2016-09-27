@@ -32,8 +32,6 @@
 		333CC0581D2ECA9600023EA3 /* ReusableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 333CC0571D2ECA9600023EA3 /* ReusableHeaderView.m */; };
 		333D53511D4EF2DE00449D5E /* SDJBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D53501D4EF2DE00449D5E /* SDJBankViewController.m */; };
 		333D53561D4EF35100449D5E /* SDJBankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D53551D4EF35100449D5E /* SDJBankTableViewCell.m */; };
-		333F5AEC1D201937007DDA09 /* CreditQuickPayOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333F5AEB1D201937007DDA09 /* CreditQuickPayOrderViewController.m */; };
-		333F5AEF1D203704007DDA09 /* CreditCardBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333F5AEE1D203704007DDA09 /* CreditCardBindViewController.m */; };
 		333F5B041D212E44007DDA09 /* qr_scan_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 333F5B031D212E43007DDA09 /* qr_scan_line@2x.png */; };
 		33409A0B1D509E1700A1305D /* InstructionsForUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33409A0A1D509E1700A1305D /* InstructionsForUseViewController.m */; };
 		33409A531D50A7D100A1305D /* InstructionsForUseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33409A521D50A7D100A1305D /* InstructionsForUseTableViewCell.m */; };
@@ -69,11 +67,17 @@
 		339B9A5C1D7D68A6004D0E1B /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339B9A491D7D68A6004D0E1B /* MOBFoundation.framework */; };
 		339B9A5D1D7D68A6004D0E1B /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 339B9A4A1D7D68A6004D0E1B /* ShareSDK.bundle */; };
 		339B9A5E1D7D68A6004D0E1B /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339B9A4B1D7D68A6004D0E1B /* ShareSDKConnector.framework */; };
+		339DA4141D9920FD001BA189 /* AddCardDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DA4071D9920FD001BA189 /* AddCardDetailInfoViewController.m */; };
+		339DA4151D9920FD001BA189 /* BankCardBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DA4091D9920FD001BA189 /* BankCardBindViewController.m */; };
+		339DA4161D9920FD001BA189 /* CheckCardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DA40B1D9920FD001BA189 /* CheckCardInfoViewController.m */; };
+		339DA4171D9920FD001BA189 /* CreditCardBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DA40D1D9920FD001BA189 /* CreditCardBindViewController.m */; };
+		339DA4181D9920FD001BA189 /* CreditQuickPayOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DA40F1D9920FD001BA189 /* CreditQuickPayOrderViewController.m */; };
+		339DA4191D9920FD001BA189 /* MyBankListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DA4111D9920FD001BA189 /* MyBankListViewController.m */; };
+		339DA41A1D9920FD001BA189 /* QuickPayOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DA4131D9920FD001BA189 /* QuickPayOrderViewController.m */; };
 		33B690BE1D5C223D00F1AC08 /* MyRunSubWithdrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B690BD1D5C223D00F1AC08 /* MyRunSubWithdrawViewController.m */; };
 		33B690C11D5C55DB00F1AC08 /* AddRunSubBankcardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B690C01D5C55DB00F1AC08 /* AddRunSubBankcardViewController.m */; };
 		33B690C51D5C666700F1AC08 /* MyRunSubTakeCashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B690C41D5C666700F1AC08 /* MyRunSubTakeCashViewController.m */; };
 		33EEE7851D15CEB000AEE080 /* CardToCardPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EEE7841D15CEB000AEE080 /* CardToCardPayViewController.m */; };
-		33EEE7881D19531A00AEE080 /* CheckCardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EEE7871D19531A00AEE080 /* CheckCardInfoViewController.m */; };
 		33F06F301D80F7D700E90487 /* SDJBankListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F06F2F1D80F7D700E90487 /* SDJBankListTableViewCell.m */; };
 		33F2573A1D61B1F900A4ECC0 /* libQuickPos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F257391D61B1F900A4ECC0 /* libQuickPos.a */; };
 		33F257411D62BC6600A4ECC0 /* ZFBBankCardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F257401D62BC6600A4ECC0 /* ZFBBankCardListViewController.m */; };
@@ -215,10 +219,6 @@
 		591BC38E1AEDFE6A0037199A /* WithdrawalOfRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC2531AEDFE6A0037199A /* WithdrawalOfRecordViewController.m */; };
 		591BC38F1AEDFE6A0037199A /* WithdrawalOfRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591BC2541AEDFE6A0037199A /* WithdrawalOfRecordViewController.xib */; };
 		591BC3901AEDFE6A0037199A /* WithdrawalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC2561AEDFE6A0037199A /* WithdrawalViewController.m */; };
-		591BC3911AEDFE6A0037199A /* AddCardDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC2591AEDFE6A0037199A /* AddCardDetailInfoViewController.m */; };
-		591BC3921AEDFE6A0037199A /* BankCardBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC25B1AEDFE6A0037199A /* BankCardBindViewController.m */; };
-		591BC3931AEDFE6A0037199A /* MyBankListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC25D1AEDFE6A0037199A /* MyBankListViewController.m */; };
-		591BC3941AEDFE6A0037199A /* QuickPayOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC25F1AEDFE6A0037199A /* QuickPayOrderViewController.m */; };
 		591BC3951AEDFE6A0037199A /* ChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC2621AEDFE6A0037199A /* ChooseView.m */; };
 		591BC3961AEDFE6A0037199A /* ChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591BC2631AEDFE6A0037199A /* ChooseView.xib */; };
 		591BC3971AEDFE6A0037199A /* ClearUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC2651AEDFE6A0037199A /* ClearUpView.m */; };
@@ -744,10 +744,6 @@
 		333D53501D4EF2DE00449D5E /* SDJBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDJBankViewController.m; sourceTree = "<group>"; };
 		333D53541D4EF35100449D5E /* SDJBankTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDJBankTableViewCell.h; sourceTree = "<group>"; };
 		333D53551D4EF35100449D5E /* SDJBankTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDJBankTableViewCell.m; sourceTree = "<group>"; };
-		333F5AEA1D201937007DDA09 /* CreditQuickPayOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditQuickPayOrderViewController.h; sourceTree = "<group>"; };
-		333F5AEB1D201937007DDA09 /* CreditQuickPayOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditQuickPayOrderViewController.m; sourceTree = "<group>"; };
-		333F5AED1D203704007DDA09 /* CreditCardBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardBindViewController.h; sourceTree = "<group>"; };
-		333F5AEE1D203704007DDA09 /* CreditCardBindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardBindViewController.m; sourceTree = "<group>"; };
 		333F5B031D212E43007DDA09 /* qr_scan_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_scan_line@2x.png"; sourceTree = "<group>"; };
 		33409A091D509E1700A1305D /* InstructionsForUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsForUseViewController.h; sourceTree = "<group>"; };
 		33409A0A1D509E1700A1305D /* InstructionsForUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsForUseViewController.m; sourceTree = "<group>"; };
@@ -815,6 +811,20 @@
 		339B9A491D7D68A6004D0E1B /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		339B9A4A1D7D68A6004D0E1B /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
 		339B9A4B1D7D68A6004D0E1B /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		339DA4061D9920FD001BA189 /* AddCardDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCardDetailInfoViewController.h; sourceTree = "<group>"; };
+		339DA4071D9920FD001BA189 /* AddCardDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCardDetailInfoViewController.m; sourceTree = "<group>"; };
+		339DA4081D9920FD001BA189 /* BankCardBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardBindViewController.h; sourceTree = "<group>"; };
+		339DA4091D9920FD001BA189 /* BankCardBindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardBindViewController.m; sourceTree = "<group>"; };
+		339DA40A1D9920FD001BA189 /* CheckCardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckCardInfoViewController.h; sourceTree = "<group>"; };
+		339DA40B1D9920FD001BA189 /* CheckCardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckCardInfoViewController.m; sourceTree = "<group>"; };
+		339DA40C1D9920FD001BA189 /* CreditCardBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardBindViewController.h; sourceTree = "<group>"; };
+		339DA40D1D9920FD001BA189 /* CreditCardBindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardBindViewController.m; sourceTree = "<group>"; };
+		339DA40E1D9920FD001BA189 /* CreditQuickPayOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditQuickPayOrderViewController.h; sourceTree = "<group>"; };
+		339DA40F1D9920FD001BA189 /* CreditQuickPayOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditQuickPayOrderViewController.m; sourceTree = "<group>"; };
+		339DA4101D9920FD001BA189 /* MyBankListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBankListViewController.h; sourceTree = "<group>"; };
+		339DA4111D9920FD001BA189 /* MyBankListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBankListViewController.m; sourceTree = "<group>"; };
+		339DA4121D9920FD001BA189 /* QuickPayOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickPayOrderViewController.h; sourceTree = "<group>"; };
+		339DA4131D9920FD001BA189 /* QuickPayOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickPayOrderViewController.m; sourceTree = "<group>"; };
 		33B690BC1D5C223D00F1AC08 /* MyRunSubWithdrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRunSubWithdrawViewController.h; sourceTree = "<group>"; };
 		33B690BD1D5C223D00F1AC08 /* MyRunSubWithdrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRunSubWithdrawViewController.m; sourceTree = "<group>"; };
 		33B690BF1D5C55DB00F1AC08 /* AddRunSubBankcardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRunSubBankcardViewController.h; sourceTree = "<group>"; };
@@ -823,8 +833,6 @@
 		33B690C41D5C666700F1AC08 /* MyRunSubTakeCashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRunSubTakeCashViewController.m; sourceTree = "<group>"; };
 		33EEE7831D15CEB000AEE080 /* CardToCardPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardToCardPayViewController.h; sourceTree = "<group>"; };
 		33EEE7841D15CEB000AEE080 /* CardToCardPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardToCardPayViewController.m; sourceTree = "<group>"; };
-		33EEE7861D19531A00AEE080 /* CheckCardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckCardInfoViewController.h; sourceTree = "<group>"; };
-		33EEE7871D19531A00AEE080 /* CheckCardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckCardInfoViewController.m; sourceTree = "<group>"; };
 		33F06F2E1D80F7D700E90487 /* SDJBankListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDJBankListTableViewCell.h; sourceTree = "<group>"; };
 		33F06F2F1D80F7D700E90487 /* SDJBankListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDJBankListTableViewCell.m; sourceTree = "<group>"; };
 		33F257391D61B1F900A4ECC0 /* libQuickPos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libQuickPos.a; sourceTree = "<group>"; };
@@ -1101,14 +1109,6 @@
 		591BC2541AEDFE6A0037199A /* WithdrawalOfRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WithdrawalOfRecordViewController.xib; sourceTree = "<group>"; };
 		591BC2551AEDFE6A0037199A /* WithdrawalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawalViewController.h; sourceTree = "<group>"; };
 		591BC2561AEDFE6A0037199A /* WithdrawalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawalViewController.m; sourceTree = "<group>"; };
-		591BC2581AEDFE6A0037199A /* AddCardDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCardDetailInfoViewController.h; sourceTree = "<group>"; };
-		591BC2591AEDFE6A0037199A /* AddCardDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCardDetailInfoViewController.m; sourceTree = "<group>"; };
-		591BC25A1AEDFE6A0037199A /* BankCardBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardBindViewController.h; sourceTree = "<group>"; };
-		591BC25B1AEDFE6A0037199A /* BankCardBindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardBindViewController.m; sourceTree = "<group>"; };
-		591BC25C1AEDFE6A0037199A /* MyBankListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBankListViewController.h; sourceTree = "<group>"; };
-		591BC25D1AEDFE6A0037199A /* MyBankListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBankListViewController.m; sourceTree = "<group>"; };
-		591BC25E1AEDFE6A0037199A /* QuickPayOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickPayOrderViewController.h; sourceTree = "<group>"; };
-		591BC25F1AEDFE6A0037199A /* QuickPayOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickPayOrderViewController.m; sourceTree = "<group>"; };
 		591BC2611AEDFE6A0037199A /* ChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseView.h; sourceTree = "<group>"; };
 		591BC2621AEDFE6A0037199A /* ChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseView.m; sourceTree = "<group>"; };
 		591BC2631AEDFE6A0037199A /* ChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseView.xib; sourceTree = "<group>"; };
@@ -2523,6 +2523,27 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
+		339DA4051D9920FD001BA189 /* YSTQuickPay */ = {
+			isa = PBXGroup;
+			children = (
+				339DA4061D9920FD001BA189 /* AddCardDetailInfoViewController.h */,
+				339DA4071D9920FD001BA189 /* AddCardDetailInfoViewController.m */,
+				339DA4081D9920FD001BA189 /* BankCardBindViewController.h */,
+				339DA4091D9920FD001BA189 /* BankCardBindViewController.m */,
+				339DA40A1D9920FD001BA189 /* CheckCardInfoViewController.h */,
+				339DA40B1D9920FD001BA189 /* CheckCardInfoViewController.m */,
+				339DA40C1D9920FD001BA189 /* CreditCardBindViewController.h */,
+				339DA40D1D9920FD001BA189 /* CreditCardBindViewController.m */,
+				339DA40E1D9920FD001BA189 /* CreditQuickPayOrderViewController.h */,
+				339DA40F1D9920FD001BA189 /* CreditQuickPayOrderViewController.m */,
+				339DA4101D9920FD001BA189 /* MyBankListViewController.h */,
+				339DA4111D9920FD001BA189 /* MyBankListViewController.m */,
+				339DA4121D9920FD001BA189 /* QuickPayOrderViewController.h */,
+				339DA4131D9920FD001BA189 /* QuickPayOrderViewController.m */,
+			);
+			path = YSTQuickPay;
+			sourceTree = "<group>";
+		};
 		33B690BB1D5C200800F1AC08 /* MyRunSubWithdraw */ = {
 			isa = PBXGroup;
 			children = (
@@ -2940,6 +2961,7 @@
 		591BC1E21AEDFE690037199A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				339DA4051D9920FD001BA189 /* YSTQuickPay */,
 				33FDAE581D66F13D00AACC61 /* CreditCardRepayment */,
 				BF3C8D3D1D581FD30092AC19 /* ZFBPay */,
 				334EA12E1D4AF21200108B33 /* SDJQuickPay */,
@@ -2953,7 +2975,6 @@
 				591BC1FE1AEDFE690037199A /* Login */,
 				591BC20A1AEDFE6A0037199A /* MainViewController */,
 				591BC20F1AEDFE6A0037199A /* MyAccount */,
-				591BC2571AEDFE6A0037199A /* QucikPay */,
 				591BC2601AEDFE6A0037199A /* Setup */,
 				591BC2731AEDFE6A0037199A /* Shop */,
 				591BC27C1AEDFE6A0037199A /* Trade */,
@@ -3043,27 +3064,6 @@
 				325CBCEF1AEE2C0F00D924D5 /* MyCreditCardMachine */,
 			);
 			path = MyAccount;
-			sourceTree = "<group>";
-		};
-		591BC2571AEDFE6A0037199A /* QucikPay */ = {
-			isa = PBXGroup;
-			children = (
-				591BC25C1AEDFE6A0037199A /* MyBankListViewController.h */,
-				591BC25D1AEDFE6A0037199A /* MyBankListViewController.m */,
-				591BC2581AEDFE6A0037199A /* AddCardDetailInfoViewController.h */,
-				591BC2591AEDFE6A0037199A /* AddCardDetailInfoViewController.m */,
-				33EEE7861D19531A00AEE080 /* CheckCardInfoViewController.h */,
-				33EEE7871D19531A00AEE080 /* CheckCardInfoViewController.m */,
-				591BC25A1AEDFE6A0037199A /* BankCardBindViewController.h */,
-				591BC25B1AEDFE6A0037199A /* BankCardBindViewController.m */,
-				333F5AED1D203704007DDA09 /* CreditCardBindViewController.h */,
-				333F5AEE1D203704007DDA09 /* CreditCardBindViewController.m */,
-				591BC25E1AEDFE6A0037199A /* QuickPayOrderViewController.h */,
-				591BC25F1AEDFE6A0037199A /* QuickPayOrderViewController.m */,
-				333F5AEA1D201937007DDA09 /* CreditQuickPayOrderViewController.h */,
-				333F5AEB1D201937007DDA09 /* CreditQuickPayOrderViewController.m */,
-			);
-			path = QucikPay;
 			sourceTree = "<group>";
 		};
 		591BC2601AEDFE6A0037199A /* Setup */ = {
@@ -4949,6 +4949,7 @@
 				BF3C8F6D1D5834A50092AC19 /* LBXScanResult.m in Sources */,
 				591BC38B1AEDFE6A0037199A /* TransactionRecordsTableViewCell.m in Sources */,
 				D58B78AD1BCFA06100A3C1ED /* HelpViewController.m in Sources */,
+				339DA4141D9920FD001BA189 /* AddCardDetailInfoViewController.m in Sources */,
 				BF3C8FF11D5834A50092AC19 /* ZXAI013x0xDecoder.m in Sources */,
 				59D460341AF20C5500BA60C3 /* WebViewController.m in Sources */,
 				BF3C904A1D5834A50092AC19 /* ZXQRCodeFinderPatternInfo.m in Sources */,
@@ -5029,6 +5030,7 @@
 				333D53511D4EF2DE00449D5E /* SDJBankViewController.m in Sources */,
 				591BC0F61AEDFE330037199A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				591BC3651AEDFE6A0037199A /* SigninViewController.m in Sources */,
+				339DA4171D9920FD001BA189 /* CreditCardBindViewController.m in Sources */,
 				BF3C8F881D5834A50092AC19 /* ZXAddressBookAUResultParser.m in Sources */,
 				BF3C8F631D5834A50092AC19 /* UIActionSheet+LBXAlertAction.m in Sources */,
 				BF3C903B1D5834A50092AC19 /* ZXQRCodeBitMatrixParser.m in Sources */,
@@ -5074,7 +5076,6 @@
 				591BC3831AEDFE6A0037199A /* PerfectInformationViewController.m in Sources */,
 				325CBCE01AEE1BC400D924D5 /* ITronAudioVpos.mm in Sources */,
 				3308D3C01D3F654000AD825C /* ObtainScanViewController.m in Sources */,
-				33EEE7881D19531A00AEE080 /* CheckCardInfoViewController.m in Sources */,
 				BF3C900A1D5834A50092AC19 /* ZXCode128Reader.m in Sources */,
 				591BC0B01AEDFE320037199A /* IQTextView.m in Sources */,
 				BF3C90411D5834A50092AC19 /* ZXQRCodeErrorCorrectionLevel.m in Sources */,
@@ -5151,7 +5152,6 @@
 				BF3C90401D5834A50092AC19 /* ZXQRCodeDecoderMetaData.m in Sources */,
 				BF3C8FAC1D5834A50092AC19 /* ZXCGImageLuminanceSource.m in Sources */,
 				BF3C8FF01D5834A50092AC19 /* ZXAI013x0x1xDecoder.m in Sources */,
-				591BC3921AEDFE6A0037199A /* BankCardBindViewController.m in Sources */,
 				3308D3C31D4078F600AD825C /* DisplayScanViewController.m in Sources */,
 				BF3C903F1D5834A50092AC19 /* ZXQRCodeDecoder.m in Sources */,
 				BF3C90261D5834A50092AC19 /* ZXPDF417BarcodeValue.m in Sources */,
@@ -5252,9 +5252,9 @@
 				BF3C900D1D5834A50092AC19 /* ZXCode39Writer.m in Sources */,
 				591BC2A21AEDFE6A0037199A /* UserBaseData.m in Sources */,
 				BF3C8F8C1D5834A50092AC19 /* ZXBookmarkDoCoMoResultParser.m in Sources */,
+				339DA41A1D9920FD001BA189 /* QuickPayOrderViewController.m in Sources */,
 				591BC3971AEDFE6A0037199A /* ClearUpView.m in Sources */,
 				591BC29D1AEDFE6A0037199A /* BankCardData.m in Sources */,
-				333F5AEC1D201937007DDA09 /* CreditQuickPayOrderViewController.m in Sources */,
 				591BC3851AEDFE6A0037199A /* SpendingViewController.m in Sources */,
 				BF3C900B1D5834A50092AC19 /* ZXCode128Writer.m in Sources */,
 				AEDD09D31C3CF69D004CE3F0 /* GKImageCropViewController.m in Sources */,
@@ -5269,7 +5269,6 @@
 				333CC0541D2D340E00023EA3 /* OriginQueryViewController.m in Sources */,
 				591BC3531AEDFE6A0037199A /* DateUtil.m in Sources */,
 				BF3C8FFC1D5834A50092AC19 /* ZXRSSExpandedFieldParser.m in Sources */,
-				591BC3931AEDFE6A0037199A /* MyBankListViewController.m in Sources */,
 				BF3C8F811D5834A50092AC19 /* ZXAztecSimpleToken.m in Sources */,
 				D56152141BDF6EA100DAAADC /* MJRefreshBackStateFooter.m in Sources */,
 				BF3C8FEC1D5834A50092AC19 /* ZXAI013103decoder.m in Sources */,
@@ -5293,6 +5292,7 @@
 				325CBCDD1AEE1BC400D924D5 /* CardInfoModel.m in Sources */,
 				BF3C8FCF1D5834A50092AC19 /* ZXResultPoint.m in Sources */,
 				BF3C8FBD1D5834A50092AC19 /* ZXDetectorResult.m in Sources */,
+				339DA4191D9920FD001BA189 /* MyBankListViewController.m in Sources */,
 				591BC0F31AEDFE330037199A /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				591BC3B01AEDFE6A0037199A /* XYSwitch.m in Sources */,
 				BF3C90031D5834A50092AC19 /* ZXRSS14Reader.m in Sources */,
@@ -5314,7 +5314,6 @@
 				33B690C51D5C666700F1AC08 /* MyRunSubTakeCashViewController.m in Sources */,
 				591BC2A91AEDFE6A0037199A /* DDXMLElement.m in Sources */,
 				AEDD09D51C3CF69D004CE3F0 /* GKResizeableCropOverlayView.m in Sources */,
-				591BC3941AEDFE6A0037199A /* QuickPayOrderViewController.m in Sources */,
 				BF3C90511D5834A50092AC19 /* ZXMultiFinderPatternFinder.m in Sources */,
 				591BC2A31AEDFE6A0037199A /* UserInfo.m in Sources */,
 				D56152171BDF6EA100DAAADC /* MJRefreshStateHeader.m in Sources */,
@@ -5364,16 +5363,17 @@
 				325CBCE51AEE1BC400D924D5 /* ME11Controller.m in Sources */,
 				591BC37B1AEDFE6A0037199A /* MessageBarManager.m in Sources */,
 				BF3C8F841D5834A50092AC19 /* ZXAztecDetectorResult.m in Sources */,
+				339DA4151D9920FD001BA189 /* BankCardBindViewController.m in Sources */,
 				591BC37E1AEDFE6A0037199A /* MyAccountTableViewCell.m in Sources */,
-				333F5AEF1D203704007DDA09 /* CreditCardBindViewController.m in Sources */,
 				D561520B1BDF6EA100DAAADC /* MJRefreshBackFooter.m in Sources */,
 				BF3C90201D5834A50092AC19 /* ZXUPCEANWriter.m in Sources */,
 				BF3C90171D5834A50092AC19 /* ZXMultiFormatUPCEANReader.m in Sources */,
-				591BC3911AEDFE6A0037199A /* AddCardDetailInfoViewController.m in Sources */,
 				BF3C8FC81D5834A50092AC19 /* ZXDimension.m in Sources */,
 				AE8EA4391C5F698E00823760 /* FoodQueryViewController.m in Sources */,
 				591BC0B41AEDFE320037199A /* UIView+Hierarchy.m in Sources */,
 				591BC0B21AEDFE320037199A /* IQToolbar.m in Sources */,
+				339DA4161D9920FD001BA189 /* CheckCardInfoViewController.m in Sources */,
+				339DA4181D9920FD001BA189 /* CreditQuickPayOrderViewController.m in Sources */,
 				591BC35C1AEDFE6A0037199A /* NoteViewController.m in Sources */,
 				BF3C902D1D5834A50092AC19 /* ZXPDF417DetectionResultRowIndicatorColumn.m in Sources */,
 				BF3C900C1D5834A50092AC19 /* ZXCode39Reader.m in Sources */,

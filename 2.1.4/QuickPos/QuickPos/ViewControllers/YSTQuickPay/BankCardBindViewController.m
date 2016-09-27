@@ -53,37 +53,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    NumberKeyBoard *numKeyBoard = [[NumberKeyBoard alloc]init];
-//    [numKeyBoard setTextView:self.cardNum];
-    
-//    NumberKeyBoard *numKeyBoard2 = [[NumberKeyBoard alloc]init];
-//    [numKeyBoard2 setTextView:self.icCard];
-    
-//    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-//    self.cardNum.text = [user objectForKey:@"cardNumTest"];
-//    self.icCard.text = [user objectForKey:@"icCardTest"];
-//    self.name.text = [user objectForKey:@"nameTest"];
-//    self.phone.text = [user objectForKey:@"phoneTest"];
+
 
     self.cardNum.text = self.bankCard;
     NSLog(@"%@",self.cardNum.text);
     self.nextBtn.layer.cornerRadius = 5;
     
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"yyyyMMdd"];
-//    NSString *currentDate = [dateFormatter stringFromDate:[NSDate date]];
-//    NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
-//    [dateFormatter1 setDateFormat:@"HHmmss"];
-//    NSString *currenttime = [dateFormatter1 stringFromDate:[NSDate date]];
-//    
-//    orderTime = [[NSString alloc]initWithFormat:@"%@%@",currentDate,currenttime];
-//    NSLog(@"%@",orderTime);
+
     
     
     request = [[Request alloc]initWithDelegate:self];
-//    self.orderIds = self.orderData.orderId;
-//    self.orderId = [NSString stringWithFormat:@"%@%i%i",self.orderIds,0,0];
+
     
     
     NSLog(@"%@  %@  %@",self.orderIds,self.orderData.orderId,self.orderId);
@@ -137,7 +117,7 @@
             quickPayOrderVc.customerName = self.name.text;
             quickPayOrderVc.cardType = self.cardType;
             quickPayOrderVc.customerId = self.customerId;
-            
+            quickPayOrderVc.bankMobileNo = self.phone.text;
             NSLog(@"%@  %@  %@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.newbindid,quickPayOrderVc.customerName,quickPayOrderVc.cardType,quickPayOrderVc.customerId);
             
             [self.navigationController pushViewController:quickPayOrderVc animated:YES];

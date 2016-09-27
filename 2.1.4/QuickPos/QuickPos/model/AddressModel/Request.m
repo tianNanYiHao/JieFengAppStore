@@ -1047,7 +1047,8 @@
 
 
 //快捷支付--支付接口
-- (void)QuickBankCardConfirmCardNo:(NSString *)cardNo password:(NSString *)password newbindid:(NSString *)newbindid transDate:(NSString *)transDate transTime:(NSString *)transTime orderTime:(NSString *)orderTime customerId:(NSString *)customerId customerName:(NSString *)customerName cardType:(NSString *)cardType bankName:(NSString *)bankName orderAmt:(NSString *)orderAmt orderId:(NSString *)orderId PinBlk:(NSString *)PinBlk
+- (void)QuickBankCardConfirmCardNo:(NSString *)cardNo mobileNo:(NSString *)mobileNo password:(NSString *)password newbindid:(NSString *)newbindid transDate:(NSString *)transDate transTime:(NSString *)transTime orderTime:(NSString *)orderTime customerId:(NSString *)customerId customerName:(NSString *)customerName cardType:(NSString *)cardType bankName:(NSString *)bankName orderAmt:(NSString *)orderAmt orderId:(NSString *)orderId PinBlk:(NSString *)PinBlk
+
 {
     
     if ([password length] != 256) {
@@ -1065,7 +1066,7 @@
     NSString *OrderTime = [[NSString alloc]initWithFormat:@"%@%@",currentDate,currenttime];
     
     NSDictionary *dict = @{@"application":MONILEMAC_QUICKBANKCARDCONFIRM,
-                           @"mobileNo": [AppDelegate getUserBaseData].mobileNo,
+                           @"mobileNo": mobileNo,
                            @"token": [AppDelegate getUserBaseData].token,
                            @"cardNo":cardNo,
                            @"password":password,
@@ -1093,10 +1094,10 @@
 
 //获取快捷支付短信验证码
 
-- (void)SendDynamicCode:(NSString *)newbindid
+- (void)SendDynamicCode:(NSString *)newbindid mobileNo:(NSString *)mobileNo
 {
     NSDictionary *dict = @{@"application": MONILEMAC_SENDDYNAMICCODE,
-                           @"mobileNo": [AppDelegate getUserBaseData].mobileNo,
+                           @"mobileNo":mobileNo,
                            @"token": [AppDelegate getUserBaseData].token,
                            @"newbindid": newbindid,
                     
@@ -1106,10 +1107,10 @@
 }
 
 //验证快捷支付短信验证码
-- (void)CheckDynamicCode:(NSString *)newbindid dynameic:(NSString *)dynameic
+- (void)CheckDynamicCode:(NSString *)newbindid mobileNo:(NSString *)mobileNo dynameic:(NSString *)dynameic
 {
     NSDictionary *dict = @{@"application": MONILEMAC_CHECKDYNAMICCODE,
-                           @"mobileNo": [AppDelegate getUserBaseData].mobileNo,
+                           @"mobileNo": mobileNo,
                            @"token": [AppDelegate getUserBaseData].token,
                            @"newbindid": newbindid,
                            @"dynameic":dynameic,

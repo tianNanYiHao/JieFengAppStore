@@ -1865,7 +1865,6 @@
                              }
                        };
     NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};
-    
     if (type == 01) {
          [self trainRequestWithDict:dict requestType:REQUSET_XZALIPAY0001 withUrl:@"ALIPAY0001.json"];
     }else if (type == 02){
@@ -1893,7 +1892,17 @@
     }
 
 }
-
+//5.1 锁票成功 发送数据到捷丰后台
+-(void)trainTicketPayToJiefengWithorderId:(NSString*)orderID orderNo:(NSString*)orderNO
+{
+    NSDictionary *dict = @{@"application": MONILEMAC_SZHCPTicketPay,
+                           @"orderId": orderID,
+                           @"orderNo": orderNO,
+                           @"token": @"0000",
+                           };
+    [self requestWithDict:dict requestType:REQUEST_USERLOGIN];
+    
+}
 
 
 

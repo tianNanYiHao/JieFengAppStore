@@ -121,8 +121,6 @@
             NSLog(@"%@  %@  %@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.newbindid,quickPayOrderVc.customerName,quickPayOrderVc.cardType,quickPayOrderVc.customerId);
             
             [self.navigationController pushViewController:quickPayOrderVc animated:YES];
-            
-            
         }else
         {
             [MBProgressHUD showHUDAddedTo:self.view WithString:@"respDesc"];
@@ -130,11 +128,8 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
     }
-    
-    
-    [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
-    
-    
+//    [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

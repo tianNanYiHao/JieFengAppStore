@@ -168,7 +168,7 @@
             
             
         }else if (type == REQUSET_CHECKDYNAMICCODE){
-            
+             if ([[[dict objectForKey:@"data"]objectForKey:@"errorcode"]isEqualToString:@"0000"]) {
             if (iOS8) {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:L(@"PleaseEnterTradingPassword") preferredStyle:UIAlertControllerStyleAlert];
                 [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
@@ -212,10 +212,10 @@
                 alert.tag = AccountPayType;
                 [alert show];
             }
-            
-            //            }
-            
-            
+    }else{
+                 [Common showMsgBox:nil msg:@"短信验证码校验失败." parentCtrl:self];
+                 [self performSelector:@selector(gobackRootCtrl) withObject:nil afterDelay:2.0];
+             }
         }else if (type == REQUSET_QUICKBANKCARDCONFIRM){
             if ([[[dict objectForKey:@"data"]objectForKey:@"respCode"] isEqualToString:@"0000"]) {
                 [MBProgressHUD hideHUDForView:self.view animated:YES];

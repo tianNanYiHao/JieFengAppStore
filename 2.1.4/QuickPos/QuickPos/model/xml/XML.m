@@ -195,7 +195,7 @@
 
 - (NSString*)returnStrPhone:(NSDictionary*)dict string:(NSString*)strPhoneOrigin{
     
-    NSArray *searcgArr = @[@"QuickBankAuthent",@"QuickBankCardConfirm",@"SendDynamicCode",@"CheckDynamicCode",@"QuickBankCardComfirmSdjSms",@"QuickBankCardPaySdj",@"QuickBankCardPaySdjSms",@"QuickBankCardComfirmSdj"];
+    NSArray *searcgArr = @[@"QuickBankAuthent",@"QuickBankCardConfirm",@"SendDynamicCode",@"CheckDynamicCode",@"QuickBankCardComfirmSdjSms",@"QuickBankCardPaySdj",@"QuickBankCardPaySdjSms",@"QuickBankCardComfirmSdj"@"QuickBankCardConfirm"];
     
     NSString *str = [dict objectForKey:@"application"];
     NSString *strphone = [[NSString alloc] init];

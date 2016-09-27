@@ -105,6 +105,10 @@
         strPhone = @"";
     }
     
+    if ([[dic objectForKey:@"application"] isEqualToString:@"QuickBankCardConfirm"]) {
+        strPhone = [AppDelegate getUserBaseData].mobileNo;
+    }
+    
    strPhone = [self returnStrPhone:dic string:strPhone];
     DDXMLNode *nPhone = [DDXMLNode attributeWithName:@"phone" stringValue:strPhone];
     [root addAttribute:nPhone];
@@ -195,7 +199,7 @@
 
 - (NSString*)returnStrPhone:(NSDictionary*)dict string:(NSString*)strPhoneOrigin{
     
-    NSArray *searcgArr = @[@"QuickBankAuthent",@"QuickBankCardConfirm",@"SendDynamicCode",@"CheckDynamicCode",@"QuickBankCardComfirmSdjSms",@"QuickBankCardPaySdj",@"QuickBankCardPaySdjSms",@"QuickBankCardComfirmSdj"@"QuickBankCardConfirm"];
+    NSArray *searcgArr = @[@"QuickBankAuthent",@"QuickBankCardConfirm",@"SendDynamicCode",@"CheckDynamicCode",@"QuickBankCardComfirmSdjSms",@"QuickBankCardPaySdj",@"QuickBankCardPaySdjSms",@"QuickBankCardComfirmSdj",@"QuickBankCardConfirm",@"UnbindQuickBankCard"];
     
     NSString *str = [dict objectForKey:@"application"];
     NSString *strphone = [[NSString alloc] init];

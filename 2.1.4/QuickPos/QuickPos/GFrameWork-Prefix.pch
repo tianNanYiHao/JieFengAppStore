@@ -40,8 +40,9 @@
 #define defDeivecType                        @"defDeviceType"
 #define UserPhone                            @"phoneNumber"
 #define BankCode                             @"bankCode"
-#define ZFBMERCHANTCODE @"999999998888888"                  //支付宝生产商户号
-#define ZFBKEY @"4E64B423C2E449A9B234C083256D97CA"  //支付宝生产秘钥
+
+#define ZFBMERCHANTCODE @"939390010000198"                  //支付宝生产商户号
+#define ZFBKEY @"09330DD00D76D6C3FAE6DE6012296A56"  //支付宝生产秘钥
 
 // 版本识别标识
 #define APPUSER             @"bmjfsh"
@@ -128,9 +129,9 @@
     #import "PSTAlertController.h"
     #import "UMSocial.h"
     #import "JPUSHService.h"
-    #import "PFYInterface.h"
-    #import "MyAlertView.h"
-    #import "PFYProgressHUD.h"
+//    #import "PFYInterface.h"
+//    #import "MyAlertView.h"
+//    #import "PFYProgressHUD.h"
 #endif
 
 //#import "CommonMacro.h"

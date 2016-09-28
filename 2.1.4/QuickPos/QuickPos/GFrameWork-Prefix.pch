@@ -138,6 +138,7 @@
     #import "PFYInterface.h"
     #import "MyAlertView.h"
     #import "PFYProgressHUD.h"
+    #import "JSONKit.h"
 #endif
 
 //#import "CommonMacro.h"

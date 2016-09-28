@@ -178,10 +178,7 @@
 }
 
 +(void)getYSTZFBimage:(UIView*)view requestDataBlock:(YSTZFBEWMBlock)requestBlock{
-    [Common linkYSTSDK];
-    PFYProgressHUD *pfyViewHUD = [[PFYProgressHUD alloc] initViewWithFrame:view.frame];
-    [view addSubview:pfyViewHUD];
-    
+    [Common linkYSTSDK];    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMddHHmmss"];
     NSString *transDate = [formatter stringFromDate:[NSDate date]];
@@ -194,7 +191,6 @@
     NSString *key = ZFBKEY;
     NSString *reqreserved = @"123456789";
     [PFYInterface connectAlipayCreateQRcodeWithMerchantcode:merchantcode subject:subject money:money backurl:backurl transdate:transdate key:key reqreserved:nil standbyCallback:^(NSDictionary *resultData) {
-        [pfyViewHUD PFYProgressHUDRemoveFromSuperview];
         if (resultData == nil) {
             [MyAlertView myAlertView:@"请检查你的网络连接"];
             return;

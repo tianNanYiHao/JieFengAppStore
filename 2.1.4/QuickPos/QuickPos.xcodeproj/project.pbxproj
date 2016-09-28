@@ -607,8 +607,8 @@
 		BF581EBB1D4EF6790073A8F6 /* ComplaintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF581EB91D4EF6790073A8F6 /* ComplaintViewController.xib */; };
 		BF581EBF1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF581EBD1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m */; };
 		BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF581EBE1D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib */; };
-		BF58601D1D9B5B1B00777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58601C1D9B5B1B00777D7D /* PFYSDK.a */; };
 		BF5860261D9BA2D200777D7D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860251D9BA2D200777D7D /* Foundation+Log.m */; };
+		BF58602E1D9BA90B00777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58602D1D9BA90B00777D7D /* PFYSDK.a */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
 		BFC042171D70120A0090CAFC /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F91D70120A0090CAFC /* AFSecurityPolicy.m */; };
@@ -1850,11 +1850,12 @@
 		BF581EBC1D4F2E3E0073A8F6 /* ManualSearchSYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManualSearchSYViewController.h; sourceTree = "<group>"; };
 		BF581EBD1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManualSearchSYViewController.m; sourceTree = "<group>"; };
 		BF581EBE1D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManualSearchSYViewController.xib; sourceTree = "<group>"; };
-		BF5860171D9B58EA00777D7D /* MyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
-		BF5860181D9B58EA00777D7D /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
-		BF5860191D9B58EA00777D7D /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
-		BF58601C1D9B5B1B00777D7D /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
 		BF5860251D9BA2D200777D7D /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		BF5860291D9BA90B00777D7D /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		BF58602A1D9BA90B00777D7D /* MyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
+		BF58602B1D9BA90B00777D7D /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
+		BF58602C1D9BA90B00777D7D /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
+		BF58602D1D9BA90B00777D7D /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFC041F31D70120A0090CAFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -2001,7 +2002,7 @@
 				C36E38701ABA5FF20004BE78 /* SystemConfiguration.framework in Frameworks */,
 				C3696F0B1AC11378003B04B4 /* CoreTelephony.framework in Frameworks */,
 				339B9A5E1D7D68A6004D0E1B /* ShareSDKConnector.framework in Frameworks */,
-				BF58601D1D9B5B1B00777D7D /* PFYSDK.a in Frameworks */,
+				BF58602E1D9BA90B00777D7D /* PFYSDK.a in Frameworks */,
 				BF4EA7791D7D3F7800E8B95D /* CoreFoundation.framework in Frameworks */,
 				D599F21F1BCCB7CE006D5F6B /* CFNetwork.framework in Frameworks */,
 				AEE5F6361C4E1C17006FAF60 /* libz.tbd in Frameworks */,
@@ -2587,8 +2588,8 @@
 		591BBFC21AEDFE320037199A /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				BF5860271D9BA90B00777D7D /* PFYSDK */,
 				BF5860241D9BA2CC00777D7D /* LFLOG */,
-				BF5860151D9B58EA00777D7D /* PFYSDK */,
 				339B9A1C1D7D68A6004D0E1B /* ShareSDK */,
 				BF4EA7741D7D3D4800E8B95D /* JpushSDK */,
 				BF3C8D431D5834A40092AC19 /* LBXAlertAction */,
@@ -4456,31 +4457,32 @@
 			path = JpushSDK;
 			sourceTree = "<group>";
 		};
-		BF5860151D9B58EA00777D7D /* PFYSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BF5860161D9B58EA00777D7D /* include */,
-			);
-			path = PFYSDK;
-			sourceTree = "<group>";
-		};
-		BF5860161D9B58EA00777D7D /* include */ = {
-			isa = PBXGroup;
-			children = (
-				BF58601C1D9B5B1B00777D7D /* PFYSDK.a */,
-				BF5860171D9B58EA00777D7D /* MyAlertView.h */,
-				BF5860181D9B58EA00777D7D /* PFYInterface.h */,
-				BF5860191D9B58EA00777D7D /* PFYProgressHUD.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
 		BF5860241D9BA2CC00777D7D /* LFLOG */ = {
 			isa = PBXGroup;
 			children = (
 				BF5860251D9BA2D200777D7D /* Foundation+Log.m */,
 			);
 			path = LFLOG;
+			sourceTree = "<group>";
+		};
+		BF5860271D9BA90B00777D7D /* PFYSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BF5860281D9BA90B00777D7D /* include */,
+				BF58602D1D9BA90B00777D7D /* PFYSDK.a */,
+			);
+			path = PFYSDK;
+			sourceTree = "<group>";
+		};
+		BF5860281D9BA90B00777D7D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				BF5860291D9BA90B00777D7D /* JSONKit.h */,
+				BF58602A1D9BA90B00777D7D /* MyAlertView.h */,
+				BF58602B1D9BA90B00777D7D /* PFYInterface.h */,
+				BF58602C1D9BA90B00777D7D /* PFYProgressHUD.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		BFC041F21D70120A0090CAFC /* AFNetworking */ = {
@@ -5625,6 +5627,7 @@
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/YiXinSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK/include",
+					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -5687,6 +5690,7 @@
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/YiXinSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK/include",
+					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";

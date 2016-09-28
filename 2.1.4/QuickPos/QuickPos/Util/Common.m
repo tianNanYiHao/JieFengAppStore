@@ -177,38 +177,5 @@
     
 }
 
-+(void)commectYSTZFBSDK view:(){
-    PFYProgressHUD *pfyViewHUD = [[PFYProgressHUD alloc] initViewWithFrame:self.view.frame];
-    [self.view addSubview:pfyViewHUD];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyyMMddHHmmss"];
-    NSString *transDate = [formatter stringFromDate:[NSDate date]];
-    
-    NSString *merchorder_no = [NSString stringWithFormat:@"%@%06d", transDate, arc4random()%1000000];
-    NSString *orderinfo = @"1级短剑";
-    NSString *merchantcode = YINHANGMERCHANTCODE;
-    NSString *backurl = @"";
-    NSString *money = @"0.01";
-    NSString *transdate = transDate;
-    NSString *key = YINHANGKEY;
-    NSString *reqreserved = @"123456789";
-    [PFYInterface connectSDKWithMerchorder_no:merchorder_no orderinfo:orderinfo merchantcode:merchantcode backurl:backurl money:money transdate:transdate key:key reqreserved:reqreserved standbyCallback:^(NSData *resultData) {
-        [pfyViewHUD PFYProgressHUDRemoveFromSuperview];
-        if (resultData == nil) {
-            [MyAlertView myAlertView:@"请检查你的网络连接"];
-            return;
-        }
-        NSMutableString *str = [[NSMutableString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
-        NSLog(@"%@", str);
-        //        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:resultData options:NSJSONReadingMutableLeaves error:nil];
-        //        NSLog(@"%@", dict);
-    }];
-
-}
-
-
-
-
 
 @end

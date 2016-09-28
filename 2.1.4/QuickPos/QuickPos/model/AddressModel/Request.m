@@ -1344,7 +1344,6 @@
             NSDictionary *dic = @{@"respCode": @"1001", @"respDesc": error.localizedDescription};
             [self.delegate responseWithDict:dic requestType:type];
         }
-        
     }];
     [sessionTask resume];
     

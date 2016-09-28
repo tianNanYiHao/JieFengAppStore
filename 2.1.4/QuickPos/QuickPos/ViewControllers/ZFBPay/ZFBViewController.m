@@ -54,7 +54,7 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"二维码获取中..."];
     //银视通获取二维码
-    [Common getYSTZFBimage:self.view requestDataBlock:^(id requestdate) {
+    [Common getYSTZFBimage:self.view money:_AmtNO requestDataBlock:^(id requestdate) {
         NSData *data = (NSData*)requestdate;
         NSMutableString *str = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"%@", str);
@@ -65,7 +65,7 @@
             NSString* qrcode = [dict objectForKey:@"qrcode"];
             [Common erweima:qrcode imageView:_ewmImageViw];
             NSString *merchorder_no = [dict objectForKey:@"merchorder_no"];
-            //            [self alipayOrderStateSelect:merchorder_no];
+//         self alipayOrderStateSelect:merchorder_no];
             merchorder_No = merchorder_no;
             //下单
             dispatch_async(dispatch_get_main_queue(), ^{

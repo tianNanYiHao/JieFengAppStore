@@ -44,6 +44,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *PaymentPassword;//支付密码
 
+@property (weak, nonatomic) IBOutlet UILabel *VerificationCode;//验证码label
+
+@property (weak, nonatomic) IBOutlet UIView *SMSView;//验证码view
+@property (weak, nonatomic) IBOutlet UIButton *comfirt;//确认按钮
+
 @property (nonatomic,strong) NSString *orderAmts;
 
 @property (nonatomic,strong) NSString *dynameic;
@@ -73,6 +78,15 @@
     NSLog(@"%@  %@  %@  %@  %@  %@",self.orderId.text,self.transAccount.text,self.transAmt.text,self.transBank.text,self.bankNo.text,self.newbindid);
     
     request = [[Request alloc]initWithDelegate:self];
+    
+    if (self.isJumps) {
+        self.isJumps = NO;
+        self.SMSView.hidden = YES;
+        [self.comfirt setTitle:@"确认支付" forState:UIControlStateNormal];
+    }else
+    {
+        self.SMSView.hidden = NO;
+    }
     
     
 }
@@ -179,9 +193,10 @@
                 UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:L(@"Confirm") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                     if ([(UITextField*)[alert.textFields objectAtIndex:0] text].length == 0) {
                         [Common showMsgBox:nil msg:L(@"PasswordCannotBeEmpty") parentCtrl:self];
-                    }else{//账户支付
-                        hud = [MBProgressHUD showMessag:@"正在交易中，请稍后" toView:[[QuickPosTabBarController getQuickPosTabBarController] view]];
-                        Request *req = [[Request alloc]initWithDelegate:self];
+                    }else{//快捷支付
+                    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在交易,请稍后"];
+//                        [MBProgressHUD showMessag:@"正在交易中，请稍后" toView:[[QuickPosTabBarController getQuickPosTabBarController] view]];
+//                        Request *req = [[Request alloc]initWithDelegate:self];
                         
                         [request QuickBankCardConfirmCardNo:self.cardNums
                                                    mobileNo:self.bankMobileNo

@@ -22,6 +22,7 @@
 @property (nonatomic,strong) NSString *customerName;
 @property (nonatomic,strong) NSString *cardType;
 @property (nonatomic,strong) NSString *bankMobileNo;
+@property (nonatomic,assign) BOOL isJumps;
 
 
 @end

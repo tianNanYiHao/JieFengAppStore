@@ -36,6 +36,7 @@
 @property (nonatomic,strong) NSString *customerName;
 @property (nonatomic,strong) NSString *bankName;
 @property (nonatomic,strong) NSString *bankMobileNo;
+@property (nonatomic,assign) BOOL isJumped;
 
 @end
 
@@ -209,6 +210,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     bankItem = bankData.bankCardArr[indexPath.row];
     bankItem.isBind = YES;
+    self.isJumped = YES;
     if ([self.cardType integerValue] == 0) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
         QuickPayOrderViewController *QuickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"QuickPayOrderViewController"];
@@ -224,8 +226,8 @@
         QuickPayOrderVc.customerName = self.customerName;
         QuickPayOrderVc.cardType = self.cardType;
         QuickPayOrderVc.bankMobileNo = self.bankMobileNo;
+        QuickPayOrderVc.isJumps = YES;
         
-        //    NSLog(@"%@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.customerName,quickPayOrderVc.bankMobileNo);
         
         [self.navigationController pushViewController:QuickPayOrderVc animated:YES];
     }else{
@@ -243,8 +245,9 @@
     CreditQuickPayOrderVc.customerName = self.customerName;
     CreditQuickPayOrderVc.cardType = self.cardType;
     CreditQuickPayOrderVc.bankMobileNo = self.bankMobileNo;
-    
-//    NSLog(@"%@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.customerName,quickPayOrderVc.bankMobileNo);
+    CreditQuickPayOrderVc.isJump = YES;
+    CreditQuickPayOrderVc.isPay = YES;
+
     
     [self.navigationController pushViewController:CreditQuickPayOrderVc animated:YES];
 }

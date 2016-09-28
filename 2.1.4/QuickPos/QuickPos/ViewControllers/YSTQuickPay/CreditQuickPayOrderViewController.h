@@ -25,4 +25,7 @@
 @property (nonatomic,strong) NSString *cardValids;
 @property (nonatomic,strong) NSString *securityCodes;
 @property (nonatomic,strong) NSString *bankMobileNo;//绑定银行的手机号
+@property (nonatomic,assign) BOOL isJump;
+@property (nonatomic,assign) BOOL isPay;
+
 @end

@@ -50,35 +50,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"支付宝收款";
-    
     [self PromptTip];
-    
     payTool = @"01";
     req = [[Request alloc]initWithDelegate:self];
-    
-    [req quickPayCodeState];
-    
     self.AmtTextField.layer.masksToBounds = YES;
     self.AmtTextField.layer.cornerRadius = 1;
     self.AmtTextField.layer.borderColor = [[UIColor greenColor] CGColor];
-    
-    [self.normalButton setOnImage:[UIImage imageNamed:@"xuanzeyuandian"] offImage:[UIImage imageNamed:@"yuandian"]];//设置图片
-    
-    
-    [self.fastButton setOnImage:[UIImage imageNamed:@"xuanzeyuandian"] offImage:[UIImage imageNamed:@"yuandian"]];//设置图片
-    
-    buttonTag = 3;
-    
-    self.fastButton.on=YES;//默认快速提款
     merchantId = @"0001000007";
-    productId = @"0000000000";
-    if(self.fastButton.on){
-        
-        cashType = @"3";
-    }
+    productId = @"0000000003";
+    
+    
+    
+//    [self.normalButton setOnImage:[UIImage imageNamed:@"xuanzeyuandian"] offImage:[UIImage imageNamed:@"yuandian"]];//设置图片
+//    [self.fastButton setOnImage:[UIImage imageNamed:@"xuanzeyuandian"] offImage:[UIImage imageNamed:@"yuandian"]];//设置图片
+//    buttonTag = 3;
+//    self.fastButton.on=YES;//默认快速提款
+//    merchantId = @"0001000007";
+//    productId = @"0000000000";
+//    if(self.fastButton.on){
+//        cashType = @"3";
+//    }
 }
 
-
+//tip
 - (void)PromptTip
 {
     UIView *tip = [Common tipWithStr:@"T+0 手续费=收款金额*0.006+2元" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+270, self.view.frame.size.width, 40)];
@@ -90,106 +84,76 @@
 
 //确认按钮
 - (IBAction)confirmButton:(id)sender {
-    
-   
+    _AmtTextField.keyboardType = UIKeyboardTypeNumberPad;
+    if (_AmtTextField.text.length == 0) {
+        [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
+    }else if([_AmtTextField.text integerValue]<5 ){
+        [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
+    }else if([_AmtTextField.text length]>100000000){
+        [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
+    }
+    else{
         self.AmtNum = [NSString stringWithFormat:@"%d",[self.AmtTextField.text intValue]*100];
         NSLog(@"%@",self.AmtNum);
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在生成二维码.."];
-        [req applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
-                      MerchanId:merchantId
-                      productId:productId
-                       orderAmt:self.AmtNum
-                      orderDesc:self.ZFBBankCardNum
-                    orderRemark:@""
-                   commodityIDs:@""
-                        payTool:payTool
-         ];
-
-    
-}
-
-//T+0提现按钮
-- (IBAction)fantButton:(id)sender {
-    
-    buttonTag = 3;
-    
-    
-    if(buttonTag == 3){
-        
-        NSLog(@"开启");
-        
-        merchantId = @"0001000007";
-        productId = @"0000000000";
-        
-        self.normalButton.on = NO;
-        
-        cashType = @"3";
-        
-        
-    }else {
-        
-        NSLog(@"关闭");
-    }
-    
-    
-    
-}
-
-
-//T+1按钮  (威富通通道)
-- (IBAction)normalButton:(id)sender {
-    
-    buttonTag = 9;
-    
-    if(buttonTag == 9){
-        
-        NSLog(@"开启");
-        
-        merchantId = @"0001000007";
-        productId = @"0000000001";
-        
-        self.fastButton.on = NO;
-        cashType = @"2";
-//        [Common showMsgBox:nil msg:@"暂未开放" parentCtrl:self];
-        
-    }else {
-        
-        NSLog(@"关闭");
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+        ZFBVc.AmtNO = self.AmtNum;
+        ZFBVc.cardNum = self.ZFBBankCardNum;
+        ZFBVc.merchantId = merchantId;
+        ZFBVc.productId = productId;
+        [self.navigationController pushViewController:ZFBVc animated:YES];
     }
 }
 
-
-- (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type
-{
-    if (type == REQUSET_ORDER) {
-        
-        
-        if ([[dict objectForKey:@"respCode"]isEqual:@"0000"]) {
-            self.orderId = [dict objectForKey:@"orderId"];
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            
-            ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-            ZFBVc.orderId = self.orderId;
-            ZFBVc.AmtNO = self.AmtNum;
-            //            ZFBVc.orderId = @"201605014515821";
-            //            ZFBVc.AmtNO = @"1111";
-            
-            ZFBVc.payTway = buttonTag;
-            
-            [self.navigationController pushViewController:ZFBVc animated:YES];
-            
-        }else{
-           [Common showMsgBox:nil msg:dict[@"respDesc"] parentCtrl:self];
-        }
-    }
-    
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-}
+////T+0提现按钮
+//- (IBAction)fantButton:(id)sender {
+//    
+//    buttonTag = 3;
+//    
+//    
+//    if(buttonTag == 3){
+//        
+//        NSLog(@"开启");
+//        
+//        merchantId = @"0001000007";
+//        productId = @"0000000000";
+//        
+//        self.normalButton.on = NO;
+//        
+//        cashType = @"3";
+//        
+//        
+//    }else {
+//        
+//        NSLog(@"关闭");
+//    }
+//    
+//    
+//    
+//}
 
 
-
-
+////T+1按钮  (威富通通道)
+//- (IBAction)normalButton:(id)sender {
+//    
+//    buttonTag = 9;
+//    
+//    if(buttonTag == 9){
+//        
+//        NSLog(@"开启");
+//        
+//        merchantId = @"0001000007";
+//        productId = @"0000000001";
+//        
+//        self.fastButton.on = NO;
+//        cashType = @"2";
+////        [Common showMsgBox:nil msg:@"暂未开放" parentCtrl:self];
+//        
+//    }else {
+//        
+//        NSLog(@"关闭");
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

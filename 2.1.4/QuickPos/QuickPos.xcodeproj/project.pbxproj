@@ -340,7 +340,6 @@
 		BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */; };
 		BF3C8D3C1D581D810092AC19 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */; };
 		BF3C8D411D5820110092AC19 /* ZFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C8D3F1D5820110092AC19 /* ZFBViewController.m */; };
-		BF3C8D421D5820110092AC19 /* ZFBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3C8D401D5820110092AC19 /* ZFBViewController.xib */; };
 		BF3C8F631D5834A50092AC19 /* UIActionSheet+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C8D471D5834A40092AC19 /* UIActionSheet+LBXAlertAction.m */; };
 		BF3C8F641D5834A50092AC19 /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C8D491D5834A40092AC19 /* UIAlertController+supportedInterfaceOrientations.m */; };
 		BF3C8F651D5834A50092AC19 /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C8D4B1D5834A40092AC19 /* UIAlertView+LBXAlertAction.m */; };
@@ -609,6 +608,7 @@
 		BF581EBF1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF581EBD1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m */; };
 		BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF581EBE1D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib */; };
 		BF58601D1D9B5B1B00777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58601C1D9B5B1B00777D7D /* PFYSDK.a */; };
+		BF5860261D9BA2D200777D7D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860251D9BA2D200777D7D /* Foundation+Log.m */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
 		BFC042171D70120A0090CAFC /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F91D70120A0090CAFC /* AFSecurityPolicy.m */; };
@@ -1316,7 +1316,6 @@
 		BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		BF3C8D3E1D5820110092AC19 /* ZFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBViewController.h; sourceTree = "<group>"; };
 		BF3C8D3F1D5820110092AC19 /* ZFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBViewController.m; sourceTree = "<group>"; };
-		BF3C8D401D5820110092AC19 /* ZFBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZFBViewController.xib; sourceTree = "<group>"; };
 		BF3C8D461D5834A40092AC19 /* UIActionSheet+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LBXAlertAction.h"; sourceTree = "<group>"; };
 		BF3C8D471D5834A40092AC19 /* UIActionSheet+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+LBXAlertAction.m"; sourceTree = "<group>"; };
 		BF3C8D481D5834A40092AC19 /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
@@ -1855,6 +1854,7 @@
 		BF5860181D9B58EA00777D7D /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
 		BF5860191D9B58EA00777D7D /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
 		BF58601C1D9B5B1B00777D7D /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
+		BF5860251D9BA2D200777D7D /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFC041F31D70120A0090CAFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -2587,6 +2587,7 @@
 		591BBFC21AEDFE320037199A /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				BF5860241D9BA2CC00777D7D /* LFLOG */,
 				BF5860151D9B58EA00777D7D /* PFYSDK */,
 				339B9A1C1D7D68A6004D0E1B /* ShareSDK */,
 				BF4EA7741D7D3D4800E8B95D /* JpushSDK */,
@@ -3600,7 +3601,6 @@
 				33F257401D62BC6600A4ECC0 /* ZFBBankCardListViewController.m */,
 				BF3C8D3E1D5820110092AC19 /* ZFBViewController.h */,
 				BF3C8D3F1D5820110092AC19 /* ZFBViewController.m */,
-				BF3C8D401D5820110092AC19 /* ZFBViewController.xib */,
 				33F257481D62EFDA00A4ECC0 /* ZFBReceivablesViewController.h */,
 				33F257491D62EFDA00A4ECC0 /* ZFBReceivablesViewController.m */,
 			);
@@ -4475,6 +4475,14 @@
 			path = include;
 			sourceTree = "<group>";
 		};
+		BF5860241D9BA2CC00777D7D /* LFLOG */ = {
+			isa = PBXGroup;
+			children = (
+				BF5860251D9BA2D200777D7D /* Foundation+Log.m */,
+			);
+			path = LFLOG;
+			sourceTree = "<group>";
+		};
 		BFC041F21D70120A0090CAFC /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -4874,7 +4882,6 @@
 				591BC3AC1AEDFE6A0037199A /* YoolinkTestViewController.xib in Resources */,
 				87E058E51C044DBD00C4A4C1 /* Icon-Small@2x.png in Resources */,
 				591BC3961AEDFE6A0037199A /* ChooseView.xib in Resources */,
-				BF3C8D421D5820110092AC19 /* ZFBViewController.xib in Resources */,
 				BF3E10081D49B3D1003F0F89 /* CompaneyDetialController.xib in Resources */,
 				AEE5F61B1C4E199F006FAF60 /* UMSShareListController.xib in Resources */,
 				87E058D91C044DBD00C4A4C1 /* Icon-40@2x.png in Resources */,
@@ -5208,6 +5215,7 @@
 				591BC0C21AEDFE320037199A /* UIView+MLScreenshot.m in Sources */,
 				BF3C8F831D5834A50092AC19 /* ZXAztecToken.m in Sources */,
 				591BC0DF1AEDFE330037199A /* SDWebImageDownloader.m in Sources */,
+				BF5860261D9BA2D200777D7D /* Foundation+Log.m in Sources */,
 				BF3C8F861D5834A50092AC19 /* ZXAztecWriter.m in Sources */,
 				591BC2AA1AEDFE6A0037199A /* DDXMLNode.m in Sources */,
 				BF3C8FFE1D5834A50092AC19 /* ZXBitArrayBuilder.m in Sources */,

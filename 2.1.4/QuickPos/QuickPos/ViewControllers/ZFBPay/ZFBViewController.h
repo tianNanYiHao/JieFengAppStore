@@ -10,12 +10,9 @@
 
 @interface ZFBViewController : UIViewController
 
-@property (nonatomic,strong) NSString *AmtNO;
-
-@property (nonatomic,strong) NSString *orderId;
-@property (nonatomic,assign) NSInteger payTway;
-
-
-
+@property (nonatomic,strong) NSString *AmtNO;  //money
+@property (nonatomic,strong) NSString *cardNum; //银行卡号
+@property (nonatomic,strong) NSString *merchantId;   //商户商家id
+@property (nonatomic,strong) NSString *productId;
 
 @end

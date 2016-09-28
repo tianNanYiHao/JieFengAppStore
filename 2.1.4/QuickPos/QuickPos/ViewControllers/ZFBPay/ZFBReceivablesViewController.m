@@ -58,7 +58,7 @@
     self.AmtTextField.layer.borderColor = [[UIColor greenColor] CGColor];
     merchantId = @"0001000007";
     productId = @"0000000003";
-    
+     _AmtTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
     
 //    [self.normalButton setOnImage:[UIImage imageNamed:@"xuanzeyuandian"] offImage:[UIImage imageNamed:@"yuandian"]];//设置图片
@@ -75,16 +75,16 @@
 //tip
 - (void)PromptTip
 {
-    UIView *tip = [Common tipWithStr:@"T+0 手续费=收款金额*0.006+2元" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+270, self.view.frame.size.width, 40)];
+    UIView *tip = [Common tipWithStr:@"手续费=千分之五+2元" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+270, self.view.frame.size.width, 40)];
     [self.view addSubview:tip];
-    UIView *tip1 = [Common tipWithStr:@"T+1 手续费=收款金额*0.0055" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+300, self.view.frame.size.width, 40)];
-    [self.view addSubview:tip1];
+//    UIView *tip1 = [Common tipWithStr:@"T+1 手续费=收款金额*0.0055" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+300, self.view.frame.size.width, 40)];
+//    [self.view addSubview:tip1];
 
 }
 
 //确认按钮
 - (IBAction)confirmButton:(id)sender {
-    _AmtTextField.keyboardType = UIKeyboardTypeNumberPad;
+   
     if (_AmtTextField.text.length == 0) {
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_AmtTextField.text integerValue]<5 ){
@@ -93,11 +93,10 @@
         [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
     }
     else{
-        self.AmtNum = [NSString stringWithFormat:@"%d",[self.AmtTextField.text intValue]*100];
-        NSLog(@"%@",self.AmtNum);
+        _AmtTextField.text = [NSString stringWithFormat:@"%.2f",[_AmtTextField.text floatValue]];
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-        ZFBVc.AmtNO = self.AmtNum;
+        ZFBVc.AmtNO = _AmtTextField.text;
         ZFBVc.cardNum = self.ZFBBankCardNum;
         ZFBVc.merchantId = merchantId;
         ZFBVc.productId = productId;

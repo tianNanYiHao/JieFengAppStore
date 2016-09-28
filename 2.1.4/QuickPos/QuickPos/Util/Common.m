@@ -177,7 +177,7 @@
     
 }
 
-+(void)getYSTZFBimage:(UIView*)view requestDataBlock:(YSTZFBEWMBlock)requestBlock{
++(void)getYSTZFBimage:(UIView*)view  money:(NSString*)moneY requestDataBlock:(YSTZFBEWMBlock)requestBlock{
     [Common linkYSTSDK];    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMddHHmmss"];
@@ -186,7 +186,7 @@
     NSString *subject = @"上海捷丰网络科技有限公司";
     NSString *merchantcode = ZFBMERCHANTCODE;
     NSString *backurl = ZFBBACKURL;
-    NSString *money = @"0.01";
+    NSString *money = moneY;
     NSString *transdate = transDate;
     NSString *key = ZFBKEY;
     NSString *reqreserved = @"123456789";

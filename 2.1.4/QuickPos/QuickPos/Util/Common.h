@@ -37,5 +37,5 @@ typedef void(^CommonShowBoxcancleBlock)(id cancleBlock);
 
 
 + (UIView*)tipWithStr:(NSString*)str color:(UIColor*)color rect:(CGRect)frame;
-
++(void)getYSTZFBimage:(UIView*)view;
 @end

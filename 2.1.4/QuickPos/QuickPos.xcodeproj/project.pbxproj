@@ -83,6 +83,7 @@
 		33F257411D62BC6600A4ECC0 /* ZFBBankCardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F257401D62BC6600A4ECC0 /* ZFBBankCardListViewController.m */; };
 		33F257441D62C40800A4ECC0 /* AddZFBBankcardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F257431D62C40800A4ECC0 /* AddZFBBankcardViewController.m */; };
 		33F2574A1D62EFDA00A4ECC0 /* ZFBReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F257491D62EFDA00A4ECC0 /* ZFBReceivablesViewController.m */; };
+		33FBC8601D9B6CFE00986D9A /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC85F1D9B6CFE00986D9A /* Common.m */; };
 		33FDAE5F1D66F13D00AACC61 /* AddCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FDAE5A1D66F13D00AACC61 /* AddCreditCardViewController.m */; };
 		33FDAE601D66F13D00AACC61 /* CreditCardPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FDAE5C1D66F13D00AACC61 /* CreditCardPayDetailViewController.m */; };
 		33FDAE611D66F13D00AACC61 /* CreditCardPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FDAE5E1D66F13D00AACC61 /* CreditCardPayViewController.m */; };
@@ -158,7 +159,6 @@
 		591BC34F1AEDFE6A0037199A /* NSJSONSerialization+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC1D41AEDFE690037199A /* NSJSONSerialization+Json.m */; };
 		591BC3501AEDFE6A0037199A /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC1D61AEDFE690037199A /* NSString+URLEncoding.m */; };
 		591BC3511AEDFE6A0037199A /* UIImage+wiRoundedRectImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC1D81AEDFE690037199A /* UIImage+wiRoundedRectImage.m */; };
-		591BC3521AEDFE6A0037199A /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC1DA1AEDFE690037199A /* Common.m */; };
 		591BC3531AEDFE6A0037199A /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC1DC1AEDFE690037199A /* DateUtil.m */; };
 		591BC3541AEDFE6A0037199A /* UIDevice+iOS7AndIphone5.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC1DF1AEDFE690037199A /* UIDevice+iOS7AndIphone5.m */; };
 		591BC3551AEDFE6A0037199A /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BC1E11AEDFE690037199A /* Utils.m */; };
@@ -843,6 +843,8 @@
 		33F257431D62C40800A4ECC0 /* AddZFBBankcardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddZFBBankcardViewController.m; sourceTree = "<group>"; };
 		33F257481D62EFDA00A4ECC0 /* ZFBReceivablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBReceivablesViewController.h; sourceTree = "<group>"; };
 		33F257491D62EFDA00A4ECC0 /* ZFBReceivablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBReceivablesViewController.m; sourceTree = "<group>"; };
+		33FBC85E1D9B6CFE00986D9A /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		33FBC85F1D9B6CFE00986D9A /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		33FDAE591D66F13D00AACC61 /* AddCreditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCreditCardViewController.h; sourceTree = "<group>"; };
 		33FDAE5A1D66F13D00AACC61 /* AddCreditCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCreditCardViewController.m; sourceTree = "<group>"; };
 		33FDAE5B1D66F13D00AACC61 /* CreditCardPayDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardPayDetailViewController.h; sourceTree = "<group>"; };
@@ -994,8 +996,6 @@
 		591BC1D61AEDFE690037199A /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		591BC1D71AEDFE690037199A /* UIImage+wiRoundedRectImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+wiRoundedRectImage.h"; sourceTree = "<group>"; };
 		591BC1D81AEDFE690037199A /* UIImage+wiRoundedRectImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+wiRoundedRectImage.m"; sourceTree = "<group>"; };
-		591BC1D91AEDFE690037199A /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		591BC1DA1AEDFE690037199A /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		591BC1DB1AEDFE690037199A /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
 		591BC1DC1AEDFE690037199A /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		591BC1DE1AEDFE690037199A /* UIDevice+iOS7AndIphone5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+iOS7AndIphone5.h"; sourceTree = "<group>"; };
@@ -2929,10 +2929,10 @@
 		591BC1D11AEDFE690037199A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				33FBC85E1D9B6CFE00986D9A /* Common.h */,
+				33FBC85F1D9B6CFE00986D9A /* Common.m */,
 				591BC5031AEDFFE30037199A /* LocationManager */,
 				591BC1D21AEDFE690037199A /* catogary */,
-				591BC1D91AEDFE690037199A /* Common.h */,
-				591BC1DA1AEDFE690037199A /* Common.m */,
 				591BC1DB1AEDFE690037199A /* DateUtil.h */,
 				591BC1DC1AEDFE690037199A /* DateUtil.m */,
 				591BC1DD1AEDFE690037199A /* UIDevice+iOS7AndIphone5 */,
@@ -5253,7 +5253,6 @@
 				BF3C8FBA1D5834A50092AC19 /* ZXCharacterSetECI.m in Sources */,
 				BF3C8FF41D5834A50092AC19 /* ZXAI01weightDecoder.m in Sources */,
 				BF3C8F9F1D5834A50092AC19 /* ZXTelParsedResult.m in Sources */,
-				591BC3521AEDFE6A0037199A /* Common.m in Sources */,
 				591BC29F1AEDFE6A0037199A /* MallData.m in Sources */,
 				BFC0421F1D70120A0090CAFC /* UIButton+AFNetworking.m in Sources */,
 				BF3C8FEB1D5834A50092AC19 /* ZXAbstractExpandedDecoder.m in Sources */,
@@ -5413,6 +5412,7 @@
 				BF3C903E1D5834A50092AC19 /* ZXQRCodeDecodedBitStreamParser.m in Sources */,
 				BF3C8FCA1D5834A50092AC19 /* ZXErrors.m in Sources */,
 				BF3C8FF91D5834A50092AC19 /* ZXRSSExpandedDecodedInformation.m in Sources */,
+				33FBC8601D9B6CFE00986D9A /* Common.m in Sources */,
 				591BC37F1AEDFE6A0037199A /* MyAccountViewController.m in Sources */,
 				591BC39C1AEDFE6A0037199A /* SetupViewController.m in Sources */,
 				BF3C8FD21D5834A50092AC19 /* ZXDataMatrixDataBlock.m in Sources */,

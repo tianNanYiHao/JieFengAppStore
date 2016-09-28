@@ -176,39 +176,70 @@
     return bsetView;
     
 }
-
-+(void)commectYSTZFBSDK view:(){
-    PFYProgressHUD *pfyViewHUD = [[PFYProgressHUD alloc] initViewWithFrame:self.view.frame];
-    [self.view addSubview:pfyViewHUD];
++(void)getYSTZFBimage:(UIView*)view{
     
+    [Common linkYSTSDK];
+    PFYProgressHUD *pfyViewHUD = [[PFYProgressHUD alloc] initViewWithFrame:view.frame];
+    [view addSubview:pfyViewHUD];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSString *transDate = [formatter stringFromDate:[NSDate date]];
+    
+    NSString *subject = @"上海捷丰网络科技有限公司";
+    NSString *merchantcode = ZFBMERCHANTCODE;
+    NSString *backurl = ZFBBACKURL;
+    NSString *money = @"0.01";
+    NSString *transdate = transDate;
+    NSString *key = ZFBKEY;
+    NSString *reqreserved = @"123456789";
+    [PFYInterface connectAlipayCreateQRcodeWithMerchantcode:merchantcode subject:subject money:money backurl:backurl transdate:transdate key:key reqreserved:reqreserved standbyCallback:^(NSDictionary *resultData) {
+        [pfyViewHUD PFYProgressHUDRemoveFromSuperview];
+        if (resultData == nil) {
+            [MyAlertView myAlertView:@"请检查你的网络连接"];
+            return;
+        }
+         NSData *data = (NSData*)resultData;
+        NSMutableString *str = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", str);
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@", dict);
+        NSString *retcode = [dict objectForKey:@"retcode"];
+        if ([retcode isEqualToString:@"R9"]) {
+            NSString *qrcode = [dict objectForKey:@"qrcode"];
+//            [self erweima:qrcode];
+            NSString *merchorder_no = [dict objectForKey:@"merchorder_no"];
+//            [self alipayOrderStateSelect:merchorder_no];
+        } else {
+            NSString *result = [dict objectForKey:@"result"];
+            [MyAlertView myAlertView:result];
+        }
+    }];
+
+ }
+#pragma mark 接入SDK
++ (void)linkYSTSDK {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMddHHmmss"];
     NSString *transDate = [formatter stringFromDate:[NSDate date]];
     
     NSString *merchorder_no = [NSString stringWithFormat:@"%@%06d", transDate, arc4random()%1000000];
     NSString *orderinfo = @"1级短剑";
-    NSString *merchantcode = YINHANGMERCHANTCODE;
+    NSString *merchantcode = ZFBMERCHANTCODE;
     NSString *backurl = @"";
     NSString *money = @"0.01";
     NSString *transdate = transDate;
-    NSString *key = YINHANGKEY;
+    NSString *key = ZFBKEY;
     NSString *reqreserved = @"123456789";
-    [PFYInterface connectSDKWithMerchorder_no:merchorder_no orderinfo:orderinfo merchantcode:merchantcode backurl:backurl money:money transdate:transdate key:key reqreserved:reqreserved standbyCallback:^(NSData *resultData) {
-        [pfyViewHUD PFYProgressHUDRemoveFromSuperview];
+    [PFYInterface connectSDKWithMerchorder_no:merchorder_no orderinfo:orderinfo merchantcode:merchantcode backurl:backurl money:money transdate:transdate key:key reqreserved:reqreserved standbyCallback:^(NSDictionary *resultData) {
         if (resultData == nil) {
             [MyAlertView myAlertView:@"请检查你的网络连接"];
             return;
         }
-        NSMutableString *str = [[NSMutableString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
-        NSLog(@"%@", str);
-        //        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:resultData options:NSJSONReadingMutableLeaves error:nil];
-        //        NSLog(@"%@", dict);
+        NSData *data = (NSData*)resultData;
+        NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"3%@",str);
     }];
-
 }
-
-
-
-
 
 @end

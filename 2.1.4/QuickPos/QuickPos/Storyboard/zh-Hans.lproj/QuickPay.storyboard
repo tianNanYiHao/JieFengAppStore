@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="90X-z3-WF6">
-                                <frame key="frameInset" minY="8" height="76.39%"/>
+                                <frame key="frameInset" minY="8" height="76.48%"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="Hee-tE-AOZ">
@@ -534,7 +534,10 @@
                     <connections>
                         <outlet property="PaymentPassword" destination="NoN-zK-ehh" id="qIr-6h-oSm"/>
                         <outlet property="SMSVerification" destination="sXS-zj-vO2" id="SbR-ys-7To"/>
+                        <outlet property="SMSView" destination="Xmb-Wy-HJ5" id="Bse-eh-0vw"/>
+                        <outlet property="VerificationCode" destination="hTu-yg-StS" id="p3G-fB-FFq"/>
                         <outlet property="bankNo" destination="PEg-qf-Ng4" id="904-pt-lPX"/>
+                        <outlet property="comfirt" destination="Gpi-yX-XAT" id="UZw-9X-br3"/>
                         <outlet property="getCodeButton" destination="Ipg-My-6w8" id="WNv-3Z-63Z"/>
                         <outlet property="orderId" destination="K1A-mT-eg6" id="DW9-9S-iw1"/>
                         <outlet property="transAccount" destination="xHg-y9-aCt" id="qn1-oq-nfj"/>
@@ -902,8 +905,11 @@
                         <outlet property="CardValid" destination="S1O-PU-cKH" id="Y4h-Fo-uko"/>
                         <outlet property="PaymentPassword" destination="RV3-m7-xHF" id="QYQ-X3-HK6"/>
                         <outlet property="SMSVerification" destination="m1q-Mb-VyN" id="U4V-L3-rWR"/>
+                        <outlet property="SMSView" destination="wnT-jn-yXP" id="qJA-MG-u9i"/>
                         <outlet property="SecurityCode" destination="wVJ-eK-eyM" id="U55-FI-F25"/>
+                        <outlet property="VerificationCode" destination="TaJ-hL-2ts" id="Pzb-Ua-CIk"/>
                         <outlet property="bankNo" destination="U28-j2-1RB" id="beR-N1-Uqx"/>
+                        <outlet property="comfirt" destination="eei-Fs-KL6" id="CL6-D3-h74"/>
                         <outlet property="getCodeButton" destination="5gL-wP-CwT" id="cp3-hq-1ue"/>
                         <outlet property="orderId" destination="kX8-j9-IZ1" id="KUc-Fd-FSz"/>
                         <outlet property="transAccount" destination="wsr-QI-hVU" id="o47-bh-Y2q"/>
@@ -924,7 +930,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="c9K-cn-Z1C">
-                                <frame key="frameInset" minY="8" height="65.37%"/>
+                                <frame key="frameInset" minX="-0.5" minY="7.5" height="65.22%" maxX="0.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="qVg-1a-9TP">
@@ -1015,7 +1021,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p9r-It-t7S">
-                                        <frame key="frameInset" minX="28" minY="217" height="40" maxX="28"/>
+                                        <frame key="frameInset" minX="27.5" minY="217" height="40" maxX="29"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.34919726848602295" green="0.75746613740921021" blue="0.39555364847183228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="实名认证">

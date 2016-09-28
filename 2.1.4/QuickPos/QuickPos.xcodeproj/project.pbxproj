@@ -262,10 +262,6 @@
 		59D460341AF20C5500BA60C3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D460331AF20C5500BA60C3 /* WebViewController.m */; };
 		87012B6A1C43A78700049D52 /* MangeMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87012B691C43A78700049D52 /* MangeMoneyViewController.m */; };
 		877D1ACB1C44D954008CC2C0 /* MangePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D1ACA1C44D954008CC2C0 /* MangePayViewController.m */; };
-		877D1AD51C44DAB1008CC2C0 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 877D1AD01C44DAB1008CC2C0 /* CHANGELOG.md */; };
-		877D1AD61C44DAB1008CC2C0 /* jsonKit 报错解决办法 .rtf in Resources */ = {isa = PBXBuildFile; fileRef = 877D1AD11C44DAB1008CC2C0 /* jsonKit 报错解决办法 .rtf */; };
-		877D1AD71C44DAB1008CC2C0 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D1AD31C44DAB1008CC2C0 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		877D1AD81C44DAB1008CC2C0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 877D1AD41C44DAB1008CC2C0 /* README.md */; };
 		877D1ADD1C44DAD0008CC2C0 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D1ADB1C44DAD0008CC2C0 /* GTMBase64.m */; };
 		87E058D81C044DBD00C4A4C1 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E058C51C044DBD00C4A4C1 /* Icon-40.png */; };
 		87E058D91C044DBD00C4A4C1 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E058C61C044DBD00C4A4C1 /* Icon-40@2x.png */; };
@@ -612,6 +608,7 @@
 		BF581EBB1D4EF6790073A8F6 /* ComplaintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF581EB91D4EF6790073A8F6 /* ComplaintViewController.xib */; };
 		BF581EBF1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF581EBD1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m */; };
 		BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF581EBE1D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib */; };
+		BF58601D1D9B5B1B00777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58601C1D9B5B1B00777D7D /* PFYSDK.a */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
 		BFC042171D70120A0090CAFC /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F91D70120A0090CAFC /* AFSecurityPolicy.m */; };
@@ -1187,11 +1184,6 @@
 		8753E8361BDF808F002B893F /* CommenDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommenDef.h; sourceTree = "<group>"; };
 		877D1AC91C44D954008CC2C0 /* MangePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangePayViewController.h; sourceTree = "<group>"; };
 		877D1ACA1C44D954008CC2C0 /* MangePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangePayViewController.m; sourceTree = "<group>"; };
-		877D1AD01C44DAB1008CC2C0 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		877D1AD11C44DAB1008CC2C0 /* jsonKit 报错解决办法 .rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "jsonKit 报错解决办法 .rtf"; sourceTree = "<group>"; };
-		877D1AD21C44DAB1008CC2C0 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		877D1AD31C44DAB1008CC2C0 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		877D1AD41C44DAB1008CC2C0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		877D1ADA1C44DAD0008CC2C0 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		877D1ADB1C44DAD0008CC2C0 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		877D1ADC1C44DAD0008CC2C0 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -1859,6 +1851,10 @@
 		BF581EBC1D4F2E3E0073A8F6 /* ManualSearchSYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManualSearchSYViewController.h; sourceTree = "<group>"; };
 		BF581EBD1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManualSearchSYViewController.m; sourceTree = "<group>"; };
 		BF581EBE1D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManualSearchSYViewController.xib; sourceTree = "<group>"; };
+		BF5860171D9B58EA00777D7D /* MyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
+		BF5860181D9B58EA00777D7D /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
+		BF5860191D9B58EA00777D7D /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
+		BF58601C1D9B5B1B00777D7D /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFC041F31D70120A0090CAFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -2005,6 +2001,7 @@
 				C36E38701ABA5FF20004BE78 /* SystemConfiguration.framework in Frameworks */,
 				C3696F0B1AC11378003B04B4 /* CoreTelephony.framework in Frameworks */,
 				339B9A5E1D7D68A6004D0E1B /* ShareSDKConnector.framework in Frameworks */,
+				BF58601D1D9B5B1B00777D7D /* PFYSDK.a in Frameworks */,
 				BF4EA7791D7D3F7800E8B95D /* CoreFoundation.framework in Frameworks */,
 				D599F21F1BCCB7CE006D5F6B /* CFNetwork.framework in Frameworks */,
 				AEE5F6361C4E1C17006FAF60 /* libz.tbd in Frameworks */,
@@ -2590,6 +2587,7 @@
 		591BBFC21AEDFE320037199A /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				BF5860151D9B58EA00777D7D /* PFYSDK */,
 				339B9A1C1D7D68A6004D0E1B /* ShareSDK */,
 				BF4EA7741D7D3D4800E8B95D /* JpushSDK */,
 				BF3C8D431D5834A40092AC19 /* LBXAlertAction */,
@@ -2600,7 +2598,6 @@
 				33659CA01D536D5300D5C3FC /* PSTAlertController */,
 				AEE5F5F51C4E199E006FAF60 /* UMSocial_Sdk_4.4 */,
 				877D1AD91C44DACF008CC2C0 /* gtmbase64 */,
-				877D1ACF1C44DAB1008CC2C0 /* JSONKit-master */,
 				AEDD09C31C3CF69D004CE3F0 /* GKClasses */,
 				87FA24241BF1BE4900BA935B /* FMDB */,
 				D561521D1BDF6F6E00DAAADC /* TableRefresh */,
@@ -3239,18 +3236,6 @@
 				8753E8361BDF808F002B893F /* CommenDef.h */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		877D1ACF1C44DAB1008CC2C0 /* JSONKit-master */ = {
-			isa = PBXGroup;
-			children = (
-				877D1AD01C44DAB1008CC2C0 /* CHANGELOG.md */,
-				877D1AD11C44DAB1008CC2C0 /* jsonKit 报错解决办法 .rtf */,
-				877D1AD21C44DAB1008CC2C0 /* JSONKit.h */,
-				877D1AD31C44DAB1008CC2C0 /* JSONKit.m */,
-				877D1AD41C44DAB1008CC2C0 /* README.md */,
-			);
-			path = "JSONKit-master";
 			sourceTree = "<group>";
 		};
 		877D1AD91C44DACF008CC2C0 /* gtmbase64 */ = {
@@ -4471,6 +4456,25 @@
 			path = JpushSDK;
 			sourceTree = "<group>";
 		};
+		BF5860151D9B58EA00777D7D /* PFYSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BF5860161D9B58EA00777D7D /* include */,
+			);
+			path = PFYSDK;
+			sourceTree = "<group>";
+		};
+		BF5860161D9B58EA00777D7D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				BF58601C1D9B5B1B00777D7D /* PFYSDK.a */,
+				BF5860171D9B58EA00777D7D /* MyAlertView.h */,
+				BF5860181D9B58EA00777D7D /* PFYInterface.h */,
+				BF5860191D9B58EA00777D7D /* PFYProgressHUD.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		BFC041F21D70120A0090CAFC /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -4744,8 +4748,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88E6BC141AB029BD00AD89E0 /* Build configuration list for PBXNativeTarget "QuickPos" */;
 			buildPhases = (
-				88E6BBED1AB029BD00AD89E0 /* Sources */,
 				88E6BBEE1AB029BD00AD89E0 /* Frameworks */,
+				88E6BBED1AB029BD00AD89E0 /* Sources */,
 				88E6BBEF1AB029BD00AD89E0 /* Resources */,
 			);
 			buildRules = (
@@ -4850,7 +4854,6 @@
 				BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */,
 				BF3E100D1D49B9A7003F0F89 /* ProducyListSYCell.xib in Resources */,
 				87E058E31C044DBD00C4A4C1 /* Icon-Small-50@2x.png in Resources */,
-				877D1AD61C44DAB1008CC2C0 /* jsonKit 报错解决办法 .rtf in Resources */,
 				339B9A571D7D68A6004D0E1B /* WeiboSDK.bundle in Resources */,
 				AEE5F6111C4E199E006FAF60 /* UMSocialLocalizable.strings in Resources */,
 				AEE5F6151C4E199F006FAF60 /* UMSCommentInputController.xib in Resources */,
@@ -4972,7 +4975,6 @@
 				BF3C8FD51D5834A50092AC19 /* ZXDataMatrixVersion.m in Sources */,
 				D56152261BDF6F7E00DAAADC /* BoRefreshAnimation.m in Sources */,
 				BFC0421C1D70120A0090CAFC /* AFImageDownloader.m in Sources */,
-				877D1AD51C44DAB1008CC2C0 /* CHANGELOG.md in Sources */,
 				591BC09A1AEDFE320037199A /* ACEDrawingTools.m in Sources */,
 				BF3C901E1D5834A50092AC19 /* ZXUPCEANExtensionSupport.m in Sources */,
 				BF3C8FC41D5834A50092AC19 /* ZXBinarizer.m in Sources */,
@@ -5194,7 +5196,6 @@
 				591BC3A41AEDFE6A0037199A /* HandSignViewController.m in Sources */,
 				BF3C90071D5834A50092AC19 /* ZXRSSUtils.m in Sources */,
 				BF3C8FB81D5834A50092AC19 /* ZXBoolArray.m in Sources */,
-				877D1AD71C44DAB1008CC2C0 /* JSONKit.m in Sources */,
 				591BC36A1AEDFE6A0037199A /* ViewController.m in Sources */,
 				325CBCE41AEE1BC400D924D5 /* GikoAudioHelper.m in Sources */,
 				BF3C8F7C1D5834A50092AC19 /* ZXAztecDetector.m in Sources */,
@@ -5244,7 +5245,6 @@
 				AE8EA4341C5F698E00823760 /* CertificationGoodsViewController.m in Sources */,
 				D56152131BDF6EA100DAAADC /* MJRefreshBackNormalFooter.m in Sources */,
 				591BC3991AEDFE6A0037199A /* ContractView.m in Sources */,
-				877D1AD81C44DAB1008CC2C0 /* README.md in Sources */,
 				BF3C8FA51D5834A50092AC19 /* ZXVCardResultParser.m in Sources */,
 				591BC0EA1AEDFE330037199A /* ChineseInclude.m in Sources */,
 				D561521B1BDF6EA100DAAADC /* UIScrollView+MJRefresh.m in Sources */,
@@ -5599,7 +5599,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = QuickPos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5611,13 +5611,12 @@
 					"$(PROJECT_DIR)/QuickPos/3rd/UMSocial_Sdk_4.4/TencentOpenAPI",
 					"$(PROJECT_DIR)/QuickPos/3rd/UMSocial_Sdk_4.4/Wechat",
 					"$(PROJECT_DIR)/QuickPos/3rd/UMSocial_Sdk_4.4/Sina",
-					"$(PROJECT_DIR)/QuickPos/3rd/openSDK1.7.3",
 					"$(PROJECT_DIR)/QuickPos/3rd/JpushSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/APSocialSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/YiXinSDK",
-					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK",
+					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK/include",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -5662,7 +5661,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = QuickPos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5674,13 +5673,12 @@
 					"$(PROJECT_DIR)/QuickPos/3rd/UMSocial_Sdk_4.4/TencentOpenAPI",
 					"$(PROJECT_DIR)/QuickPos/3rd/UMSocial_Sdk_4.4/Wechat",
 					"$(PROJECT_DIR)/QuickPos/3rd/UMSocial_Sdk_4.4/Sina",
-					"$(PROJECT_DIR)/QuickPos/3rd/openSDK1.7.3",
 					"$(PROJECT_DIR)/QuickPos/3rd/JpushSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/APSocialSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/ShareSDK/Support/PlatformSDK/YiXinSDK",
-					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK",
+					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK/include",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";

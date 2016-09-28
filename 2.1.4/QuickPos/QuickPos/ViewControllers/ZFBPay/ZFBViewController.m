@@ -52,7 +52,7 @@
 }
 -(void)getYSTewm
 {
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"二维码获取中..."];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"二维码获取中..."];
     //银视通获取二维码
     [Common getYSTZFBimage:self.view requestDataBlock:^(id requestdate) {
         NSData *data = (NSData*)requestdate;

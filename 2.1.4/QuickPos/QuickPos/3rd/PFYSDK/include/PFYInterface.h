@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef void (^CompletionBlock)(NSData *resultData);
+typedef void (^CompletionBlock)(NSDictionary *resultData);
 @interface PFYInterface: NSObject
 // SDK接入
 + (void)connectSDKWithMerchorder_no:(NSString *)merchorder_no orderinfo:(NSString *)orderinfo merchantcode:(NSString *)merchantcode backurl:(NSString *)backurl money:(NSString *)money transdate:(NSString *)transdate key:(NSString *)key reqreserved:(NSString *)reqreserved standbyCallback:(CompletionBlock)completionBlock;

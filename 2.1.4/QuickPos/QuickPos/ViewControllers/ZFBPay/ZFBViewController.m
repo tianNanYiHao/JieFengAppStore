@@ -74,16 +74,17 @@
         } else {
             NSString *result = [dict objectForKey:@"result"];
             [MyAlertView myAlertView:result];
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
-    
 }
 -(void)getOrder{
     //下单
+        NSString *money = [NSString stringWithFormat:@"%.f",[_AmtNO floatValue]*100];
         [req applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
                       MerchanId:_merchantId
                       productId:_productId
-                       orderAmt:_AmtNO
+                       orderAmt:money
                       orderDesc:_cardNum
                     orderRemark:merchorder_No
                    commodityIDs:@""

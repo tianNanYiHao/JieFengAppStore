@@ -762,7 +762,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
-                  timestampString = "496655031.85697"
+                  timestampString = "496662881.638435"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "899"
@@ -777,7 +777,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/Shop/MallViewController.m"
-                  timestampString = "496655031.858422"
+                  timestampString = "496662881.640202"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "899"
@@ -1306,7 +1306,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
-                  timestampString = "496655031.92401"
+                  timestampString = "496662881.74086"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -1321,7 +1321,7 @@
                   moduleName = "QuickPos"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fengjie/Desktop/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/FoodTraceability/OriginQueryViewController.m"
-                  timestampString = "496655031.925457"
+                  timestampString = "496662881.742392"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "184"
@@ -2404,11 +2404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
-            timestampString = "496638757.947639"
+            timestampString = "496661569.749102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-ConfirmingTheVerificationCode:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2420,11 +2420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/QuickPayOrderViewController.m"
-            timestampString = "496638765.717233"
+            timestampString = "496659122.242282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "-ConfirmingTheVerificationCode:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2435,28 +2435,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
-            timestampString = "496638855.883984"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-GetVerificationCode:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/QuickPayOrderViewController.m"
-            timestampString = "496638978.461243"
+            timestampString = "496659122.242282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-responseWithDict:requestType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2468,11 +2452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/QuickPayOrderViewController.m"
-            timestampString = "496638979.996059"
+            timestampString = "496659122.242282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-responseWithDict:requestType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2484,11 +2468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
-            timestampString = "496639388.54989"
+            timestampString = "496661569.749102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "-responseWithDict:requestType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2500,11 +2484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
-            timestampString = "496639392.644386"
+            timestampString = "496661569.749102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "-responseWithDict:requestType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2516,11 +2500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
-            timestampString = "496640366.438362"
+            timestampString = "496661569.749102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "-responseWithDict:requestType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2532,11 +2516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/MyBankListViewController.m"
-            timestampString = "496640042.694816"
+            timestampString = "496657431.925623"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2548,11 +2532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
-            timestampString = "496640147.004862"
+            timestampString = "496661569.749102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-responseWithDict:requestType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2564,12 +2548,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickPos/ViewControllers/YSTQuickPay/MyBankListViewController.m"
-            timestampString = "496650248.820852"
+            timestampString = "496661569.749102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
+            timestampString = "496661569.749102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "-responseWithDict:requestType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/YSTQuickPay/BankCardBindViewController.m"
+            timestampString = "496657789.567886"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-Verified:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/YSTQuickPay/BankCardBindViewController.m"
+            timestampString = "496657790.602595"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-Verified:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
+            timestampString = "496661569.749102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "-ConfirmingTheVerificationCode:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
+            timestampString = "496661569.749102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "-ConfirmingTheVerificationCode:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
+            timestampString = "496661569.749102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-ConfirmingTheVerificationCode:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickPos/ViewControllers/YSTQuickPay/CreditQuickPayOrderViewController.m"
+            timestampString = "496661627.770091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-ConfirmingTheVerificationCode:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

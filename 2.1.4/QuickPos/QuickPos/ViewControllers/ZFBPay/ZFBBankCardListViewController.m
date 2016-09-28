@@ -86,9 +86,6 @@
     
     [self chooseType];
     
-    
-
-    
     self.title = @"支付宝收款";
     //没有绑定过银行卡时添加提示
 //    [self.view addSubview:self.noBankCark];
@@ -107,7 +104,25 @@
     requst = [[Request alloc]initWithDelegate:self];
     [requst userInfo:[AppDelegate getUserBaseData].mobileNo];
 
-    
+    //银视通获取二维码
+    [Common getYSTZFBimage:self.view requestDataBlock:^(id requestdate) {
+        NSData *data = (NSData*)requestdate;
+        NSMutableString *str = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", str);
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@", dict);
+        NSString *retcode = [dict objectForKey:@"retcode"];
+        if ([retcode isEqualToString:@"R9"]) {
+            NSString* qrcode = [dict objectForKey:@"qrcode"];
+//            [Common erweima:qrcode imageView:imageBView];
+            NSString *merchorder_no = [dict objectForKey:@"merchorder_no"];
+            //            [self alipayOrderStateSelect:merchorder_no];
+        } else {
+            NSString *result = [dict objectForKey:@"result"];
+            [MyAlertView myAlertView:result];
+        }
+        
+    }];
     
 }
 

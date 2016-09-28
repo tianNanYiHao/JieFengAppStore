@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 typedef void(^CommonShowBoxdefaultBlock)(id defaultBlock);
 typedef void(^CommonShowBoxcancleBlock)(id cancleBlock);
+typedef void (^YSTZFBEWMBlock)(id requestdate);
+
 @interface Common : NSObject
 
 //判断是否为手机号码
@@ -35,7 +37,9 @@ typedef void(^CommonShowBoxcancleBlock)(id cancleBlock);
 
 +(void)pstaAlertWithTitle:(NSString*)title message:(NSString*)message defaultTitle:(NSString*)defaultTitle cancleTitle:(NSString*)cancaleTitle defaultBlock:(CommonShowBoxdefaultBlock)defaultBlock CancleBlock:(CommonShowBoxcancleBlock)cacleBlock ctr:(UIViewController*)ctrller;
 
-
 + (UIView*)tipWithStr:(NSString*)str color:(UIColor*)color rect:(CGRect)frame;
-+(void)getYSTZFBimage:(UIView*)view;
+
++(void)getYSTZFBimage:(UIView*)view requestDataBlock:(YSTZFBEWMBlock)requestBlock;
++(void)erweima:(NSString *)qrcode imageView:(UIImageView*)iamgeView;
+
 @end

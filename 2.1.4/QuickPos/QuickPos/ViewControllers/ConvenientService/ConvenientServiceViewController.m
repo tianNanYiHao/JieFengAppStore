@@ -666,8 +666,6 @@
 
 - (void)Recharge:(UIButton *)Btn
 {
-    [Common getYSTZFBimage:self.view];
-    
     if ([[AppDelegate getUserBaseData].mobileNo length] > 0){
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         

@@ -176,8 +176,8 @@
     return bsetView;
     
 }
-+(void)getYSTZFBimage:(UIView*)view{
-    
+
++(void)getYSTZFBimage:(UIView*)view requestDataBlock:(YSTZFBEWMBlock)requestBlock{
     [Common linkYSTSDK];
     PFYProgressHUD *pfyViewHUD = [[PFYProgressHUD alloc] initViewWithFrame:view.frame];
     [view addSubview:pfyViewHUD];
@@ -193,45 +193,33 @@
     NSString *transdate = transDate;
     NSString *key = ZFBKEY;
     NSString *reqreserved = @"123456789";
-    [PFYInterface connectAlipayCreateQRcodeWithMerchantcode:merchantcode subject:subject money:money backurl:backurl transdate:transdate key:key reqreserved:reqreserved standbyCallback:^(NSDictionary *resultData) {
+    [PFYInterface connectAlipayCreateQRcodeWithMerchantcode:merchantcode subject:subject money:money backurl:backurl transdate:transdate key:key reqreserved:nil standbyCallback:^(NSDictionary *resultData) {
         [pfyViewHUD PFYProgressHUDRemoveFromSuperview];
         if (resultData == nil) {
             [MyAlertView myAlertView:@"请检查你的网络连接"];
             return;
         }
-         NSData *data = (NSData*)resultData;
-        NSMutableString *str = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@", str);
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        NSLog(@"%@", dict);
-        NSString *retcode = [dict objectForKey:@"retcode"];
-        if ([retcode isEqualToString:@"R9"]) {
-            NSString *qrcode = [dict objectForKey:@"qrcode"];
-//            [self erweima:qrcode];
-            NSString *merchorder_no = [dict objectForKey:@"merchorder_no"];
-//            [self alipayOrderStateSelect:merchorder_no];
-        } else {
-            NSString *result = [dict objectForKey:@"result"];
-            [MyAlertView myAlertView:result];
-        }
+        requestBlock(resultData);
     }];
 
  }
++(NSString*)returnStr:(NSString*)str{
+    return str;
+}
 #pragma mark 接入SDK
 + (void)linkYSTSDK {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMddHHmmss"];
     NSString *transDate = [formatter stringFromDate:[NSDate date]];
-    
     NSString *merchorder_no = [NSString stringWithFormat:@"%@%06d", transDate, arc4random()%1000000];
-    NSString *orderinfo = @"1级短剑";
+    NSString *orderinfo = @"上海捷丰网络科技有限公司";
     NSString *merchantcode = ZFBMERCHANTCODE;
-    NSString *backurl = @"";
+    NSString *backurl = ZFBBACKURL;
     NSString *money = @"0.01";
     NSString *transdate = transDate;
     NSString *key = ZFBKEY;
     NSString *reqreserved = @"123456789";
-    [PFYInterface connectSDKWithMerchorder_no:merchorder_no orderinfo:orderinfo merchantcode:merchantcode backurl:backurl money:money transdate:transdate key:key reqreserved:reqreserved standbyCallback:^(NSDictionary *resultData) {
+    [PFYInterface connectSDKWithMerchorder_no:merchorder_no orderinfo:orderinfo merchantcode:merchantcode backurl:backurl money:money transdate:transdate key:key reqreserved:nil standbyCallback:^(NSDictionary *resultData) {
         if (resultData == nil) {
             [MyAlertView myAlertView:@"请检查你的网络连接"];
             return;
@@ -241,5 +229,48 @@
         NSLog(@"3%@",str);
     }];
 }
+//////////////////////////////华丽的分割线/////////////////////////////////////////
+//***************************二维码生成功能****************************************
++(void)erweima:(NSString *)qrcode imageView:(UIImageView*)iamgeView{
+    //二维码滤镜
+    CIFilter *filter=[CIFilter filterWithName:@"CIQRCodeGenerator"];
+    //恢复滤镜的默认属性
+    [filter setDefaults];
+    //将字符串转换成NSData
+    NSData *data = [qrcode dataUsingEncoding:NSUTF8StringEncoding];
+    //通过KVO设置滤镜inputmessage数据
+    [filter setValue:data forKey:@"inputMessage"];
+    //获得滤镜输出的图像
+    CIImage *outputImage = [filter outputImage];
+    //将CIImage转换成UIImage,并放大显示
+    iamgeView.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:500.0];
+    //如果还想加上阴影，就在ImageView的Layer上使用下面代码添加阴影
+    iamgeView.layer.shadowOffset = CGSizeMake(0, 0.5);//设置阴影的偏移量
+    iamgeView.layer.shadowRadius = 1;//设置阴影的半径
+    iamgeView.layer.shadowColor = [UIColor blackColor].CGColor;//设置阴影的颜色为黑色
+    iamgeView.layer.shadowOpacity = 0.3;
+}
+
+//改变二维码或条形码的大小
++ (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size {
+    CGRect extent = CGRectIntegral(image.extent);
+    CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
+    // 创建bitmap;
+    size_t width = CGRectGetWidth(extent) * scale;
+    size_t height = CGRectGetHeight(extent) * scale;
+    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
+    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef bitmapImage = [context createCGImage:image fromRect:extent];
+    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
+    CGContextScaleCTM(bitmapRef, scale, scale);
+    CGContextDrawImage(bitmapRef, extent, bitmapImage);
+    // 保存bitmap到图片
+    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
+    CGContextRelease(bitmapRef);
+    CGImageRelease(bitmapImage);
+    return [UIImage imageWithCGImage:scaledImage];
+}
+
 
 @end

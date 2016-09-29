@@ -14,5 +14,7 @@
 @property (nonatomic,strong) NSString *cardNum; //银行卡号
 @property (nonatomic,strong) NSString *merchantId;   //商户商家id
 @property (nonatomic,strong) NSString *productId;
+@property (nonatomic,strong) NSArray *infoArr;
+
 
 @end

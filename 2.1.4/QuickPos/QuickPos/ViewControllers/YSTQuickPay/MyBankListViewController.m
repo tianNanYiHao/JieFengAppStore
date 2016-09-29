@@ -23,6 +23,7 @@
     QuickBankItem *bankItem;
     NSIndexPath *indexpath;
 //    OrderData *orderData;
+    Request *req ;
 }
 @property (weak, nonatomic) IBOutlet UITableView *bankTableView;
 @property (nonatomic,strong) UIImageView *noBankCark;//没有银行卡的图片
@@ -45,54 +46,50 @@
 @synthesize destinationType;
 //@synthesize newbindid;
 
-- (UIImageView *)noBankCark{
-    if (!_noBankCark) {
-        _noBankCark = [[UIImageView alloc]initWithFrame:CGRectZero];
-        _noBankCark.image = [UIImage imageNamed:@"bankcard_card"];
-    }
-    return _noBankCark;
-}
-
-- (UILabel *)noBankCarktip{
-    if (!_noBankCarktip) {
-        _noBankCarktip = [[UILabel alloc]initWithFrame:CGRectZero];
-        _noBankCarktip.text = @"你还没有绑定过银行卡哦,请点击右上角绑定银行卡";
-        _noBankCarktip.font = [UIFont systemFontOfSize:13];
-        _noBankCarktip.textColor = [UIColor lightGrayColor];
-        _noBankCarktip.textAlignment = NSTextAlignmentCenter;;
-    }
-    return _noBankCarktip;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    Request *req = [[Request alloc]initWithDelegate:self];
+    [self addImageTip];
+    
+    req = [[Request alloc]initWithDelegate:self];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在查询卡列表..."];
     [req getQuickPayMyCardList];
-    
-    
 
+    self.navigationItem.title = @"我的银行卡";
     self.bankTableView.backgroundColor = [UIColor clearColor];
-
     self.view.backgroundColor = [UIColor whiteColor];
-    
     self.bankTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    //没有绑定过银行卡时添加提示
-    [self.view addSubview:self.noBankCark];
-    [self.view addSubview:self.noBankCarktip];
-    self.noBankCark.frame = CGRectMake(CGRectGetWidth(self.view.frame)/2 - 45, 200, 85, 55);
-    self.noBankCarktip.frame = CGRectMake(0, 255, CGRectGetWidth(self.view.frame), 55);
     //导航栏右边按钮
     UIButton *addbank = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
     [addbank setImage:[UIImage imageNamed:@"serve_more"] forState:UIControlStateNormal];
-    
-
-    
     [addbank addTarget:self action:@selector(addBankCard:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:addbank];
     
    
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+- (void)addImageTip{
+    _noBankCark = [[UIImageView alloc]initWithFrame:CGRectZero];
+    _noBankCark.image = [UIImage imageNamed:@"bankcard_card"];
+    _noBankCarktip = [[UILabel alloc]initWithFrame:CGRectZero];
+    _noBankCarktip.text = @"你还没有绑定过银行卡哦,请点击右上角绑定银行卡";
+    _noBankCarktip.font = [UIFont systemFontOfSize:13];
+    _noBankCarktip.textColor = [UIColor lightGrayColor];
+    _noBankCarktip.textAlignment = NSTextAlignmentCenter;;
+    //没有绑定过银行卡时添加提示
+    [self.view addSubview:self.noBankCark];
+    [self.view addSubview:self.noBankCarktip];
+    self.noBankCark.frame = CGRectMake(CGRectGetWidth(self.view.frame)/2 - 45, 200, 85, 55);
+    self.noBankCarktip.frame = CGRectMake(0, 255, CGRectGetWidth(self.view.frame), 55);
+    self.noBankCark.hidden = YES;
+    self.noBankCarktip.hidden = YES;
+    
+    
+}
+
 //添加卡
 - (void)addBankCard:(UIButton *)sender {
     
@@ -116,12 +113,11 @@
 
 
 -(void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
-     [MBProgressHUD hideHUDForView:self.view animated:YES];
+
     //有数据返回
-    
-    if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
-        if(type == REQUEST_GETQUICKBANKCARD){
-            
+    if(type == REQUEST_GETQUICKBANKCARD){
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
+           if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
             if ([[[dict objectForKey:@"data"] objectForKey:@"resultBean"] count] >0) {
                 self.noBankCark.hidden = YES;
                 self.noBankCarktip.hidden = YES;
@@ -160,8 +156,7 @@
     
         }
         else if(type == REQUEST_UNBINDQUICKBANKCARD){
-//            [bankData.bankCardArr removeObjectAtIndex:indexpath.row];
-//            [self.bankTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
+             [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"数据删除中,请稍后..."];
             [self.bankTableView reloadData];
         
         }
@@ -214,11 +209,7 @@
     if ([self.cardType integerValue] == 0) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
         QuickPayOrderViewController *QuickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"QuickPayOrderViewController"];
-        
         [QuickPayOrderVc setOrderData:self.orderData];
-        
-        
-        
         QuickPayOrderVc.newbindid = self.newbindid;
         QuickPayOrderVc.bankName = bankItem.bankName;
         QuickPayOrderVc.cardNums = bankItem.cardNo;
@@ -227,17 +218,11 @@
         QuickPayOrderVc.cardType = self.cardType;
         QuickPayOrderVc.bankMobileNo = self.bankMobileNo;
         QuickPayOrderVc.isJumps = YES;
-        
-        
         [self.navigationController pushViewController:QuickPayOrderVc animated:YES];
     }else{
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
     CreditQuickPayOrderViewController *CreditQuickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CreditQuickPayOrderViewController"];
-    
     [CreditQuickPayOrderVc setOrderData:self.orderData];
-    
-  
-    
     CreditQuickPayOrderVc.newbindid = self.newbindid;
     CreditQuickPayOrderVc.bankName = bankItem.bankName;
     CreditQuickPayOrderVc.cardNums = bankItem.cardNo;
@@ -247,8 +232,6 @@
     CreditQuickPayOrderVc.bankMobileNo = self.bankMobileNo;
     CreditQuickPayOrderVc.isJump = YES;
     CreditQuickPayOrderVc.isPay = YES;
-
-    
     [self.navigationController pushViewController:CreditQuickPayOrderVc animated:YES];
 }
 //    [self performSegueWithIdentifier:@"NoCardPaySegue" sender:cell];
@@ -270,13 +253,12 @@
         bankItem = [bankData.bankCardArr objectAtIndex:indexPath.row];
         [bankData.bankCardArr removeObjectAtIndex:[indexPath row]];  //删除数组里的数据
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];  //删除对应数据的cell
-        Request *req = [[Request alloc]initWithDelegate:self];
+        req = [[Request alloc]initWithDelegate:self];
 //        [req quickPayBankCardUnbind:bankItem.bindID newbindid:self.newbindid];
         [req quickPayBankCardUnbind:self.bindID
                           newBindId:self.newbindid
                             orderId:self.orderData.orderId
          ];
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"数据删除中,请稍后..."];
     }
 }
 

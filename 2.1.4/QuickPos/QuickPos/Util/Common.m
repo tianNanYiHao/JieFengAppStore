@@ -177,18 +177,18 @@
     
 }
 
-+(void)getYSTZFBimage:(UIView*)view  money:(NSString*)moneY requestDataBlock:(YSTZFBEWMBlock)requestBlock{
++(void)getYSTZFBimage:(UIView*)view  money:(NSString*)moneY requestDataBlock:(YSTZFBEWMBlock)requestBlock infoArr:(NSArray*)arr{
     [Common linkYSTSDK];    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMddHHmmss"];
     NSString *transDate = [formatter stringFromDate:[NSDate date]];
     
     NSString *subject = @"上海捷丰网络科技有限公司";
-    NSString *merchantcode = ZFBMERCHANTCODE;
-    NSString *backurl = ZFBBACKURL;
+    NSString *merchantcode = arr[0];
+    NSString *backurl = arr[1];
     NSString *money = moneY;
     NSString *transdate = transDate;
-    NSString *key = ZFBKEY;
+    NSString *key = arr[2];
     NSString *reqreserved = @"123456789";
     [PFYInterface connectAlipayCreateQRcodeWithMerchantcode:merchantcode subject:subject money:money backurl:backurl transdate:transdate key:key reqreserved:nil standbyCallback:^(NSDictionary *resultData) {
         if (resultData == nil) {
@@ -197,7 +197,6 @@
         }
         requestBlock(resultData);
     }];
-
  }
 +(NSString*)returnStr:(NSString*)str{
     return str;
@@ -268,5 +267,37 @@
     return [UIImage imageWithCGImage:scaledImage];
 }
 
+#pragma mark 支付宝 订单状态查询
++ (void)alipayOrderStateSelect:(NSString *)merchorder_no key:(NSString *)key {
+    //    PFYProgressHUD *pfyViewHUD = [[PFYProgressHUD alloc] initViewWithFrame:self.view.frame];
+    //    [self.view addSubview:pfyViewHUD];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSString *transDate = [formatter stringFromDate:[NSDate date]];
+
+    NSString *merchantcode = ZFBMERCHANTCODE;
+    NSString *transdate = transDate;
+    [PFYInterface alipayOrderStateSelectWithMerchantcode:merchantcode merchorder_no:merchorder_no smzfMsgId:@"" transdate:transdate key:key standbyCallback:^(NSDictionary *resultData) {
+        //        [pfyViewHUD PFYProgressHUDRemoveFromSuperview];
+
+        if (resultData == nil) {
+            [MyAlertView myAlertView:@"请检查你的网络连接"];
+            return;
+        }
+        NSData *data = (NSData*)resultData;
+        NSMutableString *str = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", str);
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@", dict);
+        //        NSString *retcode = [dict objectForKey:@"retcode"];
+        NSString *result = [dict objectForKey:@"result"];
+        [MyAlertView myAlertView:result];
+        //        if ([retcode isEqualToString:@"00"]) {
+        //
+        //            self.imageView.image = [UIImage imageNamed:@""];
+        //        }
+    }];
+}
 
 @end

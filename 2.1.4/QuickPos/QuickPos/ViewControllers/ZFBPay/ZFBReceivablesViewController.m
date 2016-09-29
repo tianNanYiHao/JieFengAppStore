@@ -100,6 +100,7 @@
         ZFBVc.cardNum = self.ZFBBankCardNum;
         ZFBVc.merchantId = merchantId;
         ZFBVc.productId = productId;
+        ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
         [self.navigationController pushViewController:ZFBVc animated:YES];
     }
 }

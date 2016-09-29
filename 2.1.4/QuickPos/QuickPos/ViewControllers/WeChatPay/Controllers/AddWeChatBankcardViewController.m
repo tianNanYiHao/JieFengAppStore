@@ -18,6 +18,8 @@
 #import "Common.h"
 #import "UserInfo.h"
 #import "ObtainScanViewController.h"
+#import "TSTWechatViewController.h"
+
 
 
 @interface AddWeChatBankcardViewController ()<UITextFieldDelegate,ResponseData>{
@@ -325,23 +327,18 @@
     
     
     if ([dict[@"respCode"]isEqual:@"0000"]) {
-        
         if(type == REQUSET_VERIFYWEIXINPAY ){
-            
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ObtainScanViewController *ObtainScanVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ObtainScanVc"];
-            
             ObtainScanVc.acctNo2 = [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-            
-            NSLog(@"%@",ObtainScanVc.acctNo2);
             [self.navigationController pushViewController:ObtainScanVc animated:YES];
-            
+            //    TSTWechatViewController *ystWechat = [[TSTWechatViewController alloc] initWithNibName:@"TSTWechatViewController" bundle:nil];
+            //    ystWechat.WeChatBankCardNum = _accountNo;
+            //    [self.navigationController pushViewController:ystWechat animated:YES];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         }else if (type == REQUSET_USERINFOQUERY){
-            
             self.authenFlag = [[[dict objectForKey:@"data"]objectForKey:@"resultBean"]objectForKey:@"authenFlag"];
             NSLog(@"%@",self.authenFlag);
-            
             if ([self.authenFlag isEqualToString:@"3"]) {
                 
             }else

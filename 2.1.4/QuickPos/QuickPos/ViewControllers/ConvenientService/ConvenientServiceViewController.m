@@ -548,9 +548,6 @@
                 WeChatBankListVc.state = self.state;
                 WeChatBankListVc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:WeChatBankListVc animated:YES];
-                
-                
-                
             }else if (indexPath.row == 6){//支付宝收款
                 
                 

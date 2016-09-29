@@ -65,7 +65,7 @@
             NSString* qrcode = [dict objectForKey:@"qrcode"];
             [Common erweima:qrcode imageView:_ewmImageViw];
             NSString *merchorder_no = [dict objectForKey:@"merchorder_no"];
-//         self alipayOrderStateSelect:merchorder_no];
+            [Common alipayOrderStateSelect:merchorder_no key:_infoArr[2]];
             merchorder_No = merchorder_no;
             //下单
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -76,8 +76,10 @@
             [MyAlertView myAlertView:result];
             [self.navigationController popViewControllerAnimated:YES];
         }
-    }];
+    } infoArr:_infoArr];
 }
+
+
 -(void)getOrder{
     //下单
         NSString *money = [NSString stringWithFormat:@"%.f",[_AmtNO floatValue]*100];

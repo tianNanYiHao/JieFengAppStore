@@ -39,7 +39,7 @@ typedef void (^YSTZFBEWMBlock)(id requestdate);
 
 + (UIView*)tipWithStr:(NSString*)str color:(UIColor*)color rect:(CGRect)frame;
 
-+(void)getYSTZFBimage:(UIView*)view  money:(NSString*)moneY requestDataBlock:(YSTZFBEWMBlock)requestBlock;
++(void)getYSTZFBimage:(UIView*)view  money:(NSString*)moneY requestDataBlock:(YSTZFBEWMBlock)requestBlock infoArr:(NSArray*)arr;
 +(void)erweima:(NSString *)qrcode imageView:(UIImageView*)iamgeView;
-
++ (void)alipayOrderStateSelect:(NSString *)merchorder_no key:(NSString *)key;
 @end

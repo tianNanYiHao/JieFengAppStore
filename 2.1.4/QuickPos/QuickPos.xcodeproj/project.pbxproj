@@ -608,7 +608,10 @@
 		BF581EBF1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF581EBD1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m */; };
 		BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF581EBE1D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib */; };
 		BF5860261D9BA2D200777D7D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860251D9BA2D200777D7D /* Foundation+Log.m */; };
-		BF5860361D9BB36100777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5860351D9BB36100777D7D /* PFYSDK.a */; };
+		BF58603F1D9CEF8300777D7D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BF5860391D9CEF8300777D7D /* back.png */; };
+		BF5860441D9CF97800777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5860431D9CF97800777D7D /* PFYSDK.a */; };
+		BF5860531D9D058600777D7D /* TSTWechatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860511D9D058600777D7D /* TSTWechatViewController.m */; };
+		BF5860541D9D058600777D7D /* TSTWechatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5860521D9D058600777D7D /* TSTWechatViewController.xib */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
 		BFC042171D70120A0090CAFC /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F91D70120A0090CAFC /* AFSecurityPolicy.m */; };
@@ -1851,11 +1854,15 @@
 		BF581EBD1D4F2E3E0073A8F6 /* ManualSearchSYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManualSearchSYViewController.m; sourceTree = "<group>"; };
 		BF581EBE1D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManualSearchSYViewController.xib; sourceTree = "<group>"; };
 		BF5860251D9BA2D200777D7D /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
-		BF5860311D9BB36100777D7D /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		BF5860321D9BB36100777D7D /* MyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
-		BF5860331D9BB36100777D7D /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
-		BF5860341D9BB36100777D7D /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
-		BF5860351D9BB36100777D7D /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
+		BF5860391D9CEF8300777D7D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		BF58603A1D9CEF8300777D7D /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		BF58603B1D9CEF8300777D7D /* MyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
+		BF58603C1D9CEF8300777D7D /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
+		BF58603D1D9CEF8300777D7D /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
+		BF5860431D9CF97800777D7D /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
+		BF5860501D9D058600777D7D /* TSTWechatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTWechatViewController.h; sourceTree = "<group>"; };
+		BF5860511D9D058600777D7D /* TSTWechatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTWechatViewController.m; sourceTree = "<group>"; };
+		BF5860521D9D058600777D7D /* TSTWechatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSTWechatViewController.xib; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFC041F31D70120A0090CAFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -2002,7 +2009,7 @@
 				C36E38701ABA5FF20004BE78 /* SystemConfiguration.framework in Frameworks */,
 				C3696F0B1AC11378003B04B4 /* CoreTelephony.framework in Frameworks */,
 				339B9A5E1D7D68A6004D0E1B /* ShareSDKConnector.framework in Frameworks */,
-				BF5860361D9BB36100777D7D /* PFYSDK.a in Frameworks */,
+				BF5860441D9CF97800777D7D /* PFYSDK.a in Frameworks */,
 				BF4EA7791D7D3F7800E8B95D /* CoreFoundation.framework in Frameworks */,
 				D599F21F1BCCB7CE006D5F6B /* CFNetwork.framework in Frameworks */,
 				AEE5F6361C4E1C17006FAF60 /* libz.tbd in Frameworks */,
@@ -2343,6 +2350,7 @@
 				3348AE191D362230001AC684 /* AddWeChatBankcardViewController.m */,
 				3348AE211D362C33001AC684 /* WeChatBankListViewController.h */,
 				3348AE221D362C33001AC684 /* WeChatBankListViewController.m */,
+				BF58604F1D9D050C00777D7D /* YSTWeChat */,
 				33502CB71D470A8E005C1873 /* MyCardCell.h */,
 				33502CB81D470A8E005C1873 /* MyCardCell.m */,
 				3308D3BE1D3F654000AD825C /* ObtainScanViewController.h */,
@@ -2588,7 +2596,7 @@
 		591BBFC21AEDFE320037199A /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
-				BF58602F1D9BB36100777D7D /* PFYSDK */,
+				BF5860371D9CEF8300777D7D /* PFYSDK */,
 				BF5860241D9BA2CC00777D7D /* LFLOG */,
 				339B9A1C1D7D68A6004D0E1B /* ShareSDK */,
 				BF4EA7741D7D3D4800E8B95D /* JpushSDK */,
@@ -4465,24 +4473,35 @@
 			path = LFLOG;
 			sourceTree = "<group>";
 		};
-		BF58602F1D9BB36100777D7D /* PFYSDK */ = {
+		BF5860371D9CEF8300777D7D /* PFYSDK */ = {
 			isa = PBXGroup;
 			children = (
-				BF5860301D9BB36100777D7D /* include */,
-				BF5860351D9BB36100777D7D /* PFYSDK.a */,
+				BF5860431D9CF97800777D7D /* PFYSDK.a */,
+				BF5860381D9CEF8300777D7D /* include */,
 			);
 			path = PFYSDK;
 			sourceTree = "<group>";
 		};
-		BF5860301D9BB36100777D7D /* include */ = {
+		BF5860381D9CEF8300777D7D /* include */ = {
 			isa = PBXGroup;
 			children = (
-				BF5860311D9BB36100777D7D /* JSONKit.h */,
-				BF5860321D9BB36100777D7D /* MyAlertView.h */,
-				BF5860331D9BB36100777D7D /* PFYInterface.h */,
-				BF5860341D9BB36100777D7D /* PFYProgressHUD.h */,
+				BF5860391D9CEF8300777D7D /* back.png */,
+				BF58603A1D9CEF8300777D7D /* JSONKit.h */,
+				BF58603B1D9CEF8300777D7D /* MyAlertView.h */,
+				BF58603C1D9CEF8300777D7D /* PFYInterface.h */,
+				BF58603D1D9CEF8300777D7D /* PFYProgressHUD.h */,
 			);
 			path = include;
+			sourceTree = "<group>";
+		};
+		BF58604F1D9D050C00777D7D /* YSTWeChat */ = {
+			isa = PBXGroup;
+			children = (
+				BF5860501D9D058600777D7D /* TSTWechatViewController.h */,
+				BF5860511D9D058600777D7D /* TSTWechatViewController.m */,
+				BF5860521D9D058600777D7D /* TSTWechatViewController.xib */,
+			);
+			path = YSTWeChat;
 			sourceTree = "<group>";
 		};
 		BFC041F21D70120A0090CAFC /* AFNetworking */ = {
@@ -4860,6 +4879,7 @@
 				87E058E71C044DBD00C4A4C1 /* Icon.png in Resources */,
 				AEE5F6171C4E199F006FAF60 /* UMShareEditViewController.xib in Resources */,
 				339B9A5D1D7D68A6004D0E1B /* ShareSDK.bundle in Resources */,
+				BF5860541D9D058600777D7D /* TSTWechatViewController.xib in Resources */,
 				BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */,
 				BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */,
 				BF3E100D1D49B9A7003F0F89 /* ProducyListSYCell.xib in Resources */,
@@ -4872,6 +4892,7 @@
 				339B9A591D7D68A6004D0E1B /* read_me.txt in Resources */,
 				AEE5F6191C4E199F006FAF60 /* UMSLoginViewController.xib in Resources */,
 				591BC3681AEDFE6A0037199A /* UserInfoView.xib in Resources */,
+				BF58603F1D9CEF8300777D7D /* back.png in Resources */,
 				87E058DF1C044DBD00C4A4C1 /* Icon-72@2x.png in Resources */,
 				BF3C8F671D5834A50092AC19 /* LICENSE in Resources */,
 				D56152181BDF6EA100DAAADC /* MJRefresh.bundle in Resources */,
@@ -5274,6 +5295,7 @@
 				BF3E10161D49E9F2003F0F89 /* CompaneyDetialController2.m in Sources */,
 				BF3C8FDB1D5834A50092AC19 /* ZXDataMatrixEdifactEncoder.m in Sources */,
 				BF3C8F641D5834A50092AC19 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
+				BF5860531D9D058600777D7D /* TSTWechatViewController.m in Sources */,
 				BF3C8FBB1D5834A50092AC19 /* ZXDecoderResult.m in Sources */,
 				333CC0541D2D340E00023EA3 /* OriginQueryViewController.m in Sources */,
 				591BC3531AEDFE6A0037199A /* DateUtil.m in Sources */,
@@ -5609,7 +5631,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = QuickPos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5672,7 +5694,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = QuickPos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

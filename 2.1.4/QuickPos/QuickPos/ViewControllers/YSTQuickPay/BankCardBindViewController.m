@@ -100,16 +100,14 @@
 }
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
+    if (type == REQUSET_QUICKBANKAUTHENT) {
     if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
-        if (type == REQUSET_QUICKBANKAUTHENT) {
-            
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
             QuickPayOrderViewController *quickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"QuickPayOrderViewController"];
-            
             quickPayOrderVc.newbindid = [dict objectForKey:@"newBindId"];
             bankItem.newbindid = quickPayOrderVc.newbindid;
-            
             NSLog(@"%@  %@",bankItem.newbindid,quickPayOrderVc.newbindid);
             [quickPayOrderVc setOrderData:self.orderData];
             quickPayOrderVc.bankName = self.bankName;
@@ -119,17 +117,17 @@
             quickPayOrderVc.customerId = self.customerId;
             quickPayOrderVc.bankMobileNo = self.phone.text;
             NSLog(@"%@  %@  %@  %@  %@  %@  %@",quickPayOrderVc.newbindid,quickPayOrderVc.bankName,quickPayOrderVc.cardNums,quickPayOrderVc.newbindid,quickPayOrderVc.customerName,quickPayOrderVc.cardType,quickPayOrderVc.customerId);
-            
             [self.navigationController pushViewController:quickPayOrderVc animated:YES];
         }else
-        {
-            [MBProgressHUD showHUDAddedTo:self.view WithString:@"respDesc"];
+        {	
+            PSTAlertController *pst = [PSTAlertController alertWithTitle:@"温馨提示" message:[dict objectForKey:@"respDesc"]];
+            [pst addAction:[PSTAlertAction actionWithTitle:@"确认" handler:^(PSTAlertAction * _Nonnull action) {
+              [self.navigationController popViewControllerAnimated:YES];
+            }]];
+            [pst showWithSender:nil controller:self animated:YES completion:NULL];
+
         }
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
     }
-//    [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

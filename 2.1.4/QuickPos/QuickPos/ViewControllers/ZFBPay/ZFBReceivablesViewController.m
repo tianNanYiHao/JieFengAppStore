@@ -84,7 +84,8 @@
 
 //确认按钮
 - (IBAction)confirmButton:(id)sender {
-   
+  
+    
     if (_AmtTextField.text.length == 0) {
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_AmtTextField.text integerValue]<5 ){
@@ -93,15 +94,17 @@
         [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
     }
     else{
-        _AmtTextField.text = [NSString stringWithFormat:@"%.2f",[_AmtTextField.text floatValue]];
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-        ZFBVc.AmtNO = _AmtTextField.text;
-        ZFBVc.cardNum = self.ZFBBankCardNum;
-        ZFBVc.merchantId = merchantId;
-        ZFBVc.productId = productId;
-        ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
-        [self.navigationController pushViewController:ZFBVc animated:YES];
+        [Common showMsgBox:@"" msg:@"暂不支持此功能" parentCtrl:self];
+//        _AmtTextField.text = [NSString stringWithFormat:@"%.2f",[_AmtTextField.text floatValue]];
+//        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+//        ZFBVc.AmtNO = _AmtTextField.text;
+//        ZFBVc.cardNum = self.ZFBBankCardNum;
+//        ZFBVc.merchantId = merchantId;
+//        ZFBVc.productId = productId;
+//        ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
+//        [self.navigationController pushViewController:ZFBVc animated:YES];
+        
     }
 }
 

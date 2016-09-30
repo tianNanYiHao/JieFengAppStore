@@ -268,19 +268,15 @@
 }
 
 #pragma mark 支付宝 订单状态查询
-+ (void)alipayOrderStateSelect:(NSString *)merchorder_no key:(NSString *)key {
++ (void)alipayOrderStateSelect:(NSString *)merchorder_no key:(NSString *)key merchantcode:(NSString*)merchantcodE{
     //    PFYProgressHUD *pfyViewHUD = [[PFYProgressHUD alloc] initViewWithFrame:self.view.frame];
     //    [self.view addSubview:pfyViewHUD];
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMddHHmmss"];
     NSString *transDate = [formatter stringFromDate:[NSDate date]];
-
-    NSString *merchantcode = ZFBMERCHANTCODE;
+    NSString *merchantcode = merchantcodE;
     NSString *transdate = transDate;
     [PFYInterface alipayOrderStateSelectWithMerchantcode:merchantcode merchorder_no:merchorder_no smzfMsgId:@"" transdate:transdate key:key standbyCallback:^(NSDictionary *resultData) {
-        //        [pfyViewHUD PFYProgressHUDRemoveFromSuperview];
-
         if (resultData == nil) {
             [MyAlertView myAlertView:@"请检查你的网络连接"];
             return;
@@ -292,7 +288,7 @@
         NSLog(@"%@", dict);
         //        NSString *retcode = [dict objectForKey:@"retcode"];
         NSString *result = [dict objectForKey:@"result"];
-        [MyAlertView myAlertView:result];
+        [MyAlertView myAlertView:[NSString stringWithFormat:@"您的二维码:%@",result]];
         //        if ([retcode isEqualToString:@"00"]) {
         //
         //            self.imageView.image = [UIImage imageNamed:@""];

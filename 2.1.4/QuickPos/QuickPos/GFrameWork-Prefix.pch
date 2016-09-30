@@ -48,7 +48,7 @@
 #define YINHANGKEY @"4E64B423C2E449A9B234C083256D97CA"
 #define WXMERCHANTCODE @"939390010000310"
 #define WXKEY @"4DC416ED2087B7FA07D6A1390550C720"
-#define WXBACKURL @"``````````````````````````"
+#define WXBACKURL @"http://122.144.198.81:8081/easypay/yst/weixin"
 #define REQUESTURL @"http://120.26.232.137:8089/forward_jt/service"
 
 // 版本识别标识

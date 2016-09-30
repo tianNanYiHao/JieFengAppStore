@@ -1287,12 +1287,6 @@
 
 
 
-
-
-
-
-
-
 #pragma  mark  ------------  基础网络请求
 // 网络请求 dict:请求参数,type:请求唯一标识
 - (void)requestWithDict:(NSDictionary*)dict requestType:(NSInteger)type {
@@ -1331,8 +1325,7 @@
                 }
             }
             NSString *desc = [d objectForKey:@"respDesc"];
-            NSLog(@"resp %@", d);
-            
+            NSLog(@"resp %@", [NSString stringWithFormat:@"%@",d]);
             NSLog(@"respDesc返回-%@",desc);
         }
         else if (error && error.code == -1001){

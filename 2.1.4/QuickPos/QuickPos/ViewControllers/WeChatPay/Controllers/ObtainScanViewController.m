@@ -39,14 +39,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"微信收款";
-    
-    
-    
+    self.title = @"微信收款金额";
     request = [[Request alloc]initWithDelegate:self];
-    
     [request quickPayCodeState];
-    
     payTool = @"01";
     merchantId = @"0001000006";
     productId = @"0000000000";

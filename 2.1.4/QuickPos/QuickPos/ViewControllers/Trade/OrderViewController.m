@@ -223,8 +223,6 @@
 //确认支付
 - (IBAction)actionPay:(UIButton *)sender {
     
-
-    
     if (self.orderData.orderPayType == AccountPayType) {
         if (self.codeTextField.text.length == 0) {
             [Common showMsgBox:nil msg:L(@"VerificationCodeCannotBeEmpty") parentCtrl:self];

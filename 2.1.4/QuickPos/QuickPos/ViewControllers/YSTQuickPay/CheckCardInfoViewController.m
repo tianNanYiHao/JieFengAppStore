@@ -59,9 +59,8 @@
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type
 {
-    
-    if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
-        if (type == REQUSET_CARDBINQUERY) {
+      if (type == REQUSET_CARDBINQUERY) {
+            if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
             self.bankNames = [[dict objectForKey:@"data"]objectForKey:@"bankname"];
             self.cardTypeNo = [[dict objectForKey:@"data"]objectForKey:@"cardtype"];
             self.customID = [[dict objectForKey:@"data"]objectForKey:@"customerId"];

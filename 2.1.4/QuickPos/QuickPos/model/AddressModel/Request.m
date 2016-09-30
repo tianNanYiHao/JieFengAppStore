@@ -1332,6 +1332,7 @@
             }
             NSString *desc = [d objectForKey:@"respDesc"];
             NSLog(@"resp %@", d);
+            
             NSLog(@"respDesc返回-%@",desc);
         }
         else if (error && error.code == -1001){
@@ -1344,7 +1345,6 @@
             NSDictionary *dic = @{@"respCode": @"1001", @"respDesc": error.localizedDescription};
             [self.delegate responseWithDict:dic requestType:type];
         }
-        
     }];
     [sessionTask resume];
     

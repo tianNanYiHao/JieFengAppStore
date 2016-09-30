@@ -4801,11 +4801,11 @@
 				TargetAttributes = {
 					88E6BBF01AB029BD00AD89E0 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = YS27375FC6;
+						DevelopmentTeam = 67S48FE7QB;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -5604,10 +5604,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = QuickPos/QuickPos.entitlements;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				DEVELOPMENT_TEAM = YS27375FC6;
+				DEVELOPMENT_TEAM = 67S48FE7QB;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5653,10 +5654,10 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiefeng.bmjfsh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JieFengPay.bmjfsh.Distribution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "25c17071-4197-4921-b670-524cae108f46";
-				PROVISIONING_PROFILE_SPECIFIER = 99_Development_All_App;
+				PROVISIONING_PROFILE = "5c8b138f-2a4a-461f-9592-957581e31fd5";
+				PROVISIONING_PROFILE_SPECIFIER = com.jieFengPay.bmjfshAPNs.Distribution;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -5667,10 +5668,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = QuickPos/QuickPos.entitlements;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				DEVELOPMENT_TEAM = YS27375FC6;
+				DEVELOPMENT_TEAM = 67S48FE7QB;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5716,10 +5718,10 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiefeng.bmjfsh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JieFengPay.bmjfsh.Distribution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "25c17071-4197-4921-b670-524cae108f46";
-				PROVISIONING_PROFILE_SPECIFIER = 99_Development_All_App;
+				PROVISIONING_PROFILE = "5c8b138f-2a4a-461f-9592-957581e31fd5";
+				PROVISIONING_PROFILE_SPECIFIER = com.jieFengPay.bmjfshAPNs.Distribution;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";

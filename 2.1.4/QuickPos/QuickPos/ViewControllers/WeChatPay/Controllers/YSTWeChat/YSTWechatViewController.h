@@ -1,5 +1,5 @@
 //
-//  TSTWechatViewController.h
+//  YSTWechatViewController.h
 //  QuickPos
 //
 //  Created by Lff on 16/9/29.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSTWechatViewController : UIViewController
+@interface YSTWechatViewController : UIViewController
 @property (nonatomic,strong) NSString *WeChatBankCardNum;
 
 

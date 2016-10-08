@@ -44,7 +44,7 @@
     
     
         //修改位置
-        _compenyDetalVIew2.frame = CGRectMake(0, CGRectGetMaxY(_companyIntroDutionLab.frame), self.view.frame.size.width, 300);
+//        _compenyDetalVIew2.frame = CGRectMake(0, CGRectGetMaxY(_companyIntroDutionLab.frame), self.view.frame.size.width, 300);
 //        _tableview.backgroundColor= [UIColor orangeColor];
         _tableview.dataSource = self;
         _tableview.delegate = self;

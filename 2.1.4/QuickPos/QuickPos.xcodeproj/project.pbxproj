@@ -610,8 +610,8 @@
 		BF5860261D9BA2D200777D7D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860251D9BA2D200777D7D /* Foundation+Log.m */; };
 		BF58603F1D9CEF8300777D7D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BF5860391D9CEF8300777D7D /* back.png */; };
 		BF5860441D9CF97800777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5860431D9CF97800777D7D /* PFYSDK.a */; };
-		BF5860531D9D058600777D7D /* TSTWechatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860511D9D058600777D7D /* TSTWechatViewController.m */; };
-		BF5860541D9D058600777D7D /* TSTWechatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5860521D9D058600777D7D /* TSTWechatViewController.xib */; };
+		BF5860531D9D058600777D7D /* YSTWechatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860511D9D058600777D7D /* YSTWechatViewController.m */; };
+		BF5860541D9D058600777D7D /* YSTWechatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5860521D9D058600777D7D /* YSTWechatViewController.xib */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
 		BFC042171D70120A0090CAFC /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F91D70120A0090CAFC /* AFSecurityPolicy.m */; };
@@ -1860,9 +1860,9 @@
 		BF58603C1D9CEF8300777D7D /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
 		BF58603D1D9CEF8300777D7D /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
 		BF5860431D9CF97800777D7D /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
-		BF5860501D9D058600777D7D /* TSTWechatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTWechatViewController.h; sourceTree = "<group>"; };
-		BF5860511D9D058600777D7D /* TSTWechatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTWechatViewController.m; sourceTree = "<group>"; };
-		BF5860521D9D058600777D7D /* TSTWechatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSTWechatViewController.xib; sourceTree = "<group>"; };
+		BF5860501D9D058600777D7D /* YSTWechatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTWechatViewController.h; sourceTree = "<group>"; };
+		BF5860511D9D058600777D7D /* YSTWechatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTWechatViewController.m; sourceTree = "<group>"; };
+		BF5860521D9D058600777D7D /* YSTWechatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSTWechatViewController.xib; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFC041F31D70120A0090CAFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -4497,9 +4497,9 @@
 		BF58604F1D9D050C00777D7D /* YSTWeChat */ = {
 			isa = PBXGroup;
 			children = (
-				BF5860501D9D058600777D7D /* TSTWechatViewController.h */,
-				BF5860511D9D058600777D7D /* TSTWechatViewController.m */,
-				BF5860521D9D058600777D7D /* TSTWechatViewController.xib */,
+				BF5860501D9D058600777D7D /* YSTWechatViewController.h */,
+				BF5860511D9D058600777D7D /* YSTWechatViewController.m */,
+				BF5860521D9D058600777D7D /* YSTWechatViewController.xib */,
 			);
 			path = YSTWeChat;
 			sourceTree = "<group>";
@@ -4879,7 +4879,7 @@
 				87E058E71C044DBD00C4A4C1 /* Icon.png in Resources */,
 				AEE5F6171C4E199F006FAF60 /* UMShareEditViewController.xib in Resources */,
 				339B9A5D1D7D68A6004D0E1B /* ShareSDK.bundle in Resources */,
-				BF5860541D9D058600777D7D /* TSTWechatViewController.xib in Resources */,
+				BF5860541D9D058600777D7D /* YSTWechatViewController.xib in Resources */,
 				BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */,
 				BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */,
 				BF3E100D1D49B9A7003F0F89 /* ProducyListSYCell.xib in Resources */,
@@ -5295,7 +5295,7 @@
 				BF3E10161D49E9F2003F0F89 /* CompaneyDetialController2.m in Sources */,
 				BF3C8FDB1D5834A50092AC19 /* ZXDataMatrixEdifactEncoder.m in Sources */,
 				BF3C8F641D5834A50092AC19 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
-				BF5860531D9D058600777D7D /* TSTWechatViewController.m in Sources */,
+				BF5860531D9D058600777D7D /* YSTWechatViewController.m in Sources */,
 				BF3C8FBB1D5834A50092AC19 /* ZXDecoderResult.m in Sources */,
 				333CC0541D2D340E00023EA3 /* OriginQueryViewController.m in Sources */,
 				591BC3531AEDFE6A0037199A /* DateUtil.m in Sources */,

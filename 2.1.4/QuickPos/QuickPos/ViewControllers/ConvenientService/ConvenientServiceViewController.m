@@ -573,14 +573,13 @@
             if (indexPath.row == 2) {
                 TrickMainViewController *trickMain = [[TrickMainViewController alloc] initWithNibName:@"TrickMainViewController" bundle:nil];
                 [self.navigationController pushViewController:trickMain animated:YES];
-                
             }
-            
-            
-            //正在努力建设中...
-            NoteViewController *noteVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"NoteViewController"];
-            noteVc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:noteVc animated:YES];
+            else{
+                //正在努力建设中...
+                NoteViewController *noteVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"NoteViewController"];
+                noteVc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:noteVc animated:YES];
+            }
         }
        
     }else{

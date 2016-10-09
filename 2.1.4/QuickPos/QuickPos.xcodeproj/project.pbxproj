@@ -628,6 +628,7 @@
 		BFC042221D70120A0090CAFC /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC042121D70120A0090CAFC /* UIRefreshControl+AFNetworking.m */; };
 		BFC042231D70120A0090CAFC /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC042141D70120A0090CAFC /* UIWebView+AFNetworking.m */; };
 		BFDDF04A1D48832500708100 /* AuthenticationEnterpriseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */; };
+		BFEF24C01DA9F43600D61F0F /* AddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24BF1DA9F43600D61F0F /* AddressModel.m */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
 		C3696F001AC1134A003B04B4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */; };
 		C3696F031AC11350003B04B4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696F011AC11350003B04B4 /* AudioToolbox.framework */; };
@@ -1900,6 +1901,8 @@
 		BFC042141D70120A0090CAFC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		BFDDF0481D48832500708100 /* AuthenticationEnterpriseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationEnterpriseModel.h; sourceTree = "<group>"; };
 		BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationEnterpriseModel.m; sourceTree = "<group>"; };
+		BFEF24BE1DA9F43600D61F0F /* AddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressModel.h; sourceTree = "<group>"; };
+		BFEF24BF1DA9F43600D61F0F /* AddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressModel.m; sourceTree = "<group>"; };
 		BFFF83B71D7E76330014BDEC /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		BFFF83B81D7E76330014BDEC /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -2968,6 +2971,7 @@
 		591BC1E21AEDFE690037199A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF093DD81DA8F0950011EFE6 /* TrainTicket */,
 				339DA4051D9920FD001BA189 /* YSTQuickPay */,
 				33FDAE581D66F13D00AACC61 /* CreditCardRepayment */,
 				BF3C8D3D1D581FD30092AC19 /* ZFBPay */,
@@ -3590,6 +3594,39 @@
 				AEE5F62F1C4E19D8006FAF60 /* UMSocialSinaHandler.h */,
 			);
 			path = Sina;
+			sourceTree = "<group>";
+		};
+		BF093DD81DA8F0950011EFE6 /* TrainTicket */ = {
+			isa = PBXGroup;
+			children = (
+				BF093DD91DA8F0D00011EFE6 /* Controller */,
+				BF093DDA1DA8F0D00011EFE6 /* model */,
+				BF093DDB1DA8F0D00011EFE6 /* view */,
+			);
+			path = TrainTicket;
+			sourceTree = "<group>";
+		};
+		BF093DD91DA8F0D00011EFE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF093DDA1DA8F0D00011EFE6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BFEF24BE1DA9F43600D61F0F /* AddressModel.h */,
+				BFEF24BF1DA9F43600D61F0F /* AddressModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BF093DDB1DA8F0D00011EFE6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		BF3C8D381D581D760092AC19 /* AlipaySDK */ = {
@@ -4802,6 +4839,7 @@
 					88E6BBF01AB029BD00AD89E0 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = YS27375FC6;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -5267,6 +5305,7 @@
 				BF3C90501D5834A50092AC19 /* ZXMultiDetector.m in Sources */,
 				BF3C8F661D5834A50092AC19 /* LBXAlertAction.m in Sources */,
 				BFC042191D70120A0090CAFC /* AFURLResponseSerialization.m in Sources */,
+				BFEF24C01DA9F43600D61F0F /* AddressModel.m in Sources */,
 				591BC0DE1AEDFE330037199A /* SDWebImageDecoder.m in Sources */,
 				591BC0DC1AEDFE330037199A /* SDImageCache.m in Sources */,
 				BF3C8FF21D5834A50092AC19 /* ZXAI01AndOtherAIs.m in Sources */,
@@ -5604,6 +5643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
@@ -5658,6 +5698,9 @@
 				PROVISIONING_PROFILE = "25c17071-4197-4921-b670-524cae108f46";
 				PROVISIONING_PROFILE_SPECIFIER = 99_Development_All_App;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickPos/ViewControllers/TrainTicket/model/QuickPos-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -5667,6 +5710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
@@ -5721,6 +5765,8 @@
 				PROVISIONING_PROFILE = "25c17071-4197-4921-b670-524cae108f46";
 				PROVISIONING_PROFILE_SPECIFIER = 99_Development_All_App;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickPos/ViewControllers/TrainTicket/model/QuickPos-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};

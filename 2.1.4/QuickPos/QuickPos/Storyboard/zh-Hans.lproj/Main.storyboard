@@ -5514,8 +5514,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rhj-cc-VvZ">
-                                <frame key="frameInset" minX="20" minY="361" width="280" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rhj-cc-VvZ">
+                                <frame key="frameInset" minX="20" minY="406" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.34919726848602295" green="0.75746613740921021" blue="0.39555364847183228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -5558,8 +5558,8 @@
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" id="oqo-pl-WTl">
-                                        <frame key="frameInset" minY="33" width="320" height="45"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" id="oqo-pl-WTl">
+                                        <frame key="frameInset" minY="33" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" tag="44" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J8y-Pe-9At" customClass="RadioButton">
@@ -5598,11 +5598,47 @@
                                                     <action selector="typeAction:" destination="NRf-yh-4rR" eventType="touchUpInside" id="zlV-3Z-bwE"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" tag="444" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GOU-6t-792" userLabel="银统微信" customClass="RadioButton">
+                                                <frame key="frameInset" minX="20" minY="45" width="90" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <state key="normal" title="微信支付" image="phone_Select_normal">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="phone_Select_press"/>
+                                                <connections>
+                                                    <action selector="typeAction:" destination="NRf-yh-4rR" eventType="touchUpInside" id="ZDv-jJ-yFH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="555" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HVG-Kg-HWp" userLabel="银统支付宝" customClass="RadioButton">
+                                                <frame key="frameInset" minX="113" minY="45" width="94" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <state key="normal" title="支付宝支付" image="phone_Select_normal">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="phone_Select_press"/>
+                                                <connections>
+                                                    <action selector="typeAction:" destination="NRf-yh-4rR" eventType="touchUpInside" id="1L6-X0-yaa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="666" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gpn-K0-LZu" userLabel="银统在线" customClass="RadioButton">
+                                                <frame key="frameInset" minX="209" minY="45" width="94" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <state key="normal" title="银联在线" image="phone_Select_normal">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="phone_Select_press"/>
+                                                <connections>
+                                                    <action selector="typeAction:" destination="NRf-yh-4rR" eventType="touchUpInside" id="7LC-Ey-sIF"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="kBw-Dx-uSd">
-                                        <frame key="frameInset" minY="79" width="320" height="45"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" id="kBw-Dx-uSd">
+                                        <frame key="frameInset" minY="124" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kqb-Mv-bxb" customClass="RadioButton">
@@ -5644,8 +5680,8 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="m00-Ql-fG4">
-                                        <frame key="frameInset" minY="125" width="320" height="45"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" id="m00-Ql-fG4">
+                                        <frame key="frameInset" minY="179" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" tag="88" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a0r-vV-iau" customClass="RadioButton">
@@ -5675,15 +5711,15 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详细区别,请点击右上角查看费率说明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L5z-qS-m4U">
-                                        <frame key="frameInset" minX="20" minY="178" width="230" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="详细区别,请点击右上角查看费率说明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L5z-qS-m4U">
+                                        <frame key="frameInset" minX="20" minY="252" width="230" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="刷卡费率 千7 单笔手续费最低1元  刷卡完成后需手动提现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5L-68-BeX">
-                                        <frame key="frameInset" minX="20" minY="158" width="300" height="21"/>
+                                        <frame key="frameInset" minX="20" minY="237" width="300" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -5703,8 +5739,11 @@
                         <outlet property="button2" destination="kqb-Mv-bxb" id="jHR-aZ-BHf"/>
                         <outlet property="button3" destination="wUv-aK-Cjp" id="MYM-aO-cqS"/>
                         <outlet property="button4" destination="J8y-Pe-9At" id="QTf-Gk-oLv"/>
+                        <outlet property="button444" destination="GOU-6t-792" id="bPc-Bl-hc0"/>
                         <outlet property="button5" destination="2Xn-BH-wRo" id="QnO-2a-hcJ"/>
+                        <outlet property="button555" destination="HVG-Kg-HWp" id="da1-zw-N4g"/>
                         <outlet property="button6" destination="8Bf-vF-pgm" id="jP3-14-Rvo"/>
+                        <outlet property="button666" destination="gpn-K0-LZu" id="Icg-vT-td1"/>
                         <outlet property="button7" destination="WFc-Rq-5hF" id="8t4-yM-hZU"/>
                         <outlet property="button8" destination="a0r-vV-iau" id="mA9-ol-2Xr"/>
                         <outlet property="comfirted" destination="rhj-cc-VvZ" id="3kN-1X-End"/>

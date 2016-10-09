@@ -42,7 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-    self.title = @"支付宝二维码";
+    self.title = _titleName;
+    
     req = [[Request alloc] initWithDelegate:self];
     payTool = @"01";
     //获取YST二维码

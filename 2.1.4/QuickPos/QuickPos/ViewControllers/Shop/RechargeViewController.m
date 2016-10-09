@@ -25,6 +25,9 @@
 #import "QuickPosTabBarController.h"
 #import "SweepViewController.h"
 #import "BankCardBindViewController.h"
+#import "ZFBViewController.h"
+
+
 
 @interface RechargeViewController ()<UITableViewDataSource,UITableViewDelegate,ResponseData,ChooseViewDelegate>
 {
@@ -38,6 +41,10 @@
     NSString *commodityIDs; //商品id
     NSString *merchantId;   //商户商家id
     NSString *productId;  //
+    NSArray *infoKeyArray; //银统支付key数组
+    NSString *_YTpayWay;
+    NSString *titleName;
+    
     
     
 }
@@ -68,6 +75,15 @@
 
 @property (weak, nonatomic) IBOutlet RadioButton *button5;
 @property (weak, nonatomic) IBOutlet RadioButton *button6;
+
+@property (weak, nonatomic) IBOutlet RadioButton *button444;
+@property (weak, nonatomic) IBOutlet RadioButton *button555;
+@property (weak, nonatomic) IBOutlet RadioButton *button666;
+
+
+
+
+
 @property (weak, nonatomic) IBOutlet RadioButton *button7;
 @property (weak, nonatomic) IBOutlet RadioButton *button8;
 @property (weak, nonatomic) IBOutlet UIView *radioBottom2;
@@ -109,6 +125,7 @@
             payTool = @"01";
             self.phoneView.hidden = YES;
             self.isAccount = @"0";
+            _YTpayWay = @"NYT";
             payType = CardPayType;  //刷卡充值/支付 0
         }
         else
@@ -122,34 +139,36 @@
             payType = CardPayType;
         }
         
-    }else if (sender.tag == 66){
-        //账户支付
-        self.radioBottomView.hidden = YES;
-        self.radioBottom2.hidden = YES;
-        self.ExplainLabel1.hidden = YES;
-        self.ExplainLabel2.hidden = YES;
-          //如果是充值页
-        if (_isRechargeView) {
-            merchantId = @"0002000002";
-            productId = @"0000000004";
-            payTool = @"02";
-            self.phoneView.hidden = NO;
-            self.isAccount = @"1";
-            payType = AccountPayType; //账户充值/支付 1
-        }
-        else
-        {
-            merchantId = @"0008000005";
-            productId = @"0000000004";
-            payTool = @"02";
-            self.phoneView.hidden = NO;
-            self.isAccount = @"1";
-            payType = AccountPayType;
-            
-            self.phoneView.hidden = NO;
-        }
-        
-    }else{
+    }
+//    else if (sender.tag == 66){
+//        //账户支付
+//        self.radioBottomView.hidden = YES;
+//        self.radioBottom2.hidden = YES;
+//        self.ExplainLabel1.hidden = YES;
+//        self.ExplainLabel2.hidden = YES;
+//          //如果是充值页
+//        if (_isRechargeView) {
+//            merchantId = @"0002000002";
+//            productId = @"0000000004";
+//            payTool = @"02";
+//            self.phoneView.hidden = NO;
+//            self.isAccount = @"1";
+//            payType = AccountPayType; //账户充值/支付 1
+//        }
+//        else
+//        {
+//            merchantId = @"0008000005";
+//            productId = @"0000000004";
+//            payTool = @"02";
+//            self.phoneView.hidden = NO;
+//            self.isAccount = @"1";
+//            payType = AccountPayType;
+//            
+//            self.phoneView.hidden = NO;
+//        }
+//        
+//    }
+    else if(sender.tag == 55){
         //快捷支付
         self.radioBottomView.hidden = YES;
         self.radioBottom2.hidden = YES;
@@ -161,6 +180,7 @@
             payTool = @"03";
             self.phoneView.hidden = YES;
             self.isAccount = @"0";
+            _YTpayWay = @"NYT";
             payType = QuickPayType; //快捷充值/支付 0
         }
         else
@@ -175,38 +195,90 @@
         }
     }
     
+    else if (sender.tag == 444){ //银统微信
+        if(_isRechargeView){
+            merchantId = @"0001000006";
+            productId = @"0000000004";
+            self.phoneView.hidden = YES;
+            self.radioBottomView.hidden = YES;
+            self.radioBottom2.hidden = YES;
+            self.ExplainLabel1.hidden = YES;
+            self.ExplainLabel2.hidden = YES;
+            _YTpayWay = @"YT";
+            _titleNmae = @"微信充值";
+            infoKeyArray = [[NSArray alloc] init];
+            infoKeyArray = @[WXMERCHANTCODE,WXBACKURL,WXKEY];
+
+        }
+    }
+    else if (sender.tag == 555){//银统支付宝
+        if (_isRechargeView) {
+            merchantId = @"0001000007";
+            productId = @"0000000005";
+            self.phoneView.hidden = YES;
+            self.radioBottomView.hidden = YES;
+            self.radioBottom2.hidden = YES;
+            self.ExplainLabel1.hidden = YES;
+            self.ExplainLabel2.hidden = YES;
+            _YTpayWay = @"YT";
+            _titleNmae = @"支付宝充值";
+            infoKeyArray = [[NSArray alloc] init];
+            infoKeyArray = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
+        }
+    }
+    else if (sender.tag == 666){//银统银联在线
+        if (_isRechargeView) {
+            merchantId = @"0001000008";
+            productId = @"0000000002";
+            self.phoneView.hidden = YES;
+            self.radioBottomView.hidden = YES;
+            self.radioBottom2.hidden = YES;
+            self.ExplainLabel1.hidden = YES;
+            self.ExplainLabel2.hidden = YES;
+            _YTpayWay = @"YT";
+            _titleNmae = @"银联在线充值";
+            infoKeyArray = [[NSArray alloc] init];
+            infoKeyArray = @[YINHANGMERCHANTCODE,YINHANGURL,YINHANGKEY];
+        }
+    }
 }
 
-#pragma mark - VIP版本不看这段
+
 - (IBAction)radioAction:(RadioButton *)sender{
     if (sender.tag == 11) {// 批发
 
         
-        if ([payTool isEqualToString:@"01"]) {
-            if (_isRechargeView) {
-               }
-            else
-            {
-                merchantId = @"0008000001";
-                productId = @"0000000000";
-            }
-            
-        }
-        _button7.selected = YES;
-        merchantId = @"0002000002";
-        productId = @"0000000005";
+//        if ([payTool isEqualToString:@"01"]) {
+//            if (_isRechargeView) {
+//               }
+//            else
+//            {
+//                merchantId = @"0008000001";
+//                productId = @"0000000000";
+//            }
+//            
+//        }
+//        _button7.selected = YES;
+//        merchantId = @"0002000002";
+//        productId = @"0000000005";
+//        
+//        
+//    }else if (sender.tag == 22){//零售
+//
+//        if ([payTool isEqualToString:@"01"]) {
+//            if (_isRechargeView) {
+//            }else{
+//                merchantId = @"0008000003";
+//                productId = @"0000000000";
+//            }
+//            
+//        }
+        _button1.selected = NO;
         
-        
-    }else if (sender.tag == 22){//零售
-
-        if ([payTool isEqualToString:@"01"]) {
-            if (_isRechargeView) {
-            }else{
-                merchantId = @"0008000003";
-                productId = @"0000000000";
-            }
-            
-        }
+        _button3.selected = YES;
+        merchantId = @"0005000001";
+        productId = @"0000000000";
+        [Common showMsgBox:@"" msg:@"功能暂未开放" parentCtrl:self];
    
         
     }else  if (sender.tag == 33){//团购
@@ -241,15 +313,16 @@
         
     }else if (sender.tag == 88){
         
-        if (_button1.selected == YES) { //T+0
-            merchantId = @"0002000002";
-            productId = @"0000000006";
-            
-        }else if(_button3.selected == YES){ //T+1
-            merchantId = @"0002000002";
-            productId = @"0000000002";
-        }
-
+//        if (_button1.selected == YES) { //T+0
+//            merchantId = @"0002000002";
+//            productId = @"0000000006";
+//            
+//        }else if(_button3.selected == YES){ //T+1
+//            merchantId = @"0002000002";
+//            productId = @"0000000002";
+//        }
+         _button8.selected = NO;
+         [Common showMsgBox:@"" msg:@"功能暂未开放" parentCtrl:self];
     }
     
 }
@@ -321,11 +394,14 @@
     
     //默认
     if (_isRechargeView) {  //如果是充值页面 给id赋初值
-        merchantId = @"0002000002";
-        productId = @"0000000005";
+//        merchantId = @"0002000002";
+//        productId = @"0000000005";
+        merchantId = @"0005000001";
+        productId = @"0000000000";
         _button5.hidden = NO;
         _button2.hidden = YES;
         _button7.selected = YES;
+        _YTpayWay = @"NYT";
     }else
     {
         _button5.hidden = YES;
@@ -340,10 +416,12 @@
      [Common setExtraCellLineHidden:self.sTableView];//去除多余的线
     
     _button1.groupButtons = @[_button1,_button2,_button3];
-    _button4.groupButtons = @[_button4,_button5,_button6];
+    _button4.groupButtons = @[_button4,_button5,_button6,_button444,_button555,_button666];
     _button7.groupButtons = @[_button7,_button8];
+    
+    _button6.hidden = YES;
     _button4.selected = YES;
-    _button1.selected = YES;
+    _button3.selected = YES;
     _button7.selected = YES;
     
     //vip版本直接隐藏
@@ -457,70 +535,97 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark  - 点击确认充值/支付 按钮
 //发送订单信息。得到回调信息才push
 - (IBAction)pushToOrder:(id)sender {
     NSLog(@"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=%@ %@",merchantId ,productId);
 
     //如果是 充值页
-    if (_isRechargeView) {
-        NSString *priceVer = finalPrice.text; //得到充值的金额
-        priceVer = [NSString stringWithFormat:@"%.2f",[priceVer doubleValue]];
-        NSString *priceVerde = finalPrice.text;
+    if (_isRechargeView ) {
         
-        //判断充值金额为空
-        if ([priceVer length] > 9 || [priceVerde isEqualToString:@""] || ![self matchStringFormat:priceVer withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"]  || [priceVer isEqualToString:@"0.00"]) {
+        //银统 走扫码充值
+        if ([_YTpayWay isEqualToString:@"YT"]) {
             
-            [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入充值金额")];
-        }
-        //如果不为空
-        else if (![self matchStringFormat:priceVerde withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"])
-        {
-            
-            [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"CorrectPrice")]; //请输入正确价格
-        }
-        //否则
-        else
-        {
-            NSString *price = [priceVer stringByReplacingOccurrencesOfString:@"." withString:@""];//过滤字符
-            //是否是账户充值的标准
-            if ([self.isAccount isEqualToString:@"1"]) {  //是账户充值
-                  if (self.phone.text.length == 0) {
-                [Common showMsgBox:@"" msg:L(@"InputNumber") parentCtrl:self];//请输入电话号码
-                return;
-                }
-                
-                if(![Common isPhoneNumber:self.phone.text]){
-                    [Common showMsgBox:@"" msg:L(@"MobilePhoneNumberIsWrong") parentCtrl:self]; //手机号码有错 请重新输入
-                    return;
-                }
-                //账户支付
-                [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
-                                  MerchanId:merchantId
-                                  productId:productId
-                                   orderAmt:price
-                                  orderDesc:self.phone.text //填写的充值账户
-                                orderRemark:@""
-                               commodityIDs:@""
-                                    payTool:payTool];
-                [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderHasBeenSubmitted-PleaseLater")];//已提交订单
+            if (finalPrice.text.length == 0) {
+                [Common showMsgBox:@"" msg:@"请输入金额" parentCtrl:self];
+            }else if([finalPrice.text integerValue]<5 ){
+                [Common showMsgBox:@"" msg:@"金额请勿小于5元" parentCtrl:self];
+            }else if([finalPrice.text length]>100000000){
+                [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
             }
-            else{ //否则是 刷卡和快捷支付
-                
-                [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
-                                  MerchanId:merchantId
-                                  productId:productId
-                                   orderAmt:price
-                                  orderDesc:[AppDelegate getUserBaseData].mobileNo
-                                orderRemark:@""
-                               commodityIDs:@""
-                                    payTool:payTool];
-                
-                [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderHasBeenSubmitted-PleaseLater")]; //已提交
+            else{
+                finalPrice.text = [NSString stringWithFormat:@"%.2f",[finalPrice.text floatValue]];
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+                ZFBVc.AmtNO = finalPrice.text;
+                ZFBVc.cardNum = [AppDelegate getUserBaseData].mobileNo;
+                ZFBVc.merchantId = merchantId;
+                ZFBVc.productId = productId;
+                ZFBVc.titleName = _titleNmae;
+                ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
+                [self.navigationController pushViewController:ZFBVc animated:YES];
             }
             
+        }else{//非银统充值方式
+            
+            NSString *priceVer = finalPrice.text; //得到充值的金额
+            priceVer = [NSString stringWithFormat:@"%.2f",[priceVer doubleValue]];
+            NSString *priceVerde = finalPrice.text;
+            
+            //判断充值金额为空
+            if ([priceVer length] > 9 || [priceVerde isEqualToString:@""] || ![self matchStringFormat:priceVer withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"]  || [priceVer isEqualToString:@"0.00"]) {
+                
+                [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入充值金额")];
+            }
+            //如果不为空
+            else if (![self matchStringFormat:priceVerde withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"])
+            {
+                
+                [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"CorrectPrice")]; //请输入正确价格
+            }
+            //否则
+            else
+            {
+                NSString *price = [priceVer stringByReplacingOccurrencesOfString:@"." withString:@""];//过滤字符
+                //是否是账户充值的标准
+                if ([self.isAccount isEqualToString:@"1"]) {  //是账户充值
+                    if (self.phone.text.length == 0) {
+                        [Common showMsgBox:@"" msg:L(@"InputNumber") parentCtrl:self];//请输入电话号码
+                        return;
+                    }
+                    
+                    if(![Common isPhoneNumber:self.phone.text]){
+                        [Common showMsgBox:@"" msg:L(@"MobilePhoneNumberIsWrong") parentCtrl:self]; //手机号码有错 请重新输入
+                        return;
+                    }
+                    //账户支付
+                    [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
+                                      MerchanId:merchantId
+                                      productId:productId
+                                       orderAmt:price
+                                      orderDesc:self.phone.text //填写的充值账户
+                                    orderRemark:@""
+                                   commodityIDs:@""
+                                        payTool:payTool];
+                    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderHasBeenSubmitted-PleaseLater")];//已提交订单
+                }
+                else{ //否则是 刷卡和快捷支付
+                    
+                    [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
+                                      MerchanId:merchantId
+                                      productId:productId
+                                       orderAmt:price
+                                      orderDesc:[AppDelegate getUserBaseData].mobileNo
+                                    orderRemark:@""
+                                   commodityIDs:@""
+                                        payTool:payTool];
+                    
+                    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderHasBeenSubmitted-PleaseLater")]; //已提交
+                }
+            }
         }
-    }
+   }
     else //如果是支付页 ******
     {
         

@@ -628,6 +628,8 @@
 		BFC042221D70120A0090CAFC /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC042121D70120A0090CAFC /* UIRefreshControl+AFNetworking.m */; };
 		BFC042231D70120A0090CAFC /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC042141D70120A0090CAFC /* UIWebView+AFNetworking.m */; };
 		BFDDF04A1D48832500708100 /* AuthenticationEnterpriseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */; };
+		BFEF24C71DAA388B00D61F0F /* TrickMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */; };
+		BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
 		C3696F001AC1134A003B04B4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */; };
 		C3696F031AC11350003B04B4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696F011AC11350003B04B4 /* AudioToolbox.framework */; };
@@ -1900,6 +1902,9 @@
 		BFC042141D70120A0090CAFC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		BFDDF0481D48832500708100 /* AuthenticationEnterpriseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationEnterpriseModel.h; sourceTree = "<group>"; };
 		BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationEnterpriseModel.m; sourceTree = "<group>"; };
+		BFEF24C41DAA388B00D61F0F /* TrickMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickMainViewController.h; sourceTree = "<group>"; };
+		BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickMainViewController.m; sourceTree = "<group>"; };
+		BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickMainViewController.xib; sourceTree = "<group>"; };
 		BFFF83B71D7E76330014BDEC /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		BFFF83B81D7E76330014BDEC /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -3606,6 +3611,9 @@
 		BF093DD91DA8F0D00011EFE6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BFEF24C41DAA388B00D61F0F /* TrickMainViewController.h */,
+				BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */,
+				BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4929,6 +4937,7 @@
 				87E058DF1C044DBD00C4A4C1 /* Icon-72@2x.png in Resources */,
 				BF3C8F671D5834A50092AC19 /* LICENSE in Resources */,
 				D56152181BDF6EA100DAAADC /* MJRefresh.bundle in Resources */,
+				BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */,
 				87E058E91C044DBD00C4A4C1 /* iTunesArtwork in Resources */,
 				87E058DB1C044DBD00C4A4C1 /* Icon-60.png in Resources */,
 				BF3E10001D499C6D003F0F89 /* CertificationGoodsCell.xib in Resources */,
@@ -5126,6 +5135,7 @@
 				325CBCE11AEE1BC400D924D5 /* ITronBlueToothVpos.mm in Sources */,
 				591BC0ED1AEDFE330037199A /* NSString+PinYin4Cocoa.m in Sources */,
 				BF43A9231D825C6800C9E722 /* AppDelegate.m in Sources */,
+				BFEF24C71DAA388B00D61F0F /* TrickMainViewController.m in Sources */,
 				AE8EA4371C5F698E00823760 /* FoodInFormationViewController.m in Sources */,
 				BF3C90301D5834A50092AC19 /* ZXPDF417DetectorResult.m in Sources */,
 				BF3C8FCC1D5834A50092AC19 /* ZXLuminanceSource.m in Sources */,

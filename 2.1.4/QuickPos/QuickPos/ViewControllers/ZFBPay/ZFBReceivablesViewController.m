@@ -102,6 +102,7 @@
 //        ZFBVc.cardNum = self.ZFBBankCardNum;
 //        ZFBVc.merchantId = merchantId;
 //        ZFBVc.productId = productId;
+//        ZFBVc.titleName = @"支付宝收款二维码";
 //        ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
 //        [self.navigationController pushViewController:ZFBVc animated:YES];
         

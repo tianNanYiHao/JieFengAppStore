@@ -15,6 +15,8 @@
 @property (nonatomic,strong) NSString *merchantId;   //商户商家id
 @property (nonatomic,strong) NSString *productId;
 @property (nonatomic,strong) NSArray *infoArr;
+@property (nonatomic,strong) NSString *titleName;
+
 
 
 @end

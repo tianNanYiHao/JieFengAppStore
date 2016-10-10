@@ -7,7 +7,8 @@
 //
 
 #import "TrickMainViewController.h"
-#import "AddressModel.h"
+
+
 
 @interface TrickMainViewController ()
 
@@ -20,11 +21,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.title = @"火车票";
-//    TrickInfoModel *model = [[TrickInfoModel alloc]init];
-//    NSArray *arr =  [model getInfoBack];
-//    NSLog(@"%@",arr);
-    
-}
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

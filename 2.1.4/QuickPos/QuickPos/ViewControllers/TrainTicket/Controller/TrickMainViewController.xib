@@ -15,7 +15,32 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="TrickMainViewController" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwr-02-tnY">
+                    <frame key="frameInset" width="100.00%" height="180"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="间隔线1" highlightedImage="间隔线1" translatesAutoresizingMaskIntoConstraints="NO" id="xzJ-Jc-lir">
+                            <frame key="frameInset" minY="80" width="100.00%" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="间隔线1" highlightedImage="间隔线1" translatesAutoresizingMaskIntoConstraints="NO" id="Yas-jB-HKg" userLabel="间隔线2">
+                            <frame key="frameInset" minY="130" width="100.00%" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="间隔线1" highlightedImage="间隔线1" translatesAutoresizingMaskIntoConstraints="NO" id="oZw-2s-iaZ" userLabel="间隔线3">
+                            <frame key="frameInset" minY="180" width="100.00%" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="-183" y="51"/>
         </view>
     </objects>
+    <resources>
+        <image name="间隔线1" width="1" height="1"/>
+    </resources>
 </document>

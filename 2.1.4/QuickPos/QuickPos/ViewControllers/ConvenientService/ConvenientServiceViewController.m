@@ -40,7 +40,7 @@
 #import "SubLBXScanViewController.h"
 #import "LBXScanWrapper.h"
 #import "TrickMainViewController.h"
-
+#import "TrickAddressModel.h"
 
 
 #define kCellReuseID @"CollectionCellId"
@@ -568,12 +568,19 @@
                 [self.navigationController pushViewController:noteVc animated:YES];
             }
         }
-        else if (indexPath.section == 1)
+        else if (indexPath.section == 1)   //骑车展订票+交通违章+火车票+飞机票
         {
-            if (indexPath.row == 2) {
+            if (indexPath.row == 2) { //火车票
                 TrickMainViewController *trickMain = [[TrickMainViewController alloc] initWithNibName:@"TrickMainViewController" bundle:nil];
+                TrickInfoModel *model = [[TrickInfoModel alloc] init];
+                trickMain.dataArray = [model getInfoBack];
+                for (int i = 0; i<trickMain.dataArray .count; i++) {
+                    NSLog(@"%@ == %@ ",[trickMain.dataArray [i] addName],[trickMain.dataArray [i] addCode]);
+                }
                 [self.navigationController pushViewController:trickMain animated:YES];
             }
+            
+            
             else{
                 //正在努力建设中...
                 NoteViewController *noteVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"NoteViewController"];

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TrickMainViewController : UIViewController
+@property (nonatomic,strong)NSArray *dataArray; //站点数据源
+
 
 @end

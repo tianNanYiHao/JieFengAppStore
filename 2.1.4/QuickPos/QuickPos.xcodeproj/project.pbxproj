@@ -630,6 +630,7 @@
 		BFDDF04A1D48832500708100 /* AuthenticationEnterpriseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */; };
 		BFEF24C71DAA388B00D61F0F /* TrickMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */; };
 		BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */; };
+		BFEF24CB1DAA3EFF00D61F0F /* TrickAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
 		C3696F001AC1134A003B04B4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */; };
 		C3696F031AC11350003B04B4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696F011AC11350003B04B4 /* AudioToolbox.framework */; };
@@ -1905,6 +1906,8 @@
 		BFEF24C41DAA388B00D61F0F /* TrickMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickMainViewController.h; sourceTree = "<group>"; };
 		BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickMainViewController.m; sourceTree = "<group>"; };
 		BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickMainViewController.xib; sourceTree = "<group>"; };
+		BFEF24C91DAA3EFF00D61F0F /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
+		BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickAddressModel.m; sourceTree = "<group>"; };
 		BFFF83B71D7E76330014BDEC /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		BFFF83B81D7E76330014BDEC /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -3621,6 +3624,8 @@
 		BF093DDA1DA8F0D00011EFE6 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				BFEF24C91DAA3EFF00D61F0F /* TrickAddressModel.h */,
+				BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -5442,6 +5447,7 @@
 				D561520B1BDF6EA100DAAADC /* MJRefreshBackFooter.m in Sources */,
 				BF3C90201D5834A50092AC19 /* ZXUPCEANWriter.m in Sources */,
 				BF3C90171D5834A50092AC19 /* ZXMultiFormatUPCEANReader.m in Sources */,
+				BFEF24CB1DAA3EFF00D61F0F /* TrickAddressModel.m in Sources */,
 				BF3C8FC81D5834A50092AC19 /* ZXDimension.m in Sources */,
 				AE8EA4391C5F698E00823760 /* FoodQueryViewController.m in Sources */,
 				591BC0B41AEDFE320037199A /* UIView+Hierarchy.m in Sources */,

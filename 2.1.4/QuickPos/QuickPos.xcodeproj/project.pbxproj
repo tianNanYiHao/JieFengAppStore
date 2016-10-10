@@ -610,8 +610,8 @@
 		BF5860261D9BA2D200777D7D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860251D9BA2D200777D7D /* Foundation+Log.m */; };
 		BF58603F1D9CEF8300777D7D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BF5860391D9CEF8300777D7D /* back.png */; };
 		BF5860441D9CF97800777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5860431D9CF97800777D7D /* PFYSDK.a */; };
-		BF5860531D9D058600777D7D /* TSTWechatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860511D9D058600777D7D /* TSTWechatViewController.m */; };
-		BF5860541D9D058600777D7D /* TSTWechatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5860521D9D058600777D7D /* TSTWechatViewController.xib */; };
+		BF5860531D9D058600777D7D /* YSTWechatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860511D9D058600777D7D /* YSTWechatViewController.m */; };
+		BF5860541D9D058600777D7D /* YSTWechatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5860521D9D058600777D7D /* YSTWechatViewController.xib */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
 		BFC042171D70120A0090CAFC /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F91D70120A0090CAFC /* AFSecurityPolicy.m */; };
@@ -628,6 +628,8 @@
 		BFC042221D70120A0090CAFC /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC042121D70120A0090CAFC /* UIRefreshControl+AFNetworking.m */; };
 		BFC042231D70120A0090CAFC /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC042141D70120A0090CAFC /* UIWebView+AFNetworking.m */; };
 		BFDDF04A1D48832500708100 /* AuthenticationEnterpriseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */; };
+		BFEF24C71DAA388B00D61F0F /* TrickMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */; };
+		BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
 		C3696F001AC1134A003B04B4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */; };
 		C3696F031AC11350003B04B4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696F011AC11350003B04B4 /* AudioToolbox.framework */; };
@@ -1860,9 +1862,9 @@
 		BF58603C1D9CEF8300777D7D /* PFYInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYInterface.h; sourceTree = "<group>"; };
 		BF58603D1D9CEF8300777D7D /* PFYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFYProgressHUD.h; sourceTree = "<group>"; };
 		BF5860431D9CF97800777D7D /* PFYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PFYSDK.a; sourceTree = "<group>"; };
-		BF5860501D9D058600777D7D /* TSTWechatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTWechatViewController.h; sourceTree = "<group>"; };
-		BF5860511D9D058600777D7D /* TSTWechatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTWechatViewController.m; sourceTree = "<group>"; };
-		BF5860521D9D058600777D7D /* TSTWechatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSTWechatViewController.xib; sourceTree = "<group>"; };
+		BF5860501D9D058600777D7D /* YSTWechatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTWechatViewController.h; sourceTree = "<group>"; };
+		BF5860511D9D058600777D7D /* YSTWechatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTWechatViewController.m; sourceTree = "<group>"; };
+		BF5860521D9D058600777D7D /* YSTWechatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSTWechatViewController.xib; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFC041F31D70120A0090CAFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -1900,6 +1902,9 @@
 		BFC042141D70120A0090CAFC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		BFDDF0481D48832500708100 /* AuthenticationEnterpriseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationEnterpriseModel.h; sourceTree = "<group>"; };
 		BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationEnterpriseModel.m; sourceTree = "<group>"; };
+		BFEF24C41DAA388B00D61F0F /* TrickMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickMainViewController.h; sourceTree = "<group>"; };
+		BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickMainViewController.m; sourceTree = "<group>"; };
+		BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickMainViewController.xib; sourceTree = "<group>"; };
 		BFFF83B71D7E76330014BDEC /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		BFFF83B81D7E76330014BDEC /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -2968,6 +2973,7 @@
 		591BC1E21AEDFE690037199A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF093DD81DA8F0950011EFE6 /* TrainTicket */,
 				339DA4051D9920FD001BA189 /* YSTQuickPay */,
 				33FDAE581D66F13D00AACC61 /* CreditCardRepayment */,
 				BF3C8D3D1D581FD30092AC19 /* ZFBPay */,
@@ -3590,6 +3596,40 @@
 				AEE5F62F1C4E19D8006FAF60 /* UMSocialSinaHandler.h */,
 			);
 			path = Sina;
+			sourceTree = "<group>";
+		};
+		BF093DD81DA8F0950011EFE6 /* TrainTicket */ = {
+			isa = PBXGroup;
+			children = (
+				BF093DD91DA8F0D00011EFE6 /* Controller */,
+				BF093DDA1DA8F0D00011EFE6 /* model */,
+				BF093DDB1DA8F0D00011EFE6 /* view */,
+			);
+			path = TrainTicket;
+			sourceTree = "<group>";
+		};
+		BF093DD91DA8F0D00011EFE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFEF24C41DAA388B00D61F0F /* TrickMainViewController.h */,
+				BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */,
+				BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF093DDA1DA8F0D00011EFE6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BF093DDB1DA8F0D00011EFE6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		BF3C8D381D581D760092AC19 /* AlipaySDK */ = {
@@ -4497,9 +4537,9 @@
 		BF58604F1D9D050C00777D7D /* YSTWeChat */ = {
 			isa = PBXGroup;
 			children = (
-				BF5860501D9D058600777D7D /* TSTWechatViewController.h */,
-				BF5860511D9D058600777D7D /* TSTWechatViewController.m */,
-				BF5860521D9D058600777D7D /* TSTWechatViewController.xib */,
+				BF5860501D9D058600777D7D /* YSTWechatViewController.h */,
+				BF5860511D9D058600777D7D /* YSTWechatViewController.m */,
+				BF5860521D9D058600777D7D /* YSTWechatViewController.xib */,
 			);
 			path = YSTWeChat;
 			sourceTree = "<group>";
@@ -4801,11 +4841,12 @@
 				TargetAttributes = {
 					88E6BBF01AB029BD00AD89E0 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 67S48FE7QB;
+						DevelopmentTeam = YS27375FC6;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -4879,7 +4920,7 @@
 				87E058E71C044DBD00C4A4C1 /* Icon.png in Resources */,
 				AEE5F6171C4E199F006FAF60 /* UMShareEditViewController.xib in Resources */,
 				339B9A5D1D7D68A6004D0E1B /* ShareSDK.bundle in Resources */,
-				BF5860541D9D058600777D7D /* TSTWechatViewController.xib in Resources */,
+				BF5860541D9D058600777D7D /* YSTWechatViewController.xib in Resources */,
 				BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */,
 				BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */,
 				BF3E100D1D49B9A7003F0F89 /* ProducyListSYCell.xib in Resources */,
@@ -4896,6 +4937,7 @@
 				87E058DF1C044DBD00C4A4C1 /* Icon-72@2x.png in Resources */,
 				BF3C8F671D5834A50092AC19 /* LICENSE in Resources */,
 				D56152181BDF6EA100DAAADC /* MJRefresh.bundle in Resources */,
+				BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */,
 				87E058E91C044DBD00C4A4C1 /* iTunesArtwork in Resources */,
 				87E058DB1C044DBD00C4A4C1 /* Icon-60.png in Resources */,
 				BF3E10001D499C6D003F0F89 /* CertificationGoodsCell.xib in Resources */,
@@ -5093,6 +5135,7 @@
 				325CBCE11AEE1BC400D924D5 /* ITronBlueToothVpos.mm in Sources */,
 				591BC0ED1AEDFE330037199A /* NSString+PinYin4Cocoa.m in Sources */,
 				BF43A9231D825C6800C9E722 /* AppDelegate.m in Sources */,
+				BFEF24C71DAA388B00D61F0F /* TrickMainViewController.m in Sources */,
 				AE8EA4371C5F698E00823760 /* FoodInFormationViewController.m in Sources */,
 				BF3C90301D5834A50092AC19 /* ZXPDF417DetectorResult.m in Sources */,
 				BF3C8FCC1D5834A50092AC19 /* ZXLuminanceSource.m in Sources */,
@@ -5295,7 +5338,7 @@
 				BF3E10161D49E9F2003F0F89 /* CompaneyDetialController2.m in Sources */,
 				BF3C8FDB1D5834A50092AC19 /* ZXDataMatrixEdifactEncoder.m in Sources */,
 				BF3C8F641D5834A50092AC19 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
-				BF5860531D9D058600777D7D /* TSTWechatViewController.m in Sources */,
+				BF5860531D9D058600777D7D /* YSTWechatViewController.m in Sources */,
 				BF3C8FBB1D5834A50092AC19 /* ZXDecoderResult.m in Sources */,
 				333CC0541D2D340E00023EA3 /* OriginQueryViewController.m in Sources */,
 				591BC3531AEDFE6A0037199A /* DateUtil.m in Sources */,
@@ -5604,11 +5647,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = QuickPos/QuickPos.entitlements;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				DEVELOPMENT_TEAM = 67S48FE7QB;
+				DEVELOPMENT_TEAM = YS27375FC6;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5654,11 +5697,14 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JieFengPay.bmjfsh.Distribution;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiefeng.bmjfsh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5c8b138f-2a4a-461f-9592-957581e31fd5";
-				PROVISIONING_PROFILE_SPECIFIER = com.jieFengPay.bmjfshAPNs.Distribution;
+				PROVISIONING_PROFILE = "25c17071-4197-4921-b670-524cae108f46";
+				PROVISIONING_PROFILE_SPECIFIER = 99_Development_All_App;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickPos/ViewControllers/TrainTicket/model/QuickPos-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -5668,11 +5714,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = QuickPos/QuickPos.entitlements;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				DEVELOPMENT_TEAM = 67S48FE7QB;
+				DEVELOPMENT_TEAM = YS27375FC6;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5718,11 +5764,13 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JieFengPay.bmjfsh.Distribution;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiefeng.bmjfsh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5c8b138f-2a4a-461f-9592-957581e31fd5";
-				PROVISIONING_PROFILE_SPECIFIER = com.jieFengPay.bmjfshAPNs.Distribution;
+				PROVISIONING_PROFILE = "25c17071-4197-4921-b670-524cae108f46";
+				PROVISIONING_PROFILE_SPECIFIER = 99_Development_All_App;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickPos/ViewControllers/TrainTicket/model/QuickPos-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};

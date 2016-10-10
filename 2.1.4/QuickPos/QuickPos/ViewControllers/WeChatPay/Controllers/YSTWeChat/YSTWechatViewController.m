@@ -1,12 +1,12 @@
 //
-//  TSTWechatViewController.m
+//  YSTWechatViewController.m
 //  QuickPos
 //
 //  Created by Lff on 16/9/29.
 //  Copyright © 2016年 张倡榕. All rights reserved.
 //
 
-#import "TSTWechatViewController.h"
+#import "YSTWechatViewController.h"
 #import "LBXScanWrapper.h"
 #import "LBXAlertAction.h"
 #import "XYSwitch.h"
@@ -18,7 +18,7 @@
 #import "ZFBViewController.h"
 
 
-@interface TSTWechatViewController ()<ResponseData>
+@interface YSTWechatViewController ()<ResponseData>
 {
     UIImageView *_imageVIew;
     
@@ -38,7 +38,7 @@
 
 @end
 
-@implementation TSTWechatViewController
+@implementation YSTWechatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,6 +95,7 @@
         WechatVc.cardNum = self.WeChatBankCardNum;
         WechatVc.merchantId = merchantId;
         WechatVc.productId = productId;
+        WechatVc.titleName = @"微信收款二维码";
         WechatVc.infoArr = @[WXMERCHANTCODE,WXBACKURL,WXKEY];
         [self.navigationController pushViewController:WechatVc animated:YES];
     }

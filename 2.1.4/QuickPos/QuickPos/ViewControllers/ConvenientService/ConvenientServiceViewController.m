@@ -39,6 +39,8 @@
 #import "ZFBBankCardListViewController.h"
 #import "SubLBXScanViewController.h"
 #import "LBXScanWrapper.h"
+#import "TrickMainViewController.h"
+
 
 
 #define kCellReuseID @"CollectionCellId"
@@ -243,11 +245,7 @@
     self.iamgeAllArr = [NSArray array];
     self.titleAllArr = [NSArray array];
     if (!isResult) {
-        
-        
-        
-        
-        
+
         NSArray *titleArr1 = @[@"账户转账",@"即时取",@"余额查询",@"卡卡转账",@"信用卡还款",@"微信收款",@"支付宝收款",@"手机充值",@"水电煤",@"电影票购买",@"中华保险",@"点卡充值"];
         
         NSArray *titleArr2 = @[@"汽车展订票",@"交通违章代办",@"火车票订购",@"飞机票订购"]; //,@"彩票下注",@"Q币充值"
@@ -571,10 +569,17 @@
             }
         }
         else if (indexPath.section == 1)
-        {//正在努力建设中...
-            NoteViewController *noteVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"NoteViewController"];
-            noteVc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:noteVc animated:YES];
+        {
+            if (indexPath.row == 2) {
+                TrickMainViewController *trickMain = [[TrickMainViewController alloc] initWithNibName:@"TrickMainViewController" bundle:nil];
+                [self.navigationController pushViewController:trickMain animated:YES];
+            }
+            else{
+                //正在努力建设中...
+                NoteViewController *noteVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"NoteViewController"];
+                noteVc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:noteVc animated:YES];
+            }
         }
        
     }else{

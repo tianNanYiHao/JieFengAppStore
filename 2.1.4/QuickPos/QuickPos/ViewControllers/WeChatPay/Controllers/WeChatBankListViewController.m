@@ -21,7 +21,7 @@
 #import "ObtainScanViewController.h"
 #import "MyCardCell.h"
 #import "BankCardData.h"
-#import "TSTWechatViewController.h"
+#import "YSTWechatViewController.h"
 
 @interface WeChatBankListViewController ()<UITableViewDataSource,UITableViewDelegate,ResponseData>{
     QuickBankData *bankData;
@@ -349,7 +349,7 @@
     ObtainScanVc.acctNo2 = self.accountNo;
     [self.navigationController pushViewController:ObtainScanVc animated:YES];
     
-//    TSTWechatViewController *ystWechat = [[TSTWechatViewController alloc] initWithNibName:@"TSTWechatViewController" bundle:nil];
+//    YSTWechatViewController *ystWechat = [[YSTWechatViewController alloc] initWithNibName:@"YSTWechatViewController" bundle:nil];
 //    ystWechat.WeChatBankCardNum = _accountNo;
 //    [self.navigationController pushViewController:ystWechat animated:YES];
     

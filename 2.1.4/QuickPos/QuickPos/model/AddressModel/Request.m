@@ -1334,7 +1334,6 @@
             [self.delegate responseWithDict:dic requestType:type];
         } else if (error && error.code == -1009) {
             NSLog(@"%@", error.localizedDescription);
-            
             NSDictionary *dic = @{@"respCode": @"1001", @"respDesc": error.localizedDescription};
             [self.delegate responseWithDict:dic requestType:type];
         }

@@ -574,9 +574,7 @@
                 TrickMainViewController *trickMain = [[TrickMainViewController alloc] initWithNibName:@"TrickMainViewController" bundle:nil];
                 TrickInfoModel *model = [[TrickInfoModel alloc] init];
                 trickMain.dataArray = [model getInfoBack];
-                for (int i = 0; i<trickMain.dataArray .count; i++) {
-                    NSLog(@"%@ == %@ ",[trickMain.dataArray [i] addName],[trickMain.dataArray [i] addCode]);
-                }
+                trickMain.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:trickMain animated:YES];
             }
             

@@ -633,6 +633,8 @@
 		BFEF24CB1DAA3EFF00D61F0F /* TrickAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */; };
 		BFEF38C91DAC855F0043A852 /* TrickTicketListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */; };
 		BFEF38CA1DAC855F0043A852 /* TrickTicketListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */; };
+		BFEF38D31DACCE720043A852 /* TicketDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38D11DACCE720043A852 /* TicketDetailViewController.m */; };
+		BFEF38D41DACCE720043A852 /* TicketDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF38D21DACCE720043A852 /* TicketDetailViewController.xib */; };
 		BFF5552C1DAB8DA200F110B7 /* TrickChooseCarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */; };
 		BFF5552D1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
@@ -1915,6 +1917,9 @@
 		BFEF38C61DAC855F0043A852 /* TrickTicketListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickTicketListCell.h; sourceTree = "<group>"; };
 		BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickTicketListCell.m; sourceTree = "<group>"; };
 		BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickTicketListCell.xib; sourceTree = "<group>"; };
+		BFEF38D01DACCE720043A852 /* TicketDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketDetailViewController.h; sourceTree = "<group>"; };
+		BFEF38D11DACCE720043A852 /* TicketDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketDetailViewController.m; sourceTree = "<group>"; };
+		BFEF38D21DACCE720043A852 /* TicketDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketDetailViewController.xib; sourceTree = "<group>"; };
 		BFF555291DAB8DA200F110B7 /* TrickChooseCarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickChooseCarListViewController.h; sourceTree = "<group>"; };
 		BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickChooseCarListViewController.m; sourceTree = "<group>"; };
 		BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickChooseCarListViewController.xib; sourceTree = "<group>"; };
@@ -3630,6 +3635,9 @@
 				BFF555291DAB8DA200F110B7 /* TrickChooseCarListViewController.h */,
 				BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */,
 				BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */,
+				BFEF38D01DACCE720043A852 /* TicketDetailViewController.h */,
+				BFEF38D11DACCE720043A852 /* TicketDetailViewController.m */,
+				BFEF38D21DACCE720043A852 /* TicketDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4924,6 +4932,7 @@
 				87E058E11C044DBD00C4A4C1 /* Icon-76@2x.png in Resources */,
 				AEE5F61C1C4E199F006FAF60 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				AEE5F61A1C4E199F006FAF60 /* UMSnsAccountViewController.xib in Resources */,
+				BFEF38D41DACCE720043A852 /* TicketDetailViewController.xib in Resources */,
 				BFEF38CA1DAC855F0043A852 /* TrickTicketListCell.xib in Resources */,
 				339B9A541D7D68A6004D0E1B /* RennSDK.bundle in Resources */,
 				591BC3A51AEDFE6A0037199A /* HandSignViewController.xib in Resources */,
@@ -5101,6 +5110,7 @@
 				BF3C901B1D5834A50092AC19 /* ZXUPCAWriter.m in Sources */,
 				BF3C90431D5834A50092AC19 /* ZXQRCodeMode.m in Sources */,
 				BF3C904F1D5834A50092AC19 /* ZXQRCodeMatrixUtil.m in Sources */,
+				BFEF38D31DACCE720043A852 /* TicketDetailViewController.m in Sources */,
 				BF3C8FD31D5834A50092AC19 /* ZXDataMatrixDecodedBitStreamParser.m in Sources */,
 				BF3C8FB41D5834A50092AC19 /* ZXReedSolomonEncoder.m in Sources */,
 				591BC3B11AEDFE6A0037199A /* NumberKeyBoard.m in Sources */,

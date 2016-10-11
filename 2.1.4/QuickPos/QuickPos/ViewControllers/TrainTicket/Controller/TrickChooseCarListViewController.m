@@ -8,7 +8,7 @@
 
 #import "TrickChooseCarListViewController.h"
 #import "TrickTicketListCell.h"
-
+#import "TicketDetailViewController.h"
 
 @interface TrickChooseCarListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -35,10 +35,16 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"TrickTicketListCell" bundle:nil] forCellReuseIdentifier:@"TrickTicketListCell"];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    
+    
     
     
 }
 
+
+#pragma mark - tableViewDelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10 ;
     
@@ -47,17 +53,22 @@
     return 100;
     
 }
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 5;
-    
-}
-
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID = @"TrickTicketListCell";
     TrickTicketListCell *cell  = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TicketDetailViewController *ticketDetail = [[TicketDetailViewController alloc] initWithNibName:@"TicketDetailViewController" bundle:nil];
+    ticketDetail.navigationItem.title = @"D3205";
+    [self.navigationController pushViewController:ticketDetail animated:YES];
+    
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

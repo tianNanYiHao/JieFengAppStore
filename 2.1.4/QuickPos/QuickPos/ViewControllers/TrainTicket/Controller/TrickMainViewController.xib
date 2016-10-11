@@ -26,7 +26,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8z-WY-8z4">
-                            <frame key="frameInset" minX="0.0%" width="39.73%" height="81"/>
+                            <frame key="frameInset" minX="0.0%" width="39.47%" height="81"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                             <state key="normal" title="地点">
@@ -56,7 +56,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9月28日 周三" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNj-IZ-Hbv">
-                            <frame key="frameInset" minX="34.93%" minY="93" width="52.00%" height="26"/>
+                            <frame key="frameInset" minX="34.67%" minY="93" width="52.00%" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -88,7 +88,7 @@
                             </connections>
                         </switch>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZa-NM-lh6">
-                            <frame key="frameInset" minX="61.33%" minY="-1" width="39.73%" height="81"/>
+                            <frame key="frameInset" minX="61.07%" minY="-1" width="39.73%" height="81"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                             <state key="normal" title="地点">
@@ -106,7 +106,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwE-iK-MGy">
-                    <frame key="frameInset" minX="16" minY="194" width="95.54%" height="49"/>
+                    <frame key="frameInset" minX="16" minY="194" width="95.27%" height="49"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.92549019607843142" green="0.52941176470588236" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>

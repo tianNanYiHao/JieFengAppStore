@@ -631,6 +631,8 @@
 		BFEF24C71DAA388B00D61F0F /* TrickMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */; };
 		BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */; };
 		BFEF24CB1DAA3EFF00D61F0F /* TrickAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */; };
+		BFEF38C91DAC855F0043A852 /* TrickTicketListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */; };
+		BFEF38CA1DAC855F0043A852 /* TrickTicketListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */; };
 		BFF5552C1DAB8DA200F110B7 /* TrickChooseCarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */; };
 		BFF5552D1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
@@ -1910,6 +1912,9 @@
 		BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickMainViewController.xib; sourceTree = "<group>"; };
 		BFEF24C91DAA3EFF00D61F0F /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
 		BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickAddressModel.m; sourceTree = "<group>"; };
+		BFEF38C61DAC855F0043A852 /* TrickTicketListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickTicketListCell.h; sourceTree = "<group>"; };
+		BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickTicketListCell.m; sourceTree = "<group>"; };
+		BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickTicketListCell.xib; sourceTree = "<group>"; };
 		BFF555291DAB8DA200F110B7 /* TrickChooseCarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickChooseCarListViewController.h; sourceTree = "<group>"; };
 		BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickChooseCarListViewController.m; sourceTree = "<group>"; };
 		BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickChooseCarListViewController.xib; sourceTree = "<group>"; };
@@ -3641,6 +3646,9 @@
 		BF093DDB1DA8F0D00011EFE6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				BFEF38C61DAC855F0043A852 /* TrickTicketListCell.h */,
+				BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */,
+				BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -4916,6 +4924,7 @@
 				87E058E11C044DBD00C4A4C1 /* Icon-76@2x.png in Resources */,
 				AEE5F61C1C4E199F006FAF60 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				AEE5F61A1C4E199F006FAF60 /* UMSnsAccountViewController.xib in Resources */,
+				BFEF38CA1DAC855F0043A852 /* TrickTicketListCell.xib in Resources */,
 				339B9A541D7D68A6004D0E1B /* RennSDK.bundle in Resources */,
 				591BC3A51AEDFE6A0037199A /* HandSignViewController.xib in Resources */,
 				87E058D81C044DBD00C4A4C1 /* Icon-40.png in Resources */,
@@ -5388,6 +5397,7 @@
 				BF3C90091D5834A50092AC19 /* ZXCodaBarWriter.m in Sources */,
 				BF3C8F801D5834A50092AC19 /* ZXAztecHighLevelEncoder.m in Sources */,
 				334EA1381D4B26B600108B33 /* BindingSDJBankCardViewController.m in Sources */,
+				BFEF38C91DAC855F0043A852 /* TrickTicketListCell.m in Sources */,
 				591BC3AB1AEDFE6A0037199A /* YoolinkTestViewController.m in Sources */,
 				591BC0EC1AEDFE330037199A /* HanyuPinyinOutputFormat.m in Sources */,
 				591BC2A61AEDFE6A0037199A /* DDXMLElementAdditions.m in Sources */,

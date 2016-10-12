@@ -637,6 +637,8 @@
 		BFEF38D41DACCE720043A852 /* TicketDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF38D21DACCE720043A852 /* TicketDetailViewController.xib */; };
 		BFEF38D81DADE9330043A852 /* TicketOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38D61DADE9330043A852 /* TicketOrderViewController.m */; };
 		BFEF38D91DADE9330043A852 /* TicketOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF38D71DADE9330043A852 /* TicketOrderViewController.xib */; };
+		BFEF38DD1DAE19DE0043A852 /* AddPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38DB1DAE19DE0043A852 /* AddPersonInfoViewController.m */; };
+		BFEF38DE1DAE19DE0043A852 /* AddPersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF38DC1DAE19DE0043A852 /* AddPersonInfoViewController.xib */; };
 		BFF5552C1DAB8DA200F110B7 /* TrickChooseCarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */; };
 		BFF5552D1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
@@ -1925,6 +1927,9 @@
 		BFEF38D51DADE9330043A852 /* TicketOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketOrderViewController.h; sourceTree = "<group>"; };
 		BFEF38D61DADE9330043A852 /* TicketOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketOrderViewController.m; sourceTree = "<group>"; };
 		BFEF38D71DADE9330043A852 /* TicketOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketOrderViewController.xib; sourceTree = "<group>"; };
+		BFEF38DA1DAE19DE0043A852 /* AddPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPersonInfoViewController.h; sourceTree = "<group>"; };
+		BFEF38DB1DAE19DE0043A852 /* AddPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPersonInfoViewController.m; sourceTree = "<group>"; };
+		BFEF38DC1DAE19DE0043A852 /* AddPersonInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPersonInfoViewController.xib; sourceTree = "<group>"; };
 		BFF555291DAB8DA200F110B7 /* TrickChooseCarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickChooseCarListViewController.h; sourceTree = "<group>"; };
 		BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickChooseCarListViewController.m; sourceTree = "<group>"; };
 		BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickChooseCarListViewController.xib; sourceTree = "<group>"; };
@@ -3646,6 +3651,9 @@
 				BFEF38D51DADE9330043A852 /* TicketOrderViewController.h */,
 				BFEF38D61DADE9330043A852 /* TicketOrderViewController.m */,
 				BFEF38D71DADE9330043A852 /* TicketOrderViewController.xib */,
+				BFEF38DA1DAE19DE0043A852 /* AddPersonInfoViewController.h */,
+				BFEF38DB1DAE19DE0043A852 /* AddPersonInfoViewController.m */,
+				BFEF38DC1DAE19DE0043A852 /* AddPersonInfoViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4916,6 +4924,7 @@
 				591BC38C1AEDFE6A0037199A /* TransactionRecordsTableViewCell.xib in Resources */,
 				591BC7691AEE13D00037199A /* QuickPay.storyboard in Resources */,
 				591BC3A71AEDFE6A0037199A /* OrderReceiptCell.xib in Resources */,
+				BFEF38DE1DAE19DE0043A852 /* AddPersonInfoViewController.xib in Resources */,
 				BFEF38D91DADE9330043A852 /* TicketOrderViewController.xib in Resources */,
 				591BC3701AEDFE6A0037199A /* AllTransactionViewController.xib in Resources */,
 				591BC3B21AEDFE6A0037199A /* NumberKeyBoard.xib in Resources */,
@@ -5027,6 +5036,7 @@
 				D5AE0EAB1BC90C7E0094CE5E /* TAAnimatedDotView.m in Sources */,
 				325CBCEA1AEE1BC400D924D5 /* PosManager.m in Sources */,
 				BF3C8FCE1D5834A50092AC19 /* ZXResult.m in Sources */,
+				BFEF38DD1DAE19DE0043A852 /* AddPersonInfoViewController.m in Sources */,
 				BF3C8FE91D5834A50092AC19 /* ZXByQuadrantReader.m in Sources */,
 				591BC3821AEDFE6A0037199A /* MyMessageViewController.m in Sources */,
 				591BC0F21AEDFE330037199A /* SimpleCam.m in Sources */,

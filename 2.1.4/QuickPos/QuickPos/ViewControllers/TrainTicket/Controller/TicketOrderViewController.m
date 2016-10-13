@@ -89,28 +89,21 @@
         NSLog(@"%@ = %@",name,perSonID);
         [_personInfoArr addObject:name];
         NSLog(@"===>>> %lu",(unsigned long)_personInfoArr.count);
-        if (_personInfoArr.count>5) {
-            [Common showMsgBox:nil msg:@"仅限添加5位乘车人信息" parentCtrl:self];
-            _addPersonbtn.hidden = YES;
-            _addPersonBtn.hidden = YES;
-        }
-        else{
+        
             _scrollViewBG.height = _scrollViewBG.height+50;
             _scrollViewBG.contentSize = CGSizeMake(0, _scrollViewBG.contentSize.height+50);
             _view3A4.y  = _view3A4.y+50;
-        }
-        
     }];
     [self.navigationController pushViewController:perinfo animated:YES];
 }
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if (_personInfoArr.count>5) {
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (_personInfoArr.count == 5) {
         _addPersonBtn.hidden = YES;
         _addPersonbtn.hidden = YES;
-        
     }
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

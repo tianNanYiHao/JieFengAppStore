@@ -20,7 +20,6 @@
     for (NSDictionary *dict in dictArr) {
         NSString *addname = [dict objectForKey:@"addName"];
         NSString *addCode = [dict objectForKey:@"addCode"];
-        NSLog(@"%@ <=> %@",addname,addCode);
         _model = [[TrickInfoModel alloc] init];
         _model.addName = addname;
         _model.addCode = addCode;

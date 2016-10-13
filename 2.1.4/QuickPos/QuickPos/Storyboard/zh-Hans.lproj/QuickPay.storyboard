@@ -27,7 +27,7 @@
             <objects>
                 <viewController storyboardIdentifier="MyBankListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vFj-g8-N9T" customClass="MyBankListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G25-tA-Tav">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="15" sectionFooterHeight="1" id="3Of-Kc-O3N">
@@ -36,10 +36,10 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCardCell" rowHeight="71" id="hws-GC-kCZ">
-                                        <rect key="frame" x="0.0" y="53.5" width="318" height="71"/>
+                                        <rect key="frame" x="0.0" y="54" width="373" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hws-GC-kCZ" id="7Xd-Ix-EwT">
-                                            <frame key="frameInset" minX="10" minY="1" width="298" height="68"/>
+                                            <frame key="frameInset" minX="10" minY="1" width="353" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankcard_back" id="o6L-wA-4Tu">
@@ -93,7 +93,7 @@
             <objects>
                 <viewController storyboardIdentifier="CheckCardInfo" id="YGq-M2-JTA" userLabel="验证银行卡信息" customClass="CheckCardInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ivb-TA-F2Q">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Rbd-B5-Fgg">
@@ -150,11 +150,11 @@
             <objects>
                 <viewController storyboardIdentifier="CreditCardBindViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZCH-hq-siu" customClass="CreditCardBindViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8wl-td-oOr">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="90X-z3-WF6">
-                                <frame key="frameInset" minY="8" height="76.48%"/>
+                                <frame key="frameInset" minY="8" height="76.37%"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="Hee-tE-AOZ">
@@ -328,7 +328,7 @@
             <objects>
                 <viewController storyboardIdentifier="QuickPayOrderViewController" id="WAF-Lf-gwb" userLabel="确认订单信息" customClass="QuickPayOrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BEw-sJ-mm7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Mai-SH-fxy">
@@ -554,7 +554,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCardDetailInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H8w-pz-UfM" customClass="AddCardDetailInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFF-YQ-Atg">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="euq-Q5-wqu">
@@ -641,7 +641,7 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="WnH-QW-LFy" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RQE-Pq-kUU">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -656,7 +656,7 @@
             <objects>
                 <viewController storyboardIdentifier="CreditQuickPayOrderViewController" id="2Rp-Nm-a60" userLabel="信用卡确认订单信息" customClass="CreditQuickPayOrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="beC-c2-LDd">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Xzo-a2-3C5">
@@ -926,11 +926,11 @@
             <objects>
                 <viewController storyboardIdentifier="BankCardBindViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gfr-Id-nxG" customClass="BankCardBindViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="goK-97-IJ0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="c9K-cn-Z1C">
-                                <frame key="frameInset" minX="-0.5" minY="7.5" height="65.22%" maxX="0.5"/>
+                                <frame key="frameInset" minX="-1" minY="7" height="65.16%" maxX="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="qVg-1a-9TP">
@@ -1021,7 +1021,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p9r-It-t7S">
-                                        <frame key="frameInset" minX="27.5" minY="217" height="40" maxX="29"/>
+                                        <frame key="frameInset" minX="28" minY="217" height="40" maxX="29"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.34919726848602295" green="0.75746613740921021" blue="0.39555364847183228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="实名认证">
@@ -1062,7 +1062,7 @@
             <objects>
                 <viewController storyboardIdentifier="BindingSDJBankCardVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="meL-Dm-OlG" userLabel="盛迪嘉绑定银行卡" customClass="BindingSDJBankCardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="734-hj-uff">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="LDp-oZ-6zT">
@@ -1253,7 +1253,7 @@
             <objects>
                 <viewController storyboardIdentifier="SDJBankPayVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cI7-ew-hVM" userLabel="盛迪嘉无卡支付" customClass="SDJBankPayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wVa-Dp-KAB">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="8SH-c8-2wD">
@@ -1432,7 +1432,7 @@
             <objects>
                 <viewController storyboardIdentifier="SDJBankVc" title="银行列表" id="2Es-ob-0eg" customClass="SDJBankViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cJ2-Mc-xVO">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="LEd-Va-2Zo">
@@ -1494,7 +1494,7 @@
             <objects>
                 <viewController storyboardIdentifier="SDJBankListVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wZc-de-kzu" userLabel="盛迪嘉银行卡列表" customClass="SDJBankListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0q6-5P-dfe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="71" sectionHeaderHeight="15" sectionFooterHeight="1" id="Pn7-wg-Vyc">
@@ -1503,10 +1503,10 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCardCell" rowHeight="71" id="uEK-5W-vhs" customClass="SDJBankListTableViewCell">
-                                        <rect key="frame" x="0.0" y="53.5" width="286" height="71"/>
+                                        <rect key="frame" x="0.0" y="54" width="341" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uEK-5W-vhs" id="2E7-G2-GgD">
-                                            <frame key="frameInset" minX="10" minY="1" width="266" height="68"/>
+                                            <frame key="frameInset" minX="10" minY="1" width="321" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="crD-eU-paf" userLabel="CellBG">
@@ -1577,6 +1577,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>

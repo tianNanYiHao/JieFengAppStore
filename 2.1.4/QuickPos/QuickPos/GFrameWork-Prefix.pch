@@ -141,6 +141,7 @@
     #import "MyAlertView.h"
     #import "PFYProgressHUD.h"
     #import "JSONKit.h"
+    #import "Masonry.h"
 #endif
 
 //#import "CommonMacro.h"

@@ -261,16 +261,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     BankCardItem *bcItem = [bankCardData.bankCardArr objectAtIndex:indexPath.row];
-    
     cardNumber = bcItem.accountNo;
     cardIdx = bcItem.cardIdx;
     
     ZFBReceivablesViewController *ZFBReceivablesVc = [self.storyboard instantiateViewControllerWithIdentifier:@"ZFBReceivablesVc"];
-    
     ZFBReceivablesVc.ZFBBankCardNum = self.bankCardNo;
-        ZFBReceivablesVc.cardNumber = cardNumber;
         ZFBReceivablesVc.cardIdx = cardIdx;
-    NSLog(@"%@  %@",ZFBReceivablesVc.ZFBBankCardNum,self.bankCardNo);
     [self.navigationController pushViewController:ZFBReceivablesVc animated:YES];
     
     

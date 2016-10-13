@@ -9,11 +9,22 @@
 #import "TicketOrderViewController.h"
 #import "AddPersonInfoViewController.h"
 
-@interface TicketOrderViewController ()
+
+@interface TicketOrderViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *_personInfoArr;
+    UITableView *_tableview;
+    UIScrollView *_scrollViewBG;
+    
     
 }
+@property (weak, nonatomic) IBOutlet UIView *infoView;
+@property (weak, nonatomic) IBOutlet UIView *view1;
+@property (weak, nonatomic) IBOutlet UIView *view2;
+@property (weak, nonatomic) IBOutlet UIView *view3;
+@property (weak, nonatomic) IBOutlet UIView *view4;
+@property (weak, nonatomic) IBOutlet UIView *upview;
+
 @end
 
 @implementation TicketOrderViewController
@@ -22,14 +33,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"订单填写";
-    
     _personInfoArr = [[NSMutableArray alloc]init];
-    
+
+    [self createScrollView];
     
     
 }
+-(void)createScrollView{
+    
+    _scrollViewBG = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
+    _scrollViewBG.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:_scrollViewBG];
+    _scrollViewBG.scrollEnabled = YES;
+    _scrollViewBG.contentSize = CGSizeMake(0, self.view.frame.size.height+10);
+    
+    [_scrollViewBG addSubview:_infoView];
+    [_scrollViewBG addSubview:_view1];
+    [_scrollViewBG addSubview:_view2];
+    [_scrollViewBG addSubview:_view3];
+    [_scrollViewBG addSubview:_view4];
+    [_scrollViewBG addSubview:_upview];
 
-
+    
+    [_scrollViewBG mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view.mas_left);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.width.mas_offset(self.view.frame.size.width);
+        make.height.mas_offset(self.view.frame.size.height);
+    }];
+}
 #pragma mark - btnClick
 //点击选可售票
 - (IBAction)chooseTicketClick:(id)sender {
@@ -72,6 +105,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - tableview
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
 }
 
 /*

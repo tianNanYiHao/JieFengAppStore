@@ -152,6 +152,8 @@
     NSDate *date = [NSDate date];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyyMMdd-HHmmss"];
+    //将获取后的本地时间 转换成东八区时间
+    format.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
     NSString*strDate = [format stringFromDate:date];
     return [strDate componentsSeparatedByString:@"-"];
 }

@@ -94,17 +94,16 @@
         [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
     }
     else{
-        [Common showMsgBox:@"" msg:@"暂不支持此功能" parentCtrl:self];
-//        _AmtTextField.text = [NSString stringWithFormat:@"%.2f",[_AmtTextField.text floatValue]];
-//        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-//        ZFBVc.AmtNO = _AmtTextField.text;
-//        ZFBVc.cardNum = self.ZFBBankCardNum;
-//        ZFBVc.merchantId = merchantId;
-//        ZFBVc.productId = productId;
-//        ZFBVc.titleName = @"支付宝收款二维码";
-//        ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
-//        [self.navigationController pushViewController:ZFBVc animated:YES];
+        _AmtTextField.text = [NSString stringWithFormat:@"%.2f",[_AmtTextField.text floatValue]];
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+        ZFBVc.AmtNO = _AmtTextField.text;
+        ZFBVc.cardNum = self.ZFBBankCardNum;
+        ZFBVc.merchantId = merchantId;
+        ZFBVc.productId = productId;
+        ZFBVc.titleName = @"支付宝收款二维码";
+        ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
+        [self.navigationController pushViewController:ZFBVc animated:YES];
         
     }
 }

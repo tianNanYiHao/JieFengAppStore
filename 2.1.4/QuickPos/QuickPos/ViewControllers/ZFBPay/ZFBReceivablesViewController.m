@@ -84,13 +84,30 @@
 
 //确认按钮
 - (IBAction)confirmButton:(id)sender {
-  
+    int i = [_AmtTextField.text intValue];
+    //iOS8的键盘适配
+    if ([_AmtTextField.text rangeOfString:@","].location == NSNotFound) {
+        NSLog(@"没找到,");
+    }else{
+        NSArray *arr = [_AmtTextField.text componentsSeparatedByString:@","];
+        if (arr.count == 2) {
+            _AmtTextField.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
+        }else{
+            [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+        }
+    }
     
     if (_AmtTextField.text.length == 0) {
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_AmtTextField.text integerValue]<5 ){
         [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
-    }else if([_AmtTextField.text length]>100000000){
+    }else if([_AmtTextField.text integerValue]>=10000 ){
+        [Common showMsgBox:@"" msg:@"收款金额请勿大于一万元" parentCtrl:self];
+    }
+    else if([_AmtTextField.text floatValue] - i == 0 ){
+        [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+    }
+    else if([_AmtTextField.text length]>100000000){
         [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
     }
     else{

@@ -649,6 +649,8 @@
 		BFEF39021DAF2B670043A852 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38F41DAF2B670043A852 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		BFEF39031DAF2B670043A852 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38F61DAF2B670043A852 /* View+MASAdditions.m */; };
 		BFEF39041DAF2B670043A852 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38F91DAF2B670043A852 /* ViewController+MASAdditions.m */; };
+		BFEF39091DAF67F00043A852 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF39061DAF67F00043A852 /* Foundation+Log.m */; };
+		BFEF390A1DAF67F00043A852 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF39081DAF67F00043A852 /* UIView+Extension.m */; };
 		BFF5552C1DAB8DA200F110B7 /* TrickChooseCarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */; };
 		BFF5552D1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
@@ -1965,6 +1967,9 @@
 		BFEF38F71DAF2B670043A852 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		BFEF38F81DAF2B670043A852 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		BFEF38F91DAF2B670043A852 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		BFEF39061DAF67F00043A852 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		BFEF39071DAF67F00043A852 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		BFEF39081DAF67F00043A852 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		BFF555291DAB8DA200F110B7 /* TrickChooseCarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickChooseCarListViewController.h; sourceTree = "<group>"; };
 		BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickChooseCarListViewController.m; sourceTree = "<group>"; };
 		BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickChooseCarListViewController.xib; sourceTree = "<group>"; };
@@ -2664,6 +2669,7 @@
 		591BBFC21AEDFE320037199A /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				BFEF39051DAF67F00043A852 /* easyFrame */,
 				BFEF38DF1DAF2B670043A852 /* Masonry */,
 				BF5860371D9CEF8300777D7D /* PFYSDK */,
 				BF5860241D9BA2CC00777D7D /* LFLOG */,
@@ -4717,6 +4723,16 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		BFEF39051DAF67F00043A852 /* easyFrame */ = {
+			isa = PBXGroup;
+			children = (
+				BFEF39061DAF67F00043A852 /* Foundation+Log.m */,
+				BFEF39071DAF67F00043A852 /* UIView+Extension.h */,
+				BFEF39081DAF67F00043A852 /* UIView+Extension.m */,
+			);
+			path = easyFrame;
+			sourceTree = "<group>";
+		};
 		C36E38711ABA60190004BE78 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -5193,6 +5209,7 @@
 				BF3C8FAD1D5834A50092AC19 /* ZXImage.m in Sources */,
 				591BC0B51AEDFE320037199A /* UIView+IQKeyboardToolbar.m in Sources */,
 				BF3C8F6C1D5834A50092AC19 /* LBXScanNetAnimation.m in Sources */,
+				BFEF39091DAF67F00043A852 /* Foundation+Log.m in Sources */,
 				BF3C90191D5834A50092AC19 /* ZXOneDReader.m in Sources */,
 				BF3C901B1D5834A50092AC19 /* ZXUPCAWriter.m in Sources */,
 				BF3C90431D5834A50092AC19 /* ZXQRCodeMode.m in Sources */,
@@ -5446,6 +5463,7 @@
 				591BC3991AEDFE6A0037199A /* ContractView.m in Sources */,
 				BF3C8FA51D5834A50092AC19 /* ZXVCardResultParser.m in Sources */,
 				591BC0EA1AEDFE330037199A /* ChineseInclude.m in Sources */,
+				BFEF390A1DAF67F00043A852 /* UIView+Extension.m in Sources */,
 				D561521B1BDF6EA100DAAADC /* UIScrollView+MJRefresh.m in Sources */,
 				33B690C11D5C55DB00F1AC08 /* AddRunSubBankcardViewController.m in Sources */,
 				BF3C900D1D5834A50092AC19 /* ZXCode39Writer.m in Sources */,

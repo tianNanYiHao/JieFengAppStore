@@ -142,6 +142,8 @@
     #import "PFYProgressHUD.h"
     #import "JSONKit.h"
     #import "Masonry.h"
+    #import "UIView+Extension.h"
+
 #endif
 
 //#import "CommonMacro.h"

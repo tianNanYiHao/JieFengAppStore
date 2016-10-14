@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickPos/Util/Common.m"
-            timestampString = "498040773.729943"
+            filePath = "QuickPos/AppDelegate.m"
+            timestampString = "498126514.585575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "+alipayOrderStateSelect:key:merchantcode:controller:"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

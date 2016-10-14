@@ -183,7 +183,7 @@
     [formatter setDateFormat:@"yyyyMMddHHmmss"];
     NSString *transDate = [formatter stringFromDate:[NSDate date]];
     
-    NSString *subject = @"上海捷丰网络科技有限公司";
+    NSString *subject = arr[3];
     NSString *merchantcode = arr[0];
     NSString *backurl = arr[1];
     NSString *money = moneY;

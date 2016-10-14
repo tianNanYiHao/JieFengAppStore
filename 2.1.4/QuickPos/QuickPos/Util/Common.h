@@ -41,5 +41,6 @@ typedef void (^YSTZFBEWMBlock)(id requestdate);
 
 +(void)getYSTZFBimage:(UIView*)view  money:(NSString*)moneY requestDataBlock:(YSTZFBEWMBlock)requestBlock infoArr:(NSArray*)arr;
 +(void)erweima:(NSString *)qrcode imageView:(UIImageView*)iamgeView;
-+ (void)alipayOrderStateSelect:(NSString *)merchorder_no key:(NSString *)key merchantcode:(NSString*)merchantcodE;
++ (void)alipayOrderStateSelect:(NSString *)merchorder_no key:(NSString *)key merchantcode:(NSString*)merchantcodE controller:(UIViewController*)vc;
+
 @end

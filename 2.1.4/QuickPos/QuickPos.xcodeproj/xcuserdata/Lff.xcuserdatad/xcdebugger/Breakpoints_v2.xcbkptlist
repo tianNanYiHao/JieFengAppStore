@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/TrainTicket/Controller/TicketOrderViewController.m"
-            timestampString = "498037548.614989"
+            filePath = "QuickPos/Util/Common.m"
+            timestampString = "498040773.729943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "+alipayOrderStateSelect:key:merchantcode:controller:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

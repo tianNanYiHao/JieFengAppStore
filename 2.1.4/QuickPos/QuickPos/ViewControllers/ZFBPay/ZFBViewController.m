@@ -43,7 +43,7 @@
     [super viewDidLoad];
   
     self.title = _titleName;
-    
+    _amtTitleLabel.text = [NSString stringWithFormat:@"%.2f",[_AmtNO floatValue]];
     req = [[Request alloc] initWithDelegate:self];
     payTool = @"01";
     //获取YST二维码
@@ -66,7 +66,7 @@
             NSString* qrcode = [dict objectForKey:@"qrcode"];
             [Common erweima:qrcode imageView:_ewmImageViw];
             NSString *merchorder_no = [dict objectForKey:@"merchorder_no"];
-            [Common alipayOrderStateSelect:merchorder_no key:_infoArr[2] merchantcode:_infoArr[0]];
+            [Common alipayOrderStateSelect:merchorder_no key:_infoArr[2] merchantcode:_infoArr[0] controller:self];
             merchorder_No = merchorder_no;
             //下单
             dispatch_async(dispatch_get_main_queue(), ^{

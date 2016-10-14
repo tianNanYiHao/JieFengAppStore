@@ -156,6 +156,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //计数
+    NSString *ii = @"0";
+    [[NSUserDefaults standardUserDefaults] setObject:ii forKey:@"ii"];
+    
+    
     //一句代码实现检测更新
     [self hsupdateAppFromAppStore];
     [Bugly startWithAppId:@"900050866"];

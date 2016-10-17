@@ -614,6 +614,7 @@
             //如果不为空
             else if (![self matchStringFormat:priceVerde withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"])
             {
+                
                 [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"CorrectPrice")]; //请输入正确价格
             }
             //否则

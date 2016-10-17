@@ -72,11 +72,6 @@
 //    }
     
     
-
-    
-    
-    
-    
 }
 
 //tip
@@ -91,6 +86,7 @@
 
 //确认按钮
 - (IBAction)confirmButton:(id)sender {
+    
     int i = [_AmtTextField.text intValue];
     //iOS8的键盘适配
     if ([_AmtTextField.text rangeOfString:@","].location == NSNotFound) {

@@ -337,6 +337,7 @@
 		AEE5F6341C4E1C0B006FAF60 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE5F6331C4E1C0A006FAF60 /* libstdc++.tbd */; };
 		AEE5F6361C4E1C17006FAF60 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE5F6351C4E1C17006FAF60 /* libz.tbd */; };
 		AEED5D621C0410AC00F2F2EB /* RechargeFixedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEED5D611C0410AC00F2F2EB /* RechargeFixedViewController.m */; };
+		BF35707A1DB479A9009D92FC /* libLFFTrickAddress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3570791DB479A9009D92FC /* libLFFTrickAddress.a */; };
 		BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */; };
 		BF3C8D3C1D581D810092AC19 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */; };
 		BF3C8D411D5820110092AC19 /* ZFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C8D3F1D5820110092AC19 /* ZFBViewController.m */; };
@@ -632,7 +633,6 @@
 		BFDDF04A1D48832500708100 /* AuthenticationEnterpriseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */; };
 		BFEF24C71DAA388B00D61F0F /* TrickMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */; };
 		BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */; };
-		BFEF24CB1DAA3EFF00D61F0F /* TrickAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */; };
 		BFEF38C91DAC855F0043A852 /* TrickTicketListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */; };
 		BFEF38CA1DAC855F0043A852 /* TrickTicketListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */; };
 		BFEF38D31DACCE720043A852 /* TicketDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38D11DACCE720043A852 /* TicketDetailViewController.m */; };
@@ -1342,6 +1342,8 @@
 		AEE5F6351C4E1C17006FAF60 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		AEED5D601C0410AC00F2F2EB /* RechargeFixedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeFixedViewController.h; sourceTree = "<group>"; };
 		AEED5D611C0410AC00F2F2EB /* RechargeFixedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeFixedViewController.m; sourceTree = "<group>"; };
+		BF3570781DB479A5009D92FC /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
+		BF3570791DB479A9009D92FC /* libLFFTrickAddress.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLFFTrickAddress.a; sourceTree = "<group>"; };
 		BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		BF3C8D3E1D5820110092AC19 /* ZFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBViewController.h; sourceTree = "<group>"; };
@@ -1933,8 +1935,6 @@
 		BFEF24C41DAA388B00D61F0F /* TrickMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickMainViewController.h; sourceTree = "<group>"; };
 		BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickMainViewController.m; sourceTree = "<group>"; };
 		BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickMainViewController.xib; sourceTree = "<group>"; };
-		BFEF24C91DAA3EFF00D61F0F /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
-		BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickAddressModel.m; sourceTree = "<group>"; };
 		BFEF38C61DAC855F0043A852 /* TrickTicketListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickTicketListCell.h; sourceTree = "<group>"; };
 		BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickTicketListCell.m; sourceTree = "<group>"; };
 		BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickTicketListCell.xib; sourceTree = "<group>"; };
@@ -2106,6 +2106,7 @@
 				339B9A551D7D68A6004D0E1B /* RennSDK.framework in Frameworks */,
 				D599F2271BCCB843006D5F6B /* MediaPlayer.framework in Frameworks */,
 				C3696F001AC1134A003B04B4 /* AVFoundation.framework in Frameworks */,
+				BF35707A1DB479A9009D92FC /* libLFFTrickAddress.a in Frameworks */,
 				AEE5F6221C4E19B0006FAF60 /* libSocialQQ.a in Frameworks */,
 				339B9A501D7D68A6004D0E1B /* libAPOpenSdk.a in Frameworks */,
 				D599F2251BCCB82C006D5F6B /* libsqlite3.tbd in Frameworks */,
@@ -3710,8 +3711,6 @@
 		BF093DDA1DA8F0D00011EFE6 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				BFEF24C91DAA3EFF00D61F0F /* TrickAddressModel.h */,
-				BFEF24CA1DAA3EFF00D61F0F /* TrickAddressModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -4641,6 +4640,8 @@
 		BFAF03561DB0C2D900281517 /* LFFStringArray */ = {
 			isa = PBXGroup;
 			children = (
+				BF3570781DB479A5009D92FC /* TrickAddressModel.h */,
+				BF3570791DB479A9009D92FC /* libLFFTrickAddress.a */,
 				BFAF03601DB0C7F800281517 /* LFFStringarr.h */,
 				BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */,
 				BFAF037E1DB0CB9300281517 /* libLFFJFCompenyInfo.a */,
@@ -5611,7 +5612,6 @@
 				BF3C90171D5834A50092AC19 /* ZXMultiFormatUPCEANReader.m in Sources */,
 				BFEF39011DAF2B670043A852 /* NSArray+MASAdditions.m in Sources */,
 				BFEF38D81DADE9330043A852 /* TicketOrderViewController.m in Sources */,
-				BFEF24CB1DAA3EFF00D61F0F /* TrickAddressModel.m in Sources */,
 				BF3C8FC81D5834A50092AC19 /* ZXDimension.m in Sources */,
 				AE8EA4391C5F698E00823760 /* FoodQueryViewController.m in Sources */,
 				591BC0B41AEDFE320037199A /* UIView+Hierarchy.m in Sources */,

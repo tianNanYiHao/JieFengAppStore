@@ -39,50 +39,50 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Be-eV-Nwk" userLabel="infoView">
-                    <frame key="frameInset" minX="0.16343490304712771" width="99.80%" height="90"/>
+                    <frame key="frameInset" minX="-1" width="99.38%" height="90"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="上海虹桥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYa-dn-Air">
-                            <frame key="frameInset" minX="14.9806094182827" minY="15" width="14.77%" height="10"/>
+                            <frame key="frameInset" minX="15" minY="15" width="14.80%" height="10"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="D3205" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0f-Ca-APa">
-                            <frame key="frameInset" minX="41.88%" minY="13" width="14.44%" height="10"/>
+                            <frame key="frameInset" minX="42.01%" minY="13" width="14.73%" height="10"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="北京南" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i4-S3-Yc4">
-                            <frame key="frameInset" minY="15" width="15.04%" height="10" maxX="12.675900276987534"/>
+                            <frame key="frameInset" minY="15" width="15.31%" height="10" maxX="12"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="06:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REz-Pj-FAD">
-                            <frame key="frameInset" minX="14.9806094182827" minY="33" width="16.67%" height="20"/>
+                            <frame key="frameInset" minX="15" minY="33" width="16.78%" height="20"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efC-lb-a30">
-                            <frame key="frameInset" minY="33" width="19.49%" height="20" maxX="5.7617728531647572"/>
+                            <frame key="frameInset" minY="33" width="19.49%" height="20" maxX="6"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="间隔线2" translatesAutoresizingMaskIntoConstraints="NO" id="8OC-os-j0u">
-                            <frame key="frameInset" minX="35.02%" minY="41" width="27.80%" height="1"/>
+                            <frame key="frameInset" minX="35.11%" minY="41" width="28.21%" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="时刻表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnL-AF-qoj">
-                            <frame key="frameInset" minX="42.24%" minY="37" width="13.72%" height="10"/>
+                            <frame key="frameInset" minX="42.32%" minY="37" width="14.11%" height="10"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -90,67 +90,67 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9-28 周三" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyq-Fk-ZvF">
-                            <frame key="frameInset" minX="14.9806094182827" minY="58" width="19.70%" height="21"/>
+                            <frame key="frameInset" minX="15" minY="58" width="19.74%" height="21"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9-28 周三" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9H-aQ-ZbI">
-                            <frame key="frameInset" minY="58" width="19.49%" height="21" maxX="5.7617728531647572"/>
+                            <frame key="frameInset" minY="58" width="19.49%" height="21" maxX="6"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="耗时5小时30分" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHk-SZ-GOk">
-                            <frame key="frameInset" minX="32.85%" minY="58" width="32.85%" height="21"/>
+                            <frame key="frameInset" minX="32.92%" minY="58" width="33.23%" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="间隔线1" translatesAutoresizingMaskIntoConstraints="NO" id="kCi-PY-2sj">
-                            <frame key="frameInset" minY="89" width="98.56%" height="1"/>
+                            <frame key="frameInset" minY="89" width="98.12%" height="1"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VOI-v8-LzQ" userLabel="View1">
-                    <frame key="frameInset" minX="0.16343490304712771" minY="110" width="100.16%" height="50"/>
+                    <frame key="frameInset" minX="-1" minY="110" width="99.69%" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iL6-UB-tZc">
-                            <frame key="frameInset" width="98.56%" height="50"/>
+                            <frame key="frameInset" width="98.75%" height="50"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <connections>
                                 <action selector="chooseTicketClick:" destination="-1" eventType="touchUpInside" id="dbJ-ej-EFL"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="坐  席" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUH-Zh-KZZ">
-                            <frame key="frameInset" minX="14.9806094182827" minY="15" width="19.62%" height="21"/>
+                            <frame key="frameInset" minX="15" minY="15" width="19.67%" height="21"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="二等座 ¥ 250" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkc-kh-TrL">
-                            <frame key="frameInset" minX="30.58%" minY="15" width="44.25%" height="21"/>
+                            <frame key="frameInset" minX="30.63%" minY="15" width="44.69%" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menu-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="e2a-oi-BGo">
-                            <frame key="frameInset" minX="91.73%" minY="17" width="2.88%" height="15"/>
+                            <frame key="frameInset" minX="92.19%" minY="17" width="2.50%" height="15"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U6A-bD-n0Y" userLabel="View2">
-                    <frame key="frameInset" minX="0.16343490304712771" minY="180" width="100.16%" height="50"/>
+                    <frame key="frameInset" minX="-1" minY="180" width="99.69%" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="乘车人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPU-NW-cW9">
@@ -168,7 +168,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3D-Ab-sMz">
-                            <frame key="frameInset" minX="79.86%" minY="11" width="16.19%" height="29"/>
+                            <frame key="frameInset" minX="80.31%" minY="11" width="16.25%" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="添加">
                                 <color key="titleColor" red="0.93333333330000001" green="0.61116553159999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -178,18 +178,18 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="预订底" translatesAutoresizingMaskIntoConstraints="NO" id="fmz-aj-hmn">
-                            <frame key="frameInset" minX="79.86%" minY="11" width="16.19%" height="29"/>
+                            <frame key="frameInset" minX="80.31%" minY="11" width="16.25%" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="axo-CM-RDT" userLabel="View3+4">
-                    <frame key="frameInset" minX="-0.98891966758992755" minY="250" width="99.80%" height="145"/>
+                    <frame key="frameInset" minX="-2" minY="250" width="99.38%" height="145"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffy-ee-VpR" userLabel="View3">
-                            <frame key="frameInset" minX="-6.5503773534893e-14" width="100.00%" height="50"/>
+                            <frame key="frameInset" width="100.00%" height="50"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ4-rl-ovj">
@@ -200,7 +200,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用于发送取票信息" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNA-BM-PhL">
-                                    <frame key="frameInset" minX="30.58%" minY="11" width="40.29%" height="30"/>
+                                    <frame key="frameInset" minX="30.63%" minY="11" width="40.31%" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -210,7 +210,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yDL-CR-G8N" userLabel="View4">
-                            <frame key="frameInset" minX="-6.5503773534893e-14" minY="70" width="100.00%" height="50"/>
+                            <frame key="frameInset" minY="70" width="100.00%" height="50"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="抢票至" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2k-bf-rWp">
@@ -221,7 +221,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcm-JE-FBy">
-                                    <frame key="frameInset" minX="2.16%" minY="11" width="95.32%" height="30"/>
+                                    <frame key="frameInset" minX="2.19%" minY="11" width="95.31%" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="选择抢票截止时间">
                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -234,35 +234,35 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="到达时间未抢到票,会立即为您全额退款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dka-O4-Y5i">
-                            <frame key="frameInset" minX="14.980609418282635" minY="125" width="93.59%" height="20"/>
+                            <frame key="frameInset" minX="15" minY="125" width="93.77%" height="20"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" red="0.93333333330000001" green="0.61116553159999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.89411764705882357" green="0.89411764705882357" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEe-6l-Pkj" userLabel="upView">
-                    <frame key="frameInset" minX="0.16343490304712771" width="100.16%" height="53.008310249314945" maxY="-1.0360110804125497"/>
+                    <frame key="frameInset" minX="-1" width="99.69%" height="53"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥ 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvt-ZU-65N">
-                            <frame key="frameInset" minX="21.894736842105484" minY="8" width="23.55%" height="21"/>
+                            <frame key="frameInset" minX="22" minY="8" width="23.49%" height="21"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fh-28-se5">
-                            <frame key="frameInset" minX="44.60%" minY="8" width="23.38%" height="21"/>
+                            <frame key="frameInset" minX="44.69%" minY="8" width="23.75%" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owM-cg-ibM">
-                            <frame key="frameInset" width="28.78%" height="52" maxX="-2.1032064978498966e-11"/>
+                            <frame key="frameInset" width="28.75%" height="52"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.92549019610000005" green="0.52941176469999995" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="提交订单">
@@ -273,14 +273,14 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="订单总额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQd-UR-BDe">
-                            <frame key="frameInset" minX="21.894736842105484" minY="31" width="20.46%" height="11"/>
+                            <frame key="frameInset" minX="22" minY="31" width="20.47%" height="11"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="订单总额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgO-KO-PCM">
-                            <frame key="frameInset" minX="44.60%" minY="31" width="18.71%" height="11"/>
+                            <frame key="frameInset" minX="44.69%" minY="31" width="18.75%" height="11"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

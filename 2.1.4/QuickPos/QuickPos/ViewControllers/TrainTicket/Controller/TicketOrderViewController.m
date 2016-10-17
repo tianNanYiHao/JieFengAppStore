@@ -90,12 +90,31 @@
         [_personInfoArr addObject:name];
         NSLog(@"===>>> %lu",(unsigned long)_personInfoArr.count);
         
-            _scrollViewBG.height = _scrollViewBG.height+50;
+        [UIView animateWithDuration:0.5 animations:^{
             _scrollViewBG.contentSize = CGSizeMake(0, _scrollViewBG.contentSize.height+50);
             _view3A4.y  = _view3A4.y+50;
-    }];
+            [self createPerSonInfosize:50*(_personInfoArr.count-1)+_view2.y+_view2.height];
+            
+        }];
+        
+        }];
+    
+    
     [self.navigationController pushViewController:perinfo animated:YES];
 }
+
+-(void)createPerSonInfosize:(NSInteger)size{
+    UIView *listView = [[UIView alloc] initWithFrame:CGRectMake(0, size, self.view.frame.size.width, 50)];
+    listView.backgroundColor = [UIColor whiteColor];
+    [_scrollViewBG addSubview:listView];
+    
+    
+    
+    
+    
+    
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     if (_personInfoArr.count == 5) {

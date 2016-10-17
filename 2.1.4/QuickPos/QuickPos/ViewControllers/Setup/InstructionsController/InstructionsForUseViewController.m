@@ -165,7 +165,7 @@
 //    OperationManualVc.titleName = @"账户充值";
 //    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-        [self gotoviewstr:@"账户充值.png" strname:@"账户充值"];
+        [self gotoviewstr:@"账户转账.png" strname:@"账户充值"];
 }
 
 //支付宝收款

@@ -338,6 +338,7 @@
 		AEE5F6361C4E1C17006FAF60 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE5F6351C4E1C17006FAF60 /* libz.tbd */; };
 		AEED5D621C0410AC00F2F2EB /* RechargeFixedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEED5D611C0410AC00F2F2EB /* RechargeFixedViewController.m */; };
 		BF35707A1DB479A9009D92FC /* libLFFTrickAddress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3570791DB479A9009D92FC /* libLFFTrickAddress.a */; };
+		BF35707D1DB4CFEC009D92FC /* TrickPersonListView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF35707C1DB4CFEC009D92FC /* TrickPersonListView.m */; };
 		BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */; };
 		BF3C8D3C1D581D810092AC19 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */; };
 		BF3C8D411D5820110092AC19 /* ZFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C8D3F1D5820110092AC19 /* ZFBViewController.m */; };
@@ -1344,6 +1345,8 @@
 		AEED5D611C0410AC00F2F2EB /* RechargeFixedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeFixedViewController.m; sourceTree = "<group>"; };
 		BF3570781DB479A5009D92FC /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
 		BF3570791DB479A9009D92FC /* libLFFTrickAddress.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLFFTrickAddress.a; sourceTree = "<group>"; };
+		BF35707B1DB4CFEC009D92FC /* TrickPersonListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickPersonListView.h; sourceTree = "<group>"; };
+		BF35707C1DB4CFEC009D92FC /* TrickPersonListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickPersonListView.m; sourceTree = "<group>"; };
 		BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		BF3C8D3E1D5820110092AC19 /* ZFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBViewController.h; sourceTree = "<group>"; };
@@ -3721,6 +3724,8 @@
 				BFEF38C61DAC855F0043A852 /* TrickTicketListCell.h */,
 				BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */,
 				BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */,
+				BF35707B1DB4CFEC009D92FC /* TrickPersonListView.h */,
+				BF35707C1DB4CFEC009D92FC /* TrickPersonListView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -5439,6 +5444,7 @@
 				BF3C8F9B1D5834A50092AC19 /* ZXSMSMMSResultParser.m in Sources */,
 				BF3C8F7F1D5834A50092AC19 /* ZXAztecEncoder.m in Sources */,
 				591BC0C21AEDFE320037199A /* UIView+MLScreenshot.m in Sources */,
+				BF35707D1DB4CFEC009D92FC /* TrickPersonListView.m in Sources */,
 				BF3C8F831D5834A50092AC19 /* ZXAztecToken.m in Sources */,
 				591BC0DF1AEDFE330037199A /* SDWebImageDownloader.m in Sources */,
 				BF5860261D9BA2D200777D7D /* Foundation+Log.m in Sources */,

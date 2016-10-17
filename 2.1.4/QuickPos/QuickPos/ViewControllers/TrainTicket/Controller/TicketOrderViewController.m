@@ -35,7 +35,9 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"订单填写";
     _personInfoArr = [[NSMutableArray alloc]init];
-
+    self.view.backgroundColor =  [Common hexStringToColor:@"e4e4e4"];
+    _view3A4.backgroundColor =  [Common hexStringToColor:@"e4e4e4"];
+    
     [self createScrollView];
     
     
@@ -44,7 +46,7 @@
     
     _scrollViewBG = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
-    _scrollViewBG.backgroundColor = [Common hexStringToColor:@"E4E4E4"];
+    _scrollViewBG.backgroundColor = [Common hexStringToColor:@"e4e4e4"];
     [self.view addSubview:_scrollViewBG];
     _scrollViewBG.scrollEnabled = YES;
     _scrollViewBG.contentSize = CGSizeMake(0, [UIApplication sharedApplication].keyWindow.frame.size.height-104);
@@ -93,12 +95,9 @@
         [UIView animateWithDuration:0.5 animations:^{
             _scrollViewBG.contentSize = CGSizeMake(0, _scrollViewBG.contentSize.height+50);
             _view3A4.y  = _view3A4.y+50;
-            [self createPerSonInfosize:50*(_personInfoArr.count-1)+_view2.y+_view2.height];
-            
         }];
-        
+         [self createPerSonInfosize:50*(_personInfoArr.count-1)+_view2.y+_view2.height];
         }];
-    
     
     [self.navigationController pushViewController:perinfo animated:YES];
 }
@@ -108,10 +107,9 @@
     listView.backgroundColor = [UIColor whiteColor];
     [_scrollViewBG addSubview:listView];
     
-    
-    
-    
-    
+    UIImageView *line = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"间隔线1"]];
+    line.frame = CGRectMake(15, 1, self.view.frame.size.width, 1);
+    [listView addSubview:line];
     
 }
 

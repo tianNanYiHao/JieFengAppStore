@@ -28,7 +28,6 @@
     
     NSString *merchantId;   //商户商家id
     NSString *productId;
-    
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *AmtTextField;//金额输入框
@@ -61,6 +60,7 @@
      _AmtTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
     
+    
 //    [self.normalButton setOnImage:[UIImage imageNamed:@"xuanzeyuandian"] offImage:[UIImage imageNamed:@"yuandian"]];//设置图片
 //    [self.fastButton setOnImage:[UIImage imageNamed:@"xuanzeyuandian"] offImage:[UIImage imageNamed:@"yuandian"]];//设置图片
 //    buttonTag = 3;
@@ -70,6 +70,8 @@
 //    if(self.fastButton.on){
 //        cashType = @"3";
 //    }
+    
+    
 }
 
 //tip
@@ -84,13 +86,31 @@
 
 //确认按钮
 - (IBAction)confirmButton:(id)sender {
-  
+    
+    int i = [_AmtTextField.text intValue];
+    //iOS8的键盘适配
+    if ([_AmtTextField.text rangeOfString:@","].location == NSNotFound) {
+   
+    }else{
+        NSArray *arr = [_AmtTextField.text componentsSeparatedByString:@","];
+        if (arr.count == 2) {
+            _AmtTextField.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
+        }else{
+            [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+        }
+    }
     
     if (_AmtTextField.text.length == 0) {
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_AmtTextField.text integerValue]<5 ){
         [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
-    }else if([_AmtTextField.text length]>100000000){
+    }else if([_AmtTextField.text integerValue]>=10000 ){
+        [Common showMsgBox:@"" msg:@"收款金额请勿大于一万元" parentCtrl:self];
+    }
+    else if([_AmtTextField.text floatValue] - i == 0 ){
+        [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+    }
+    else if([_AmtTextField.text length]>100000000){
         [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
     }
     else{
@@ -102,9 +122,20 @@
         ZFBVc.merchantId = merchantId;
         ZFBVc.productId = productId;
         ZFBVc.titleName = @"支付宝收款二维码";
-        ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
+
+        LFFStringarr *lff = [[LFFStringarr alloc]init];
+        LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];
+        NSString *ii = [[NSUserDefaults standardUserDefaults] objectForKey:@"ii"];
+        NSInteger  iii = [ii integerValue];
+        ZFBVc.infoArr = @[mode.arrJFNO[iii],ZFBBACKURL,mode.arrJFKey[iii],mode.arrJFName[iii]];
+        iii = iii+1;
+        if (iii == mode.arrJFName.count) {
+            iii = 0;
+             [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)iii] forKey:@"ii"];
+        }else{
+             [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%ld",(long)iii] forKey:@"ii"];
+        }
         [self.navigationController pushViewController:ZFBVc animated:YES];
-        
     }
 }
 

@@ -183,7 +183,7 @@
     [formatter setDateFormat:@"yyyyMMddHHmmss"];
     NSString *transDate = [formatter stringFromDate:[NSDate date]];
     
-    NSString *subject = @"上海捷丰网络科技有限公司";
+    NSString *subject = arr[3];
     NSString *merchantcode = arr[0];
     NSString *backurl = arr[1];
     NSString *money = moneY;
@@ -268,7 +268,7 @@
 }
 
 #pragma mark 支付宝 订单状态查询
-+ (void)alipayOrderStateSelect:(NSString *)merchorder_no key:(NSString *)key merchantcode:(NSString*)merchantcodE{
++ (void)alipayOrderStateSelect:(NSString *)merchorder_no key:(NSString *)key merchantcode:(NSString*)merchantcodE controller:(UIViewController*)vc{
     //    PFYProgressHUD *pfyViewHUD = [[PFYProgressHUD alloc] initViewWithFrame:self.view.frame];
     //    [self.view addSubview:pfyViewHUD];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -288,7 +288,8 @@
         NSLog(@"%@", dict);
         //        NSString *retcode = [dict objectForKey:@"retcode"];
         NSString *result = [dict objectForKey:@"result"];
-        [MyAlertView myAlertView:[NSString stringWithFormat:@"您的二维码:%@",result]];
+//        [MyAlertView myAlertView:[NSString stringWithFormat:@"您的二维码:%@",result]];
+        [Common showMsgBox:@"" msg:[NSString stringWithFormat:@"您的二维码:%@",result] parentCtrl:vc];
         //        if ([retcode isEqualToString:@"00"]) {
         //
         //            self.imageView.image = [UIImage imageNamed:@""];

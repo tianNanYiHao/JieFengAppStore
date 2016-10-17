@@ -350,6 +350,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    finalPrice.keyboardType = UIKeyboardTypeDecimalPad;
     // Do any additional setup after loading the view.
     self.title = _titleNmae;
     self.comfirt.layer.cornerRadius = 5;
@@ -547,27 +548,46 @@
         //银统 走扫码充值
         if ([_YTpayWay isEqualToString:@"YT"]) {
             
+            int i = [finalPrice.text intValue];
+            //iOS8的键盘适配
+            if ([finalPrice.text rangeOfString:@","].location == NSNotFound) {
+                NSLog(@"没找到,");
+            }else{
+                NSArray *arr = [finalPrice.text componentsSeparatedByString:@","];
+                if (arr.count == 2) {
+                    finalPrice.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
+                }else{
+                    [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+                }
+            }
+            
             if (finalPrice.text.length == 0) {
-                [Common showMsgBox:@"" msg:@"请输入金额" parentCtrl:self];
+                [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
             }else if([finalPrice.text integerValue]<5 ){
-                [Common showMsgBox:@"" msg:@"金额请勿小于5元" parentCtrl:self];
-            }else if([finalPrice.text length]>100000000){
+                [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
+            }else if([finalPrice.text integerValue]>=10000 ){
+                [Common showMsgBox:@"" msg:@"收款金额请勿大于一万元" parentCtrl:self];
+            }
+            else if([finalPrice.text floatValue] - i == 0 ){
+                [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+            }
+            else if([finalPrice.text length]>100000000){
                 [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
             }
             else{
-                finalPrice.text = [NSString stringWithFormat:@"%.2f",[finalPrice.text floatValue]];
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-                ZFBVc.AmtNO = finalPrice.text;
-                ZFBVc.cardNum = [AppDelegate getUserBaseData].mobileNo;
-                ZFBVc.merchantId = merchantId;
-                ZFBVc.productId = productId;
-                ZFBVc.titleName = _titleNmae;
-                ZFBVc.infoArr = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
-                [self.navigationController pushViewController:ZFBVc animated:YES];
+                [Common showMsgBox:@"" msg:@"功能暂未开放" parentCtrl:self];
+//                finalPrice.text = [NSString stringWithFormat:@"%.2f",[finalPrice.text floatValue]];
+//                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+//                ZFBVc.AmtNO = finalPrice.text;
+//                ZFBVc.cardNum = [AppDelegate getUserBaseData].mobileNo;
+//                ZFBVc.merchantId = merchantId;
+//                ZFBVc.productId = productId;
+//                ZFBVc.titleName = _titleNmae;
+//                ZFBVc.infoArr = infoKeyArray;
+//                [self.navigationController pushViewController:ZFBVc animated:YES];
             }
-            
-        }else{//非银统充值方式
+        }else{//非银统充值方式  (原账户/快捷/刷卡方式)
             
             NSString *priceVer = finalPrice.text; //得到充值的金额
             priceVer = [NSString stringWithFormat:@"%.2f",[priceVer doubleValue]];

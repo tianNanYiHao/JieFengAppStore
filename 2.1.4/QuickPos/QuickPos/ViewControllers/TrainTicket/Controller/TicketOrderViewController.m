@@ -8,7 +8,7 @@
 
 #import "TicketOrderViewController.h"
 #import "AddPersonInfoViewController.h"
-
+#import "TickerOrderSureViewController.h"
 
 @interface TicketOrderViewController ()<UITableViewDelegate,UITableViewDataSource,UITableViewDelegate,UITableViewDataSource>
 {
@@ -84,6 +84,10 @@
 }
 //提交订单
 - (IBAction)upOrderClick:(id)sender {
+    TickerOrderSureViewController *sure = [[TickerOrderSureViewController alloc] initWithNibName:@"TickerOrderSureViewController" bundle:nil];
+    [self.navigationController pushViewController:sure animated:YES];
+    
+    
 }
 //添加乘客信息
 - (IBAction)addPersonClick:(id)sender {

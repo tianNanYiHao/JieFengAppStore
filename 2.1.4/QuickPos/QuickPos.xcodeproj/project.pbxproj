@@ -337,6 +337,12 @@
 		AEE5F6341C4E1C0B006FAF60 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE5F6331C4E1C0A006FAF60 /* libstdc++.tbd */; };
 		AEE5F6361C4E1C17006FAF60 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE5F6351C4E1C17006FAF60 /* libz.tbd */; };
 		AEED5D621C0410AC00F2F2EB /* RechargeFixedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEED5D611C0410AC00F2F2EB /* RechargeFixedViewController.m */; };
+		BF21CD581DB6138600963498 /* TickerOrderSureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21CD561DB6138600963498 /* TickerOrderSureViewController.m */; };
+		BF21CD591DB6138600963498 /* TickerOrderSureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF21CD571DB6138600963498 /* TickerOrderSureViewController.xib */; };
+		BF21CD5D1DB619A700963498 /* TrickPersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21CD5B1DB619A700963498 /* TrickPersonInfoCell.m */; };
+		BF21CD5E1DB619A700963498 /* TrickPersonInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF21CD5C1DB619A700963498 /* TrickPersonInfoCell.xib */; };
+		BF21CD621DB61C5500963498 /* TrickOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21CD601DB61C5500963498 /* TrickOrderCell.m */; };
+		BF21CD631DB61C5500963498 /* TrickOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF21CD611DB61C5500963498 /* TrickOrderCell.xib */; };
 		BF35707A1DB479A9009D92FC /* libLFFTrickAddress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3570791DB479A9009D92FC /* libLFFTrickAddress.a */; };
 		BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */; };
 		BF3C8D3C1D581D810092AC19 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3C8D3A1D581D810092AC19 /* AlipaySDK.framework */; };
@@ -1342,6 +1348,15 @@
 		AEE5F6351C4E1C17006FAF60 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		AEED5D601C0410AC00F2F2EB /* RechargeFixedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeFixedViewController.h; sourceTree = "<group>"; };
 		AEED5D611C0410AC00F2F2EB /* RechargeFixedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeFixedViewController.m; sourceTree = "<group>"; };
+		BF21CD551DB6138500963498 /* TickerOrderSureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickerOrderSureViewController.h; sourceTree = "<group>"; };
+		BF21CD561DB6138600963498 /* TickerOrderSureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickerOrderSureViewController.m; sourceTree = "<group>"; };
+		BF21CD571DB6138600963498 /* TickerOrderSureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TickerOrderSureViewController.xib; sourceTree = "<group>"; };
+		BF21CD5A1DB619A700963498 /* TrickPersonInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickPersonInfoCell.h; sourceTree = "<group>"; };
+		BF21CD5B1DB619A700963498 /* TrickPersonInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickPersonInfoCell.m; sourceTree = "<group>"; };
+		BF21CD5C1DB619A700963498 /* TrickPersonInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickPersonInfoCell.xib; sourceTree = "<group>"; };
+		BF21CD5F1DB61C5500963498 /* TrickOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickOrderCell.h; sourceTree = "<group>"; };
+		BF21CD601DB61C5500963498 /* TrickOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickOrderCell.m; sourceTree = "<group>"; };
+		BF21CD611DB61C5500963498 /* TrickOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickOrderCell.xib; sourceTree = "<group>"; };
 		BF3570781DB479A5009D92FC /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
 		BF3570791DB479A9009D92FC /* libLFFTrickAddress.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLFFTrickAddress.a; sourceTree = "<group>"; };
 		BF3C8D391D581D810092AC19 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -3704,6 +3719,9 @@
 				BFEF38DA1DAE19DE0043A852 /* AddPersonInfoViewController.h */,
 				BFEF38DB1DAE19DE0043A852 /* AddPersonInfoViewController.m */,
 				BFEF38DC1DAE19DE0043A852 /* AddPersonInfoViewController.xib */,
+				BF21CD551DB6138500963498 /* TickerOrderSureViewController.h */,
+				BF21CD561DB6138600963498 /* TickerOrderSureViewController.m */,
+				BF21CD571DB6138600963498 /* TickerOrderSureViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3721,6 +3739,12 @@
 				BFEF38C61DAC855F0043A852 /* TrickTicketListCell.h */,
 				BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */,
 				BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */,
+				BF21CD5A1DB619A700963498 /* TrickPersonInfoCell.h */,
+				BF21CD5B1DB619A700963498 /* TrickPersonInfoCell.m */,
+				BF21CD5C1DB619A700963498 /* TrickPersonInfoCell.xib */,
+				BF21CD5F1DB61C5500963498 /* TrickOrderCell.h */,
+				BF21CD601DB61C5500963498 /* TrickOrderCell.m */,
+				BF21CD611DB61C5500963498 /* TrickOrderCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -5057,6 +5081,7 @@
 				339B9A541D7D68A6004D0E1B /* RennSDK.bundle in Resources */,
 				591BC3A51AEDFE6A0037199A /* HandSignViewController.xib in Resources */,
 				87E058D81C044DBD00C4A4C1 /* Icon-40.png in Resources */,
+				BF21CD591DB6138600963498 /* TickerOrderSureViewController.xib in Resources */,
 				32F3A8311AD5285600763B72 /* coolblack.TTF in Resources */,
 				AEE5F6181C4E199F006FAF60 /* UMShareEditViewControlleriPad.xib in Resources */,
 				339B9A4E1D7D68A6004D0E1B /* ShareSDKUI.bundle in Resources */,
@@ -5093,10 +5118,12 @@
 				87E058DB1C044DBD00C4A4C1 /* Icon-60.png in Resources */,
 				BF3E10001D499C6D003F0F89 /* CertificationGoodsCell.xib in Resources */,
 				AEE5F6241C4E19B1006FAF60 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				BF21CD5E1DB619A700963498 /* TrickPersonInfoCell.xib in Resources */,
 				339B9A531D7D68A6004D0E1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				87E058DE1C044DBD00C4A4C1 /* Icon-72.png in Resources */,
 				BFF5552D1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib in Resources */,
 				591BC3AC1AEDFE6A0037199A /* YoolinkTestViewController.xib in Resources */,
+				BF21CD631DB61C5500963498 /* TrickOrderCell.xib in Resources */,
 				87E058E51C044DBD00C4A4C1 /* Icon-Small@2x.png in Resources */,
 				591BC3961AEDFE6A0037199A /* ChooseView.xib in Resources */,
 				BF3E10081D49B3D1003F0F89 /* CompaneyDetialController.xib in Resources */,
@@ -5187,6 +5214,7 @@
 				591BC0B91AEDFE320037199A /* Toast+UIView.m in Sources */,
 				AE8EA4331C5F698E00823760 /* AuthenticationEnterpriseViewController.m in Sources */,
 				BF3C8F971D5834A50092AC19 /* ZXParsedResult.m in Sources */,
+				BF21CD5D1DB619A700963498 /* TrickPersonInfoCell.m in Sources */,
 				591BC35D1AEDFE6A0037199A /* PayViewController.m in Sources */,
 				D561520A1BDF6EA100DAAADC /* MJRefreshAutoFooter.m in Sources */,
 				BF3C8FD01D5834A50092AC19 /* ZXRGBLuminanceSource.m in Sources */,
@@ -5246,6 +5274,7 @@
 				BF3C8F681D5834A50092AC19 /* README.md in Sources */,
 				591BC0D71AEDFE330037199A /* PECropViewController.m in Sources */,
 				BF3C8F911D5834A50092AC19 /* ZXExpandedProductParsedResult.m in Sources */,
+				BF21CD581DB6138600963498 /* TickerOrderSureViewController.m in Sources */,
 				591BC0E81AEDFE330037199A /* UIImageView+WebCache.m in Sources */,
 				BF3C8F6F1D5834A50092AC19 /* LBXScanView.m in Sources */,
 				87EAAF651C05A20D006CD886 /* TransferAccountViewController.m in Sources */,
@@ -5620,6 +5649,7 @@
 				339DA4181D9920FD001BA189 /* CreditQuickPayOrderViewController.m in Sources */,
 				591BC35C1AEDFE6A0037199A /* NoteViewController.m in Sources */,
 				BF3C902D1D5834A50092AC19 /* ZXPDF417DetectionResultRowIndicatorColumn.m in Sources */,
+				BF21CD621DB61C5500963498 /* TrickOrderCell.m in Sources */,
 				BF3C900C1D5834A50092AC19 /* ZXCode39Reader.m in Sources */,
 				BF3C90021D5834A50092AC19 /* ZXAbstractRSSReader.m in Sources */,
 				591BC0EE1AEDFE330037199A /* PinyinFormatter.m in Sources */,

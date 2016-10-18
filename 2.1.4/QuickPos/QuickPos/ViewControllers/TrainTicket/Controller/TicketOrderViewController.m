@@ -129,6 +129,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ind];
     }
+    cell.accessoryType = UITableViewCellAccessoryNone;
     cell.textLabel.text = [_personInfoArr[indexPath.row] objectForKey:@"name"] ;
     cell.detailTextLabel.text = [_personInfoArr[indexPath.row] objectForKey:@"perSonID"] ;
     cell.detailTextLabel.font  = [UIFont systemFontOfSize:12];

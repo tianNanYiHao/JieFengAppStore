@@ -117,6 +117,7 @@
         WechatVc.titleName = @"微信收款二维码";
         WechatVc.infoArr = @[WXMERCHANTCODE,WXBACKURL,WXKEY];
         [self.navigationController pushViewController:WechatVc animated:YES];
+        
     }
 }
 - (void)didReceiveMemoryWarning {

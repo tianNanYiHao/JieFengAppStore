@@ -424,6 +424,8 @@
     _button4.selected = YES;
     _button3.selected = YES;
     _button7.selected = YES;
+    _button444.hidden = YES;
+    _button666.hidden = YES;
     
     //vip版本直接隐藏
     self.radioBottomView.hidden = NO;
@@ -557,35 +559,46 @@
                 if (arr.count == 2) {
                     finalPrice.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
                 }else{
-                    [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+                    [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
                 }
             }
             
             if (finalPrice.text.length == 0) {
-                [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
+                [Common showMsgBox:@"" msg:@"请输入金额" parentCtrl:self];
             }else if([finalPrice.text integerValue]<5 ){
-                [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
+                [Common showMsgBox:@"" msg:@"金额请勿小于5元" parentCtrl:self];
             }else if([finalPrice.text integerValue]>=10000 ){
-                [Common showMsgBox:@"" msg:@"收款金额请勿大于一万元" parentCtrl:self];
+                [Common showMsgBox:@"" msg:@"金额请勿大于一万元" parentCtrl:self];
             }
             else if([finalPrice.text floatValue] - i == 0 ){
-                [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+                [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
             }
             else if([finalPrice.text length]>100000000){
                 [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
             }
             else{
-                [Common showMsgBox:@"" msg:@"功能暂未开放" parentCtrl:self];
-//                finalPrice.text = [NSString stringWithFormat:@"%.2f",[finalPrice.text floatValue]];
-//                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//                ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-//                ZFBVc.AmtNO = finalPrice.text;
-//                ZFBVc.cardNum = [AppDelegate getUserBaseData].mobileNo;
-//                ZFBVc.merchantId = merchantId;
-//                ZFBVc.productId = productId;
-//                ZFBVc.titleName = _titleNmae;
-//                ZFBVc.infoArr = infoKeyArray;
-//                [self.navigationController pushViewController:ZFBVc animated:YES];
+//                [Common showMsgBox:@"" msg:@"功能暂未开放" parentCtrl:self];
+                finalPrice.text = [NSString stringWithFormat:@"%.2f",[finalPrice.text floatValue]];
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+                ZFBVc.AmtNO = finalPrice.text;
+                ZFBVc.cardNum = [AppDelegate getUserBaseData].mobileNo;
+                ZFBVc.merchantId = merchantId;
+                ZFBVc.productId = productId;
+                ZFBVc.titleName = _titleNmae;
+                LFFStringarr *lff = [[LFFStringarr alloc]init];
+                LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];
+                NSString *ii = [[NSUserDefaults standardUserDefaults] objectForKey:@"ii"];
+                NSInteger  iii = [ii integerValue];
+                ZFBVc.infoArr = @[mode.arrJFNO[iii],ZFBBACKURL,mode.arrJFKey[iii],mode.arrJFName[iii]];
+                iii = iii+1;
+                if (iii == mode.arrJFName.count) {
+                    iii = 0;
+                    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)iii] forKey:@"ii"];
+                }else{
+                    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%ld",(long)iii] forKey:@"ii"];
+                }
+                [self.navigationController pushViewController:ZFBVc animated:YES];
             }
         }else{//非银统充值方式  (原账户/快捷/刷卡方式)
             

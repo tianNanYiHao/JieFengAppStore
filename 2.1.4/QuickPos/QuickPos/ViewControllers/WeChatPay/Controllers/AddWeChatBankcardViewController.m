@@ -328,13 +328,21 @@
     
     if ([dict[@"respCode"]isEqual:@"0000"]) {
         if(type == REQUSET_VERIFYWEIXINPAY ){
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ObtainScanViewController *ObtainScanVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ObtainScanVc"];
-            ObtainScanVc.acctNo2 = [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-            [self.navigationController pushViewController:ObtainScanVc animated:YES];
-//                YSTWechatViewController *ystWechat = [[YSTWechatViewController alloc] initWithNibName:@"YSTWechatViewController" bundle:nil];
-//                ystWechat.WeChatBankCardNum =  [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-//                [self.navigationController pushViewController:ystWechat animated:YES];
+            PSTAlertController *p  = [PSTAlertController alertWithTitle:@"" message:@"请选择微信收款方式"];
+            [p addAction:[PSTAlertAction actionWithTitle:@"微信收款一" handler:^(PSTAlertAction * _Nonnull action) {
+
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                ObtainScanViewController *ObtainScanVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ObtainScanVc"];
+                ObtainScanVc.acctNo2 = [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+                [self.navigationController pushViewController:ObtainScanVc animated:YES];
+            }]];
+            [p addAction:[PSTAlertAction actionWithTitle:@"微信收款二" handler:^(PSTAlertAction * _Nonnull action) {
+                YSTWechatViewController *ystWechat = [[YSTWechatViewController alloc] initWithNibName:@"YSTWechatViewController" bundle:nil];
+                ystWechat.WeChatBankCardNum =  [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+                [self.navigationController pushViewController:ystWechat animated:YES];
+            }]];
+            [p showWithSender:nil controller:self animated:YES completion:NULL];
+            
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         }else if (type == REQUSET_USERINFOQUERY){
             self.authenFlag = [[[dict objectForKey:@"data"]objectForKey:@"resultBean"]objectForKey:@"authenFlag"];

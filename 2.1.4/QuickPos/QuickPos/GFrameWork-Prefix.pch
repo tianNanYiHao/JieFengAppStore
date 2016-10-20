@@ -13,6 +13,7 @@
 #define iOS8 [[[UIDevice currentDevice] systemVersion]floatValue]>=8
 #define iOS6 [[[UIDevice currentDevice] systemVersion]floatValue]<=7
 
+
 //FMDB
 #import "DBManger.h"
 

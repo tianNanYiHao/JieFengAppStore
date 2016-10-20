@@ -94,12 +94,9 @@
     
     AddPersonInfoViewController *perinfo = [[AddPersonInfoViewController alloc] initWithNibName:@"AddPersonInfoViewController" bundle:nil];
     [perinfo comeBackBlock:^(NSString *name, NSString *perSonID) {
-        NSLog(@"%@ = %@",name,perSonID);
         NSDictionary * dict = [NSDictionary new];
          dict =  @{@"name":name,@"perSonID":perSonID};
         [_personInfoArr addObject:dict];
-        NSLog(@"===>>> %lu",(unsigned long)_personInfoArr.count);
-        
         if (personTableView) {
             [personTableView removeFromSuperview];
         }

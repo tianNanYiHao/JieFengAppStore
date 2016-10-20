@@ -102,7 +102,7 @@
         if ([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]) {
             _ewmImageViw.hidden = NO;
         }else{
-            [MBProgressHUD showHUDAddedTo:self.view WithString:[dict objectForKey:@"respDesc"]];
+            [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
         }
     }
 

@@ -128,13 +128,14 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (type == REQUSET_XZTK1003) {
-        if ([[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_RSPMSG"] isEqualToString:@"100001"]) {
-            [MBProgressHUD showHUDAddedTo:self.view WithString:[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_RSPMSG"]];
-          }
-        else{
+        if ([[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_CODE"]isEqualToString:@"000000"]) {
             TrickChooseCarListViewController *chooseList = [[TrickChooseCarListViewController alloc] initWithNibName:@"TrickChooseCarListViewController" bundle:nil];
             [self.navigationController pushViewController:chooseList animated:YES];
-       }
+            
+          }
+        else{
+              [MBProgressHUD showHUDAddedTo:self.view WithString:[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_RSPMSG"]];
+          }
     }
     
     

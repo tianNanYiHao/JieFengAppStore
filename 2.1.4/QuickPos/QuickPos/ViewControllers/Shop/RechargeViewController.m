@@ -115,12 +115,12 @@
     
     if (sender.tag == 44) {
         //刷卡支付
-         self.radioBottomView.hidden = NO;
-        self.radioBottom2.hidden = NO;
+         self.radioBottomView.hidden = YES;
+        self.radioBottom2.hidden = YES;
         self.ExplainLabel1.hidden = YES;
         self.ExplainLabel2.hidden = YES;
         if (_isRechargeView) {
-            merchantId = @"0002000002";
+            merchantId = @"0005000001";
             productId = @"0000000000";
             payTool = @"01";
             self.phoneView.hidden = YES;
@@ -423,12 +423,10 @@
     _button6.hidden = YES;
     _button4.selected = YES;
     _button3.selected = YES;
+    _radioBottomView.hidden = YES;
+    _radioBottom2.hidden = YES;
     _button7.selected = YES;
-    _button444.hidden = YES;
     _button666.hidden = YES;
-    
-    //vip版本直接隐藏
-    self.radioBottomView.hidden = NO;
     
     self.phoneView.hidden = YES;
     self.isAccount = @"0";
@@ -565,8 +563,8 @@
             
             if (finalPrice.text.length == 0) {
                 [Common showMsgBox:@"" msg:@"请输入金额" parentCtrl:self];
-            }else if([finalPrice.text integerValue]<5 ){
-                [Common showMsgBox:@"" msg:@"金额请勿小于5元" parentCtrl:self];
+            }else if([finalPrice.text integerValue]<2 ){
+                [Common showMsgBox:@"" msg:@"金额请勿小于2元" parentCtrl:self];
             }else if([finalPrice.text integerValue]>=10000 ){
                 [Common showMsgBox:@"" msg:@"金额请勿大于一万元" parentCtrl:self];
             }
@@ -586,18 +584,28 @@
                 ZFBVc.merchantId = merchantId;
                 ZFBVc.productId = productId;
                 ZFBVc.titleName = _titleNmae;
-                LFFStringarr *lff = [[LFFStringarr alloc]init];
-                LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];
-                NSString *ii = [[NSUserDefaults standardUserDefaults] objectForKey:@"ii"];
-                NSInteger  iii = [ii integerValue];
-                ZFBVc.infoArr = @[mode.arrJFNO[iii],ZFBBACKURL,mode.arrJFKey[iii],mode.arrJFName[iii]];
-                iii = iii+1;
-                if (iii == mode.arrJFName.count) {
-                    iii = 0;
-                    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)iii] forKey:@"ii"];
-                }else{
-                    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%ld",(long)iii] forKey:@"ii"];
+                if (_button444.selected == YES) {
+                  ZFBVc.infoArr =  @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
                 }
+                else if (_button555.selected == YES) {
+                    LFFStringarr *lff = [[LFFStringarr alloc]init];
+                    LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];
+                    NSString *ii = [[NSUserDefaults standardUserDefaults] objectForKey:@"ii"];
+                    NSInteger  iii = [ii integerValue];
+                    ZFBVc.infoArr = @[mode.arrJFNO[iii],ZFBBACKURL,mode.arrJFKey[iii],mode.arrJFName[iii]];
+                    iii = iii+1;
+                    if (iii == mode.arrJFName.count) {
+                        iii = 0;
+                        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)iii] forKey:@"ii"];
+                    }else{
+                        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%ld",(long)iii] forKey:@"ii"];
+                    }
+
+                }
+                else{
+                    
+                }
+                
                 [self.navigationController pushViewController:ZFBVc animated:YES];
             }
         }else{//非银统充值方式  (原账户/快捷/刷卡方式)
@@ -610,6 +618,11 @@
             if ([priceVer length] > 9 || [priceVerde isEqualToString:@""] || ![self matchStringFormat:priceVer withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"]  || [priceVer isEqualToString:@"0.00"]) {
                 
                 [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入充值金额")];
+            }
+            if([finalPrice.text integerValue]<2 ){
+                [Common showMsgBox:@"" msg:@"金额请勿小于2元" parentCtrl:self];
+            }else if([finalPrice.text integerValue]>=10000 ){
+                [Common showMsgBox:@"" msg:@"金额请勿大于一万元" parentCtrl:self];
             }
             //如果不为空
             else if (![self matchStringFormat:priceVerde withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"])

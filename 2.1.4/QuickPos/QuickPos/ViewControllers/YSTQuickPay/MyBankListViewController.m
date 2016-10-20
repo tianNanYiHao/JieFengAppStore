@@ -24,6 +24,7 @@
     NSIndexPath *indexpath;
 //    OrderData *orderData;
     Request *req ;
+    NSArray *resultBeanArr;
 }
 @property (weak, nonatomic) IBOutlet UITableView *bankTableView;
 @property (nonatomic,strong) UIImageView *noBankCark;//没有银行卡的图片
@@ -113,11 +114,14 @@
 
 
 -(void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
-
+    
     //有数据返回
     if(type == REQUEST_GETQUICKBANKCARD){
-             [MBProgressHUD hideHUDForView:self.view animated:YES];
-           if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        resultBeanArr = [[dict objectForKey:@"data"]objectForKey:@"resultBean"];
+        
+        if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
             if ([[[dict objectForKey:@"data"] objectForKey:@"resultBean"] count] >0) {
                 self.noBankCark.hidden = YES;
                 self.noBankCarktip.hidden = YES;
@@ -125,45 +129,47 @@
                 self.noBankCark.hidden = NO;
                 self.noBankCarktip.hidden = NO;
             }
-            NSArray *resultBeanArr = [[dict objectForKey:@"data"]objectForKey:@"resultBean"];
-            if (resultBeanArr.count == 0) {
+            
+//            if (resultBeanArr.count == 0) {
+//                bankData = [[QuickBankData alloc]initWithData:dict];
+//                
+//            }
+//            else{
                 bankData = [[QuickBankData alloc]initWithData:dict];
-               
+                [self.bankTableView reloadData];
+                //                NSDictionary *resultDict = resultBeanArr[0];
+                for (NSDictionary *item in resultBeanArr) {
+                    self.newbindid = [item objectForKey:@"memo"];
+                    self.customerId = [item objectForKey:@"customerId"];
+                    self.bankId = [item objectForKey:@"bankId"];
+                    self.bindID = [item objectForKey:@"bindID"];
+                    self.bankName = [item objectForKey:@"bankName"];
+                    self.customerName = [item objectForKey:@"customerName"];
+                    self.cardType = [item objectForKey:@"cardType"];
+                    self.bankMobileNo = [item objectForKey:@"mobile"];
+                    NSLog(@"%@  %@  %@  %@",self.newbindid,self.customerId,self.bankId,self.bindID);
+//                }
             }
-            else{
-                bankData = [[QuickBankData alloc]initWithData:dict];
-                NSDictionary *resultDict = resultBeanArr[0];
-                
-                self.newbindid = [resultDict objectForKey:@"memo"];
-                self.customerId = [resultDict objectForKey:@"customerId"];
-                self.bankId = [resultDict objectForKey:@"bankId"];
-                self.bindID = [resultDict objectForKey:@"bindID"];
-                self.bankName = [resultDict objectForKey:@"bankName"];
-                self.customerName = [resultDict objectForKey:@"customerName"];
-                self.cardType = [resultDict objectForKey:@"cardType"];
-                self.bankMobileNo = [resultDict objectForKey:@"mobile"];
-                NSLog(@"%@  %@  %@  %@",self.newbindid,self.customerId,self.bankId,self.bindID);
-            }
-           
             
             
-            [self.bankTableView reloadData];
+            
+//            [self.bankTableView reloadData];
             
         }else if(type == REQUSET_MYPOS){
             //无卡支付申请
-//            orderData = [[OrderData alloc]initWithData:dict];
-//            [self performSegueWithIdentifier:@"NoCardPaySegue" sender:nil];
-    
+            //            orderData = [[OrderData alloc]initWithData:dict];
+            //            [self performSegueWithIdentifier:@"NoCardPaySegue" sender:nil];
+            
         }
         else if(type == REQUEST_UNBINDQUICKBANKCARD){
-             [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"数据删除中,请稍后..."];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"数据删除中,请稍后..."];
             [self.bankTableView reloadData];
-        
+            
         }
     }else{
         [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
     }
-
+    
 }
 
 #pragma mark - TableViewDataSource
@@ -172,7 +178,10 @@
     return  bankData.bankCardArr.count>0? bankData.bankCardArr.count:0;
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     indexpath = indexPath;
     bankItem = [bankData.bankCardArr objectAtIndex:indexPath.row];
@@ -202,36 +211,40 @@
 #pragma mark - TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    bankItem = bankData.bankCardArr[indexPath.row];
-    bankItem.isBind = YES;
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    bankItem = bankData.bankCardArr[indexPath.row];
+//    bankItem.isBind = YES;
+    NSDictionary *resultDic = resultBeanArr[indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.isJumped = YES;
     if ([self.cardType integerValue] == 0) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
         QuickPayOrderViewController *QuickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"QuickPayOrderViewController"];
         [QuickPayOrderVc setOrderData:self.orderData];
-        QuickPayOrderVc.newbindid = self.newbindid;
-        QuickPayOrderVc.bankName = bankItem.bankName;
-        QuickPayOrderVc.cardNums = bankItem.cardNo;
-        QuickPayOrderVc.customerId = self.customerId;
-        QuickPayOrderVc.customerName = self.customerName;
+        QuickPayOrderVc.newbindid = [resultDic objectForKey:@"memo"];
+        QuickPayOrderVc.bankName = [resultDic objectForKey:@"bankName"];
+        QuickPayOrderVc.cardNums = [resultDic objectForKey:@"cardNo"];
+        QuickPayOrderVc.customerId = [resultDic objectForKey:@"customerId"];
+        QuickPayOrderVc.customerName = [resultDic objectForKey:@"customerName"];
         QuickPayOrderVc.cardType = self.cardType;
-        QuickPayOrderVc.bankMobileNo = self.bankMobileNo;
+        QuickPayOrderVc.bankMobileNo = [resultDic objectForKey:@"mobile"];
         QuickPayOrderVc.isJumps = YES;
+        NSLog(@"%@  %@",QuickPayOrderVc.newbindid,self.newbindid);
         [self.navigationController pushViewController:QuickPayOrderVc animated:YES];
     }else{
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"QuickPay" bundle:nil];
     CreditQuickPayOrderViewController *CreditQuickPayOrderVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CreditQuickPayOrderViewController"];
     [CreditQuickPayOrderVc setOrderData:self.orderData];
-    CreditQuickPayOrderVc.newbindid = self.newbindid;
-    CreditQuickPayOrderVc.bankName = bankItem.bankName;
-    CreditQuickPayOrderVc.cardNums = bankItem.cardNo;
-    CreditQuickPayOrderVc.customerId = self.customerId;
-    CreditQuickPayOrderVc.customerName = self.customerName;
+    CreditQuickPayOrderVc.newbindid =  [resultDic objectForKey:@"memo"];
+    CreditQuickPayOrderVc.bankName = [resultDic objectForKey:@"bankName"];
+    CreditQuickPayOrderVc.cardNums = [resultDic objectForKey:@"cardNo"];
+    CreditQuickPayOrderVc.customerId = [resultDic objectForKey:@"customerId"];
+    CreditQuickPayOrderVc.customerName = [resultDic objectForKey:@"customerName"];
     CreditQuickPayOrderVc.cardType = self.cardType;
-    CreditQuickPayOrderVc.bankMobileNo = self.bankMobileNo;
+    CreditQuickPayOrderVc.bankMobileNo = [resultDic objectForKey:@"mobile"];
     CreditQuickPayOrderVc.isJump = YES;
     CreditQuickPayOrderVc.isPay = YES;
+        NSLog(@"%@",CreditQuickPayOrderVc.newbindid);
     [self.navigationController pushViewController:CreditQuickPayOrderVc animated:YES];
 }
 //    [self performSegueWithIdentifier:@"NoCardPaySegue" sender:cell];

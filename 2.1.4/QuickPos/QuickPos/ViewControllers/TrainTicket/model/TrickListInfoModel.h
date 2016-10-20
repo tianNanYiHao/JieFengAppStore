@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TrickInfoModel : NSObject
+@interface TrickListInfoModel : NSObject
 @property (nonatomic,strong) NSString *train_no ;
 @property (nonatomic,strong) NSString *arrive_time ;
 @property (nonatomic,strong) NSString *start_station_name ;
@@ -49,6 +49,7 @@
 @property (nonatomic,strong) NSString *train_start_date ;
 @property (nonatomic,strong) NSString *controlled_train_message ;
 @property (nonatomic,strong) NSString *controlled_train_flag ;
+
 
 
 

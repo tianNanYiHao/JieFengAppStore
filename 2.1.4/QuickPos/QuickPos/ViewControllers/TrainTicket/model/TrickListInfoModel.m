@@ -6,11 +6,13 @@
 //  Copyright © 2016年 张倡榕. All rights reserved.
 //
 
-#import "TrickInfoModel.h"
+#import "TrickListInfoModel.h"
 
-@implementation TrickInfoModel
+@implementation TrickListInfoModel
 
 
-
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
 
 @end

@@ -54,6 +54,8 @@
     _textfiledCash.keyboardType = UIKeyboardTypeDecimalPad;
     _btnOne.groupButtons = @[_btnOne,_btnTwo];
     _btnOne.selected = YES;
+    _btnOne.hidden = YES;
+    _btnTwo.hidden = YES;
     merchantId = @"0001000006";
     productId = @"0000000002";
 
@@ -61,22 +63,23 @@
 //tip
 - (void)PromptTip
 {
-    UIView *tip = [Common tipWithStr:@"待定待定待定" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commitBtn.frame)+270, self.view.frame.size.width, 40)];
+    
+    UIView *tip = [Common tipWithStr:@"手续费:千五+2元(秒到)" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commitBtn.frame)+2, [UIApplication sharedApplication].keyWindow.width,40)];
     [self.view addSubview:tip];
     
 }
 //T+0 //T+1
-- (IBAction)chooseBtn:(RadioButton*)sender {
-    if (sender.tag == 11) {   //T+0
-        merchantId = @"0001000006";
-        productId = @"0000000002";
-    }
-    else if (sender.tag == 22){
-        merchantId = @"0001000006";
-        productId = @"0000000003";
-    }
-    
-}
+//- (IBAction)chooseBtn:(RadioButton*)sender {
+//    if (sender.tag == 11) {   //T+0
+//        merchantId = @"0001000006";
+//        productId = @"0000000002";
+//    }
+//    else if (sender.tag == 22){
+//        merchantId = @"0001000006";
+//        productId = @"0000000003";
+//    }
+//    
+//}
 
 - (IBAction)commitEwm:(id)sender {
     
@@ -96,8 +99,8 @@
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_textfiledCash.text integerValue]<5 ){
         [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
-    }else if([_textfiledCash.text integerValue]>=10000 ){
-        [Common showMsgBox:@"" msg:@"收款金额请勿大于一万元" parentCtrl:self];
+    }else if([_textfiledCash.text integerValue]>=50000 ){
+        [Common showMsgBox:@"" msg:@"收款金额请勿大于五万元" parentCtrl:self];
     }
     else if([_textfiledCash.text floatValue] - i == 0 ){
         [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
@@ -115,7 +118,7 @@
         WechatVc.merchantId = merchantId;
         WechatVc.productId = productId;
         WechatVc.titleName = @"微信收款二维码";
-        WechatVc.infoArr = @[WXMERCHANTCODE,WXBACKURL,WXKEY];
+        WechatVc.infoArr = @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
         [self.navigationController pushViewController:WechatVc animated:YES];
         
     }

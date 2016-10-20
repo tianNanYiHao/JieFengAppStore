@@ -8,7 +8,7 @@
 
 #import "TicketOrderViewController.h"
 #import "AddPersonInfoViewController.h"
-
+#import "TickerOrderSureViewController.h"
 
 @interface TicketOrderViewController ()<UITableViewDelegate,UITableViewDataSource,UITableViewDelegate,UITableViewDataSource>
 {
@@ -84,18 +84,19 @@
 }
 //提交订单
 - (IBAction)upOrderClick:(id)sender {
+    TickerOrderSureViewController *sure = [[TickerOrderSureViewController alloc] initWithNibName:@"TickerOrderSureViewController" bundle:nil];
+    [self.navigationController pushViewController:sure animated:YES];
+    
+    
 }
 //添加乘客信息
 - (IBAction)addPersonClick:(id)sender {
     
     AddPersonInfoViewController *perinfo = [[AddPersonInfoViewController alloc] initWithNibName:@"AddPersonInfoViewController" bundle:nil];
     [perinfo comeBackBlock:^(NSString *name, NSString *perSonID) {
-        NSLog(@"%@ = %@",name,perSonID);
         NSDictionary * dict = [NSDictionary new];
          dict =  @{@"name":name,@"perSonID":perSonID};
         [_personInfoArr addObject:dict];
-        NSLog(@"===>>> %lu",(unsigned long)_personInfoArr.count);
-        
         if (personTableView) {
             [personTableView removeFromSuperview];
         }

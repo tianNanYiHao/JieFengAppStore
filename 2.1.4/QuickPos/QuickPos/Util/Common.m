@@ -166,6 +166,7 @@
 
 + (UIView*)tipWithStr:(NSString*)str color:(UIColor*)color rect:(CGRect)frame{
     UIView *bsetView = [[UIView alloc] initWithFrame:frame];
+    bsetView.backgroundColor = [UIColor orangeColor];
     bsetView.backgroundColor = [self hexStringToColor:@"ffffff"];
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
     title.text = str;

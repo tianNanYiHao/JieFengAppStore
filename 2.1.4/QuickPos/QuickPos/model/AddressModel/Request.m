@@ -1766,8 +1766,7 @@
 
 //``````````````````````````````````````````````````````````````````````习正火车票查询````````````````````````````````````````````````````
 //3.1 查询车次
-- (void)checkTrainInfoBusType:(NSString*)busType orgID:(NSString*)orgId termID:(NSString*)termId trainDate:(NSString*)traindate fromStation:(NSString*)fromstation toStation:(NSString*)tostation purposeCodes:(NSString*)purposecodes{
-    
+-(void)checkTrainInfoBusfromStation:(NSString*)fromStation  toStation:(NSString*)tostation transDate:(NSString*)transDate trainDate:(NSString*)trainDate{
     NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
     [dateFormatter1 setDateFormat:@"HHmmss"];
      NSString *currenttime = [dateFormatter1 stringFromDate:[NSDate date]];  //获取系统时间1
@@ -1777,10 +1776,10 @@
                              @"busType":@"000002",
                              @"termId":@"80000001",
                              @"orgId":@"A00000008",
-                             @"from_station":@"BJP",
-                             @"TransDate":@"20160929",
-                             @"train_date":@"2016-09-29",
-                             @"to_station":@"SHH",
+                             @"from_station":fromStation,
+                             @"TransDate":transDate,
+                             @"train_date":trainDate,
+                             @"to_station":tostation,
                              @"purpose_codes":@"ADULT"
                              }
                        };
@@ -1908,14 +1907,13 @@
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@ %@",responseObject,[responseObject class]);
+        NSLog(@"习正火车票 ===> %@ %@",[NSString stringWithFormat:@"%@",responseObject],[responseObject class]);
         BOOL achieve = [self.delegate respondsToSelector:@selector(responseWithDict:requestType:)];
         if (responseObject && achieve) {
             [self.delegate responseWithDict:responseObject requestType:type];
         }
         NSNotification *notifition = [NSNotification notificationWithName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];
         [[NSNotificationCenter defaultCenter] postNotification:notifition];
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@ %@",task,error);
         NSNotification *notifition = [NSNotification notificationWithName:@"ruquest" object:nil userInfo:@{@"result":@"success"}];

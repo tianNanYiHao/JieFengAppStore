@@ -13,11 +13,18 @@
 #import "LFFPickerVIew.h"
 
 
-@interface TrickMainViewController ()<LFFAddPickerViewDelegate,LFFPickerViewDelegate>
+@interface TrickMainViewController ()<LFFAddPickerViewDelegate,LFFPickerViewDelegate,ResponseData>
 {
     
     LFFAddPickerView *addPickerView;
     LFFPickerVIew        *addDatePickerView;
+    Request *_req;
+    NSString *_fromCode;
+    NSString *_toCode;
+    NSString *_dateCode;
+    
+    
+    
     
 }
 
@@ -40,6 +47,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"火车票";
+    _req = [[Request alloc] initWithDelegate:self];
+    
+    [self createPickerViewList];
+
+}
+
+-(void)createPickerViewList{
     
     addPickerView = [LFFAddPickerView awakeFromXib];
     addPickerView.delegate = self;
@@ -49,17 +63,13 @@
     addPickerView.alpha = 0;
     
     
-    
     addDatePickerView = [LFFPickerVIew awakeFromXib];
     addDatePickerView.delegate = self;
     addDatePickerView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     [self.view addSubview:addDatePickerView];
     addDatePickerView.alpha = 0;
-    _dateLab.text = [addDatePickerView formatterDate:[NSDate date]];
-
-    
+    _dateLab.text = @"请选择出发日期";
 }
-
 
 //起点
 - (IBAction)addressFromeClick:(id)sender {
@@ -79,6 +89,8 @@
 //是否高铁/动车
 - (IBAction)chooseFaseCar:(id)sender {
     
+    
+    
 }
 
 //选择日期按钮
@@ -92,11 +104,44 @@
 }
 //查询click
 - (IBAction)queryCarListClick:(id)sender {
-    TrickChooseCarListViewController *chooseList = [[TrickChooseCarListViewController alloc] initWithNibName:@"TrickChooseCarListViewController" bundle:nil];
-    [self.navigationController pushViewController:chooseList animated:YES];
+    
+    
+    if (_fromCode.length == 0) {
+        [MBProgressHUD showHUDAddedTo:self.view WithString:@"请先填写始发站"];
+    }
+    else if (_toCode.length == 0){
+        [MBProgressHUD showHUDAddedTo:self.view WithString:@"请先填写终点站"];
+    }
+    else if (_dateCode.length == 0){
+        [MBProgressHUD showHUDAddedTo:self.view WithString:@"请先选择出发日期"];
+    }else{
+        [_req checkTrainInfoBusfromStation:_fromCode toStation:_toCode transDate:[self removew:_dateCode] trainDate:_dateCode];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"车次查询中..."];
+        
+    }
+
+    
+
 }
 
-
+-(void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    if (type == REQUSET_XZTK1003) {
+        if ([[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_RSPMSG"] isEqualToString:@"100001"]) {
+            [MBProgressHUD showHUDAddedTo:self.view WithString:[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_RSPMSG"]];
+          }
+        else{
+            TrickChooseCarListViewController *chooseList = [[TrickChooseCarListViewController alloc] initWithNibName:@"TrickChooseCarListViewController" bundle:nil];
+            [self.navigationController pushViewController:chooseList animated:YES];
+       }
+    }
+    
+    
+    
+    
+}
+    
 
 #pragma  mark - LFFAddPickerViewDelegate
 -(void)hiddenLFFAddPickerView{
@@ -107,9 +152,12 @@
 
 -(void)returnFromeLFFAddPickerInfo:(NSArray *)arr{
     _fromLab.text = arr[0];
+    _fromCode = arr[1];
+    
 }
 -(void)returnToLFFAddPickerInfo:(NSArray *)arr{
     _toLab.text = arr[0];
+    _toCode = arr[1];
 }
 
 #pragma mark - lffpickerviewdelegate
@@ -124,6 +172,7 @@
             [Common showMsgBox:@"" msg:@"不能购买今日之前的车票" parentCtrl:self];
         }else{
             _dateLab.text = dateStr;
+            _dateCode = dateStr;
         }
     }
     [UIView animateWithDuration:0.2 animations:^{

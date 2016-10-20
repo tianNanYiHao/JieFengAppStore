@@ -480,7 +480,7 @@ enum{
 
 //``````````````````````````````````````````````````````````````````````习正火车票查询``````````````````
 //3.1 查询车次
-- (void)checkTrainInfoBusType:(NSString*)busType orgID:(NSString*)orgId termID:(NSString*)termId trainDate:(NSString*)traindate fromStation:(NSString*)fromstation toStation:(NSString*)tostation purposeCodes:(NSString*)purposecodes;
+-(void)checkTrainInfoBusfromStation:(NSString*)fromStation  toStation:(NSString*)tostation transDate:(NSString*)transDate trainDate:(NSString*)trainDate;
 //3.2 登录12306
 -(void)logIN12306TermId:(NSString*)termID orgID:(NSString*)orgid busType:(NSString*)busType userName:(NSString*)username password:(NSString*)password;
 //3.3下单接口

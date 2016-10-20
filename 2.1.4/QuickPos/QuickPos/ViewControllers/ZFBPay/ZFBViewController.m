@@ -65,6 +65,8 @@
         if ([retcode isEqualToString:@"R9"]) {
             NSString* qrcode = [dict objectForKey:@"qrcode"];
             [Common erweima:qrcode imageView:_ewmImageViw];
+            _ewmImageViw.hidden = YES;
+            
             NSString *merchorder_no = [dict objectForKey:@"merchorder_no"];
             [Common alipayOrderStateSelect:merchorder_no key:_infoArr[2] merchantcode:_infoArr[0] controller:self];
             merchorder_No = merchorder_no;
@@ -97,7 +99,11 @@
 -(void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (type == REQUSET_ORDER) {
-        
+        if ([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]) {
+            _ewmImageViw.hidden = NO;
+        }else{
+            [MBProgressHUD showHUDAddedTo:self.view WithString:[dict objectForKey:@"respDesc"]];
+        }
     }
 
 }

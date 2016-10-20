@@ -174,10 +174,6 @@
                 self.noBankCark.hidden = NO;
                 self.noBankCarktip.hidden = NO;
             }
-            
-            
-            
-            
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         }else if(type == REQUSET_BankCardUnBind){//解绑银行卡
             
@@ -263,7 +259,7 @@
         takecashVC.cardNumber = cardNumber;
         takecashVC.cardIdx = cardIdx;
         
-        
+        NSLog(@"%@",takecashVC.cardNumber);
         
         
         [self.navigationController pushViewController:takecashVC animated:YES];

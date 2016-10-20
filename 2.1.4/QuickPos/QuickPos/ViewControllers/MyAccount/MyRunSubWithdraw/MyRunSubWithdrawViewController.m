@@ -275,7 +275,7 @@
     MyRunSubTakeCashVc.cardNumber = cardNumber;
     MyRunSubTakeCashVc.cardIdx = cardIdx;
     
-    
+    NSLog(@"%@  %@",MyRunSubTakeCashVc.cardNumber,MyRunSubTakeCashVc.cardIdx);
     
     
     [self.navigationController pushViewController:MyRunSubTakeCashVc animated:YES];

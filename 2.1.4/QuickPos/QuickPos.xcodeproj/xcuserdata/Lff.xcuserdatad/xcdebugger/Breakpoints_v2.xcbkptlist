@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/Shop/RechargeViewController.m"
-            timestampString = "498551730.946374"
+            filePath = "QuickPos/ViewControllers/ZFBPay/ZFBViewController.m"
+            timestampString = "498642595.321862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "588"
-            endingLineNumber = "588"
-            landmarkName = "-pushToOrder:"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-getYSTewm"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/Shop/RechargeViewController.m"
-            timestampString = "498551731.794426"
+            filePath = "QuickPos/ViewControllers/ZFBPay/ZFBViewController.m"
+            timestampString = "498642596.929817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "591"
-            endingLineNumber = "591"
-            landmarkName = "-pushToOrder:"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-getYSTewm"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -38,6 +38,7 @@
     NSIndexPath *indexpath;//indexpath索引
     
     int Viewtype ;//复用页面标示 1=提现，2=转账。
+    
     NSArray *resultBeanArray;
     
 }
@@ -263,10 +264,12 @@
     BankCardItem *bcItem = [bankCardData.bankCardArr objectAtIndex:indexPath.row];
     cardNumber = bcItem.accountNo;
     cardIdx = bcItem.cardIdx;
+    NSDictionary *resultBeanDict = resultBeanArray[indexPath.row];
     
     ZFBReceivablesViewController *ZFBReceivablesVc = [self.storyboard instantiateViewControllerWithIdentifier:@"ZFBReceivablesVc"];
-    ZFBReceivablesVc.ZFBBankCardNum = self.bankCardNo;
-        ZFBReceivablesVc.cardIdx = cardIdx;
+    ZFBReceivablesVc.ZFBBankCardNum = [resultBeanDict objectForKey:@"accountNo"];
+        ZFBReceivablesVc.cardIdx = [resultBeanDict objectForKey:@"cardIdx"];
+    NSLog(@"%@  %@",ZFBReceivablesVc.ZFBBankCardNum,ZFBReceivablesVc.cardIdx);
     [self.navigationController pushViewController:ZFBReceivablesVc animated:YES];
     
     

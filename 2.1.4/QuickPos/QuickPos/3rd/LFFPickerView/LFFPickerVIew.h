@@ -20,9 +20,9 @@
 @property (nonatomic,assign) NSInteger Timetype; //
 
 
+
 + (LFFPickerVIew*)awakeFromXib;
 -(NSString*)formatterDate:(NSDate*)date;
-
 
 
 @end

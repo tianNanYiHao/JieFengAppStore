@@ -618,12 +618,10 @@
 		BF5860441D9CF97800777D7D /* PFYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5860431D9CF97800777D7D /* PFYSDK.a */; };
 		BF5860531D9D058600777D7D /* YSTWechatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5860511D9D058600777D7D /* YSTWechatViewController.m */; };
 		BF5860541D9D058600777D7D /* YSTWechatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5860521D9D058600777D7D /* YSTWechatViewController.xib */; };
-		BF766BDD1DB70E3B00EEB043 /* LFFAddPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF766BDC1DB70E3A00EEB043 /* LFFAddPickerView.m */; };
-		BF766BDF1DB70E4E00EEB043 /* LFFAddPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF766BDE1DB70E4E00EEB043 /* LFFAddPickerView.xib */; };
-		BF766C331DB7725400EEB043 /* LFFPickerVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = BF766C311DB7725400EEB043 /* LFFPickerVIew.m */; };
-		BF766C341DB7725400EEB043 /* LFFPickerVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF766C321DB7725400EEB043 /* LFFPickerVIew.xib */; };
 		BF7E3E5A1DB875830042BDC4 /* libLFFJFCompenyInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E3E591DB875830042BDC4 /* libLFFJFCompenyInfo.a */; };
-		BF7E3E601DB877990042BDC4 /* libLFFTrickAddress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E3E5E1DB877990042BDC4 /* libLFFTrickAddress.a */; };
+		BF7E3E771DB88D6F0042BDC4 /* libLFFPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E3E761DB88D6F0042BDC4 /* libLFFPicker.a */; };
+		BF7E3E7A1DB88D7D0042BDC4 /* LFFAddPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E3E781DB88D7D0042BDC4 /* LFFAddPickerView.xib */; };
+		BF7E3E7B1DB88D7D0042BDC4 /* LFFPickerVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E3E791DB88D7D0042BDC4 /* LFFPickerVIew.xib */; };
 		BFAF035B1DB0C2FB00281517 /* 捷丰商户.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
@@ -1909,15 +1907,13 @@
 		BF5860501D9D058600777D7D /* YSTWechatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTWechatViewController.h; sourceTree = "<group>"; };
 		BF5860511D9D058600777D7D /* YSTWechatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTWechatViewController.m; sourceTree = "<group>"; };
 		BF5860521D9D058600777D7D /* YSTWechatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSTWechatViewController.xib; sourceTree = "<group>"; };
-		BF766BDB1DB70E3A00EEB043 /* LFFAddPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFAddPickerView.h; sourceTree = "<group>"; };
-		BF766BDC1DB70E3A00EEB043 /* LFFAddPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFFAddPickerView.m; sourceTree = "<group>"; };
-		BF766BDE1DB70E4E00EEB043 /* LFFAddPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFFAddPickerView.xib; sourceTree = "<group>"; };
-		BF766C301DB7725400EEB043 /* LFFPickerVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFPickerVIew.h; sourceTree = "<group>"; };
-		BF766C311DB7725400EEB043 /* LFFPickerVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFFPickerVIew.m; sourceTree = "<group>"; };
-		BF766C321DB7725400EEB043 /* LFFPickerVIew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFFPickerVIew.xib; sourceTree = "<group>"; };
 		BF7E3E591DB875830042BDC4 /* libLFFJFCompenyInfo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLFFJFCompenyInfo.a; sourceTree = "<group>"; };
-		BF7E3E5E1DB877990042BDC4 /* libLFFTrickAddress.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLFFTrickAddress.a; sourceTree = "<group>"; };
-		BF7E3E5F1DB877990042BDC4 /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
+		BF7E3E731DB88BE90042BDC4 /* LFFAddPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFAddPickerView.h; sourceTree = "<group>"; };
+		BF7E3E741DB88BE90042BDC4 /* LFFPickerVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFPickerVIew.h; sourceTree = "<group>"; };
+		BF7E3E751DB88BE90042BDC4 /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
+		BF7E3E761DB88D6F0042BDC4 /* libLFFPicker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLFFPicker.a; sourceTree = "<group>"; };
+		BF7E3E781DB88D7D0042BDC4 /* LFFAddPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFFAddPickerView.xib; sourceTree = "<group>"; };
+		BF7E3E791DB88D7D0042BDC4 /* LFFPickerVIew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFFPickerVIew.xib; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "捷丰商户.txt"; sourceTree = "<group>"; };
@@ -2131,7 +2127,6 @@
 				339B9A551D7D68A6004D0E1B /* RennSDK.framework in Frameworks */,
 				D599F2271BCCB843006D5F6B /* MediaPlayer.framework in Frameworks */,
 				C3696F001AC1134A003B04B4 /* AVFoundation.framework in Frameworks */,
-				BF7E3E601DB877990042BDC4 /* libLFFTrickAddress.a in Frameworks */,
 				AEE5F6221C4E19B0006FAF60 /* libSocialQQ.a in Frameworks */,
 				339B9A501D7D68A6004D0E1B /* libAPOpenSdk.a in Frameworks */,
 				D599F2251BCCB82C006D5F6B /* libsqlite3.tbd in Frameworks */,
@@ -2157,6 +2152,7 @@
 				59A4FA351AC28D90004DFA15 /* AddressBook.framework in Frameworks */,
 				C3696F081AC1135E003B04B4 /* MessageUI.framework in Frameworks */,
 				C3696F061AC11358003B04B4 /* CoreBluetooth.framework in Frameworks */,
+				BF7E3E771DB88D6F0042BDC4 /* libLFFPicker.a in Frameworks */,
 				C3696F041AC11350003B04B4 /* CoreAudio.framework in Frameworks */,
 				BF43A9251D825C9700C9E722 /* jpush-ios-2.1.9.a in Frameworks */,
 				BF7E3E5A1DB875830042BDC4 /* libLFFJFCompenyInfo.a in Frameworks */,
@@ -2701,6 +2697,7 @@
 		591BBFC21AEDFE320037199A /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				BF7E3E701DB88BD50042BDC4 /* LFFPickerView */,
 				BFAF03561DB0C2D900281517 /* LFFStringArray */,
 				BFEF39051DAF67F00043A852 /* easyFrame */,
 				BFEF38DF1DAF2B670043A852 /* Masonry */,
@@ -3755,12 +3752,6 @@
 				BF21CD5F1DB61C5500963498 /* TrickOrderCell.h */,
 				BF21CD601DB61C5500963498 /* TrickOrderCell.m */,
 				BF21CD611DB61C5500963498 /* TrickOrderCell.xib */,
-				BF766BDB1DB70E3A00EEB043 /* LFFAddPickerView.h */,
-				BF766BDC1DB70E3A00EEB043 /* LFFAddPickerView.m */,
-				BF766BDE1DB70E4E00EEB043 /* LFFAddPickerView.xib */,
-				BF766C301DB7725400EEB043 /* LFFPickerVIew.h */,
-				BF766C311DB7725400EEB043 /* LFFPickerVIew.m */,
-				BF766C321DB7725400EEB043 /* LFFPickerVIew.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -4677,11 +4668,22 @@
 			path = YSTWeChat;
 			sourceTree = "<group>";
 		};
+		BF7E3E701DB88BD50042BDC4 /* LFFPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				BF7E3E761DB88D6F0042BDC4 /* libLFFPicker.a */,
+				BF7E3E731DB88BE90042BDC4 /* LFFAddPickerView.h */,
+				BF7E3E741DB88BE90042BDC4 /* LFFPickerVIew.h */,
+				BF7E3E751DB88BE90042BDC4 /* TrickAddressModel.h */,
+				BF7E3E781DB88D7D0042BDC4 /* LFFAddPickerView.xib */,
+				BF7E3E791DB88D7D0042BDC4 /* LFFPickerVIew.xib */,
+			);
+			path = LFFPickerView;
+			sourceTree = "<group>";
+		};
 		BFAF03561DB0C2D900281517 /* LFFStringArray */ = {
 			isa = PBXGroup;
 			children = (
-				BF7E3E5E1DB877990042BDC4 /* libLFFTrickAddress.a */,
-				BF7E3E5F1DB877990042BDC4 /* TrickAddressModel.h */,
 				BFAF03601DB0C7F800281517 /* LFFStringarr.h */,
 				BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */,
 				BF7E3E591DB875830042BDC4 /* libLFFJFCompenyInfo.a */,
@@ -5114,7 +5116,7 @@
 				339B9A5D1D7D68A6004D0E1B /* ShareSDK.bundle in Resources */,
 				BF5860541D9D058600777D7D /* YSTWechatViewController.xib in Resources */,
 				BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */,
-				BF766C341DB7725400EEB043 /* LFFPickerVIew.xib in Resources */,
+				BF7E3E7B1DB88D7D0042BDC4 /* LFFPickerVIew.xib in Resources */,
 				BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */,
 				BF3E100D1D49B9A7003F0F89 /* ProducyListSYCell.xib in Resources */,
 				87E058E31C044DBD00C4A4C1 /* Icon-Small-50@2x.png in Resources */,
@@ -5141,9 +5143,9 @@
 				BFF5552D1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib in Resources */,
 				591BC3AC1AEDFE6A0037199A /* YoolinkTestViewController.xib in Resources */,
 				BF21CD631DB61C5500963498 /* TrickOrderCell.xib in Resources */,
+				BF7E3E7A1DB88D7D0042BDC4 /* LFFAddPickerView.xib in Resources */,
 				87E058E51C044DBD00C4A4C1 /* Icon-Small@2x.png in Resources */,
 				591BC3961AEDFE6A0037199A /* ChooseView.xib in Resources */,
-				BF766BDF1DB70E4E00EEB043 /* LFFAddPickerView.xib in Resources */,
 				BF3E10081D49B3D1003F0F89 /* CompaneyDetialController.xib in Resources */,
 				AEE5F61B1C4E199F006FAF60 /* UMSShareListController.xib in Resources */,
 				87E058D91C044DBD00C4A4C1 /* Icon-40@2x.png in Resources */,
@@ -5288,7 +5290,6 @@
 				BF3C8FF51D5834A50092AC19 /* ZXAnyAIDecoder.m in Sources */,
 				BF3C8FF71D5834A50092AC19 /* ZXRSSExpandedCurrentParsingState.m in Sources */,
 				AE8EA4321C5F698E00823760 /* AuthenticationDeviceViewController.m in Sources */,
-				BF766C331DB7725400EEB043 /* LFFPickerVIew.m in Sources */,
 				D56152291BDF6F7E00DAAADC /* UIView+Additions.m in Sources */,
 				BF3C8F681D5834A50092AC19 /* README.md in Sources */,
 				591BC0D71AEDFE330037199A /* PECropViewController.m in Sources */,
@@ -5305,7 +5306,6 @@
 				BFC042231D70120A0090CAFC /* UIWebView+AFNetworking.m in Sources */,
 				AEDD09D01C3CF69D004CE3F0 /* GKCropBorderView.m in Sources */,
 				BF3C90521D5834A50092AC19 /* ZXQRCodeMultiReader.m in Sources */,
-				BF766BDD1DB70E3B00EEB043 /* LFFAddPickerView.m in Sources */,
 				BF3C902C1D5834A50092AC19 /* ZXPDF417DetectionResultColumn.m in Sources */,
 				333D53511D4EF2DE00449D5E /* SDJBankViewController.m in Sources */,
 				591BC0F61AEDFE330037199A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
@@ -5915,6 +5915,7 @@
 					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK/include",
 					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/LFFStringArray",
+					"$(PROJECT_DIR)/QuickPos/3rd/LFFPickerView",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -5983,6 +5984,7 @@
 					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK/include",
 					"$(PROJECT_DIR)/QuickPos/3rd/PFYSDK",
 					"$(PROJECT_DIR)/QuickPos/3rd/LFFStringArray",
+					"$(PROJECT_DIR)/QuickPos/3rd/LFFPickerView",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";

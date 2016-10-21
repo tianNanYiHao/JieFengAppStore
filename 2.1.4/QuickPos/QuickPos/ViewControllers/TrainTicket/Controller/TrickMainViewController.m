@@ -24,6 +24,9 @@
     NSString *_toCode;
     NSString *_dateCode;
     TrickListInfoModel *_trickListModel;
+    NSMutableArray *_listDataArray;
+    NSString *_lastDay;
+    
     
     
     
@@ -51,7 +54,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"火车票";
     _req = [[Request alloc] initWithDelegate:self];
-    
+    _listDataArray = [NSMutableArray arrayWithCapacity:0];
     [self createPickerViewList];
 
 }
@@ -131,18 +134,26 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (type == REQUSET_XZTK1003) {
+        if (_listDataArray.count>0) {
+            [_listDataArray removeAllObjects];
+        }
+        
         if ([[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_CODE"]isEqualToString:@"000000"]) {
             NSArray *arr = [[dict objectForKey:@"REP_BODY"] objectForKey:@"data"];
             
             for (NSDictionary *dictt in arr) {
                  _trickListModel = [[TrickListInfoModel alloc] init];
                  [_trickListModel setValuesForKeysWithDictionary:dictt];
-                NSLog(@"%@",_trickListModel.train_code);
+                [_listDataArray addObject:_trickListModel];
             }
-            
             TrickChooseCarListViewController *chooseList = [[TrickChooseCarListViewController alloc] initWithNibName:@"TrickChooseCarListViewController" bundle:nil];
+            chooseList.showDayStr = [self removewMD:_dateCode];
+            chooseList.Yer = [self removewY:_dateCode];
+            chooseList.dataArray = _listDataArray;
+            chooseList.fromCode = _fromCode;
+            chooseList.toCode = _toCode;
+            chooseList.lastDay = _lastDay;
             [self.navigationController pushViewController:chooseList animated:YES];
-            
             
           }
         else{
@@ -196,11 +207,20 @@
 -(NSString*)removew:(NSString*)s{
     NSArray *arr = [s componentsSeparatedByString:@"-"];
     NSString *ss = [NSString stringWithFormat:@"%@%@%@",arr[0],arr[1],arr[2]];
+    _lastDay = arr[2];
     return ss;
 }
 
-
-
+-(NSString*)removewMD:(NSString*)s{
+    NSArray *arr = [s componentsSeparatedByString:@"-"];
+    NSString *ss = [NSString stringWithFormat:@"%@-%@",arr[1],arr[2]];
+    return ss;
+}
+-(NSString*)removewY:(NSString*)s{
+    NSArray *arr = [s componentsSeparatedByString:@"-"];
+    NSString *ss = [NSString stringWithFormat:@"%@",arr[0]];
+    return ss;
+}
 
 
 

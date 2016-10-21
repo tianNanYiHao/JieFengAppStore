@@ -10,4 +10,19 @@
 
 @interface TrickChooseCarListViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UIButton *upDayBtn;
+@property (weak, nonatomic) IBOutlet UIButton *downDayBtn;
+@property (weak, nonatomic) IBOutlet UILabel *showDatLab;
+
+@property (nonatomic,strong) NSString * showDayStr;
+@property (nonatomic,strong) NSString * Yer;
+@property (nonatomic,strong) NSString * lastDay;
+@property (nonatomic,strong) NSMutableArray *dataArray;
+
+@property (nonatomic,strong) NSString *fromCode;
+@property (nonatomic,strong) NSString *toCode;
+
+
+
 @end

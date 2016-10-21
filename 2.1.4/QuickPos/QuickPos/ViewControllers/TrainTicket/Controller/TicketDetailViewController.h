@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class TrickListInfoModel;
 @interface TicketDetailViewController : UIViewController
+
+@property (nonatomic,strong) NSString *showDayStr;
+@property (nonatomic,strong) TrickListInfoModel *detaiIinfoModel;
+
 
 @end

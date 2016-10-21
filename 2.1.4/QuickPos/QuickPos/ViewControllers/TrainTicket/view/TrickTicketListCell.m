@@ -30,16 +30,16 @@
 -(void)setModel:(TrickListInfoModel *)model{
     _model = model;
     
-    _train_code.text = _model.train_code;
-    _from_station_name.text = _model.from_station_name;
-    _to_station_name.text = _model.to_station_name;
-    _start_time.text = _model.start_time;
-    _arrive_time.text = _model.arrive_time;
-    _run_time.text = [self separStr:_model.run_time];
-    _yw_price.text = _model.yw_price;
-    _ydz_num.text = _model.ydz_num;
-    _edz_num.text = _model.edz_num;
-    _swz_num.text = _model.swz_num;
+    _train_code1.text = _model.train_code;
+    _from_station_name1.text = _model.from_station_name;
+    _to_station_name1.text = _model.to_station_name;
+    _start_time1.text = _model.start_time;
+    _arrive_time1.text = _model.arrive_time;
+    _run_time1.text = [self separStr:_model.run_time];
+    _yw_price1.text = _model.yw_price;
+    _ydz_num1.text = _model.ydz_num;
+    _edz_num1.text = _model.edz_num;
+    _swz_num1.text = _model.swz_num;
 }
 -(NSString*)separStr:(NSString*)str{
   NSArray *arr =  [str componentsSeparatedByString:@":"];

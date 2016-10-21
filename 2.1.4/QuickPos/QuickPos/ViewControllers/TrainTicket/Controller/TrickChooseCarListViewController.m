@@ -120,7 +120,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TicketDetailViewController *ticketDetail = [[TicketDetailViewController alloc] initWithNibName:@"TicketDetailViewController" bundle:nil];
-    ticketDetail.navigationItem.title = @"D3205";
+    ticketDetail.navigationItem.title = [_dataArray[indexPath.row] train_code];
+    ticketDetail.showDayStr =  _showDatLab.text;
+    ticketDetail.detaiIinfoModel = _dataArray[indexPath.row];
     [self.navigationController pushViewController:ticketDetail animated:YES];
     
     

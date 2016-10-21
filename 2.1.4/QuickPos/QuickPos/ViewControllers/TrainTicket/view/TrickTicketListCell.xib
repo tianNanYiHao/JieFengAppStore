@@ -160,16 +160,16 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="arrive_time" destination="tf6-LE-GUW" id="Dz0-uf-EbR"/>
-                <outlet property="edz_num" destination="7lo-3U-hSQ" id="hCM-iG-fGz"/>
-                <outlet property="from_station_name" destination="jLU-bK-sAz" id="RfP-Ey-01G"/>
-                <outlet property="run_time" destination="ozt-xs-uoq" id="ozZ-KP-lGn"/>
-                <outlet property="start_time" destination="60N-vS-WKv" id="gbT-Ju-mm7"/>
-                <outlet property="swz_num" destination="8rm-c6-E2u" id="mgU-zc-T0Z"/>
-                <outlet property="to_station_name" destination="shq-If-gRF" id="DJp-F5-C1R"/>
-                <outlet property="train_code" destination="kFC-Kv-jOz" id="XUy-2X-XpL"/>
-                <outlet property="ydz_num" destination="Dwm-qp-53a" id="NTG-Wq-Rk1"/>
-                <outlet property="yw_price" destination="Z7M-uF-aYj" id="8PX-qe-vJo"/>
+                <outlet property="arrive_time1" destination="tf6-LE-GUW" id="fMI-Vy-O6e"/>
+                <outlet property="edz_num1" destination="7lo-3U-hSQ" id="Xlb-tQ-MNs"/>
+                <outlet property="from_station_name1" destination="jLU-bK-sAz" id="h1E-nS-cEK"/>
+                <outlet property="run_time1" destination="ozt-xs-uoq" id="Q59-ph-J1e"/>
+                <outlet property="start_time1" destination="60N-vS-WKv" id="NrN-YJ-yfA"/>
+                <outlet property="swz_num1" destination="8rm-c6-E2u" id="ho3-kN-tYg"/>
+                <outlet property="to_station_name1" destination="shq-If-gRF" id="Ulg-rc-yto"/>
+                <outlet property="train_code1" destination="kFC-Kv-jOz" id="6rO-gz-1vr"/>
+                <outlet property="ydz_num1" destination="Dwm-qp-53a" id="ZEW-a1-JrQ"/>
+                <outlet property="yw_price1" destination="Z7M-uF-aYj" id="7zn-ZU-q9V"/>
             </connections>
             <point key="canvasLocation" x="6" y="-41"/>
         </tableViewCell>

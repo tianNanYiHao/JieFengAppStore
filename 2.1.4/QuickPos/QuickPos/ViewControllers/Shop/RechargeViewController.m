@@ -544,7 +544,6 @@
 
     //如果是 充值页
     if (_isRechargeView ) {
-        
         //银统 走扫码充值
         if ([_YTpayWay isEqualToString:@"YT"]) {
             
@@ -560,13 +559,8 @@
                     [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
                 }
             }
-            
             if (finalPrice.text.length == 0) {
                 [Common showMsgBox:@"" msg:@"请输入金额" parentCtrl:self];
-            }else if([finalPrice.text integerValue]<2 ){
-                [Common showMsgBox:@"" msg:@"金额请勿小于2元" parentCtrl:self];
-            }else if([finalPrice.text integerValue]>=10000 ){
-                [Common showMsgBox:@"" msg:@"金额请勿大于一万元" parentCtrl:self];
             }
             else if([finalPrice.text floatValue] - i == 0 ){
                 [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
@@ -609,25 +603,22 @@
                 [self.navigationController pushViewController:ZFBVc animated:YES];
             }
         }else{//非银统充值方式  (原账户/快捷/刷卡方式)
-            
             NSString *priceVer = finalPrice.text; //得到充值的金额
             priceVer = [NSString stringWithFormat:@"%.2f",[priceVer doubleValue]];
             NSString *priceVerde = finalPrice.text;
-            
             //判断充值金额为空
-            if ([priceVer length] > 9 || [priceVerde isEqualToString:@""] || ![self matchStringFormat:priceVer withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"]  || [priceVer isEqualToString:@"0.00"]) {
-                
-                [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入充值金额")];
-            }
-            if([finalPrice.text integerValue]<2 ){
-                [Common showMsgBox:@"" msg:@"金额请勿小于2元" parentCtrl:self];
-            }else if([finalPrice.text integerValue]>=10000 ){
-                [Common showMsgBox:@"" msg:@"金额请勿大于一万元" parentCtrl:self];
+//           if ([priceVer length] > 9 || [priceVerde isEqualToString:@""] || ![self matchStringFormat:priceVer withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"]  || [priceVer isEqualToString:@"0.00"]) {
+//                [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入正确金额")];
+//            }else
+                if ([finalPrice.text rangeOfString:@","].location != NSNotFound) {
+                NSArray *arr = [finalPrice.text componentsSeparatedByString:@","];
+                if (arr.count == 2) {
+                    finalPrice.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
+                }
             }
             //如果不为空
             else if (![self matchStringFormat:priceVerde withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"])
             {
-                
                 [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"CorrectPrice")]; //请输入正确价格
             }
             //否则

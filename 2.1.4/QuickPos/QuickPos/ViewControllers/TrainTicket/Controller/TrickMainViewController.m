@@ -11,6 +11,7 @@
 #import "TrickChooseCarListViewController.h"
 #import "LFFAddPickerView.h"
 #import "LFFPickerVIew.h"
+#import "TrickListInfoModel.h"
 
 
 @interface TrickMainViewController ()<LFFAddPickerViewDelegate,LFFPickerViewDelegate,ResponseData>
@@ -22,6 +23,8 @@
     NSString *_fromCode;
     NSString *_toCode;
     NSString *_dateCode;
+    TrickListInfoModel *_trickListModel;
+    
     
     
     
@@ -128,13 +131,23 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (type == REQUSET_XZTK1003) {
-        if ([[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_RSPMSG"] isEqualToString:@"100001"]) {
-            [MBProgressHUD showHUDAddedTo:self.view WithString:[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_RSPMSG"]];
-          }
-        else{
+        if ([[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_CODE"]isEqualToString:@"000000"]) {
+            NSArray *arr = [[dict objectForKey:@"REP_BODY"] objectForKey:@"data"];
+            
+            for (NSDictionary *dictt in arr) {
+                 _trickListModel = [[TrickListInfoModel alloc] init];
+                 [_trickListModel setValuesForKeysWithDictionary:dictt];
+                NSLog(@"%@",_trickListModel.train_code);
+            }
+            
             TrickChooseCarListViewController *chooseList = [[TrickChooseCarListViewController alloc] initWithNibName:@"TrickChooseCarListViewController" bundle:nil];
             [self.navigationController pushViewController:chooseList animated:YES];
-       }
+            
+            
+          }
+        else{
+              [MBProgressHUD showHUDAddedTo:self.view WithString:[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_RSPMSG"]];
+          }
     }
     
     

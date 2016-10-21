@@ -622,6 +622,7 @@
 		BF7E3EA41DB896E60042BDC4 /* LFFPickerVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E3EA21DB896E60042BDC4 /* LFFPickerVIew.xib */; };
 		BF7E3EAE1DB8AB200042BDC4 /* LFFAddPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E3EAD1DB8AB200042BDC4 /* LFFAddPickerView.xib */; };
 		BF7E3EB01DB8AB7F0042BDC4 /* libLFFPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E3EAF1DB8AB7F0042BDC4 /* libLFFPicker.a */; };
+		BF7E3EB51DB8B5E20042BDC4 /* TrickListInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3EB41DB8B5E20042BDC4 /* TrickListInfoModel.m */; };
 		BFAF035B1DB0C2FB00281517 /* 捷丰商户.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
@@ -1914,6 +1915,8 @@
 		BF7E3EA81DB896F20042BDC4 /* TrickAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickAddressModel.h; sourceTree = "<group>"; };
 		BF7E3EAD1DB8AB200042BDC4 /* LFFAddPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFFAddPickerView.xib; sourceTree = "<group>"; };
 		BF7E3EAF1DB8AB7F0042BDC4 /* libLFFPicker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLFFPicker.a; sourceTree = "<group>"; };
+		BF7E3EB31DB8B5E20042BDC4 /* TrickListInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickListInfoModel.h; sourceTree = "<group>"; };
+		BF7E3EB41DB8B5E20042BDC4 /* TrickListInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickListInfoModel.m; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "捷丰商户.txt"; sourceTree = "<group>"; };
@@ -3736,6 +3739,8 @@
 		BF093DDA1DA8F0D00011EFE6 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				BF7E3EB31DB8B5E20042BDC4 /* TrickListInfoModel.h */,
+				BF7E3EB41DB8B5E20042BDC4 /* TrickListInfoModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -5329,6 +5334,7 @@
 				BF3C90441D5834A50092AC19 /* ZXQRCodeVersion.m in Sources */,
 				BF3C904B1D5834A50092AC19 /* ZXQRCode.m in Sources */,
 				BF3C90131D5834A50092AC19 /* ZXEANManufacturerOrgSupport.m in Sources */,
+				BF7E3EB51DB8B5E20042BDC4 /* TrickListInfoModel.m in Sources */,
 				BF3C90381D5834A50092AC19 /* ZXPDF417Reader.m in Sources */,
 				591BC36B1AEDFE6A0037199A /* AccountOfCityViewController.m in Sources */,
 				BF3C8FDA1D5834A50092AC19 /* ZXDataMatrixDefaultPlacement.m in Sources */,

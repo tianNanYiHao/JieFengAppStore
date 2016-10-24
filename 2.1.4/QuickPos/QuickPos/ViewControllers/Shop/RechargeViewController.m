@@ -350,7 +350,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    finalPrice.keyboardType = UIKeyboardTypeDecimalPad;
+    finalPrice.keyboardType = UIKeyboardTypeNumberPad;
     // Do any additional setup after loading the view.
     self.title = _titleNmae;
     self.comfirt.layer.cornerRadius = 5;
@@ -444,6 +444,9 @@
 //每次页面出现
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    finalPrice.text  = @"";
+    
     //    int count = ISQUICKPAY?3:2;
     //    float x = (self.bottomView.frame.size.width - [ChooseView chooseWidth]*count)/2.0;
     //    float y = self.finalPrice.frame.origin.y + self.finalPrice.frame.size.height + 12;
@@ -546,63 +549,30 @@
     if (_isRechargeView ) {
         //银统 走扫码充值
         if ([_YTpayWay isEqualToString:@"YT"]) {
-            
-            int i = [finalPrice.text intValue];
-            //iOS8的键盘适配
-            if ([finalPrice.text rangeOfString:@","].location == NSNotFound) {
-                NSLog(@"没找到,");
-            }else{
-                NSArray *arr = [finalPrice.text componentsSeparatedByString:@","];
-                if (arr.count == 2) {
-                    finalPrice.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
-                }else{
-                    [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
-                }
-            }
+             NSInteger i = [finalPrice.text integerValue];
             if (finalPrice.text.length == 0) {
                 [Common showMsgBox:@"" msg:@"请输入金额" parentCtrl:self];
-            }
-            else if([finalPrice.text floatValue] - i == 0 ){
-                [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
             }
             else if([finalPrice.text length]>100000000){
                 [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
             }
-            else{
-//                [Common showMsgBox:@"" msg:@"功能暂未开放" parentCtrl:self];
-                finalPrice.text = [NSString stringWithFormat:@"%.2f",[finalPrice.text floatValue]];
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-                ZFBVc.AmtNO = finalPrice.text;
-                ZFBVc.cardNum = [AppDelegate getUserBaseData].mobileNo;
-                ZFBVc.merchantId = merchantId;
-                ZFBVc.productId = productId;
-                ZFBVc.titleName = _titleNmae;
-                if (_button444.selected == YES) {
-                  ZFBVc.infoArr =  @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
-                }
-                else if (_button555.selected == YES) {
-                    LFFStringarr *lff = [[LFFStringarr alloc]init];
-                    LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];
-                    NSString *ii = [[NSUserDefaults standardUserDefaults] objectForKey:@"ii"];
-                    NSInteger  iii = [ii integerValue];
-                    ZFBVc.infoArr = @[mode.arrJFNO[iii],ZFBBACKURL,mode.arrJFKey[iii],mode.arrJFName[iii]];
-                    iii = iii+1;
-                    if (iii == mode.arrJFName.count) {
-                        iii = 0;
-                        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)iii] forKey:@"ii"];
+            else  if ( (i %10) == 0){
+                [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
+            }
+            else {
+                if (i/10>1) {
+                    if ([[finalPrice.text substringFromIndex:[finalPrice.text length]-1] isEqualToString:[[finalPrice.text substringFromIndex:[finalPrice.text length]-2] substringToIndex:1]]){
+                        [Common showMsgBox:nil msg:@"金额最后两位不能相同" parentCtrl:self];
                     }else{
-                        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%ld",(long)iii] forKey:@"ii"];
+                        [self pay];
                     }
-
                 }
                 else{
-                    
+                    [self pay];
                 }
-                
-                [self.navigationController pushViewController:ZFBVc animated:YES];
             }
-        }else{//非银统充值方式  (原账户/快捷/刷卡方式)
+        }
+        else{//非银统充值方式  (原账户/快捷/刷卡方式)
             NSString *priceVer = finalPrice.text; //得到充值的金额
             priceVer = [NSString stringWithFormat:@"%.2f",[priceVer doubleValue]];
             NSString *priceVerde = finalPrice.text;
@@ -800,6 +770,41 @@
     }
 }
 
+-(void)pay{
+    finalPrice.text = [NSString stringWithFormat:@"%.2f",[finalPrice.text floatValue]];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ZFBViewController *ZFBVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+    ZFBVc.AmtNO = finalPrice.text;
+    ZFBVc.cardNum = [AppDelegate getUserBaseData].mobileNo;
+    ZFBVc.merchantId = merchantId;
+    ZFBVc.productId = productId;
+    ZFBVc.titleName = _titleNmae;
+    
+    if (_button444.selected == YES) {  //微信
+        ZFBVc.infoArr =  @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
+    }
+    else if (_button555.selected == YES) {  //支付宝
+        LFFStringarr *lff = [[LFFStringarr alloc]init];
+        LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];
+        NSString *ii = [[NSUserDefaults standardUserDefaults] objectForKey:@"ii"];
+        NSInteger  iii = [ii integerValue];
+        ZFBVc.infoArr = @[mode.arrJFNO[iii],ZFBBACKURL,mode.arrJFKey[iii],mode.arrJFName[iii]];
+        iii = iii+1;
+        if (iii == mode.arrJFName.count) {
+            iii = 0;
+            [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)iii] forKey:@"ii"];
+        }else{
+            [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%ld",(long)iii] forKey:@"ii"];
+        }
+        
+    }
+    else{  //银联在线
+        
+    }
+    [self.navigationController pushViewController:ZFBVc animated:YES];
+
+    
+}
 //不用看 CartArr 已经被注释掉
 #pragma mark - tableView
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

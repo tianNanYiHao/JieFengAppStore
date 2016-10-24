@@ -39,6 +39,11 @@
 @end
 
 @implementation YSTWechatViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _textfiledCash.text = @"";
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,7 +56,7 @@
     self.textfiledCash.layer.masksToBounds = YES;
     self.textfiledCash.layer.cornerRadius = 1;
     self.textfiledCash.layer.borderColor = [[UIColor greenColor] CGColor];
-    _textfiledCash.keyboardType = UIKeyboardTypeDecimalPad;
+    _textfiledCash.keyboardType = UIKeyboardTypeNumberPad;
     _btnOne.groupButtons = @[_btnOne,_btnTwo];
     _btnOne.selected = YES;
     _btnOne.hidden = YES;
@@ -84,17 +89,17 @@
 - (IBAction)commitEwm:(id)sender {
     
     int i = [_textfiledCash.text intValue];
-    //iOS8的键盘适配
-    if ([_textfiledCash.text rangeOfString:@","].location == NSNotFound) {
-        NSLog(@"没找到,");
-    }else{
-        NSArray *arr = [_textfiledCash.text componentsSeparatedByString:@","];
-        if (arr.count == 2) {
-            _textfiledCash.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
-        }else{
-            [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
-        }
-    }
+//    //iOS8的键盘适配
+//    if ([_textfiledCash.text rangeOfString:@","].location == NSNotFound) {
+//        NSLog(@"没找到,");
+//    }else{
+//        NSArray *arr = [_textfiledCash.text componentsSeparatedByString:@","];
+//        if (arr.count == 2) {
+//            _textfiledCash.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
+//        }else{
+//            [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+//        }
+//    }
     if (_textfiledCash.text.length == 0) {
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_textfiledCash.text integerValue]<5 ){
@@ -102,26 +107,44 @@
     }else if([_textfiledCash.text integerValue]>=50000 ){
         [Common showMsgBox:@"" msg:@"收款金额请勿大于五万元" parentCtrl:self];
     }
-    else if([_textfiledCash.text floatValue] - i == 0 ){
-        [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+    else  if ( (i %10) == 0){
+        [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
     }
+//    else if([_textfiledCash.text floatValue] - i == 0 ){
+//        [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
+//    }
     else if([_textfiledCash.text length]>100000000){
         [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
     }
     else{
-        _textfiledCash.text = [NSString stringWithFormat:@"%.2f",[_textfiledCash.text floatValue]];
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
-        ZFBViewController *WechatVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
-        WechatVc.AmtNO = _textfiledCash.text;
-        WechatVc.cardNum = self.WeChatBankCardNum;
-        WechatVc.merchantId = merchantId;
-        WechatVc.productId = productId;
-        WechatVc.titleName = @"微信收款二维码";
-        WechatVc.infoArr = @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
-        [self.navigationController pushViewController:WechatVc animated:YES];
+        if (i/10>1) {
+            if ([[_textfiledCash.text substringFromIndex:[_textfiledCash.text length]-1] isEqualToString:[[_textfiledCash.text substringFromIndex:[_textfiledCash.text length]-2] substringToIndex:1]]){
+                [Common showMsgBox:nil msg:@"金额最后两位不能相同" parentCtrl:self];
+            }else{
+                [self pay];
+            }
+        }
+        else{
+            [self pay];
+        }
         
     }
+}
+-(void)pay{
+    
+    _textfiledCash.text = [NSString stringWithFormat:@"%.2f",[_textfiledCash.text floatValue]];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    ZFBViewController *WechatVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ZFBVc"];
+    WechatVc.AmtNO = _textfiledCash.text;
+    WechatVc.cardNum = self.WeChatBankCardNum;
+    WechatVc.merchantId = merchantId;
+    WechatVc.productId = productId;
+    WechatVc.titleName = @"微信收款二维码";
+    WechatVc.infoArr = @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
+    [self.navigationController pushViewController:WechatVc animated:YES];
+
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

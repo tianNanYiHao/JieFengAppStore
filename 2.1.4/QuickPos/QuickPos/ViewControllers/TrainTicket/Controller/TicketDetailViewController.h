@@ -12,6 +12,10 @@
 
 @property (nonatomic,strong) NSString *showDayStr;
 @property (nonatomic,strong) TrickListInfoModel *detaiIinfoModel;
+@property (weak, nonatomic) IBOutlet UIView *infoView;
 
+@property (weak, nonatomic) IBOutlet UIView *chooseV1;
+@property (weak, nonatomic) IBOutlet UIView *chooseV2;
+@property (weak, nonatomic) IBOutlet UIView *chooseV3;
 
 @end

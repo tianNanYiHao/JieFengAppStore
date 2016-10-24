@@ -553,8 +553,8 @@
             if (finalPrice.text.length == 0) {
                 [Common showMsgBox:@"" msg:@"请输入金额" parentCtrl:self];
             }
-            else if([finalPrice.text length]>100000000){
-                [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
+            else if([finalPrice.text length]>6){
+                [Common showMsgBox:@"" msg:@"输入金额超限" parentCtrl:self];
             }
             else  if ( (i %10) == 0){
                 [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
@@ -577,14 +577,8 @@
             priceVer = [NSString stringWithFormat:@"%.2f",[priceVer doubleValue]];
             NSString *priceVerde = finalPrice.text;
             //判断充值金额为空
-//           if ([priceVer length] > 9 || [priceVerde isEqualToString:@""] || ![self matchStringFormat:priceVer withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"]  || [priceVer isEqualToString:@"0.00"]) {
-//                [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入正确金额")];
-//            }else
-                if ([finalPrice.text rangeOfString:@","].location != NSNotFound) {
-                NSArray *arr = [finalPrice.text componentsSeparatedByString:@","];
-                if (arr.count == 2) {
-                    finalPrice.text = [NSString stringWithFormat:@"%@.%@",arr[0],arr[1]];
-                }
+           if ([priceVer length] > 9 || [priceVerde isEqualToString:@""] || ![self matchStringFormat:priceVer withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"]  || [priceVer isEqualToString:@"0.00"]) {
+                [MBProgressHUD showHUDAddedTo:self.view WithString:L(@"请输入正确金额")];
             }
             //如果不为空
             else if (![self matchStringFormat:priceVerde withRegex:@"^([0-9]+\\.[0-9]{2})|([0-9]+\\.[0-9]{1})|[0-9]*$"])

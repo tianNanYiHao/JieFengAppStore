@@ -113,8 +113,8 @@
 //    else if([_textfiledCash.text floatValue] - i == 0 ){
 //        [Common showMsgBox:@"" msg:@"收款金额不能为整数" parentCtrl:self];
 //    }
-    else if([_textfiledCash.text length]>100000000){
-        [Common showMsgBox:@"" msg:@"输入金额有误" parentCtrl:self];
+    else if([_textfiledCash.text length]>6){
+        [Common showMsgBox:@"" msg:@"输入金额超限" parentCtrl:self];
     }
     else{
         if (i/10>1) {

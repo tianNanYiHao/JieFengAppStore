@@ -13,6 +13,8 @@
 @interface TicketDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_tirckDetailTableview;
+    NSMutableArray *_ticketKindArray;
+    
     
 }
 @property (weak, nonatomic) IBOutlet UIButton *dayBeforeBtn;//前一天
@@ -66,6 +68,11 @@
     _trickTimeLab.text = [self separStr:_detaiIinfoModel.run_time];
     
     
+    //判断车票类型+构建数据源
+    _ticketKindArray = [NSMutableArray arrayWithCapacity:0];
+    
+    
+    
     
     _tirckDetailTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NEWWIDTH, 4*50)];
     _tirckDetailTableview.delegate = self;
@@ -77,6 +84,7 @@
         make.left.mas_equalTo(_chooseV1.mas_left);
         make.width.mas_offset(NEWWIDTH);
         make.top.mas_equalTo(_infoView.maxY+20);
+//        make.bottom.mas_equalTo([UIApplication sharedApplication].keyWindow.maxY-100);
     }];
     
 }

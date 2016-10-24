@@ -623,6 +623,8 @@
 		BF7E3EAE1DB8AB200042BDC4 /* LFFAddPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E3EAD1DB8AB200042BDC4 /* LFFAddPickerView.xib */; };
 		BF7E3EB01DB8AB7F0042BDC4 /* libLFFPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E3EAF1DB8AB7F0042BDC4 /* libLFFPicker.a */; };
 		BF7E3EB51DB8B5E20042BDC4 /* TrickListInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3EB41DB8B5E20042BDC4 /* TrickListInfoModel.m */; };
+		BFA862131DBDA78C004289DD /* TrickDetailShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA862111DBDA78C004289DD /* TrickDetailShowCell.m */; };
+		BFA862141DBDA78C004289DD /* TrickDetailShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA862121DBDA78C004289DD /* TrickDetailShowCell.xib */; };
 		BFAF035B1DB0C2FB00281517 /* 捷丰商户.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */; };
 		BFC042151D70120A0090CAFC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F41D70120A0090CAFC /* AFHTTPSessionManager.m */; };
 		BFC042161D70120A0090CAFC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC041F71D70120A0090CAFC /* AFNetworkReachabilityManager.m */; };
@@ -1919,6 +1921,9 @@
 		BF7E3EB41DB8B5E20042BDC4 /* TrickListInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickListInfoModel.m; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		BFA862101DBDA78C004289DD /* TrickDetailShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickDetailShowCell.h; sourceTree = "<group>"; };
+		BFA862111DBDA78C004289DD /* TrickDetailShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickDetailShowCell.m; sourceTree = "<group>"; };
+		BFA862121DBDA78C004289DD /* TrickDetailShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickDetailShowCell.xib; sourceTree = "<group>"; };
 		BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "捷丰商户.txt"; sourceTree = "<group>"; };
 		BFAF03601DB0C7F800281517 /* LFFStringarr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFStringarr.h; sourceTree = "<group>"; };
 		BFC041F31D70120A0090CAFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -3751,6 +3756,9 @@
 				BFEF38C61DAC855F0043A852 /* TrickTicketListCell.h */,
 				BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */,
 				BFEF38C81DAC855F0043A852 /* TrickTicketListCell.xib */,
+				BFA862101DBDA78C004289DD /* TrickDetailShowCell.h */,
+				BFA862111DBDA78C004289DD /* TrickDetailShowCell.m */,
+				BFA862121DBDA78C004289DD /* TrickDetailShowCell.xib */,
 				BF21CD5A1DB619A700963498 /* TrickPersonInfoCell.h */,
 				BF21CD5B1DB619A700963498 /* TrickPersonInfoCell.m */,
 				BF21CD5C1DB619A700963498 /* TrickPersonInfoCell.xib */,
@@ -5142,6 +5150,7 @@
 				87E058DB1C044DBD00C4A4C1 /* Icon-60.png in Resources */,
 				BF3E10001D499C6D003F0F89 /* CertificationGoodsCell.xib in Resources */,
 				BF7E3EA41DB896E60042BDC4 /* LFFPickerVIew.xib in Resources */,
+				BFA862141DBDA78C004289DD /* TrickDetailShowCell.xib in Resources */,
 				AEE5F6241C4E19B1006FAF60 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				BF21CD5E1DB619A700963498 /* TrickPersonInfoCell.xib in Resources */,
 				339B9A531D7D68A6004D0E1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -5307,6 +5316,7 @@
 				BF3C8FD11D5834A50092AC19 /* ZXDataMatrixBitMatrixParser.m in Sources */,
 				D56152111BDF6EA100DAAADC /* MJRefreshAutoStateFooter.m in Sources */,
 				33502CBC1D472C17005C1873 /* CompaniesViewController.m in Sources */,
+				BFA862131DBDA78C004289DD /* TrickDetailShowCell.m in Sources */,
 				BF3C8F961D5834A50092AC19 /* ZXISBNResultParser.m in Sources */,
 				BFC042231D70120A0090CAFC /* UIWebView+AFNetworking.m in Sources */,
 				AEDD09D01C3CF69D004CE3F0 /* GKCropBorderView.m in Sources */,

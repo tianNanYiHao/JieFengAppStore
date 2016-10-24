@@ -9,9 +9,12 @@
 #import "TicketDetailViewController.h"
 #import "TicketOrderViewController.h"
 #import "TrickListInfoModel.h"
-
-@interface TicketDetailViewController ()
+#import "TrickDetailShowCell.h"
+@interface TicketDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
+    UITableView *_tirckDetailTableview;
+    NSMutableArray *_ticketKindArray;
+    
     
 }
 @property (weak, nonatomic) IBOutlet UIButton *dayBeforeBtn;//前一天
@@ -30,24 +33,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *trickTimeLab;//旅行时间
 
 
-
-//二等座
-@property (weak, nonatomic) IBOutlet UILabel *moneyOne;  
-@property (weak, nonatomic) IBOutlet UILabel *ticketCountOne;
-@property (weak, nonatomic) IBOutlet UIButton *yudingBtn;
-
-//一等座
-@property (weak, nonatomic) IBOutlet UILabel *moneyTwo;
-@property (weak, nonatomic) IBOutlet UILabel *ticketCountTwo;
-@property (weak, nonatomic) IBOutlet UIButton *yudingBtn2;
-
-//商务座
-@property (weak, nonatomic) IBOutlet UILabel *moneyThree;
-@property (weak, nonatomic) IBOutlet UILabel *ticketCountThree;
-@property (weak, nonatomic) IBOutlet UIButton *qiangpiaoBtn;
-
-
-
 @end
 
 @implementation TicketDetailViewController
@@ -64,7 +49,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+//注入
 -(void)info{
+    _chooseV1.hidden = YES;
+    _chooseV2.hidden = YES;
+    _chooseV3.hidden = YES;
+    
+    
+    
     _dayInfoLab.text = _showDayStr;
     _addfromlab.text = _detaiIinfoModel.from_station_name;
     _addtoLab.text = _detaiIinfoModel.to_station_name;
@@ -74,7 +66,30 @@
     _dayFromLab.text = [self addStr:[_detaiIinfoModel.train_start_date substringFromIndex:4]];
     _dayToLab.text = [self addStr:[NSString stringWithFormat:@"%ld",(long)([[_detaiIinfoModel.train_start_date substringFromIndex:4]integerValue]+[_detaiIinfoModel.arrive_days integerValue])]];
     _trickTimeLab.text = [self separStr:_detaiIinfoModel.run_time];
+    
+    
+    //判断车票类型+构建数据源
+    _ticketKindArray = [NSMutableArray arrayWithCapacity:0];
+    
+    
+    
+    
+    _tirckDetailTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NEWWIDTH, 4*50)];
+    _tirckDetailTableview.delegate = self;
+    _tirckDetailTableview.dataSource = self;
+    [_tirckDetailTableview registerNib:[UINib nibWithNibName:@"TrickDetailShowCell" bundle:nil] forCellReuseIdentifier:@"TrickDetailShow"];
+    [self.view addSubview:_tirckDetailTableview];
+    
+    [_tirckDetailTableview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(_chooseV1.mas_left);
+        make.width.mas_offset(NEWWIDTH);
+        make.top.mas_equalTo(_infoView.maxY+20);
+//        make.bottom.mas_equalTo([UIApplication sharedApplication].keyWindow.maxY-100);
+    }];
+    
 }
+
+
 
 #pragma mark - btnAll
 ////前一天
@@ -91,14 +106,29 @@
     
 }
 
-//一等座预定
-- (IBAction)yuding2Click:(id)sender {
-}
 
-//商务座抢票
-- (IBAction)qiangpiaoClick:(id)sender {
+
+#pragma mark - tableViewDelegate
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
     
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *SS = @"TrickDetailShow";
+    
+    TrickDetailShowCell *cell = [tableView dequeueReusableCellWithIdentifier:SS forIndexPath:indexPath];
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"132");
+    
+}
+
 
 
 -(NSString*)separStr:(NSString*)str{

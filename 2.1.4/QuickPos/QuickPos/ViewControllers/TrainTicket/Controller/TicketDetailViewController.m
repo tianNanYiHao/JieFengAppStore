@@ -70,11 +70,13 @@
     
     //判断车票类型+构建数据源
     _ticketKindArray = [NSMutableArray arrayWithCapacity:0];
+    _ticketKindArray =  [_detaiIinfoModel ticketKindWitNum];
+//    for (id s in _ticketKindArray[0]) {
+//        NSLog(@"%@",s);
+//    }
     
     
-    
-    
-    _tirckDetailTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NEWWIDTH, 4*50)];
+    _tirckDetailTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NEWWIDTH, _ticketKindArray.count*50)];
     _tirckDetailTableview.delegate = self;
     _tirckDetailTableview.dataSource = self;
     [_tirckDetailTableview registerNib:[UINib nibWithNibName:@"TrickDetailShowCell" bundle:nil] forCellReuseIdentifier:@"TrickDetailShow"];
@@ -84,7 +86,7 @@
         make.left.mas_equalTo(_chooseV1.mas_left);
         make.width.mas_offset(NEWWIDTH);
         make.top.mas_equalTo(_infoView.maxY+20);
-//        make.bottom.mas_equalTo([UIApplication sharedApplication].keyWindow.maxY-100);
+        make.height.mas_offset(_ticketKindArray.count*50);
     }];
     
 }

@@ -337,6 +337,7 @@
                 [self.navigationController pushViewController:ObtainScanVc animated:YES];
             }]];
             [p addAction:[PSTAlertAction actionWithTitle:@"微信收款二" handler:^(PSTAlertAction * _Nonnull action) {
+//                       [MBProgressHUD showHUDAddedTo:self.view WithString:@"功能暂未开放"];
                 YSTWechatViewController *ystWechat = [[YSTWechatViewController alloc] initWithNibName:@"YSTWechatViewController" bundle:nil];
                 ystWechat.WeChatBankCardNum =  [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
                 [self.navigationController pushViewController:ystWechat animated:YES];

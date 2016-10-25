@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface TrickDetailShowCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *chearLab;//座位类型
@@ -15,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *moneyOne;
 @property (weak, nonatomic) IBOutlet UILabel *ticketCountOne;
 @property (weak, nonatomic) IBOutlet UIButton *yudingBtn;
+
+
 @end

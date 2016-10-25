@@ -7,6 +7,7 @@
 //
 
 #import "TrickDetailShowCell.h"
+#import "TrickListInfoModel.h"
 
 @implementation TrickDetailShowCell
 
@@ -20,5 +21,9 @@
 
     // Configure the view for the selected state
 }
+
+
+
+
 
 @end

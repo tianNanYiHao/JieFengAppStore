@@ -71,14 +71,13 @@
     //判断车票类型+构建数据源
     _ticketKindArray = [NSMutableArray arrayWithCapacity:0];
     _ticketKindArray =  [_detaiIinfoModel ticketKindWitNum];
-    for (id s in _ticketKindArray[0]) {
-        NSLog(@"1%@",s);
-    }
+
 
     _tirckDetailTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NEWWIDTH, _ticketKindArray.count*50)];
     _tirckDetailTableview.delegate = self;
     _tirckDetailTableview.dataSource = self;
     [_tirckDetailTableview registerNib:[UINib nibWithNibName:@"TrickDetailShowCell" bundle:nil] forCellReuseIdentifier:@"TrickDetailShow"];
+    _tirckDetailTableview.userInteractionEnabled = NO;
     [self.view addSubview:_tirckDetailTableview];
     
     [_tirckDetailTableview mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -127,8 +126,8 @@
     NSArray *pricearr =  _ticketKindArray[2];
     
     cell.chearLab.text = namearr[indexPath.row];
-    cell.moneyOne.text = numarr[indexPath.row];
-    cell.ticketCountOne.text = pricearr[indexPath.row];
+    cell.moneyOne.text = pricearr[indexPath.row];
+    cell.ticketCountOne.text =[NSString stringWithFormat:@"%@ 张",numarr[indexPath.row]];
     
     return cell;
 }

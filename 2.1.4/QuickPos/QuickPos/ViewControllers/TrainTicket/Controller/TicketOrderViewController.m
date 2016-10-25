@@ -35,6 +35,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"订单填写";
+    [self infoIN];
+    
     _personInfoArr = [[NSMutableArray alloc]init];
     self.view.backgroundColor =  [Common hexStringToColor:@"e4e4e4"];
     _view3A4.backgroundColor =  [Common hexStringToColor:@"e4e4e4"];
@@ -43,6 +45,20 @@
     
     
 }
+-(void)infoIN{
+    _addfromlab.text = _addfrom;
+    _addtoLab.text = _addto;
+    _tiamFromLab.text = _timefrom;
+    _timaToLab.text = _timeto;
+    _TicketLab.text = _ticketKind;
+    _dayFromLab.text = _dayFrom;
+    _dayToLab.text = _dayTo;
+    _trickTimeLab.text = _trickTime;
+    _ticketInfoLab.text = _ticketInfo;
+    
+
+}
+
 -(void)createScrollView{
     
     _scrollViewBG = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -70,10 +86,10 @@
 //点击选可售票
 - (IBAction)chooseTicketClick:(id)sender {
     PSTAlertController *psta = [PSTAlertController alertControllerWithTitle:nil message:@"请选择您的坐席信息" preferredStyle:PSTAlertControllerStyleActionSheet];
-    NSArray *arr  = @[@"二等座¥250",@"一等座¥553",@"商务座¥990"];
-    for (int i= 0; i<arr.count; i++) {
-        [psta addAction:[PSTAlertAction actionWithTitle:arr[i] handler:^(PSTAlertAction * _Nonnull action) {
-            _ticketInfoLab.text = arr[i];
+    for (int i= 0; i<_ticekMoneyArr.count; i++) {
+        [psta addAction:[PSTAlertAction actionWithTitle:_ticekMoneyArr[i] handler:^(PSTAlertAction * _Nonnull action) {
+            _ticketInfoLab.text = _ticekMoneyArr[i];
+            _moneyAll.text = @"¥ 0";
         }]];
     }
     [psta showWithSender:nil controller:self animated:YES completion:NULL];
@@ -100,6 +116,10 @@
         if (personTableView) {
             [personTableView removeFromSuperview];
         }
+        
+        NSString *s = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][1];
+        float f = [s floatValue];
+        _moneyAll.text = [NSString stringWithFormat:@"¥ %.1f", f *_personInfoArr.count];
         personTableView = [[UITableView alloc] init];
         personTableView.delegate = self;
         personTableView.dataSource = self;

@@ -68,8 +68,7 @@
 //tip
 - (void)PromptTip
 {
-    
-    UIView *tip = [Common tipWithStr:@"手续费:千五+2元(秒到)" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commitBtn.frame)+2, [UIApplication sharedApplication].keyWindow.width,40)];
+    UIView *tip = [Common tipWithStr:@"手续费:千分之四点九+1元(秒到)" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commitBtn.frame)+2, [UIApplication sharedApplication].keyWindow.width,40)];
     [self.view addSubview:tip];
     
 }
@@ -104,8 +103,6 @@
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_textfiledCash.text integerValue]<5 ){
         [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
-    }else if([_textfiledCash.text integerValue]>=50000 ){
-        [Common showMsgBox:@"" msg:@"收款金额请勿大于五万元" parentCtrl:self];
     }
     else  if ( (i %10) == 0){
         [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];

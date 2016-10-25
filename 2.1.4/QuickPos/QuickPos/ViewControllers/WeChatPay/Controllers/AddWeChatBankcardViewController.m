@@ -330,17 +330,15 @@
         if(type == REQUSET_VERIFYWEIXINPAY ){
             PSTAlertController *p  = [PSTAlertController alertWithTitle:@"" message:@"请选择微信收款方式"];
             [p addAction:[PSTAlertAction actionWithTitle:@"微信收款一" handler:^(PSTAlertAction * _Nonnull action) {
-
+                YSTWechatViewController *ystWechat = [[YSTWechatViewController alloc] initWithNibName:@"YSTWechatViewController" bundle:nil];
+                ystWechat.WeChatBankCardNum =  [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+                [self.navigationController pushViewController:ystWechat animated:YES];
+            }]];
+            [p addAction:[PSTAlertAction actionWithTitle:@"微信收款二" handler:^(PSTAlertAction * _Nonnull action) {
                 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 ObtainScanViewController *ObtainScanVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ObtainScanVc"];
                 ObtainScanVc.acctNo2 = [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
                 [self.navigationController pushViewController:ObtainScanVc animated:YES];
-            }]];
-            [p addAction:[PSTAlertAction actionWithTitle:@"微信收款二" handler:^(PSTAlertAction * _Nonnull action) {
-//                       [MBProgressHUD showHUDAddedTo:self.view WithString:@"功能暂未开放"];
-                YSTWechatViewController *ystWechat = [[YSTWechatViewController alloc] initWithNibName:@"YSTWechatViewController" bundle:nil];
-                ystWechat.WeChatBankCardNum =  [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-                [self.navigationController pushViewController:ystWechat animated:YES];
             }]];
             [p showWithSender:nil controller:self animated:YES completion:NULL];
             

@@ -117,7 +117,7 @@
         [Common showMsgBox:@"" msg:@"输入金额超限" parentCtrl:self];
     }
     else{
-        if (i/10>1) {
+        if (i/10>=1) {
             if ([[_textfiledCash.text substringFromIndex:[_textfiledCash.text length]-1] isEqualToString:[[_textfiledCash.text substringFromIndex:[_textfiledCash.text length]-2] substringToIndex:1]]){
                 [Common showMsgBox:nil msg:@"金额最后两位不能相同" parentCtrl:self];
             }else{

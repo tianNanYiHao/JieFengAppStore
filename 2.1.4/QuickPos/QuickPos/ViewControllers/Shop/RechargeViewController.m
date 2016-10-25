@@ -544,6 +544,7 @@
 //发送订单信息。得到回调信息才push
 - (IBAction)pushToOrder:(id)sender {
     NSLog(@"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=%@ %@",merchantId ,productId);
+
     //如果是 充值页
     if (_isRechargeView ) {
         //银统 走扫码充值
@@ -559,7 +560,7 @@
                 [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
             }
             else {
-                if (i/10>1) {
+                if (i/10>=1) {
                     if ([[finalPrice.text substringFromIndex:[finalPrice.text length]-1] isEqualToString:[[finalPrice.text substringFromIndex:[finalPrice.text length]-2] substringToIndex:1]]){
                         [Common showMsgBox:nil msg:@"金额最后两位不能相同" parentCtrl:self];
                     }else{

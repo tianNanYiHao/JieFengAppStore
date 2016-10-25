@@ -17,7 +17,6 @@
 
 
 -(NSMutableArray*)ticketKindWitNum{
-    NSLog(@"kind ========= %@",_train_code);
     NSMutableArray *arrM = [NSMutableArray arrayWithCapacity:0];
     NSMutableArray *arrNameM = [NSMutableArray arrayWithCapacity:0];
     NSMutableArray *arrNumM = [NSMutableArray arrayWithCapacity:0];

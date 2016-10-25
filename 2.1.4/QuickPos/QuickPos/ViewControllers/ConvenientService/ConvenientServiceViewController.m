@@ -571,12 +571,12 @@
         else if (indexPath.section == 1)   //骑车展订票+交通违章+火车票+飞机票
         {
             if (indexPath.row == 2) { //火车票
-                [MBProgressHUD showHUDAddedTo:self.view WithString:@"功能暂未开放"];
-//                TrickMainViewController *trickMain = [[TrickMainViewController alloc] initWithNibName:@"TrickMainViewController" bundle:nil];
-//                TrickInfoModel *model = [[TrickInfoModel alloc] init];
-//                trickMain.dataArray = [model getInfoBack];
-//                trickMain.hidesBottomBarWhenPushed = YES;
-//                [self.navigationController pushViewController:trickMain animated:YES];
+//                [MBProgressHUD showHUDAddedTo:self.view WithString:@"功能暂未开放"];
+                TrickMainViewController *trickMain = [[TrickMainViewController alloc] initWithNibName:@"TrickMainViewController" bundle:nil];
+                TrickInfoModel *model = [[TrickInfoModel alloc] init];
+                trickMain.dataArray = [model getInfoBack];
+                trickMain.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:trickMain animated:YES];
             }
             else{
                 //正在努力建设中...

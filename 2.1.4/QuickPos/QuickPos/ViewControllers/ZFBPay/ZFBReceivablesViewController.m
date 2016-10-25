@@ -108,8 +108,6 @@
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_AmtTextField.text integerValue]<5 ){
         [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
-    }else if([_AmtTextField.text integerValue]>=10000 ){
-        [Common showMsgBox:@"" msg:@"收款金额请勿大于一万元" parentCtrl:self];
     }
     else  if ( (i %10) == 0){
         [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];

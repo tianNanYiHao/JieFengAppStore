@@ -89,7 +89,7 @@
     for (int i= 0; i<_ticekMoneyArr.count; i++) {
         [psta addAction:[PSTAlertAction actionWithTitle:_ticekMoneyArr[i] handler:^(PSTAlertAction * _Nonnull action) {
             _ticketInfoLab.text = _ticekMoneyArr[i];
-            _moneyAll.text = @"¥ 0";
+           [self getMoneyAllPersonAll];
         }]];
     }
     [psta showWithSender:nil controller:self animated:YES completion:NULL];
@@ -116,10 +116,7 @@
         if (personTableView) {
             [personTableView removeFromSuperview];
         }
-        
-        NSString *s = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][1];
-        float f = [s floatValue];
-        _moneyAll.text = [NSString stringWithFormat:@"¥ %.1f", f *_personInfoArr.count];
+        [self getMoneyAllPersonAll];
         personTableView = [[UITableView alloc] init];
         personTableView.delegate = self;
         personTableView.dataSource = self;
@@ -135,7 +132,12 @@
     
     [self.navigationController pushViewController:perinfo animated:YES];
 }
-
+-(void)getMoneyAllPersonAll{
+    NSString *s = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][1];
+    float f = [s floatValue];
+    _moneyAll.text = [NSString stringWithFormat:@"¥ %.1f", f *_personInfoArr.count];
+    _personAll.text = [NSString stringWithFormat:@"%ld 人",(long)_personInfoArr.count];
+}
 #pragma  mark - tabledelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _personInfoArr.count;

@@ -544,7 +544,6 @@
 //发送订单信息。得到回调信息才push
 - (IBAction)pushToOrder:(id)sender {
     NSLog(@"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=%@ %@",merchantId ,productId);
-
     //如果是 充值页
     if (_isRechargeView ) {
         //银统 走扫码充值

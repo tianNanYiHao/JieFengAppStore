@@ -4,29 +4,51 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickPos/ViewControllers/Shop/RechargeViewController.m"
-            timestampString = "498983354.740952"
+            filePath = "QuickPos/ViewControllers/TrainTicket/Controller/TicketDetailViewController.m"
+            timestampString = "499052469.763144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "569"
-            endingLineNumber = "569"
-            landmarkName = "-pushToOrder:"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-info"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TicketDetailViewController info]"
+                  moduleName = "QuickPos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lff/Desktop/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/TrainTicket/Controller/TicketDetailViewController.m"
+                  timestampString = "499055866.623878"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "2084">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TicketDetailViewController info]"
+                  moduleName = "QuickPos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lff/Desktop/JieFengAppStore/2.1.4/QuickPos/QuickPos/ViewControllers/TrainTicket/Controller/TicketDetailViewController.m"
+                  timestampString = "499055866.625921"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "2112">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -100,10 +100,32 @@
 }
 //提交订单
 - (IBAction)upOrderClick:(id)sender {
-    TickerOrderSureViewController *sure = [[TickerOrderSureViewController alloc] initWithNibName:@"TickerOrderSureViewController" bundle:nil];
-    [self.navigationController pushViewController:sure animated:YES];
-    
-    
+    if (_personInfoArr.count == 0) {
+        [MBProgressHUD showHUDAddedTo:self.view WithString:@"请添加乘车人信息"];
+    }
+    else if (_phoneNumber.text.length == 0) {
+        [MBProgressHUD showHUDAddedTo:self.view WithString:@"请输入手机号"];
+    }else{
+        TickerOrderSureViewController *sure = [[TickerOrderSureViewController alloc] initWithNibName:@"TickerOrderSureViewController" bundle:nil];
+        
+        sure.addfromlab.text = _addfrom;
+        sure.addtoLab.text = _addto;
+        sure.tiamFromLab.text = _timefrom;
+        sure.timaToLab.text = _timeto;
+        sure.TicketLab.text = _ticketKind;
+        sure.dayFromLab.text = _dayFrom;
+        sure.dayToLab.text = _dayTo;
+        sure.trickTimeLab.text = _trickTime;
+        sure.personArray = _personInfoArr;
+        
+        NSString *s = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][0];
+        NSString *s2 = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][1];
+        sure.personTickKind = s;
+        sure.persionTickMoney = [NSString stringWithFormat:@"¥%@",s2];
+        
+        [self.navigationController pushViewController:sure animated:YES];
+    }
+
 }
 //添加乘客信息
 - (IBAction)addPersonClick:(id)sender {
@@ -137,6 +159,7 @@
     float f = [s floatValue];
     _moneyAll.text = [NSString stringWithFormat:@"¥ %.1f", f *_personInfoArr.count];
     _personAll.text = [NSString stringWithFormat:@"%ld 人",(long)_personInfoArr.count];
+    
 }
 #pragma  mark - tabledelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -172,6 +195,7 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_personInfoArr removeObjectAtIndex:indexPath.row];
+        [self getMoneyAllPersonAll];
         [personTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         [personTableView reloadData];
         

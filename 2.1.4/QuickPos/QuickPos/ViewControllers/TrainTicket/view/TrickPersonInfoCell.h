@@ -10,4 +10,10 @@
 
 @interface TrickPersonInfoCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *personNameLab;
+@property (weak, nonatomic) IBOutlet UILabel *personTicketKind;
+@property (weak, nonatomic) IBOutlet UILabel *persionIDDLab;
+@property (weak, nonatomic) IBOutlet UILabel *personMoneyLab;
+
+
 @end

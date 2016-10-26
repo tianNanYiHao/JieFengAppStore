@@ -172,6 +172,7 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_personInfoArr removeObjectAtIndex:indexPath.row];
+        [self getMoneyAllPersonAll];
         [personTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         [personTableView reloadData];
         

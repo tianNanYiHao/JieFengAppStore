@@ -7,16 +7,39 @@
 //
 
 #import "AddPersonInfoViewController.h"
+#import "RadioButton.h"
 #define textABC @"123456789QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuiopasdfghjklmnbvcxz"
 
 @interface AddPersonInfoViewController ()<UITextFieldDelegate>
-
+{
+    NSInteger indexKind;
+    
+}
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UITextField *personIDText;
+@property (weak, nonatomic) IBOutlet RadioButton *btn1;
+@property (weak, nonatomic) IBOutlet RadioButton *btn2;
+@property (weak, nonatomic) IBOutlet RadioButton *btn3;
+@property (weak, nonatomic) IBOutlet RadioButton *btn4;
 
 @end
 
 @implementation AddPersonInfoViewController
+- (IBAction)chooseTicketKind:(RadioButton*)sender {
+    if (sender.tag == 1) {
+        indexKind = _btn1.tag;
+    }
+    if (sender.tag == 2) {
+        indexKind = _btn1.tag;
+    }
+    if (sender.tag == 3) {
+        indexKind = _btn1.tag;
+    }
+    if (sender.tag == 4) {
+        indexKind = _btn1.tag;
+    }
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +49,12 @@
     _nameText.delegate = self;
     _nameText.tag = 1001;
     _personIDText.keyboardType = UIKeyboardTypeDefault;
+    
+    _btn1.groupButtons = @[_btn1,_btn2,_btn3,_btn4];
+    _btn1.selected = YES;
+    indexKind = _btn1.tag;
+    
+    
     
 }
 

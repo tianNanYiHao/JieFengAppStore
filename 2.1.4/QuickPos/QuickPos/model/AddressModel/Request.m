@@ -1804,25 +1804,26 @@
 }
 
 //3.3下单接口
--(void)getProOrdNoWithtermId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE checi:(NSString*)checI from_station_code:(NSString*)from_station_codE from_station_name:(NSString*)from_station_namE to_station_code:(NSString*)to_station_codE to_station_name:(NSString*)to_station_namE train_date:(NSString*)train_datE
+-(void)getProOrdNoWithcheci:(NSString*)checI from_station_code:(NSString*)from_station_codE from_station_name:(NSString*)from_station_namE to_station_code:(NSString*)to_station_codE to_station_name:(NSString*)to_station_namE train_date:(NSString*)train_datE
                   passengers:(NSString*)passengerS mobile:(NSString*)mobilE zmoney:(NSString*)zmoneY uprice:(NSString*)upricE fee:(NSString*)feE count:(NSString*)counT{
     NSDictionary*dic=@{@"REQ_HEAD":@{@"TRAN_SCUESSS":@"1"},
                        @"REQ_BODY":
-                           @{@"termId":@"" ,
-                             @"orgId":@"" ,
-                             @"busType":@"",
-                             @"checi":@"" ,
-                             @"from_station_code":@"",
-                             @"from_station_name":@"" ,
-                             @"to_station_code":@"",
-                             @"to_station_name":@"" ,
-                             @"train_date":@"",
-                             @"passengers":@"" ,
-                             @"mobile":@"",
-                             @"zmoney":@"" ,
-                             @"uprice":@"",
-                             @"fee":@"" ,
-                             @"count":@"",
+                           @{@"termId":@"80000001" ,
+                             @"orgId":@"A00000008" ,
+                             @"busType":@"000002",
+                             @"checi":checI ,
+                             @"from_station_code":from_station_codE,
+                             @"from_station_name":from_station_namE ,
+                             @"to_station_code":to_station_codE,
+                             @"to_station_name":to_station_namE ,
+                             @"train_date":train_datE,
+                             @"passengers":passengerS ,
+                             @"mobile":mobilE,
+                             @"zmoney":zmoneY ,
+                             @"uprice":upricE,
+                             @"fee":feE ,
+                             @"count":counT,
+                             @"purpose_codes":@"ADULT"
                              }
                        };
     NSDictionary *dict = @{@"REQ_MESSAGE":[self DataTOjsonString:dic]};

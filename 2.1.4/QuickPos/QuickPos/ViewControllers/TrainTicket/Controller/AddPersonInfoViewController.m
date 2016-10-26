@@ -26,7 +26,7 @@
     _nameText.delegate = self;
     _nameText.tag = 1001;
     _personIDText.keyboardType = UIKeyboardTypeDefault;
-
+    
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{

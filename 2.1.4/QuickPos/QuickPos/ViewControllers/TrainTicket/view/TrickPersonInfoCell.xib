@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TrickPersonInfoCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrickPersonInfoCell" id="KGk-i7-Jjw" customClass="PersonInfoCell">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TrickPersonInfoCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrickPersonInfoCell" id="KGk-i7-Jjw" customClass="TrickPersonInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -27,7 +27,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="身份证:320518471541518475" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5A-iQ-xMg">
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 250" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veo-zh-8LS">
@@ -48,6 +48,12 @@
                     <constraint firstItem="Veo-zh-8LS" firstAttribute="top" secondItem="xLb-SM-2Ci" secondAttribute="bottom" constant="17" id="yj9-DQ-y4y"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="persionIDDLab" destination="W5A-iQ-xMg" id="Za9-Se-lFA"/>
+                <outlet property="personMoneyLab" destination="Veo-zh-8LS" id="BOG-Xm-hda"/>
+                <outlet property="personNameLab" destination="XiE-u8-r2R" id="DR5-P4-FWD"/>
+                <outlet property="personTicketKind" destination="xLb-SM-2Ci" id="Y3d-Qt-tva"/>
+            </connections>
             <point key="canvasLocation" x="-209" y="-89.5"/>
         </tableViewCell>
     </objects>

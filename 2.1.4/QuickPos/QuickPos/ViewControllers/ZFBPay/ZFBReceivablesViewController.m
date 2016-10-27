@@ -53,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"支付宝收款";
-    [self PromptTip];
+//    [self PromptTip];
     payTool = @"01";
     req = [[Request alloc]initWithDelegate:self];
     self.AmtTextField.layer.masksToBounds = YES;

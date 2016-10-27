@@ -324,8 +324,6 @@
 
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
-    
-    
     if ([dict[@"respCode"]isEqual:@"0000"]) {
         if(type == REQUSET_VERIFYWEIXINPAY ){
             PSTAlertController *p  = [PSTAlertController alertWithTitle:@"" message:@"请选择微信收款方式"];

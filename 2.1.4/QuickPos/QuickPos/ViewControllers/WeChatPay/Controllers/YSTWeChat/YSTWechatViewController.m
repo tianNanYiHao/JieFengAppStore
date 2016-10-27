@@ -50,7 +50,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"微信收款";
     
-    [self PromptTip];
+//    [self PromptTip];
     payTool = @"01";
     req = [[Request alloc]initWithDelegate:self];
     self.textfiledCash.layer.masksToBounds = YES;

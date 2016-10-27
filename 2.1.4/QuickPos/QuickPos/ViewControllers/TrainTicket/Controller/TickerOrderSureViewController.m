@@ -64,6 +64,8 @@
     return 0;
     
 }
+
+
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *v = [UIView new];
     v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NEWWIDTH, 30)];

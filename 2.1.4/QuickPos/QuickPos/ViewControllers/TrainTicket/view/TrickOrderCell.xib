@@ -28,11 +28,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="3Km-4f-oyu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="7Fx-ox-s3F"/>
+                    <constraint firstItem="qGF-NH-alR" firstAttribute="leading" secondItem="3Km-4f-oyu" secondAttribute="trailing" constant="23.5" id="Byd-wb-LUx"/>
                     <constraint firstItem="qGF-NH-alR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="MbI-cz-EtJ"/>
                     <constraint firstItem="3Km-4f-oyu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="N9G-Ic-niU"/>
-                    <constraint firstAttribute="trailing" secondItem="qGF-NH-alR" secondAttribute="trailing" constant="93" id="pb1-7G-dnw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="orderInfoLab" destination="qGF-NH-alR" id="JPe-ix-gkl"/>
+                <outlet property="orderTitleLab" destination="3Km-4f-oyu" id="NoL-Mr-kt1"/>
+            </connections>
             <point key="canvasLocation" x="-34" y="-13"/>
         </tableViewCell>
     </objects>

@@ -108,14 +108,14 @@
     }else{
         TickerOrderSureViewController *sure = [[TickerOrderSureViewController alloc] initWithNibName:@"TickerOrderSureViewController" bundle:nil];
         
-        sure.addfromlab.text = _addfrom;
-        sure.addtoLab.text = _addto;
-        sure.tiamFromLab.text = _timefrom;
-        sure.timaToLab.text = _timeto;
-        sure.TicketLab.text = _ticketKind;
-        sure.dayFromLab.text = _dayFrom;
-        sure.dayToLab.text = _dayTo;
-        sure.trickTimeLab.text = _trickTime;
+        sure.addfrom = _addfrom;
+        sure.addto = _addto;
+        sure.timefrom= _timefrom;
+        sure.timeto = _timeto;
+        sure.ticketKind = _ticketKind;
+        sure.dayFrom = _dayFrom;
+        sure.dayTo = _dayTo;
+        sure.trickTime = _trickTime;
         sure.personArray = _personInfoArr;
         
         NSString *s = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][0];
@@ -131,9 +131,10 @@
 - (IBAction)addPersonClick:(id)sender {
     
     AddPersonInfoViewController *perinfo = [[AddPersonInfoViewController alloc] initWithNibName:@"AddPersonInfoViewController" bundle:nil];
-    [perinfo comeBackBlock:^(NSString *name, NSString *perSonID) {
+    [perinfo comeBackBlock:^(NSString *name, NSString *perSonID,NSDictionary *personDict) {
         NSDictionary * dict = [NSDictionary new];
          dict =  @{@"name":name,@"perSonID":perSonID};
+        NSLog(@"%@",[NSString stringWithFormat:@"%@",personDict]);
         [_personInfoArr addObject:dict];
         if (personTableView) {
             [personTableView removeFromSuperview];

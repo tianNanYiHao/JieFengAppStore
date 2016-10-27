@@ -97,7 +97,6 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 0) {
-        
         static NSString *iddPerson = @"TrickPersonInfoCell";
         TrickPersonInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:iddPerson forIndexPath:indexPath];
         
@@ -105,18 +104,34 @@
         cell.persionIDDLab.text = [NSString stringWithFormat:@"身份证:%@", [_personArray[indexPath.row] objectForKey:@"perSonID"]];
         cell.personTicketKind.text = _personTickKind;
         cell.personMoneyLab.text = _persionTickMoney;
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if (indexPath.section == 1){
         static NSString *iddOrder = @"TrickOrderCell";
         TrickOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:iddOrder forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if (indexPath.row == 0) {
+             cell.orderTitleLab.text = @"订单号";
+             cell.orderInfoLab.text = @"20160508784516";
+        }
+        if (indexPath.row == 1) {
+             cell.orderTitleLab.text = @"联系人";
+             cell.orderInfoLab.text = @"张大大";
+        }
+        if (indexPath.row == 2) {
+             cell.orderTitleLab.text = @"手机号";
+             cell.orderInfoLab.text = @"180187181847";
+        }
         return cell;
         
     }else if (indexPath.section == 2){
         static NSString *iddOrder = @"TrickOrderCell";
         TrickOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:iddOrder forIndexPath:indexPath];
+        cell.orderTitleLab.text = @"支付金额";
+        cell.orderInfoLab.text = @"¥ 500";
+        cell.orderInfoLab.textColor = [UIColor redColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
-        
     }
     
     return nil;

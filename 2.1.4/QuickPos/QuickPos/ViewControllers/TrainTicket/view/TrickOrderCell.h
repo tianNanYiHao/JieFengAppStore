@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TrickOrderCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *orderTitleLab;
+@property (weak, nonatomic) IBOutlet UILabel *orderInfoLab;
 
 @end

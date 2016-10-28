@@ -77,6 +77,11 @@
 @property (nonatomic, strong)UIBarButtonItem *help;
 
 @property (weak, nonatomic) IBOutlet UIButton *comfirt;
+@property (weak, nonatomic) IBOutlet UILabel *l1;
+@property (weak, nonatomic) IBOutlet UILabel *l2;
+@property (weak, nonatomic) IBOutlet UILabel *l3;
+@property (weak, nonatomic) IBOutlet UILabel *l4;
+@property (weak, nonatomic) IBOutlet UILabel *l5;
 
 @end
 
@@ -90,6 +95,11 @@
     
     [super viewDidLoad];
     
+    _l1.hidden = YES;
+    _l2.hidden = YES;
+    _l3.hidden = YES;
+    _l4.hidden = YES;
+    _l5.hidden = YES;
     self.title = L(@"TakeCash");
     
 //    [self creatRightBtn];
@@ -152,6 +162,7 @@
      buttonTag = 9;
     
     self.fastButton.on=YES;//默认快速提款
+    [self PromptTipString:@"FRKT"];
     
     if(self.fastButton.on){
     
@@ -181,7 +192,15 @@
     
     
 }
-
+//tip
+- (void)PromptTipString:(NSString*)string
+{
+    
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:string];
+    UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, _comfirt.y-50, self.view.frame.size.width, 40)];
+    [self.view addSubview:tip];
+    
+}
 //右侧点击按钮
 - (void)creatRightBtn
 {
@@ -449,7 +468,7 @@
 
 - (IBAction)normalButtonAct:(UIButton *)sender {
     buttonTag = 9;
-    
+    [self PromptTipString:@"FRPT"];
     if(buttonTag == 9){
         
         NSLog(@"开启");
@@ -469,7 +488,7 @@
 - (IBAction)fastButtonAct:(UIButton *)sender {
     
     buttonTag = 3;
-    
+      [self PromptTipString:@"FRKT"];
     
     if(buttonTag == 3){
         

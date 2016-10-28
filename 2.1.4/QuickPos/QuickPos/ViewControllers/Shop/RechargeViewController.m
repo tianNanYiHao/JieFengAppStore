@@ -127,6 +127,7 @@
             self.isAccount = @"0";
             _YTpayWay = @"NYT";
             payType = CardPayType;  //刷卡充值/支付 0
+            [self PromptTipString:@"ZFSK"];
         }
         else
         {
@@ -182,6 +183,7 @@
             self.isAccount = @"0";
             _YTpayWay = @"NYT";
             payType = QuickPayType; //快捷充值/支付 0
+            [self PromptTipString:@"KJZF"];
         }
         else
         {
@@ -208,6 +210,7 @@
             _titleNmae = @"微信充值";
             infoKeyArray = [[NSArray alloc] init];
             infoKeyArray = @[WXMERCHANTCODE,WXBACKURL,WXKEY];
+              [self PromptTipString:@"ZWX"];
 
         }
     }
@@ -224,6 +227,7 @@
             _titleNmae = @"支付宝充值";
             infoKeyArray = [[NSArray alloc] init];
             infoKeyArray = @[ZFBMERCHANTCODE,ZFBBACKURL,ZFBKEY];
+              [self PromptTipString:@"ZZFB"];
         }
     }
     else if (sender.tag == 666){//银统银联在线
@@ -241,6 +245,15 @@
             infoKeyArray = @[YINHANGMERCHANTCODE,YINHANGURL,YINHANGKEY];
         }
     }
+}
+
+//tip
+- (void)PromptTipString:(NSString*)string
+{
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:string];
+    UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, _comfirted.maxY+10, self.view.frame.size.width, 40)];
+
+    [self.view addSubview:tip];
 }
 
 
@@ -369,6 +382,7 @@
     if (_isRechargeView) {
 //        _isRechargeView = YES;
         self.finalPrice.placeholder = moneyTitle;
+        [self PromptTipString:@"ZFSK"];
         
     }else
     {

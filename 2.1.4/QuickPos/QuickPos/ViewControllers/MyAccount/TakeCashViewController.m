@@ -147,7 +147,7 @@
      buttonTag = 9;
     
     self.fastButton.on=YES;//默认快速提款
-    
+    [self PromptTipString:@"KSTX"];
     if(self.fastButton.on){
     
       cashType = @"1";
@@ -176,7 +176,15 @@
     
     
 }
-
+//tip
+- (void)PromptTipString:(NSString*)string
+{
+    
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:string];
+    UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, _comfirt.y+50, self.view.frame.size.width, 40)];
+    [self.view addSubview:tip];
+    
+}
 //右侧点击按钮
 - (void)creatRightBtn
 {
@@ -429,7 +437,7 @@
 
 - (IBAction)normalButtonAct:(UIButton *)sender {
     buttonTag = 9;
-    
+     [self PromptTipString:@"PTTX"];
     if(buttonTag == 9){
         
         NSLog(@"开启");
@@ -449,7 +457,7 @@
 - (IBAction)fastButtonAct:(UIButton *)sender {
     
     buttonTag = 3;
-    
+     [self PromptTipString:@"KSTX"];
     
     if(buttonTag == 3){
         

@@ -45,13 +45,17 @@
     payTool = @"01";
     merchantId = @"0001000006";
     productId = @"0000000000";
-    
+    [self PromptTipString:@"KFWX"];
     self.view.backgroundColor = [UIColor whiteColor];
-    UIView *tip = [Common tipWithStr:@"手续费:千分之五" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+300, self.view.frame.size.width, 40)];
-    [self.view addSubview:tip];
     
 }
-
+//tip
+- (void)PromptTipString:(NSString*)string
+{
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:string];
+    UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, _comfirt.y+320, NEWWIDTH, 40)];
+    [self.view addSubview:tip];
+}
 
 //确认按钮
 - (IBAction)ObtainScan:(id)sender {

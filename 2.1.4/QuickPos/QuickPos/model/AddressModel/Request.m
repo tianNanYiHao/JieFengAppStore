@@ -1922,7 +1922,34 @@
     }];
 }
 
-
+//////////////////////////////////////tipsInfoGet///////////////////////////////////////
+//获取tips
+-(void)getTipsInfo{
+    
+    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
+    manger.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSString *urlC = @"http://122.144.198.81:8081/easypay/yst/allfee";
+    urlC = [urlC stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [manger GET:urlC parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dictReq = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+            NSArray *arr = (NSArray*)dictReq;
+            NSLog(@"%@",[NSString stringWithFormat:@"%@",arr]);
+        for (NSDictionary *dict in arr) {
+            NSString *name = [dict objectForKey:@"code"];
+            NSString *note = [dict objectForKey:@"note"];
+            [[NSUserDefaults standardUserDefaults] setObject:note forKey:name];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@,%@",task,[task class]);
+        NSLog(@"%@",error);
+    }];
+    
+    
+}
 
 #pragma mark - 商品朔源接口集
 

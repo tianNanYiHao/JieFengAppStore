@@ -50,7 +50,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"微信收款";
     
-//    [self PromptTip];
+    [self PromptTip];
     payTool = @"01";
     req = [[Request alloc]initWithDelegate:self];
     self.textfiledCash.layer.masksToBounds = YES;
@@ -68,10 +68,11 @@
 //tip
 - (void)PromptTip
 {
-    UIView *tip = [Common tipWithStr:@"手续费:千分之四点九+1元(秒到)" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commitBtn.frame)+2, [UIApplication sharedApplication].keyWindow.width,40)];
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:@"YSTWX"];
+    UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commitBtn.frame)+2, [UIApplication sharedApplication].keyWindow.width,40)];
     [self.view addSubview:tip];
-    
 }
+
 //T+0 //T+1
 //- (IBAction)chooseBtn:(RadioButton*)sender {
 //    if (sender.tag == 11) {   //T+0

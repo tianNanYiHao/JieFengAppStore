@@ -53,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"支付宝收款";
-//    [self PromptTip];
+    [self PromptTip];
     payTool = @"01";
     req = [[Request alloc]initWithDelegate:self];
     self.AmtTextField.layer.masksToBounds = YES;
@@ -81,10 +81,10 @@
 //tip
 - (void)PromptTip
 {
-    UIView *tip = [Common tipWithStr:@"手续费=千分之五+2元" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+270, self.view.frame.size.width, 40)];
+    
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:@"YSTZFB"];
+    UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+270, self.view.frame.size.width, 40)];
     [self.view addSubview:tip];
-//    UIView *tip1 = [Common tipWithStr:@"T+1 手续费=收款金额*0.0055" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+300, self.view.frame.size.width, 40)];
-//    [self.view addSubview:tip1];
 
 }
 

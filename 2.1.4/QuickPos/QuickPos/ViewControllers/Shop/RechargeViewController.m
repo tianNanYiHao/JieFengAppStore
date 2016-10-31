@@ -790,10 +790,10 @@
     
     if (_button444.selected == YES) {  //微信
         ZFBVc.infoArr =  @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
-         ZFBVc.openShowLab1Str = @"请打开微信扫一扫该二维码";
+         ZFBVc.openShowLab1Str = @"请打开微信扫一扫该二维码，完成交易";
     }
     else if (_button555.selected == YES) {  //支付宝
-         ZFBVc.openShowLab1Str = @"请打开支付宝扫一扫该二维码";
+         ZFBVc.openShowLab1Str = @"请打开支付宝扫一扫该二维码，完成交易";
         LFFStringarr *lff = [[LFFStringarr alloc]init];
         LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];
         NSString *ii = [[NSUserDefaults standardUserDefaults] objectForKey:@"ii"];

@@ -139,7 +139,7 @@
     WechatVc.merchantId = merchantId;
     WechatVc.productId = productId;
     WechatVc.titleName = @"微信收款二维码";
-    WechatVc.openShowLab1Str = @"请打开微信扫一扫该二维码";
+    WechatVc.openShowLab1Str = @"请打开微信扫一扫该二维码，完成交易";
     WechatVc.infoArr = @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
     [self.navigationController pushViewController:WechatVc animated:YES];
 

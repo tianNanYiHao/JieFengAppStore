@@ -27,6 +27,7 @@
     
     
 }
+@property (weak, nonatomic) IBOutlet UILabel *openShowLab1;//
 @property (weak, nonatomic) IBOutlet UIImageView *ewmImageViw;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic,strong) NSString *urlString;
@@ -38,10 +39,14 @@
 @end
 
 @implementation ZFBViewController
-
+-(void)showOpenLab1{
+    _openShowLab1.text = _openShowLab1Str;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    [self showOpenLab1];
+    
     self.title = _titleName;
     _amtTitleLabel.text = [NSString stringWithFormat:@"%.2f",[_AmtNO floatValue]];
     req = [[Request alloc] initWithDelegate:self];

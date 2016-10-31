@@ -17,6 +17,7 @@
 @property (nonatomic,strong) NSArray *infoArr;
 @property (nonatomic,strong) NSString *titleName;
 
+@property (nonatomic,strong) NSString *openShowLab1Str;
 
 
 @end

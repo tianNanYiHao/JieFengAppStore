@@ -142,6 +142,7 @@
     ZFBVc.merchantId = merchantId;
     ZFBVc.productId = productId;
     ZFBVc.titleName = @"支付宝收款二维码";
+    ZFBVc.openShowLab1Str = @"请打开支付宝扫一扫该二维码";
     
     LFFStringarr *lff = [[LFFStringarr alloc]init];
     LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];

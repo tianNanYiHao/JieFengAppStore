@@ -8195,6 +8195,7 @@
                     <connections>
                         <outlet property="amtTitleLabel" destination="Zup-II-4Av" id="spT-T3-Fo8"/>
                         <outlet property="ewmImageViw" destination="lbj-gC-51V" id="HHr-qI-qBk"/>
+                        <outlet property="openShowLab1" destination="UQF-bm-u6A" id="7GS-01-2Lf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRs-ry-5QT" userLabel="First Responder" sceneMemberID="firstResponder"/>

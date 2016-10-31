@@ -32,6 +32,7 @@
     NSString *payTool;
     NSString *merchorder_No;
     UILongPressGestureRecognizer *singleTap;
+    UIButton *rightBtn;
     
 }
 @property (weak, nonatomic) IBOutlet UILabel *openShowLab1;//
@@ -113,6 +114,7 @@
     if (type == REQUSET_ORDER) {
         if ([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]) {
             _ewmImageViw.hidden = NO;
+            [self sharePicture];
             [self ImageViewAndTap];
         }else{
             [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
@@ -192,6 +194,18 @@
     //        [MBProgressHUD showHUDAddedTo:self.view WithString:@"二维码获取中..."];
     //    }
 }
+//分享二维码按钮
+- (void)sharePicture{
+    
+    rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [rightBtn setImage:[UIImage imageNamed:@"serve_more"] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(shareClickS:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
+}
 //设置imageView长按手势分享二维码
 - (void)ImageViewAndTap{
     _ewmImageViw.userInteractionEnabled = YES;
@@ -258,6 +272,7 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     _ewmImageViw.userInteractionEnabled = NO;
+    [rightBtn removeFromSuperview];
     [_ewmImageViw removeGestureRecognizer:singleTap];
 }
 @end

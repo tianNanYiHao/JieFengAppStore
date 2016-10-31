@@ -593,7 +593,7 @@
     if (indexPath.section == 4) {
         if (indexPath.row == 0){
             
-            cell.titleLabel.text = L(@"QuickPosCode");//快捷支付认证码
+            cell.titleLabel.text = @"激活码";//快捷支付认证码
             cell.logoImageView.image = [UIImage imageNamed:@"account_quick"];
             cell.UserQuantityLabel.hidden = YES;
             cell.Quantity.hidden = YES;

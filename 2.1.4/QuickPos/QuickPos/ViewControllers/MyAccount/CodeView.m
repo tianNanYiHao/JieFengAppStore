@@ -89,7 +89,7 @@
         
         NSString *code = codeTextF.text;
         if (code.length == 0) {
-            [self.delegate getRespDesc:@"请输入快捷支付认证码"];
+            [self.delegate getRespDesc:@"请输入激活码"];
         }
         else if (code.length != 11 && code.length != 16 )
         {
@@ -160,7 +160,7 @@
     if ([lab isEqualToString:L(@"NoRecord")]) {
         v.textType = NO;
         v.codeTextF.userInteractionEnabled = YES;
-        v.codeTextF.placeholder = @"请绑定快捷支付认证码..";
+        v.codeTextF.placeholder = @"请绑定激活码..";
     }
     else
     {

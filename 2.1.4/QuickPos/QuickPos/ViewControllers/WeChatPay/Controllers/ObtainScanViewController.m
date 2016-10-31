@@ -118,7 +118,7 @@
             NSLog(@"%@",self.psamid);
             if (self.psamid.length == 0) {
                 self.AmtTextField.userInteractionEnabled = NO;
-                [Common showMsgBox:nil msg:@"请先绑定快捷支付认证码" parentCtrl:self];
+                [Common showMsgBox:nil msg:@"请先绑定激活码.." parentCtrl:self];
             }else{
                 self.AmtTextField.userInteractionEnabled = YES;
             }

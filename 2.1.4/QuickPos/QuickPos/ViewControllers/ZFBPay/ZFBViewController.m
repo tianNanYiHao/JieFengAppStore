@@ -220,9 +220,7 @@
 
 //调整长按手势触发两次的问题
 -(void)shareClickS:(UILongPressGestureRecognizer *)sender
-
 {
-    
     if (sender.state == UIGestureRecognizerStateBegan) {
         //1、创建分享参数
         NSArray* imageArray = @[self.ewmImageViw.image];

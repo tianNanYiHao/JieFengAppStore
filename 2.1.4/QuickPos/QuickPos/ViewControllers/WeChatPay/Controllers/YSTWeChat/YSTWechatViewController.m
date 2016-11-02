@@ -68,11 +68,11 @@
 //tip
 - (void)PromptTip
 {
-    
-    UIView *tip = [Common tipWithStr:@"手续费:千五+2元(秒到)" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commitBtn.frame)+2, [UIApplication sharedApplication].keyWindow.width,40)];
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:@"YSTWX"];
+    UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commitBtn.frame)+2, [UIApplication sharedApplication].keyWindow.width,40)];
     [self.view addSubview:tip];
-    
 }
+
 //T+0 //T+1
 //- (IBAction)chooseBtn:(RadioButton*)sender {
 //    if (sender.tag == 11) {   //T+0
@@ -104,8 +104,6 @@
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_textfiledCash.text integerValue]<5 ){
         [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
-    }else if([_textfiledCash.text integerValue]>=50000 ){
-        [Common showMsgBox:@"" msg:@"收款金额请勿大于五万元" parentCtrl:self];
     }
     else  if ( (i %10) == 0){
         [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
@@ -117,7 +115,7 @@
         [Common showMsgBox:@"" msg:@"输入金额超限" parentCtrl:self];
     }
     else{
-        if (i/10>1) {
+        if (i/10>=1) {
             if ([[_textfiledCash.text substringFromIndex:[_textfiledCash.text length]-1] isEqualToString:[[_textfiledCash.text substringFromIndex:[_textfiledCash.text length]-2] substringToIndex:1]]){
                 [Common showMsgBox:nil msg:@"金额最后两位不能相同" parentCtrl:self];
             }else{
@@ -141,6 +139,7 @@
     WechatVc.merchantId = merchantId;
     WechatVc.productId = productId;
     WechatVc.titleName = @"微信收款二维码";
+    WechatVc.openShowLab1Str = @"请打开微信扫一扫该二维码，完成交易";
     WechatVc.infoArr = @[WXMERCHANTCODE,WXBACKURL,WXKEY,@"上海捷丰网络科技有限公司"];
     [self.navigationController pushViewController:WechatVc animated:YES];
 

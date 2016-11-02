@@ -35,6 +35,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"订单填写";
+    [self infoIN];
+    
     _personInfoArr = [[NSMutableArray alloc]init];
     self.view.backgroundColor =  [Common hexStringToColor:@"e4e4e4"];
     _view3A4.backgroundColor =  [Common hexStringToColor:@"e4e4e4"];
@@ -43,6 +45,20 @@
     
     
 }
+-(void)infoIN{
+    _addfromlab.text = _addfrom;
+    _addtoLab.text = _addto;
+    _tiamFromLab.text = _timefrom;
+    _timaToLab.text = _timeto;
+    _TicketLab.text = _ticketKind;
+    _dayFromLab.text = _dayFrom;
+    _dayToLab.text = _dayTo;
+    _trickTimeLab.text = _trickTime;
+    _ticketInfoLab.text = _ticketInfo;
+    
+
+}
+
 -(void)createScrollView{
     
     _scrollViewBG = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -70,10 +86,10 @@
 //点击选可售票
 - (IBAction)chooseTicketClick:(id)sender {
     PSTAlertController *psta = [PSTAlertController alertControllerWithTitle:nil message:@"请选择您的坐席信息" preferredStyle:PSTAlertControllerStyleActionSheet];
-    NSArray *arr  = @[@"二等座¥250",@"一等座¥553",@"商务座¥990"];
-    for (int i= 0; i<arr.count; i++) {
-        [psta addAction:[PSTAlertAction actionWithTitle:arr[i] handler:^(PSTAlertAction * _Nonnull action) {
-            _ticketInfoLab.text = arr[i];
+    for (int i= 0; i<_ticekMoneyArr.count; i++) {
+        [psta addAction:[PSTAlertAction actionWithTitle:_ticekMoneyArr[i] handler:^(PSTAlertAction * _Nonnull action) {
+            _ticketInfoLab.text = _ticekMoneyArr[i];
+           [self getMoneyAllPersonAll];
         }]];
     }
     [psta showWithSender:nil controller:self animated:YES completion:NULL];
@@ -84,22 +100,46 @@
 }
 //提交订单
 - (IBAction)upOrderClick:(id)sender {
-    TickerOrderSureViewController *sure = [[TickerOrderSureViewController alloc] initWithNibName:@"TickerOrderSureViewController" bundle:nil];
-    [self.navigationController pushViewController:sure animated:YES];
-    
-    
+    if (_personInfoArr.count == 0) {
+        [MBProgressHUD showHUDAddedTo:self.view WithString:@"请添加乘车人信息"];
+    }
+    else if (_phoneNumber.text.length == 0) {
+        [MBProgressHUD showHUDAddedTo:self.view WithString:@"请输入手机号"];
+    }else{
+        TickerOrderSureViewController *sure = [[TickerOrderSureViewController alloc] initWithNibName:@"TickerOrderSureViewController" bundle:nil];
+        
+        sure.addfrom = _addfrom;
+        sure.addto = _addto;
+        sure.timefrom= _timefrom;
+        sure.timeto = _timeto;
+        sure.ticketKind = _ticketKind;
+        sure.dayFrom = _dayFrom;
+        sure.dayTo = _dayTo;
+        sure.trickTime = _trickTime;
+        sure.personArray = _personInfoArr;
+        
+        NSString *s = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][0];
+        NSString *s2 = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][1];
+        sure.personTickKind = s;
+        sure.persionTickMoney = [NSString stringWithFormat:@"¥%@",s2];
+        
+        [self.navigationController pushViewController:sure animated:YES];
+    }
+
 }
 //添加乘客信息
 - (IBAction)addPersonClick:(id)sender {
     
     AddPersonInfoViewController *perinfo = [[AddPersonInfoViewController alloc] initWithNibName:@"AddPersonInfoViewController" bundle:nil];
-    [perinfo comeBackBlock:^(NSString *name, NSString *perSonID) {
+    [perinfo comeBackBlock:^(NSString *name, NSString *perSonID,NSDictionary *personDict) {
         NSDictionary * dict = [NSDictionary new];
          dict =  @{@"name":name,@"perSonID":perSonID};
+        NSLog(@"%@",[NSString stringWithFormat:@"%@",personDict]);
         [_personInfoArr addObject:dict];
         if (personTableView) {
             [personTableView removeFromSuperview];
         }
+        [self getMoneyAllPersonAll];
         personTableView = [[UITableView alloc] init];
         personTableView.delegate = self;
         personTableView.dataSource = self;
@@ -115,7 +155,13 @@
     
     [self.navigationController pushViewController:perinfo animated:YES];
 }
-
+-(void)getMoneyAllPersonAll{
+    NSString *s = [_ticketInfoLab.text componentsSeparatedByString:@"¥"][1];
+    float f = [s floatValue];
+    _moneyAll.text = [NSString stringWithFormat:@"¥ %.1f", f *_personInfoArr.count];
+    _personAll.text = [NSString stringWithFormat:@"%ld 人",(long)_personInfoArr.count];
+    
+}
 #pragma  mark - tabledelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _personInfoArr.count;
@@ -150,6 +196,7 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_personInfoArr removeObjectAtIndex:indexPath.row];
+        [self getMoneyAllPersonAll];
         [personTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         [personTableView reloadData];
         

@@ -7,6 +7,7 @@
 //
 
 #import "TrickDetailShowCell.h"
+#import "TrickListInfoModel.h"
 
 @implementation TrickDetailShowCell
 
@@ -20,5 +21,15 @@
 
     // Configure the view for the selected state
 }
+
+- (IBAction)yudingBtnClick:(id)sender {
+    if ([_delegate respondsToSelector:@selector(trickDetailShowBtnClickYuDing:)]) {
+        [_delegate trickDetailShowBtnClickYuDing:_yudingBtn.tag];
+    }
+    
+}
+
+
+
 
 @end

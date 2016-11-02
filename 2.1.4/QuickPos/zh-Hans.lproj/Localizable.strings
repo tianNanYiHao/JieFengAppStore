@@ -229,7 +229,7 @@
 
 "MyCreditCardMachine" = "我的刷卡器";
 
-"QuickPosCode" = "快捷支付认证码";
+"QuickPosCode" = "激活码";
 
 "MyMessage" = "我的消息";
 
@@ -237,11 +237,11 @@
 
 "NoTitle" = "无标题";
 
-"PleaseInputQuickCode" = "请输入快捷支付认证码";
+"PleaseInputQuickCode" = "请输入激活码";
 
 "InputSixteenCode" = "请输入16位认证码";
 
-"InputRightCode" = "认证码错误,请联系代理商";
+"InputRightCode" = "激活错误,请联系代理商";
 
 /**************退出登录提示***************/
 

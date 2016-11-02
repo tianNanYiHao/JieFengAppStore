@@ -10,7 +10,7 @@
 #import "TicketOrderViewController.h"
 #import "TrickListInfoModel.h"
 #import "TrickDetailShowCell.h"
-@interface TicketDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface TicketDetailViewController ()<UITableViewDelegate,UITableViewDataSource,TrickDetailShowCellDelegate>
 {
     UITableView *_tirckDetailTableview;
     NSMutableArray *_ticketKindArray;
@@ -70,21 +70,20 @@
     
     //判断车票类型+构建数据源
     _ticketKindArray = [NSMutableArray arrayWithCapacity:0];
-    
-    
-    
-    
-    _tirckDetailTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NEWWIDTH, 4*50)];
+    _ticketKindArray =  [_detaiIinfoModel ticketKindWitNum];
+
+    _tirckDetailTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NEWWIDTH, _ticketKindArray.count*50)];
     _tirckDetailTableview.delegate = self;
     _tirckDetailTableview.dataSource = self;
     [_tirckDetailTableview registerNib:[UINib nibWithNibName:@"TrickDetailShowCell" bundle:nil] forCellReuseIdentifier:@"TrickDetailShow"];
+    _tirckDetailTableview.scrollEnabled = NO;
     [self.view addSubview:_tirckDetailTableview];
     
     [_tirckDetailTableview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_chooseV1.mas_left);
         make.width.mas_offset(NEWWIDTH);
         make.top.mas_equalTo(_infoView.maxY+20);
-//        make.bottom.mas_equalTo([UIApplication sharedApplication].keyWindow.maxY-100);
+        make.height.mas_offset([_ticketKindArray[0] count]*50);
     }];
     
 }
@@ -99,19 +98,11 @@
 //- (IBAction)afterDayClick:(id)sender {
 //}
 
-//二等座预定
-- (IBAction)yudingClick1:(id)sender {
-    TicketOrderViewController *order = [[TicketOrderViewController alloc] initWithNibName:@"TicketOrderViewController" bundle:nil];
-    [self.navigationController pushViewController:order animated:YES];
-    
-}
-
 
 
 #pragma mark - tableViewDelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
-    
+    return [_ticketKindArray[0] count];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -121,15 +112,50 @@
     static NSString *SS = @"TrickDetailShow";
     
     TrickDetailShowCell *cell = [tableView dequeueReusableCellWithIdentifier:SS forIndexPath:indexPath];
+    
+    NSArray *namearr =  _ticketKindArray[0];
+    NSArray *numarr =  _ticketKindArray[1];
+    NSArray *pricearr =  _ticketKindArray[2];
+    
+    cell.chearLab.text = namearr[indexPath.row];
+    cell.moneyOne.text = pricearr[indexPath.row];
+    cell.ticketCountOne.text =[NSString stringWithFormat:@"%@ 张",numarr[indexPath.row]];
+    cell.yudingBtn.tag = indexPath.row+1;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.delegate = self;
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+#pragma mark - tirckDetaiShowCellDelegate
+-(void)trickDetailShowBtnClickYuDing:(NSInteger)index{
+    NSInteger indexRow = index-1;
+    NSArray *namearr =  _ticketKindArray[0];
+    NSArray *pricearr =  _ticketKindArray[2];
+    NSMutableArray *arrM = [NSMutableArray arrayWithCapacity:0];
+    for (int i = 0 ; i<namearr.count;  i++  ) {
+        NSString *s = [NSString new];
+        s = [NSString stringWithFormat:@"%@ ¥%@",namearr[i],pricearr[i]];
+        [arrM addObject:s];
+    }
     
-    NSLog(@"132");
+    
+    
+    TicketOrderViewController *order = [[TicketOrderViewController alloc] initWithNibName:@"TicketOrderViewController" bundle:nil];
+    
+    order.addfrom =  _addfromlab.text;
+    order.addto = _addtoLab.text;
+    order.timefrom = _tiamFromLab.text;
+    order.timeto = _timaToLab.text;
+    order.ticketKind = _TicketLab.text;
+    order.dayFrom = _dayFromLab.text;
+    order.dayTo = _dayToLab.text;
+    order.trickTime = _trickTimeLab.text;
+    order.ticketPriceArr = _ticketKindArray[2];
+    order.ticketInfo = [NSString stringWithFormat:@"%@ ¥%@",namearr[indexRow],pricearr[indexRow]];
+    order.indexRow = indexRow;
+    order.ticekMoneyArr = arrM;
+    [self.navigationController pushViewController:order animated:YES];
     
 }
-
-
 
 -(NSString*)separStr:(NSString*)str{
     NSArray *arr =  [str componentsSeparatedByString:@":"];

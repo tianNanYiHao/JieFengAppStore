@@ -53,9 +53,7 @@
 
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type {
     if (type == REQUEST_USERAGREEMENT && [@"0000" isEqualToString:[dict objectForKey:@"respCode"]]) {
-        
         NSString *device = @"111101";
-        
         NSDictionary *agreement = [[dict objectForKey:@"data"] objectForKey:@"agreementInfo"];
         if (agreement && [agreement isKindOfClass:[NSDictionary class]]) {
             device = [agreement objectForKey:@"posDevice"];
@@ -90,8 +88,8 @@
         }
         // 这里处理获取的频道信息
         //        [[UserBaseData getInstance] setDevice:device];
-        
     }
+
 //    if (type == REQUEST_CLIENTUPDATE && [@"0000" isEqualToString:[dict objectForKey:@"respCode"]]) {
 //        
 //        if([[dict objectForKey:@"application"] isEqualToString:@"ClientUpdate2.Rsp"]) {
@@ -157,9 +155,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //计数
-    NSString *ii = @"0";
-    [[NSUserDefaults standardUserDefaults] setObject:ii forKey:@"ii"];
+    NSString *ii;
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"ii"] length] == 0) {
+        
+    }else{
+        ii = [[NSUserDefaults standardUserDefaults] objectForKey:@"ii"];
+        [[NSUserDefaults standardUserDefaults] setObject:ii forKey:@"ii"];
+    }
     
+    //获取tips
+    [[[Request alloc] initWithDelegate:self] getTipsInfo];
     
     //一句代码实现检测更新
     [self hsupdateAppFromAppStore];

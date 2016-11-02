@@ -118,7 +118,7 @@
 //    OperationManualVc.titleName = @"快捷支付认证码";
 //    [self.navigationController pushViewController:OperationManualVc animated:YES];
     
-        [self gotoviewstr:@"快捷支付认证码.png" strname:@"快捷支付认证码"];
+        [self gotoviewstr:@"快捷支付认证码.png" strname:@"激活码"];
     
 }
 

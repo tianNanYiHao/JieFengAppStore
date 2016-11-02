@@ -81,10 +81,10 @@
 //tip
 - (void)PromptTip
 {
-    UIView *tip = [Common tipWithStr:@"手续费=千分之五+2元" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+270, self.view.frame.size.width, 40)];
+    
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:@"YSTZFB"];
+    UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+270, self.view.frame.size.width, 40)];
     [self.view addSubview:tip];
-//    UIView *tip1 = [Common tipWithStr:@"T+1 手续费=收款金额*0.0055" color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_comfirt.frame)+300, self.view.frame.size.width, 40)];
-//    [self.view addSubview:tip1];
 
 }
 
@@ -108,8 +108,6 @@
         [Common showMsgBox:@"" msg:@"请输入收款金额" parentCtrl:self];
     }else if([_AmtTextField.text integerValue]<5 ){
         [Common showMsgBox:@"" msg:@"收款金额请勿小于5元" parentCtrl:self];
-    }else if([_AmtTextField.text integerValue]>=10000 ){
-        [Common showMsgBox:@"" msg:@"收款金额请勿大于一万元" parentCtrl:self];
     }
     else  if ( (i %10) == 0){
         [Common showMsgBox:@"" msg:@"金额不能为整数" parentCtrl:self];
@@ -121,7 +119,7 @@
         [Common showMsgBox:@"" msg:@"输入金额超限" parentCtrl:self];
     }
     else{
-        if (i/10>1) {
+        if (i/10>=1) {
             if ([[_AmtTextField.text substringFromIndex:[_AmtTextField.text length]-1] isEqualToString:[[_AmtTextField.text substringFromIndex:[_AmtTextField.text length]-2] substringToIndex:1]]){
                 [Common showMsgBox:nil msg:@"金额最后两位不能相同" parentCtrl:self];
             }else{
@@ -144,6 +142,7 @@
     ZFBVc.merchantId = merchantId;
     ZFBVc.productId = productId;
     ZFBVc.titleName = @"支付宝收款二维码";
+    ZFBVc.openShowLab1Str = @"请打开支付宝扫一扫该二维码，完成交易";
     
     LFFStringarr *lff = [[LFFStringarr alloc]init];
     LFFJieFengCompenyInfo *mode =   [lff getJieFengCompenyInfoModel];

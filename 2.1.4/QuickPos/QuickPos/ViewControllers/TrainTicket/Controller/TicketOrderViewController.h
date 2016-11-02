@@ -20,11 +20,26 @@
 @property (weak, nonatomic) IBOutlet UILabel *dayToLab;//终点日期
 @property (weak, nonatomic) IBOutlet UILabel *trickTimeLab;//旅行时间
 
+@property (nonatomic,strong) NSString *addfrom;
+@property (nonatomic,strong) NSString *addto;
+@property (nonatomic,strong) NSString *timefrom;
+@property (nonatomic,strong) NSString *timeto;
+@property (nonatomic,strong) NSString *ticketKind;
+@property (nonatomic,strong) NSString *dayFrom;
+@property (nonatomic,strong) NSString *dayTo;
+@property (nonatomic,strong) NSString *trickTime;
+
+
+@property (nonatomic,strong) NSArray *ticketPriceArr;
+@property (nonatomic,strong) NSString *ticketInfo; //票务信息str
+@property (nonatomic,strong) NSMutableArray *ticekMoneyArr; //坐席数据
+@property (nonatomic,assign) NSInteger indexRow;
+
+
 
 
 
 @property (weak, nonatomic) IBOutlet UILabel *ticketInfoLab;//票务信息
-
 @property (weak, nonatomic) IBOutlet UIImageView *addPersonBtn; //添加    imageView
 @property (weak, nonatomic) IBOutlet UIButton *addPersonbtn;//添加    btn
 

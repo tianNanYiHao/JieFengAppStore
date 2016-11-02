@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" colorMatched="YES" initialViewController="OJ6-Ip-iiJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" colorMatched="YES" initialViewController="OJ6-Ip-iiJ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -67,7 +67,7 @@
             <objects>
                 <viewController id="wKZ-7s-2pL" customClass="ChangePasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fuq-EP-dHE">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cXQ-Tq-Z65" customClass="TPKeyboardAvoidingScrollView">
@@ -235,7 +235,7 @@
             <objects>
                 <viewController storyboardIdentifier="transactionrecordsVC" id="dcH-a3-FeK" customClass="TransactionRecordsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xIT-Zy-f4Y">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -249,7 +249,7 @@
             <objects>
                 <viewController storyboardIdentifier="detailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gpe-lS-8dP" customClass="TransactionDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WpO-wX-LiN">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="tnD-Jd-V2n">
@@ -403,7 +403,7 @@
             <objects>
                 <viewController storyboardIdentifier="MyMessageViewControllerVC" id="lyQ-h9-Olg" customClass="MyMessageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GUc-Ig-Qhm">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hQS-3X-CcR">
@@ -481,7 +481,7 @@
             <objects>
                 <viewController storyboardIdentifier="MyChangePasswordVC" id="O77-pD-8a6" customClass="MyChangePasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NxN-0p-Q4k">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0zk-f1-oVh" customClass="TPKeyboardAvoidingScrollView">
@@ -601,7 +601,7 @@
             <objects>
                 <viewController storyboardIdentifier="LotteryViewController" id="SI0-kd-ADK" customClass="LotteryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vx0-YW-USP">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" id="0Qf-hI-cBJ" customClass="UserInfoView">
@@ -660,7 +660,7 @@
             <objects>
                 <viewController storyboardIdentifier="WaterElectricityCoalViewController" id="JWb-bq-18Y" customClass="WaterElectricityCoalViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCc-uf-Rjj">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xrM-NA-l8w">
@@ -691,7 +691,7 @@
             <objects>
                 <viewController storyboardIdentifier="CreditCardPayViewController" id="bi4-WE-Z59" customClass="CreditCardPayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jnh-7G-hIF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="83" sectionHeaderHeight="22" sectionFooterHeight="22" id="f7H-wB-UH4">
@@ -779,7 +779,7 @@
             <objects>
                 <viewController storyboardIdentifier="CreditCardPayDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cel-aB-oP6" customClass="CreditCardPayDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MLe-Pl-E7j">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="kJ8-RZ-VGA">
@@ -886,7 +886,7 @@
             <objects>
                 <viewController storyboardIdentifier="SetupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Zc-ji-fTw" customClass="SetupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lBR-sF-qHD">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Qhu-Yq-eX1">
@@ -939,7 +939,7 @@
             <objects>
                 <viewController storyboardIdentifier="MangeMoneyViewController" id="MoU-2K-bHA" customClass="MangeMoneyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ARa-Dr-OcH">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="7V7-Gc-dej">
@@ -963,7 +963,7 @@
             <objects>
                 <viewController id="7ax-rW-kIV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9w-aW-KIc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3sv-z5-ETA">
@@ -1014,7 +1014,7 @@
             <objects>
                 <viewController id="A0Y-Iy-GZ2" customClass="PayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XdO-km-fBm">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="u89-QE-54b">
@@ -1035,7 +1035,7 @@
             <objects>
                 <viewController storyboardIdentifier="NoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K7J-h0-OXY" customClass="NoteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kqV-bV-isp">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="goD-wh-gdw">
@@ -1065,7 +1065,7 @@
             <objects>
                 <viewController storyboardIdentifier="ConvenientServiceSB" id="S8P-EQ-59D" customClass="ConvenientServiceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYn-b2-8zk">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="qiM-QG-ek9">
@@ -1165,7 +1165,7 @@
             <objects>
                 <viewController id="uT5-KG-oYi" customClass="SettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vgs-UT-PwN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1180,7 +1180,7 @@
             <objects>
                 <viewController storyboardIdentifier="informationVC" title="完善用户资料" id="Ul5-ct-gfV" customClass="PerfectInformationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cF5-oi-6ME">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Wfk-Ga-iuY">
@@ -1271,7 +1271,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddBankcardVC" id="Hji-Js-CUM" customClass="AddBankcardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fS6-aG-f1k">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DLc-YR-Ize">
@@ -1521,7 +1521,7 @@
             <objects>
                 <viewController storyboardIdentifier="banklistVC" title="银行列表" id="mF2-2h-sVr" customClass="BankListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Szs-9a-Y5e">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="g2E-6Z-ljE">
@@ -1583,7 +1583,7 @@
             <objects>
                 <viewController id="yg6-OL-6TV" customClass="SigninViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XQT-K8-PIl">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Gal-Fq-nov" customClass="TPKeyboardAvoidingScrollView">
@@ -1731,7 +1731,7 @@
             <objects>
                 <viewController id="OHi-qL-n9h" customClass="UserAgreementViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FzS-CB-s4K" customClass="UserAgreement">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="8mQ-2I-0Dj">
@@ -1755,7 +1755,7 @@
             <objects>
                 <viewController storyboardIdentifier="provincesVC" id="d0D-5t-swl" customClass="AccountOfProvincesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ovj-pg-AAI">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="查询" id="Gsk-eC-cC7">
@@ -1821,7 +1821,7 @@
             <objects>
                 <viewController storyboardIdentifier="WithdrawalVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zdN-7n-f0W" userLabel="WithdrawalViewController" customClass="WithdrawalViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GhZ-FW-9zh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="15" sectionFooterHeight="15" id="EiG-o7-t3P">
@@ -1904,7 +1904,7 @@
             <objects>
                 <viewController storyboardIdentifier="takecashVC" id="W7d-e5-uJ0" customClass="TakeCashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PLP-NH-q5b">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="QP8-k5-gYh">
@@ -2105,7 +2105,7 @@
             <objects>
                 <viewController storyboardIdentifier="branchVC" id="mAm-WS-mqG" customClass="BankOfBranchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jo7-Cw-bYj">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cmJ-Op-k7o">
@@ -2168,7 +2168,7 @@
             <objects>
                 <viewController storyboardIdentifier="MyCreditCardMachineVC" id="Re6-sr-EMd" customClass="MyCreditCardMachineViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="15f-rm-xvS">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RII-mO-Xhg">
@@ -2228,7 +2228,7 @@
             <objects>
                 <viewController storyboardIdentifier="cityVC" id="rYG-Le-9uO" customClass="AccountOfCityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cyv-Nw-Hah">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="查询" id="j0V-V2-JRr">
@@ -2380,7 +2380,7 @@
             <objects>
                 <viewController storyboardIdentifier="loginVC" id="zHd-on-qsk" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="60K-AN-NWo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" id="GeN-dV-SYC">
@@ -2504,7 +2504,7 @@
             <objects>
                 <viewController storyboardIdentifier="ShoppingCartViewController" id="juy-gD-Rb1" customClass="ShoppingCartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sbT-j6-wxc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="22" sectionFooterHeight="22" id="fEo-Ts-SSb">
@@ -2637,7 +2637,7 @@
             <objects>
                 <viewController storyboardIdentifier="MallViewController" id="bM8-SV-eO4" customClass="MallViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hds-8Q-eiM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="wvp-BR-KEu" userLabel="shopcar">
@@ -3795,7 +3795,7 @@
             <objects>
                 <viewController storyboardIdentifier="TransferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TSg-t3-6hr" customClass="TransferViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GTa-a4-a04">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ibg-dl-LwJ">
@@ -3966,7 +3966,7 @@
             <objects>
                 <viewController storyboardIdentifier="BalanceEnquiryViewController" id="hhm-Jd-jph" customClass="BalanceEnquiryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1M9-IY-MNB">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="GaL-0s-EfM">
@@ -4079,7 +4079,7 @@
             <objects>
                 <viewController id="ioI-aj-x1f" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Nq-as-eLB">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -4093,7 +4093,7 @@
             <objects>
                 <viewController storyboardIdentifier="PhoneRechargeViewController" id="qs4-EF-PyS" customClass="PhoneRechargeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VrZ-JJ-UQh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="DVf-Ni-DVz">
@@ -4262,7 +4262,7 @@
             <objects>
                 <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6uT-et-O2W" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="60f-35-fpx">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="56m-fq-k2G">
@@ -4287,7 +4287,7 @@
             <objects>
                 <viewController storyboardIdentifier="EditMallViewController" id="Vgp-qC-FVa" customClass="EditMallViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uob-Op-F3R">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="xMa-u4-Ecj">
@@ -4487,7 +4487,7 @@
             <objects>
                 <viewController storyboardIdentifier="RechargeFixedViewController" id="o3O-4x-bcO" customClass="RechargeFixedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EVw-h5-A3k">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="utL-Ap-094">
@@ -4671,7 +4671,7 @@
             <objects>
                 <viewController storyboardIdentifier="TransferAccountViewController" id="J9w-wx-Vsj" customClass="TransferAccountViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NjZ-NF-FYC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="c2y-Ac-cSf">
@@ -4746,7 +4746,7 @@
             <objects>
                 <viewController storyboardIdentifier="OrderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UWX-ge-dbo" customClass="OrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wnv-ax-NRx">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="aur-ut-heV" customClass="UserInfoView">
@@ -4824,28 +4824,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sOf-fe-bKf">
-                                        <frame key="frameInset" minY="25" width="70.28%" height="21" maxX="13"/>
+                                        <frame key="frameInset" minY="25" width="70.52%" height="21" maxX="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.24983558058738708" green="0.25857910513877869" blue="0.31078270077705383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lCH-9H-zYX">
-                                        <frame key="frameInset" minY="97" width="70.28%" height="21" maxX="13"/>
+                                        <frame key="frameInset" minY="97" width="70.52%" height="21" maxX="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.24983558058738708" green="0.25857910513877869" blue="0.31078270077705383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ofa-7j-RBh">
-                                        <frame key="frameInset" minY="137" width="70.28%" height="21" maxX="13"/>
+                                        <frame key="frameInset" minY="137" width="70.52%" height="21" maxX="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.24983558058738708" green="0.25857910513877869" blue="0.31078270077705383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xI6-tN-Ubp">
-                                        <frame key="frameInset" minY="61" width="70.28%" height="21" maxX="13"/>
+                                        <frame key="frameInset" minY="61" width="70.52%" height="21" maxX="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.24983558058738708" green="0.25857910513877869" blue="0.31078270077705383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4930,7 +4930,7 @@
             <objects>
                 <viewController storyboardIdentifier="touxiangVC" id="NTv-oH-hRB" customClass="HeadPhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b7l-Cb-ruv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S9b-Bl-VS8">
@@ -4980,7 +4980,7 @@
             <objects>
                 <viewController storyboardIdentifier="IDcardPositiveVC" id="Hyu-gy-qK1" customClass="TakingIDcardPositiveViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lbt-XC-jBG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account_positive_sample" id="DcK-Tw-30F">
@@ -5030,7 +5030,7 @@
             <objects>
                 <viewController storyboardIdentifier="IDcardReverseVC" id="Rbj-0G-QAi" customClass="TakingIDcardReverseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HdM-kw-PO8">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account_reverse_sample" id="X1Q-rP-45j">
@@ -5080,7 +5080,7 @@
             <objects>
                 <viewController storyboardIdentifier="MangePayViewController" id="TF8-ts-tRo" customClass="MangePayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ftC-p8-fku">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="2F8-xI-byp">
@@ -5241,15 +5241,15 @@
             <objects>
                 <tableViewController id="W4w-B6-hCr" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hDX-XK-TYY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jNz-cQ-CE6">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jNz-cQ-CE6" id="X9w-2p-AgO">
-                                    <frame key="frameInset" width="320" height="43"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -5269,7 +5269,7 @@
             <objects>
                 <viewController storyboardIdentifier="CompaniesViewController" id="e24-AS-kRI" customClass="CompaniesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r3z-HK-oM7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sJk-U5-S2p">
@@ -5290,7 +5290,7 @@
             <objects>
                 <viewController storyboardIdentifier="AuthenticationEnterpriseVc" id="Qkc-Gv-PC4" customClass="AuthenticationEnterpriseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GGu-Cz-dz7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -5323,7 +5323,7 @@
             <objects>
                 <viewController storyboardIdentifier="FoodQueryVC" title="防伪验证" id="dyu-j8-lDU" customClass="FoodQueryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cdR-Gg-j6E">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="OWK-1c-Xoo">
@@ -5385,7 +5385,7 @@
             <objects>
                 <viewController storyboardIdentifier="FoodDataVC" id="ljA-uf-chI" customClass="FoodDataViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nna-IZ-QsG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AzU-AL-0PB">
@@ -5446,7 +5446,7 @@
             <objects>
                 <viewController storyboardIdentifier="SweepViewVC" id="khA-08-WFH" customClass="SweepViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XCx-vY-GbQ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fW9-wZ-IOX">
@@ -5470,7 +5470,7 @@
             <objects>
                 <viewController id="VmG-ob-rAD" customClass="NudgedTableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T1E-QF-MBY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nfc" id="ZPO-qh-G7e">
@@ -5490,7 +5490,7 @@
             <objects>
                 <viewController storyboardIdentifier="RechargeViewVC" id="NRf-yh-4rR" customClass="RechargeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nMd-yP-xcB">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="d5d-ph-CoI">
@@ -5711,20 +5711,6 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="详细区别,请点击右上角查看费率说明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L5z-qS-m4U">
-                                        <frame key="frameInset" minX="20" minY="252" width="230" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="刷卡费率 千7 单笔手续费最低1元  刷卡完成后需手动提现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5L-68-BeX">
-                                        <frame key="frameInset" minX="20" minY="237" width="300" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -5732,8 +5718,6 @@
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="ExplainLabel1" destination="h5L-68-BeX" id="mR2-rV-4Vc"/>
-                        <outlet property="ExplainLabel2" destination="L5z-qS-m4U" id="ptA-ao-T7J"/>
                         <outlet property="bottomView" destination="kBw-Dx-uSd" id="yNT-5W-BDT"/>
                         <outlet property="button1" destination="AYe-bg-Cmv" id="9ah-3A-zaX"/>
                         <outlet property="button2" destination="kqb-Mv-bxb" id="jHR-aZ-BHf"/>
@@ -5765,7 +5749,7 @@
             <objects>
                 <viewController storyboardIdentifier="CardToCardPay" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sq4-DR-wkW" customClass="CardToCardPayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yQf-mQ-m36">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="wB7-j3-p3v">
@@ -5952,7 +5936,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCreditCardVC" id="tQ4-6x-kzS" customClass="AddCreditCardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SOr-F1-7jJ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1xU-wL-HVb">
@@ -6202,7 +6186,7 @@
             <objects>
                 <viewController storyboardIdentifier="DetailOriginOfGoodsViewController" id="Sxs-Yd-dLN" customClass="DetailOriginOfGoodsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RtB-XA-ZJr">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="PWS-FG-7Yb">
@@ -6340,7 +6324,7 @@
             <objects>
                 <viewController id="3Le-nN-Pw8" customClass="OriginQueryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fUn-qE-WLb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="JAW-xt-rNl">
@@ -6489,7 +6473,7 @@
             <objects>
                 <viewController storyboardIdentifier="WeChatBankListVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IGN-Q0-jzo" userLabel="WeChatBankListViewController" customClass="WeChatBankListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b6l-Bu-l8e">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="15" sectionFooterHeight="15" id="Slx-ZG-Mej" userLabel="WeChatList Table View">
@@ -6568,7 +6552,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddWeChatBankcardVC" id="nFi-kl-Q7S" customClass="AddWeChatBankcardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TRL-EW-8O1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="upr-MV-efC">
@@ -6832,7 +6816,7 @@
             <objects>
                 <viewController storyboardIdentifier="ObtainScanVc" id="fVj-6X-gB4" customClass="ObtainScanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HPO-AN-mxC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="lv3-hd-PCG">
@@ -6882,7 +6866,7 @@
             <objects>
                 <viewController storyboardIdentifier="DisplayScanVc" id="2JC-nJ-BAZ" customClass="DisplayScanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ni8-SY-vjy">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="utY-g4-bTo">
@@ -6936,7 +6920,7 @@
             <objects>
                 <viewController id="X8E-4X-eKg" customClass="MyAccountViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zGW-tX-5a5">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Y8k-W1-GlT">
@@ -7180,7 +7164,7 @@
             <objects>
                 <viewController storyboardIdentifier="MyRunSubWithdrawVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lbh-mS-FL3" userLabel="MyRunSubWithdrawViewController" customClass="MyRunSubWithdrawViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1eJ-Qg-TjF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="15" sectionFooterHeight="15" id="0LG-Vx-nTz">
@@ -7263,7 +7247,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddRunSubBankcardVc" id="sDc-bs-Hb1" customClass="AddRunSubBankcardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26Z-nI-bSY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HC2-Y6-aGy">
@@ -7513,7 +7497,7 @@
             <objects>
                 <viewController storyboardIdentifier="MyRunSubTakeCashVc" id="lFU-Mx-bew" customClass="MyRunSubTakeCashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OeV-pA-ujK">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ddy-v1-MR9">
@@ -7734,6 +7718,11 @@
                         <outlet property="getCodeButton" destination="lAl-29-M9f" id="Qyt-uQ-UMh"/>
                         <outlet property="headImageView" destination="4U9-H0-pDO" id="mKG-4X-80f"/>
                         <outlet property="infoView" destination="ddy-v1-MR9" id="aLw-w9-ZkQ"/>
+                        <outlet property="l1" destination="zhd-hW-NaL" id="Rqq-fp-oBP"/>
+                        <outlet property="l2" destination="Ket-eh-0uL" id="BvJ-Ay-QBU"/>
+                        <outlet property="l3" destination="vAu-dc-Nu3" id="2Ni-W5-Oic"/>
+                        <outlet property="l4" destination="8VH-uQ-sZM" id="4Tq-kh-UOl"/>
+                        <outlet property="l5" destination="EWc-u5-n0J" id="wEP-pI-yFQ"/>
                         <outlet property="mobileMacTextField" destination="KRG-KB-52S" id="HD4-f6-bil"/>
                         <outlet property="normalButton" destination="uai-qT-9hw" id="eu6-3w-iXK"/>
                         <outlet property="passwordTextField" destination="eBP-2x-BxY" id="5Bn-mw-UZY"/>
@@ -7742,14 +7731,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8X-aH-gRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="3260"/>
+            <point key="canvasLocation" x="1822" y="3254"/>
         </scene>
         <!--ZFBBankCardListViewController-->
         <scene sceneID="euu-CT-7fl">
             <objects>
                 <viewController storyboardIdentifier="ZFBBankCardListVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Vj-wh-0zF" userLabel="ZFBBankCardListViewController" customClass="ZFBBankCardListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kOg-oU-QO5">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="15" sectionFooterHeight="15" id="WJu-2g-feu">
@@ -7832,7 +7821,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddZFBBankcardVc" id="Es4-NF-t6e" customClass="AddZFBBankcardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Et0-gv-YV7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="C5O-qA-Yed">
@@ -8082,7 +8071,7 @@
             <objects>
                 <viewController storyboardIdentifier="ZFBReceivablesVc" id="gTI-q4-mfZ" customClass="ZFBReceivablesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pip-jf-vKp">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="20E-ws-ghJ">
@@ -8158,16 +8147,16 @@
             <objects>
                 <viewController storyboardIdentifier="ZFBVc" id="HfS-3e-j1x" customClass="ZFBViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w6m-aA-T63">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="7GR-xb-7Hk">
                                 <frame key="frameInset" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请打开支付宝扫一扫该二维码" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UQF-bm-u6A">
-                                        <frame key="frameInset" minX="60" minY="300" width="320" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="请打开支付宝扫一扫该二维码" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UQF-bm-u6A">
+                                        <frame key="frameInset" minY="300" width="100.00%" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -8186,9 +8175,9 @@
                                         <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交易详情请在交易记录中查看" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Emp-hh-8jX">
-                                        <frame key="frameInset" minX="60" minY="321" width="320" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="长按二维码或点击右上角进行分享" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Emp-hh-8jX">
+                                        <frame key="frameInset" minY="321" width="100.00%" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -8206,6 +8195,7 @@
                     <connections>
                         <outlet property="amtTitleLabel" destination="Zup-II-4Av" id="spT-T3-Fo8"/>
                         <outlet property="ewmImageViw" destination="lbj-gC-51V" id="HHr-qI-qBk"/>
+                        <outlet property="openShowLab1" destination="UQF-bm-u6A" id="7GS-01-2Lf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRs-ry-5QT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8217,7 +8207,7 @@
             <objects>
                 <viewController storyboardIdentifier="InstructionsForUseVc" id="Zr2-qb-6HS" customClass="InstructionsForUseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sWI-kB-il1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="hCv-XZ-cFi">
@@ -8357,7 +8347,7 @@
                                         <frame key="frameInset" minY="225" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快捷支付认证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3h5-71-cza">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="激活码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3h5-71-cza">
                                                 <frame key="frameInset" minX="8" minY="10" width="103" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -8622,7 +8612,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="YCU-um-l3x"/>

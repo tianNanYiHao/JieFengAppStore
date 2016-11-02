@@ -51,6 +51,7 @@
 @property (nonatomic,strong) NSString *controlled_train_flag ;
 
 
+-(NSMutableArray*)ticketKindWitNum;
 
 
 @end

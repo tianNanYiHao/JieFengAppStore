@@ -484,8 +484,8 @@ enum{
 //3.2 登录12306
 -(void)logIN12306TermId:(NSString*)termID orgID:(NSString*)orgid busType:(NSString*)busType userName:(NSString*)username password:(NSString*)password;
 //3.3下单接口
--(void)getProOrdNoWithtermId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE checi:(NSString*)checI from_station_code:(NSString*)from_station_codE from_station_name:(NSString*)from_station_namE to_station_code:(NSString*)to_station_codE to_station_name:(NSString*)to_station_namE train_date:(NSString*)train_datE
-                  passengers:(NSString*)passengerS mobile:(NSString*)mobilE zmoney:(NSString*)zmoneY uprice:(NSString*)upricE fee:(NSString*)feE count:(NSString*)counT;
+-(void)getProOrdNoWithcheci:(NSString*)checI from_station_code:(NSString*)from_station_codE from_station_name:(NSString*)from_station_namE to_station_code:(NSString*)to_station_codE to_station_name:(NSString*)to_station_namE train_date:(NSString*)train_datE
+                 passengers:(NSString*)passengerS mobile:(NSString*)mobilE zmoney:(NSString*)zmoneY uprice:(NSString*)upricE fee:(NSString*)feE count:(NSString*)counT;
 //3.4 习正业务处理接口(出票)
 -(void)getTrainTicketsWithprdOrdNo:(NSString*)prdOrdNO termId:(NSString*)termID orgId:(NSString*)orgID busType:(NSString*)busTypE isGrab:(NSString*)isGraB deadline:(NSString*)deadlinE;
 //4.1支付宝 / 微信 预下单接口
@@ -498,7 +498,9 @@ enum{
 
 
 
-
+//////////////////////////////////////tipsInfoGet///////////////////////////////////////
+//获取tips
+-(void)getTipsInfo;
 
 
 

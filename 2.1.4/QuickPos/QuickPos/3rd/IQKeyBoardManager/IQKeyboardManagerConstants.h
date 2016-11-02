@@ -25,9 +25,9 @@
 #define IQKeyboardManagerConstants_h
 
 /* Set IQKEYBOARDMANAGER_DEBUG=1 in preprocessor macros under build settings to enable debugging.*/
-#if !IQKEYBOARDMANAGER_DEBUG
-#define NSLog(...)
-#endif
+//#if !IQKEYBOARDMANAGER_DEBUG
+//#define NSLog(...)
+//#endif
 
 
 /*!

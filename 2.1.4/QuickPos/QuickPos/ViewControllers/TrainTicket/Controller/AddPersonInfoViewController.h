@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^AddPersonBlock)(NSString *name , NSString *perSonID);
+typedef void (^AddPersonBlock)(NSString *name , NSString *perSonID,NSDictionary *personDict);
 
 @interface AddPersonInfoViewController : UIViewController
 @property (nonatomic,strong)AddPersonBlock block;

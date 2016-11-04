@@ -83,6 +83,9 @@
 		33F257411D62BC6600A4ECC0 /* ZFBBankCardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F257401D62BC6600A4ECC0 /* ZFBBankCardListViewController.m */; };
 		33F257441D62C40800A4ECC0 /* AddZFBBankcardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F257431D62C40800A4ECC0 /* AddZFBBankcardViewController.m */; };
 		33F2574A1D62EFDA00A4ECC0 /* ZFBReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F257491D62EFDA00A4ECC0 /* ZFBReceivablesViewController.m */; };
+		33F398761DCC771D0000520C /* ImessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F398711DCC771D0000520C /* ImessageDetailViewController.m */; };
+		33F398771DCC771D0000520C /* MyImessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F398731DCC771D0000520C /* MyImessageTableViewCell.m */; };
+		33F398781DCC771D0000520C /* MyImessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F398751DCC771D0000520C /* MyImessageViewController.m */; };
 		33FBC8601D9B6CFE00986D9A /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC85F1D9B6CFE00986D9A /* Common.m */; };
 		33FDAE5F1D66F13D00AACC61 /* AddCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FDAE5A1D66F13D00AACC61 /* AddCreditCardViewController.m */; };
 		33FDAE601D66F13D00AACC61 /* CreditCardPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FDAE5C1D66F13D00AACC61 /* CreditCardPayDetailViewController.m */; };
@@ -880,6 +883,12 @@
 		33F257431D62C40800A4ECC0 /* AddZFBBankcardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddZFBBankcardViewController.m; sourceTree = "<group>"; };
 		33F257481D62EFDA00A4ECC0 /* ZFBReceivablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBReceivablesViewController.h; sourceTree = "<group>"; };
 		33F257491D62EFDA00A4ECC0 /* ZFBReceivablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBReceivablesViewController.m; sourceTree = "<group>"; };
+		33F398701DCC771D0000520C /* ImessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImessageDetailViewController.h; sourceTree = "<group>"; };
+		33F398711DCC771D0000520C /* ImessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImessageDetailViewController.m; sourceTree = "<group>"; };
+		33F398721DCC771D0000520C /* MyImessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImessageTableViewCell.h; sourceTree = "<group>"; };
+		33F398731DCC771D0000520C /* MyImessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImessageTableViewCell.m; sourceTree = "<group>"; };
+		33F398741DCC771D0000520C /* MyImessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImessageViewController.h; sourceTree = "<group>"; };
+		33F398751DCC771D0000520C /* MyImessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImessageViewController.m; sourceTree = "<group>"; };
 		33FBC85E1D9B6CFE00986D9A /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		33FBC85F1D9B6CFE00986D9A /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		33FDAE591D66F13D00AACC61 /* AddCreditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCreditCardViewController.h; sourceTree = "<group>"; };
@@ -2394,6 +2403,12 @@
 		325CBCF91AEE2E8100D924D5 /* MyMessage */ = {
 			isa = PBXGroup;
 			children = (
+				33F398701DCC771D0000520C /* ImessageDetailViewController.h */,
+				33F398711DCC771D0000520C /* ImessageDetailViewController.m */,
+				33F398721DCC771D0000520C /* MyImessageTableViewCell.h */,
+				33F398731DCC771D0000520C /* MyImessageTableViewCell.m */,
+				33F398741DCC771D0000520C /* MyImessageViewController.h */,
+				33F398751DCC771D0000520C /* MyImessageViewController.m */,
 				591BC7711AEE160C0037199A /* MessageBar */,
 				591BC2301AEDFE6A0037199A /* MessageCell.h */,
 				591BC2311AEDFE6A0037199A /* MessageCell.m */,
@@ -5493,6 +5508,7 @@
 				BFEF39041DAF2B670043A852 /* ViewController+MASAdditions.m in Sources */,
 				BF3C90071D5834A50092AC19 /* ZXRSSUtils.m in Sources */,
 				BF3C8FB81D5834A50092AC19 /* ZXBoolArray.m in Sources */,
+				33F398761DCC771D0000520C /* ImessageDetailViewController.m in Sources */,
 				591BC36A1AEDFE6A0037199A /* ViewController.m in Sources */,
 				325CBCE41AEE1BC400D924D5 /* GikoAudioHelper.m in Sources */,
 				BF3C8F7C1D5834A50092AC19 /* ZXAztecDetector.m in Sources */,
@@ -5509,6 +5525,7 @@
 				BF5860261D9BA2D200777D7D /* Foundation+Log.m in Sources */,
 				BF3C8F861D5834A50092AC19 /* ZXAztecWriter.m in Sources */,
 				BFEF38FB1DAF2B670043A852 /* MASCompositeConstraint.m in Sources */,
+				33F398771DCC771D0000520C /* MyImessageTableViewCell.m in Sources */,
 				591BC2AA1AEDFE6A0037199A /* DDXMLNode.m in Sources */,
 				BF3C8FFE1D5834A50092AC19 /* ZXBitArrayBuilder.m in Sources */,
 				BF3C90281D5834A50092AC19 /* ZXPDF417Codeword.m in Sources */,
@@ -5567,6 +5584,7 @@
 				BF3C8FDB1D5834A50092AC19 /* ZXDataMatrixEdifactEncoder.m in Sources */,
 				BF3C8F641D5834A50092AC19 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				BF5860531D9D058600777D7D /* YSTWechatViewController.m in Sources */,
+				33F398781DCC771D0000520C /* MyImessageViewController.m in Sources */,
 				BFEF39001DAF2B670043A852 /* MASViewConstraint.m in Sources */,
 				BF3C8FBB1D5834A50092AC19 /* ZXDecoderResult.m in Sources */,
 				333CC0541D2D340E00023EA3 /* OriginQueryViewController.m in Sources */,

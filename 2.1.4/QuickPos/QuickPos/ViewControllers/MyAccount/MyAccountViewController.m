@@ -28,6 +28,7 @@
 #import "MyRunSubWithdrawViewController.h"
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+Add.h"
+#import "MyImessageViewController.h"
 
 @interface MyAccountViewController ()<UITableViewDataSource,UITableViewDelegate,ResponseData,UIAlertViewDelegate,getRespDesc>{
     
@@ -703,11 +704,11 @@
     
     else if(indexPath.section == 3 && indexPath.row == 1){
         
-        MyMessageViewController *myMessageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MyMessageViewControllerVC"];
+        MyImessageViewController *MyImessageVc = [self.storyboard instantiateViewControllerWithIdentifier:@"MyImessageViewController"];
         
-        myMessageVC.hidesBottomBarWhenPushed = YES;
+        MyImessageVc.hidesBottomBarWhenPushed = YES;
         
-        [self.navigationController pushViewController:myMessageVC animated:YES];//我的消息
+        [self.navigationController pushViewController:MyImessageVc animated:YES];//我的消息
         
     }
     else if(indexPath.section == 4 && indexPath.row == 0){

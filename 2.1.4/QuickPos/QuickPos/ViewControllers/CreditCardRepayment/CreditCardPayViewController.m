@@ -53,7 +53,7 @@
         _noBankCarktip.text = @"请点击右上角绑定要还款的信用卡";
         _noBankCarktip.font = [UIFont systemFontOfSize:13];
         _noBankCarktip.textColor = [UIColor redColor];
-        _noBankCarktip.textAlignment = NSTextAlignmentCenter;;
+        _noBankCarktip.textAlignment = NSTextAlignmentCenter;
     }
     return _noBankCarktip;
 }

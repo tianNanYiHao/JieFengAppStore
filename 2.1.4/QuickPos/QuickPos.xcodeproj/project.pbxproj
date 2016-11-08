@@ -626,6 +626,8 @@
 		BF7E3EAE1DB8AB200042BDC4 /* LFFAddPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E3EAD1DB8AB200042BDC4 /* LFFAddPickerView.xib */; };
 		BF7E3EB01DB8AB7F0042BDC4 /* libLFFPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E3EAF1DB8AB7F0042BDC4 /* libLFFPicker.a */; };
 		BF7E3EB51DB8B5E20042BDC4 /* TrickListInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3EB41DB8B5E20042BDC4 /* TrickListInfoModel.m */; };
+		BF9DB2B41DD16CFD00516FF3 /* RuiMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9DB2B21DD16CFD00516FF3 /* RuiMViewController.m */; };
+		BF9DB2B51DD16CFD00516FF3 /* RuiMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9DB2B31DD16CFD00516FF3 /* RuiMViewController.xib */; };
 		BFA862131DBDA78C004289DD /* TrickDetailShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA862111DBDA78C004289DD /* TrickDetailShowCell.m */; };
 		BFA862141DBDA78C004289DD /* TrickDetailShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA862121DBDA78C004289DD /* TrickDetailShowCell.xib */; };
 		BFAF035B1DB0C2FB00281517 /* 捷丰商户.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFAF035A1DB0C2FB00281517 /* 捷丰商户.txt */; };
@@ -1929,6 +1931,9 @@
 		BF7E3EB31DB8B5E20042BDC4 /* TrickListInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickListInfoModel.h; sourceTree = "<group>"; };
 		BF7E3EB41DB8B5E20042BDC4 /* TrickListInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickListInfoModel.m; sourceTree = "<group>"; };
 		BF8DA0791D99100E00F5BF7E /* QuickPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPos.entitlements; sourceTree = "<group>"; };
+		BF9DB2B11DD16CFD00516FF3 /* RuiMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuiMViewController.h; sourceTree = "<group>"; };
+		BF9DB2B21DD16CFD00516FF3 /* RuiMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuiMViewController.m; sourceTree = "<group>"; };
+		BF9DB2B31DD16CFD00516FF3 /* RuiMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RuiMViewController.xib; sourceTree = "<group>"; };
 		BFA26A431D815C49002D49A4 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BFA862101DBDA78C004289DD /* TrickDetailShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickDetailShowCell.h; sourceTree = "<group>"; };
 		BFA862111DBDA78C004289DD /* TrickDetailShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickDetailShowCell.m; sourceTree = "<group>"; };
@@ -4692,6 +4697,9 @@
 				BF5860501D9D058600777D7D /* YSTWechatViewController.h */,
 				BF5860511D9D058600777D7D /* YSTWechatViewController.m */,
 				BF5860521D9D058600777D7D /* YSTWechatViewController.xib */,
+				BF9DB2B11DD16CFD00516FF3 /* RuiMViewController.h */,
+				BF9DB2B21DD16CFD00516FF3 /* RuiMViewController.m */,
+				BF9DB2B31DD16CFD00516FF3 /* RuiMViewController.xib */,
 			);
 			path = YSTWeChat;
 			sourceTree = "<group>";
@@ -5160,6 +5168,7 @@
 				87E058DF1C044DBD00C4A4C1 /* Icon-72@2x.png in Resources */,
 				BF3C8F671D5834A50092AC19 /* LICENSE in Resources */,
 				D56152181BDF6EA100DAAADC /* MJRefresh.bundle in Resources */,
+				BF9DB2B51DD16CFD00516FF3 /* RuiMViewController.xib in Resources */,
 				BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */,
 				87E058E91C044DBD00C4A4C1 /* iTunesArtwork in Resources */,
 				87E058DB1C044DBD00C4A4C1 /* Icon-60.png in Resources */,
@@ -5689,6 +5698,7 @@
 				591BC37B1AEDFE6A0037199A /* MessageBarManager.m in Sources */,
 				BF3C8F841D5834A50092AC19 /* ZXAztecDetectorResult.m in Sources */,
 				339DA4151D9920FD001BA189 /* BankCardBindViewController.m in Sources */,
+				BF9DB2B41DD16CFD00516FF3 /* RuiMViewController.m in Sources */,
 				591BC37E1AEDFE6A0037199A /* MyAccountTableViewCell.m in Sources */,
 				D561520B1BDF6EA100DAAADC /* MJRefreshBackFooter.m in Sources */,
 				BF3C90201D5834A50092AC19 /* ZXUPCEANWriter.m in Sources */,

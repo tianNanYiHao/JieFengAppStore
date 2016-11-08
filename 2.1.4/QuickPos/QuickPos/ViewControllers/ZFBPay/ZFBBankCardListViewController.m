@@ -20,6 +20,7 @@
 #import "AddZFBBankcardViewController.h"
 #import "ZFBReceivablesViewController.h"
 #import "PSTAlertController.h"
+#import "RuiMViewController.h"
 
 @interface ZFBBankCardListViewController ()<UITableViewDataSource,UITableViewDelegate,ResponseData>{
     
@@ -266,13 +267,20 @@
     cardIdx = bcItem.cardIdx;
     NSDictionary *resultBeanDict = resultBeanArray[indexPath.row];
     
-    ZFBReceivablesViewController *ZFBReceivablesVc = [self.storyboard instantiateViewControllerWithIdentifier:@"ZFBReceivablesVc"];
-    ZFBReceivablesVc.ZFBBankCardNum = [resultBeanDict objectForKey:@"accountNo"];
+    PSTAlertController *p  = [PSTAlertController alertWithTitle:@"" message:@"请选择支付宝收款方式"];
+    [p addAction:[PSTAlertAction actionWithTitle:@"支付宝收款一" handler:^(PSTAlertAction * _Nonnull action) {
+        ZFBReceivablesViewController *ZFBReceivablesVc = [self.storyboard instantiateViewControllerWithIdentifier:@"ZFBReceivablesVc"];
+        ZFBReceivablesVc.ZFBBankCardNum = [resultBeanDict objectForKey:@"accountNo"];
         ZFBReceivablesVc.cardIdx = [resultBeanDict objectForKey:@"cardIdx"];
-    NSLog(@"%@  %@",ZFBReceivablesVc.ZFBBankCardNum,ZFBReceivablesVc.cardIdx);
-    [self.navigationController pushViewController:ZFBReceivablesVc animated:YES];
+        NSLog(@"%@  %@",ZFBReceivablesVc.ZFBBankCardNum,ZFBReceivablesVc.cardIdx);
+        [self.navigationController pushViewController:ZFBReceivablesVc animated:YES];
+    }]];
+    [p addAction:[PSTAlertAction actionWithTitle:@"支付宝收款二" handler:^(PSTAlertAction * _Nonnull action) {
+        RuiMViewController *rui = [[RuiMViewController alloc] initWithNibName:@"RuiMViewController" bundle:nil];
+        [self.navigationController pushViewController:rui animated:YES];
+    }]];
     
-    
+    [p showWithSender:nil controller:self animated:YES completion:NULL];
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {

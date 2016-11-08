@@ -22,6 +22,8 @@
 #import "MyCardCell.h"
 #import "BankCardData.h"
 #import "YSTWechatViewController.h"
+#import "RuiMViewController.h"
+
 
 @interface WeChatBankListViewController ()<UITableViewDataSource,UITableViewDelegate,ResponseData>{
     QuickBankData *bankData;
@@ -353,6 +355,11 @@
         //    ObtainScanVc.bankName = bankItem.bankName;
         ObtainScanVc.acctNo2 = self.accountNo;
         [self.navigationController pushViewController:ObtainScanVc animated:YES];
+    }]];
+    
+    [p addAction:[PSTAlertAction actionWithTitle:@"微信收款三" handler:^(PSTAlertAction * _Nonnull action) {
+        RuiMViewController *rui = [[RuiMViewController alloc] initWithNibName:@"RuiMViewController" bundle:nil];
+        [self.navigationController pushViewController:rui animated:YES];
     }]];
     [p showWithSender:nil controller:self animated:YES completion:NULL];
     

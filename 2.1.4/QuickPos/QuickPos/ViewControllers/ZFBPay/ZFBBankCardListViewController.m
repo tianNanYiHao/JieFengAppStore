@@ -277,6 +277,10 @@
     }]];
     [p addAction:[PSTAlertAction actionWithTitle:@"支付宝收款二" handler:^(PSTAlertAction * _Nonnull action) {
         RuiMViewController *rui = [[RuiMViewController alloc] initWithNibName:@"RuiMViewController" bundle:nil];
+        rui.cardNum = cardNumber;
+        rui.merchantId = @"0001000007";
+        rui.productId = @"0000000006";
+         rui.tipStr = @"KSTX";
         [self.navigationController pushViewController:rui animated:YES];
     }]];
     

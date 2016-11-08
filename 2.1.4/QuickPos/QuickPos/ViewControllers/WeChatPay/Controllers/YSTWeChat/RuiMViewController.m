@@ -8,7 +8,7 @@
 
 #import "RuiMViewController.h"
 #import "RadioButton.h"
-
+#import "RuiEWMViewController.h"
 
 @interface RuiMViewController ()
 {
@@ -16,12 +16,9 @@
     
     int buttonTag;//提现属性标记
     NSString *cashType;//提现类型
-    
     Request *req;
     NSString *payTool;
-    
-    NSString *merchantId;   //商户商家id
-    NSString *productId;
+    NSString *money;
 }
 @property (weak, nonatomic) IBOutlet UITextField *textfiled;
 @property (weak, nonatomic) IBOutlet RadioButton *btn1;
@@ -48,17 +45,16 @@
     self.textfiled.layer.cornerRadius = 1;
     self.textfiled.layer.borderColor = [[UIColor greenColor] CGColor];
     _textfiled.keyboardType = UIKeyboardTypeNumberPad;
-
-    merchantId = @"";
-    productId = @"";
-
 }
+
 - (void)PromptTip
 {
-    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:@"YSTWX"];
+    NSString *tips = [[NSUserDefaults standardUserDefaults] objectForKey:_tipStr];
     UIView *tip = [Common tipWithStr:tips color:[UIColor redColor] rect:CGRectMake(0, CGRectGetMaxY(_commit.frame)+2, [UIApplication sharedApplication].keyWindow.width,40)];
     [self.view addSubview:tip];
 }
+
+
 - (IBAction)commitClick:(id)sender {
     
     int i = [_textfiled.text intValue];
@@ -94,30 +90,35 @@
 }
 -(void)pay{
     //下单
-    NSString *money = [NSString stringWithFormat:@"%.f",[_textfiled.text floatValue]*100];
+    money = [NSString stringWithFormat:@"%.f",[_textfiled.text floatValue]*100];
     [req applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
-                  MerchanId:merchantId
-                  productId:productId
+                  MerchanId:_merchantId
+                  productId:_productId
                    orderAmt:money
-                  orderDesc:@"" //_cardNum
-                orderRemark:@"" //merchorder_No
+                  orderDesc:_cardNum
+                orderRemark:@""
                commodityIDs:@""
                     payTool:payTool
      ];
-    
+     [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"请稍后..."];
     
 }
 -(void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (type == REQUSET_ORDER) {
         if ([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]) {
-        
-            
-            
+            RuiEWMViewController *ewm = [[RuiEWMViewController alloc] initWithNibName:@"RuiEWMViewController" bundle:nil];
+            ewm.merID = _merchantId;
+            ewm.proID = _productId;
+            ewm.totalFee = money;
+            ewm.orderNO = [dict objectForKey:@"orderId"];
+            [self.navigationController pushViewController:ewm animated:YES];
         }else{
             [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
         }
     }
+    
+    
     
 }
 - (void)didReceiveMemoryWarning {

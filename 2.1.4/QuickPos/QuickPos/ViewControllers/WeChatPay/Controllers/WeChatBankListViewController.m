@@ -359,6 +359,10 @@
     
     [p addAction:[PSTAlertAction actionWithTitle:@"微信收款三" handler:^(PSTAlertAction * _Nonnull action) {
         RuiMViewController *rui = [[RuiMViewController alloc] initWithNibName:@"RuiMViewController" bundle:nil];
+        rui.cardNum = _accountNo;
+        rui.merchantId = @"0001000006";
+        rui.productId = @"0000000005";
+        rui.tipStr = @"KSTX";
         [self.navigationController pushViewController:rui animated:YES];
     }]];
     [p showWithSender:nil controller:self animated:YES completion:NULL];

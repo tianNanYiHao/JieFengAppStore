@@ -10,4 +10,14 @@
 
 @interface RuiMViewController : UIViewController
 
+@property (nonatomic,strong) NSString *cardNum;
+
+
+
+
+@property (nonatomic,strong) NSString *merchantId;   //商户商家id
+@property (nonatomic,strong) NSString *productId;
+
+@property (nonatomic,strong) NSString *tipStr;
+
 @end

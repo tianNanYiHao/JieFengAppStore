@@ -671,6 +671,8 @@
 		BFEF390A1DAF67F00043A852 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF39081DAF67F00043A852 /* UIView+Extension.m */; };
 		BFF5552C1DAB8DA200F110B7 /* TrickChooseCarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */; };
 		BFF5552D1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */; };
+		BFF8AECD1DD1A174001439E4 /* RuiEWMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF8AECB1DD1A174001439E4 /* RuiEWMViewController.m */; };
+		BFF8AECE1DD1A174001439E4 /* RuiEWMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF8AECC1DD1A174001439E4 /* RuiEWMViewController.xib */; };
 		BFFF83B91D7E76330014BDEC /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF83B81D7E76330014BDEC /* Request.m */; };
 		C3696F001AC1134A003B04B4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */; };
 		C3696F031AC11350003B04B4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3696F011AC11350003B04B4 /* AudioToolbox.framework */; };
@@ -2021,6 +2023,9 @@
 		BFF555291DAB8DA200F110B7 /* TrickChooseCarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickChooseCarListViewController.h; sourceTree = "<group>"; };
 		BFF5552A1DAB8DA200F110B7 /* TrickChooseCarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickChooseCarListViewController.m; sourceTree = "<group>"; };
 		BFF5552B1DAB8DA200F110B7 /* TrickChooseCarListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickChooseCarListViewController.xib; sourceTree = "<group>"; };
+		BFF8AECA1DD1A174001439E4 /* RuiEWMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuiEWMViewController.h; sourceTree = "<group>"; };
+		BFF8AECB1DD1A174001439E4 /* RuiEWMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuiEWMViewController.m; sourceTree = "<group>"; };
+		BFF8AECC1DD1A174001439E4 /* RuiEWMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RuiEWMViewController.xib; sourceTree = "<group>"; };
 		BFFF83B71D7E76330014BDEC /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		BFFF83B81D7E76330014BDEC /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		C3696EFF1AC1134A003B04B4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -4700,6 +4705,9 @@
 				BF9DB2B11DD16CFD00516FF3 /* RuiMViewController.h */,
 				BF9DB2B21DD16CFD00516FF3 /* RuiMViewController.m */,
 				BF9DB2B31DD16CFD00516FF3 /* RuiMViewController.xib */,
+				BFF8AECA1DD1A174001439E4 /* RuiEWMViewController.h */,
+				BFF8AECB1DD1A174001439E4 /* RuiEWMViewController.m */,
+				BFF8AECC1DD1A174001439E4 /* RuiEWMViewController.xib */,
 			);
 			path = YSTWeChat;
 			sourceTree = "<group>";
@@ -5192,6 +5200,7 @@
 				BF3C8F791D5834A50092AC19 /* COPYING in Resources */,
 				333F5B041D212E44007DDA09 /* qr_scan_line@2x.png in Resources */,
 				87E058E01C044DBD00C4A4C1 /* Icon-76.png in Resources */,
+				BFF8AECE1DD1A174001439E4 /* RuiEWMViewController.xib in Resources */,
 				BF3E10171D49E9F2003F0F89 /* CompaneyDetialController2.xib in Resources */,
 				BF3C8F691D5834A50092AC19 /* CodeScan.bundle in Resources */,
 				87E058E21C044DBD00C4A4C1 /* Icon-Small-50.png in Resources */,
@@ -5289,6 +5298,7 @@
 				D56152261BDF6F7E00DAAADC /* BoRefreshAnimation.m in Sources */,
 				BFC0421C1D70120A0090CAFC /* AFImageDownloader.m in Sources */,
 				591BC09A1AEDFE320037199A /* ACEDrawingTools.m in Sources */,
+				BFF8AECD1DD1A174001439E4 /* RuiEWMViewController.m in Sources */,
 				BF3C901E1D5834A50092AC19 /* ZXUPCEANExtensionSupport.m in Sources */,
 				BF3C8FC41D5834A50092AC19 /* ZXBinarizer.m in Sources */,
 				591BC2A81AEDFE6A0037199A /* DDXMLDocument.m in Sources */,

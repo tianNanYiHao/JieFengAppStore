@@ -112,6 +112,7 @@
             ewm.proID = _productId;
             ewm.totalFee = money;
             ewm.orderNO = [dict objectForKey:@"orderId"];
+            ewm.patWay = _payway;
             [self.navigationController pushViewController:ewm animated:YES];
         }else{
             [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];

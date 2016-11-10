@@ -281,6 +281,7 @@
         rui.merchantId = @"0001000007";
         rui.productId = @"0000000006";
          rui.tipStr = @"KSTX";
+        rui.payway = @"请打开支付宝扫一扫该二维码，完成交易";
         [self.navigationController pushViewController:rui animated:YES];
     }]];
     

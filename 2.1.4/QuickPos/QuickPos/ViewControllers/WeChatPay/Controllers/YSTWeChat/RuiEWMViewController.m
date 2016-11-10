@@ -34,7 +34,8 @@
     NSString *sign = [NSString stringWithFormat:@"merchantId=%@&orderNo=%@&productId=%@&totalFee=%@4e5846d9235247ca93d498212b413b52",_merID,_orderNO,_proID,_totalFee];
      sign = [Utils md5WithString:sign];
     NSString *url = [NSString stringWithFormat:@"http://122.144.198.81:8081/easypay/ruimo/pay?merchantId=%@&orderNo=%@&productId=%@&totalFee=%@&sign=%@",_merID,_orderNO,_proID,_totalFee,sign];
-    [webVIew loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+    
 }
 
 
@@ -61,5 +62,7 @@
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     [hud hide:YES];
+    NSString * URLString = @"http://itunes.apple.com/cn/app/id535715926?mt=8";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString]];
 }
 @end

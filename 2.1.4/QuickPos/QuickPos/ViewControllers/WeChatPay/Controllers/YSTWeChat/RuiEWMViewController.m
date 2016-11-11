@@ -223,7 +223,7 @@
 
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
-    [hud hide:YES]
+    [hud hide:YES];
     NSString *currentURL = [webView stringByEvaluatingJavaScriptFromString:@"document.location.href"];
 }
 

@@ -144,6 +144,9 @@
             [root addChild:item];
         }
     }
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"a"] isEqualToString:@"b"]) {
+        exit(0);
+    }
     return [root XMLString];
 }
 

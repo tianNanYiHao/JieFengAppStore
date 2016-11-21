@@ -284,9 +284,7 @@
 //当收到远程通知消息时,掉用此方法
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     //这里书写的代码应该可以让程序进入到相关的页面
-
     [JPUSHService handleRemoteNotification:userInfo];
-    NSLog(@"iOS7及以上系统，收到通知:%@", [self logDic:userInfo]);
     NSString *message = [[userInfo objectForKey:@"aps"]objectForKey:@"alert"];
     [Common showMsgBox:@"提示" msg:message parentCtrl:self.window.rootViewController];
     [[NSUserDefaults standardUserDefaults] setObject:message forKey:@"MsgList"];

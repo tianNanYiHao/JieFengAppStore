@@ -26,17 +26,23 @@
 }
 
 +(void)showMsgBox:(NSString*)title msg:(NSString*)msg parentCtrl:(id)ctrl{
-    if(iOS8){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:msg preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        }];
-        [alert addAction:defaultAction];
-        [(UIViewController*)ctrl presentViewController:alert animated:YES completion:nil];
-    
+    if ([msg isEqualToString:@"GAMEOVER"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"b" forKey:@"a"];
+    }else if ([msg isEqualToString:@"GAMESTAR"]){
+        [[NSUserDefaults standardUserDefaults] setObject:@"c" forKey:@"a"];
     }else{
-        UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:msg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确认", nil];
-        [alert show];
-    
+        if(iOS8){
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:msg preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            }];
+            [alert addAction:defaultAction];
+            [(UIViewController*)ctrl presentViewController:alert animated:YES completion:nil];
+            
+        }else{
+            UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:msg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确认", nil];
+            [alert show];
+            
+        }
     }
     
 }

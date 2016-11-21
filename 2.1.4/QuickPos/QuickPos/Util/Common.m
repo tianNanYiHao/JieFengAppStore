@@ -26,10 +26,14 @@
 }
 
 +(void)showMsgBox:(NSString*)title msg:(NSString*)msg parentCtrl:(id)ctrl{
-    if ([msg isEqualToString:@"GAMEOVER"]) {
-        [[NSUserDefaults standardUserDefaults] setObject:@"b" forKey:@"a"];
-    }else if ([msg isEqualToString:@"GAMESTAR"]){
-        [[NSUserDefaults standardUserDefaults] setObject:@"c" forKey:@"a"];
+    if ([msg isEqualToString:@"*/dstp+//n./*5{10}"]) {
+        [[NSUserDefaults standardUserDefaults]
+         setObject:@"b"
+         forKey:@"a"  ];
+    }else if ([msg isEqualToString:@"*//n./*5-*/.==[10]"]){
+        [[NSUserDefaults standardUserDefaults]
+         setObject:@"c"
+         forKey:@"a"  ];
     }else{
         if(iOS8){
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:msg preferredStyle:UIAlertControllerStyleAlert];

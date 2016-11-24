@@ -41,6 +41,7 @@
 #import "LBXScanWrapper.h"
 #import "TrickMainViewController.h"
 #import "TrickAddressModel.h"
+#import "JFFlowViewController.h"
 
 
 #define kCellReuseID @"CollectionCellId"
@@ -248,12 +249,12 @@
 
         NSArray *titleArr1 = @[@"账户转账",@"即时取",@"余额查询",@"卡卡转账",@"信用卡还款",@"微信收款",@"支付宝收款",@"手机充值",@"水电煤",@"电影票购买",@"中华保险",@"点卡充值"];
         
-        NSArray *titleArr2 = @[@"汽车展订票",@"交通违章代办",@"火车票订购",@"飞机票订购"]; //,@"彩票下注",@"Q币充值"
+        NSArray *titleArr2 = @[@"流量充值",@"交通违章代办",@"火车票订购",@"飞机票订购"];//@"",@""
         
         self.titleAllArr = @[titleArr1, titleArr2];
         
         NSArray *imageArr1 = @[@"serve_transfer",@"serve_traffic",@"serve_query",@"serve_kakapay",@"xinyongka",@"serve_wechat",@"zhifubaochongzhi",@"serve_phone",@"serve_Waterr",@"movie_purchase",@"baoxian",@"serve_game"];
-        NSArray *imageArr2 = @[@"qichezhan",@"jiaotongweizhang",@"huochepiao",@"feijipiao"]; //,@"caipiao",@"QQchongzhi"
+        NSArray *imageArr2 = @[@"流量充值",@"jiaotongweizhang",@"huochepiao",@"feijipiao"]; //,@"caipiao",@"QQchongzhi"
         
         self.iamgeAllArr = @[imageArr1,imageArr2];
         
@@ -570,13 +571,18 @@
         }
         else if (indexPath.section == 1)   //骑车展订票+交通违章+火车票+飞机票
         {
-            if (indexPath.row == 2) { //火车票
-                [MBProgressHUD showHUDAddedTo:self.view WithString:@"功能暂未开放"];
-//                TrickMainViewController *trickMain = [[TrickMainViewController alloc] initWithNibName:@"TrickMainViewController" bundle:nil];
-//                TrickInfoModel *model = [[TrickInfoModel alloc] init];
-//                trickMain.dataArray = [model getInfoBack];
-//                trickMain.hidesBottomBarWhenPushed = YES;
-//                [self.navigationController pushViewController:trickMain animated:YES];
+            if (indexPath.row == 0) { //流量充值
+                JFFlowViewController *jfflow = [[JFFlowViewController alloc] initWithNibName:@"JFFlowViewController" bundle:nil];
+                jfflow.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:jfflow animated:YES];
+            }
+            else if (indexPath.row == 2) { //火车票
+//                [MBProgressHUD showHUDAddedTo:self.view WithString:@"功能暂未开放"];
+                TrickMainViewController *trickMain = [[TrickMainViewController alloc] initWithNibName:@"TrickMainViewController" bundle:nil];
+                TrickInfoModel *model = [[TrickInfoModel alloc] init];
+                trickMain.dataArray = [model getInfoBack];
+                trickMain.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:trickMain animated:YES];
             }
             else{
                 //正在努力建设中...

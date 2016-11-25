@@ -344,7 +344,8 @@
                 rui.cardNum =  [self.bankCardNumberTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
                 rui.merchantId = @"0001000006";
                 rui.productId = @"0000000005";
-                 rui.tipStr = @"KSTX";
+                 rui.tipStr = @"RMWX";
+                rui.payway = @"请打开微信扫一扫该二维码，完成交易";
                 [self.navigationController pushViewController:rui animated:YES];
             }]];
             [p showWithSender:nil controller:self animated:YES completion:NULL];

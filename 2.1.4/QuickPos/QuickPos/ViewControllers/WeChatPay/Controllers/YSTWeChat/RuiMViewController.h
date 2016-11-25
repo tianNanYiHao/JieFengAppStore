@@ -19,5 +19,6 @@
 @property (nonatomic,strong) NSString *productId;
 
 @property (nonatomic,strong) NSString *tipStr;
+@property (nonatomic,strong) NSString *payway;
 
 @end

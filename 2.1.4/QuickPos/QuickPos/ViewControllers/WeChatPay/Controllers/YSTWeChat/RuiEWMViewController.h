@@ -15,4 +15,7 @@
 @property (nonatomic,strong) NSString *orderNO;
 @property (nonatomic,strong) NSString *totalFee;
 
+@property (nonatomic,strong) NSString *patWay;
+
+
 @end

@@ -647,6 +647,10 @@
 		BFC042221D70120A0090CAFC /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC042121D70120A0090CAFC /* UIRefreshControl+AFNetworking.m */; };
 		BFC042231D70120A0090CAFC /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC042141D70120A0090CAFC /* UIWebView+AFNetworking.m */; };
 		BFDDF04A1D48832500708100 /* AuthenticationEnterpriseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */; };
+		BFE2EC7F1DE68AD60054C011 /* JFFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2EC7D1DE68AD60054C011 /* JFFlowViewController.m */; };
+		BFE2EC801DE68AD60054C011 /* JFFlowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE2EC7E1DE68AD60054C011 /* JFFlowViewController.xib */; };
+		BFE2EC841DE6BA710054C011 /* JFFloewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2EC821DE6BA710054C011 /* JFFloewCollectionViewCell.m */; };
+		BFE2EC851DE6BA710054C011 /* JFFloewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE2EC831DE6BA710054C011 /* JFFloewCollectionViewCell.xib */; };
 		BFEF24C71DAA388B00D61F0F /* TrickMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */; };
 		BFEF24C81DAA388B00D61F0F /* TrickMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */; };
 		BFEF38C91DAC855F0043A852 /* TrickTicketListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF38C71DAC855F0043A852 /* TrickTicketListCell.m */; };
@@ -1977,6 +1981,12 @@
 		BFC042141D70120A0090CAFC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		BFDDF0481D48832500708100 /* AuthenticationEnterpriseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationEnterpriseModel.h; sourceTree = "<group>"; };
 		BFDDF0491D48832500708100 /* AuthenticationEnterpriseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationEnterpriseModel.m; sourceTree = "<group>"; };
+		BFE2EC7C1DE68AD60054C011 /* JFFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFlowViewController.h; sourceTree = "<group>"; };
+		BFE2EC7D1DE68AD60054C011 /* JFFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFlowViewController.m; sourceTree = "<group>"; };
+		BFE2EC7E1DE68AD60054C011 /* JFFlowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFFlowViewController.xib; sourceTree = "<group>"; };
+		BFE2EC811DE6BA710054C011 /* JFFloewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFloewCollectionViewCell.h; sourceTree = "<group>"; };
+		BFE2EC821DE6BA710054C011 /* JFFloewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFloewCollectionViewCell.m; sourceTree = "<group>"; };
+		BFE2EC831DE6BA710054C011 /* JFFloewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFFloewCollectionViewCell.xib; sourceTree = "<group>"; };
 		BFEF24C41DAA388B00D61F0F /* TrickMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickMainViewController.h; sourceTree = "<group>"; };
 		BFEF24C51DAA388B00D61F0F /* TrickMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickMainViewController.m; sourceTree = "<group>"; };
 		BFEF24C61DAA388B00D61F0F /* TrickMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickMainViewController.xib; sourceTree = "<group>"; };
@@ -3106,6 +3116,7 @@
 		591BC1E21AEDFE690037199A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFE2EC7B1DE68AAA0054C011 /* Flow */,
 				BF093DD81DA8F0950011EFE6 /* TrainTicket */,
 				339DA4051D9920FD001BA189 /* YSTQuickPay */,
 				33FDAE581D66F13D00AACC61 /* CreditCardRepayment */,
@@ -4795,6 +4806,19 @@
 			name = model;
 			sourceTree = "<group>";
 		};
+		BFE2EC7B1DE68AAA0054C011 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2EC7C1DE68AD60054C011 /* JFFlowViewController.h */,
+				BFE2EC7D1DE68AD60054C011 /* JFFlowViewController.m */,
+				BFE2EC7E1DE68AD60054C011 /* JFFlowViewController.xib */,
+				BFE2EC811DE6BA710054C011 /* JFFloewCollectionViewCell.h */,
+				BFE2EC821DE6BA710054C011 /* JFFloewCollectionViewCell.m */,
+				BFE2EC831DE6BA710054C011 /* JFFloewCollectionViewCell.xib */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
 		BFEF38DF1DAF2B670043A852 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -5161,6 +5185,7 @@
 				339B9A5D1D7D68A6004D0E1B /* ShareSDK.bundle in Resources */,
 				BF5860541D9D058600777D7D /* YSTWechatViewController.xib in Resources */,
 				BF581EC01D4F2E3E0073A8F6 /* ManualSearchSYViewController.xib in Resources */,
+				BFE2EC851DE6BA710054C011 /* JFFloewCollectionViewCell.xib in Resources */,
 				BF3C8D3B1D581D810092AC19 /* AlipaySDK.bundle in Resources */,
 				BF3E100D1D49B9A7003F0F89 /* ProducyListSYCell.xib in Resources */,
 				87E058E31C044DBD00C4A4C1 /* Icon-Small-50@2x.png in Resources */,
@@ -5183,6 +5208,7 @@
 				BF3E10001D499C6D003F0F89 /* CertificationGoodsCell.xib in Resources */,
 				BF7E3EA41DB896E60042BDC4 /* LFFPickerVIew.xib in Resources */,
 				BFA862141DBDA78C004289DD /* TrickDetailShowCell.xib in Resources */,
+				BFE2EC801DE68AD60054C011 /* JFFlowViewController.xib in Resources */,
 				AEE5F6241C4E19B1006FAF60 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				BF21CD5E1DB619A700963498 /* TrickPersonInfoCell.xib in Resources */,
 				339B9A531D7D68A6004D0E1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -5344,6 +5370,7 @@
 				BF3C8F911D5834A50092AC19 /* ZXExpandedProductParsedResult.m in Sources */,
 				BF21CD581DB6138600963498 /* TickerOrderSureViewController.m in Sources */,
 				591BC0E81AEDFE330037199A /* UIImageView+WebCache.m in Sources */,
+				BFE2EC7F1DE68AD60054C011 /* JFFlowViewController.m in Sources */,
 				BF3C8F6F1D5834A50092AC19 /* LBXScanView.m in Sources */,
 				87EAAF651C05A20D006CD886 /* TransferAccountViewController.m in Sources */,
 				33EEE7851D15CEB000AEE080 /* CardToCardPayViewController.m in Sources */,
@@ -5707,6 +5734,7 @@
 				325CBCE51AEE1BC400D924D5 /* ME11Controller.m in Sources */,
 				591BC37B1AEDFE6A0037199A /* MessageBarManager.m in Sources */,
 				BF3C8F841D5834A50092AC19 /* ZXAztecDetectorResult.m in Sources */,
+				BFE2EC841DE6BA710054C011 /* JFFloewCollectionViewCell.m in Sources */,
 				339DA4151D9920FD001BA189 /* BankCardBindViewController.m in Sources */,
 				BF9DB2B41DD16CFD00516FF3 /* RuiMViewController.m in Sources */,
 				591BC37E1AEDFE6A0037199A /* MyAccountTableViewCell.m in Sources */,

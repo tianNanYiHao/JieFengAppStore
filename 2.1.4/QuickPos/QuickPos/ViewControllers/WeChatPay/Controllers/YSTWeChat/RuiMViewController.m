@@ -10,7 +10,7 @@
 #import "RadioButton.h"
 #import "RuiEWMViewController.h"
 
-@interface RuiMViewController ()
+@interface RuiMViewController ()<ResponseData>
 {
     UIImageView *_imageVIew;
     
@@ -45,6 +45,8 @@
     self.textfiled.layer.cornerRadius = 1;
     self.textfiled.layer.borderColor = [[UIColor greenColor] CGColor];
     _textfiled.keyboardType = UIKeyboardTypeNumberPad;
+    _btn1.hidden = YES;
+    _btn2.hidden = YES;
 }
 
 - (void)PromptTip
@@ -112,13 +114,12 @@
             ewm.proID = _productId;
             ewm.totalFee = money;
             ewm.orderNO = [dict objectForKey:@"orderId"];
+            ewm.patWay = _payway;
             [self.navigationController pushViewController:ewm animated:YES];
         }else{
             [Common showMsgBox:nil msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
         }
     }
-    
-    
     
 }
 - (void)didReceiveMemoryWarning {

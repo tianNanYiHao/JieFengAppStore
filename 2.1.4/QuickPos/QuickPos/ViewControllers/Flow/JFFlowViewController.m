@@ -8,27 +8,60 @@
 
 #import "JFFlowViewController.h"
 #import "JFFloewCollectionViewCell.h"
+#import "Request.h"
+#import "RadioButton.h"
+#import "OrderData.h"
+#import "PayType.h"
 
 
-@interface JFFlowViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+@interface JFFlowViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ResponseData>
 {
+     NSUInteger payType;//账户支付 刷卡支付 快捷支付
+     OrderData *orderData;
     UICollectionView *_collectionView;
     NSArray *_array;
     NSArray *_array2;
-    
+    NSString *_merchaID;
+    NSString *_productID;
     
     
 }
+
+@property (weak, nonatomic) IBOutlet RadioButton *btn2;
+@property (weak, nonatomic) IBOutlet RadioButton *btn1;
 @end
 
 @implementation JFFlowViewController
+
+- (IBAction)payWayChangeClick:(RadioButton*)sender {
+    if (sender.tag == 1) { //刷卡支付
+        _merchaID = @"0001000004";
+        _productID = @"0000000000";
+        payType = CardPayType;
+        
+    }else if (sender.tag == 2){ //快捷支付
+        _merchaID = @"0001000004";
+        _productID = @"0000000001";
+        payType = QuickPayType;
+        
+    }
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title  = @"流量充值";
+    _btn1.groupButtons = @[_btn1,_btn2];
+    _btn1.selected = YES;
+    _merchaID = @"0001000004";
+    _productID = @"0000000000";
+    payType = CardPayType;
     
     [self createCollection];
+    
+    
     
 }
 

@@ -30,6 +30,7 @@
     
 }
 
+@property (weak, nonatomic) IBOutlet UITextField *numbText;
 @property (weak, nonatomic) IBOutlet RadioButton *btn2;
 @property (weak, nonatomic) IBOutlet RadioButton *btn1;
 @end
@@ -74,7 +75,7 @@
     
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, NEWWIDTH, NEWHEIGHT-50) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 180, NEWWIDTH, NEWHEIGHT-130) collectionViewLayout:layout];
     [_collectionView registerNib:[UINib nibWithNibName:@"JFFloewCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"JFFloewCollectionViewCell"];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
@@ -114,15 +115,15 @@
     NSLog(@"00000000");
     
     if (payType == CardPayType){
-        [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo MerchanId:_merchaID productId:_productID orderAmt:@"" orderDesc:@"" orderRemark:@"" commodityIDs:@"" payTool:@"01"];
+        [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo MerchanId:_merchaID productId:_productID orderAmt:@"100" orderDesc:_numbText.text orderRemark:@"" commodityIDs:@"" payTool:@"01"];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderIsSubmitted")];
     }else{
         //快捷支付
         [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
                           MerchanId:_merchaID
                           productId:_productID
-                           orderAmt:@""
-                          orderDesc:@""
+                           orderAmt:@"100"
+                          orderDesc:_numbText.text
                         orderRemark:@""
                        commodityIDs:@""
                             payTool:@"03"];
@@ -136,14 +137,8 @@
     if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
         
        if(type == REQUSET_ORDER){  // 申请订单成功
-           
-            if ([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]) {
-                NSString *orderID = [dict objectForKey:@"orderId"];
-                NSString *amt = [dict objectForKey:@"orderAmt"];
-                NSString *mob = [dict objectForKey:@"orderDesc"];
-                //                [request postPhoneRechargeOnwOrderId:orderID moneyAmt:amt mobileNo:mob];  //习正鸟接口 暂时不走
-            }
-            OrderViewController *shopVc = [self.storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+           UIStoryboard *sto = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            OrderViewController *shopVc = [sto instantiateViewControllerWithIdentifier:@"OrderViewController"];
             orderData = [[OrderData alloc]initWithData:dict];
             orderData.orderAccount = [AppDelegate getUserBaseData].mobileNo;
             orderData.orderPayType = payType;
@@ -151,7 +146,7 @@
             orderData.productId = _productID;
             //            orderData.mallOrder = YES;
             shopVc.orderData = orderData;
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+           NSLog(@"push push push push push push push push push");
             [self.navigationController pushViewController:shopVc animated:YES];
         }
         

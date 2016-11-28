@@ -12,6 +12,8 @@
 #import "RadioButton.h"
 #import "OrderData.h"
 #import "PayType.h"
+#import "OrderViewController.h"
+
 
 
 
@@ -24,7 +26,7 @@
     NSArray *_array2;
     NSString *_merchaID;
     NSString *_productID;
-    
+    Request *request;
     
 }
 
@@ -58,7 +60,7 @@
     _merchaID = @"0001000004";
     _productID = @"0000000000";
     payType = CardPayType;
-    
+    request = [[Request alloc] initWithDelegate:self];
     [self createCollection];
     
     
@@ -110,9 +112,55 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"00000000");
-
+    
+    if (payType == CardPayType){
+        [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo MerchanId:_merchaID productId:_productID orderAmt:@"" orderDesc:@"" orderRemark:@"" commodityIDs:@"" payTool:@"01"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderIsSubmitted")];
+    }else{
+        //快捷支付
+        [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
+                          MerchanId:_merchaID
+                          productId:_productID
+                           orderAmt:@""
+                          orderDesc:@""
+                        orderRemark:@""
+                       commodityIDs:@""
+                            payTool:@"03"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderIsSubmitted")];
+    }
 }
 
+
+- (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
+        
+       if(type == REQUSET_ORDER){  // 申请订单成功
+           
+            if ([[dict objectForKey:@"respCode"] isEqualToString:@"0000"]) {
+                NSString *orderID = [dict objectForKey:@"orderId"];
+                NSString *amt = [dict objectForKey:@"orderAmt"];
+                NSString *mob = [dict objectForKey:@"orderDesc"];
+                //                [request postPhoneRechargeOnwOrderId:orderID moneyAmt:amt mobileNo:mob];  //习正鸟接口 暂时不走
+            }
+            OrderViewController *shopVc = [self.storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+            orderData = [[OrderData alloc]initWithData:dict];
+            orderData.orderAccount = [AppDelegate getUserBaseData].mobileNo;
+            orderData.orderPayType = payType;
+            orderData.merchantId = _merchaID;
+            orderData.productId = _productID;
+            //            orderData.mallOrder = YES;
+            shopVc.orderData = orderData;
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.navigationController pushViewController:shopVc animated:YES];
+        }
+        
+    }else{
+        
+        [Common showMsgBox:@"" msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
+    }
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

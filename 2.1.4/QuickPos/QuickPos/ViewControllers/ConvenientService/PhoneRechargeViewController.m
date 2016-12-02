@@ -166,7 +166,6 @@
 //        }
             //刷卡支付
             if (payType == CardPayType){
-            
             [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo MerchanId:_merchID productId:_productID orderAmt:orderAmt orderDesc:self.phoneNumberTextField.text orderRemark:@"" commodityIDs:@"" payTool:@"01"];
             [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderIsSubmitted")];
         }else{

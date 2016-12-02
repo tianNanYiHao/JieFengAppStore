@@ -8,27 +8,63 @@
 
 #import "JFFlowViewController.h"
 #import "JFFloewCollectionViewCell.h"
+#import "Request.h"
+#import "RadioButton.h"
+#import "OrderData.h"
+#import "PayType.h"
+#import "OrderViewController.h"
 
 
-@interface JFFlowViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+
+@interface JFFlowViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ResponseData>
 {
+     NSUInteger payType;//账户支付 刷卡支付 快捷支付
+     OrderData *orderData;
     UICollectionView *_collectionView;
     NSArray *_array;
     NSArray *_array2;
-    
-    
+    NSString *_merchaID;
+    NSString *_productID;
+    Request *request;
     
 }
+
+@property (weak, nonatomic) IBOutlet UITextField *numbText;
+@property (weak, nonatomic) IBOutlet RadioButton *btn2;
+@property (weak, nonatomic) IBOutlet RadioButton *btn1;
 @end
 
 @implementation JFFlowViewController
+
+- (IBAction)payWayChangeClick:(RadioButton*)sender {
+    if (sender.tag == 1) { //刷卡支付
+        _merchaID = @"0001000004";
+        _productID = @"0000000000";
+        payType = CardPayType;
+        
+    }else if (sender.tag == 2){ //快捷支付
+        _merchaID = @"0001000004";
+        _productID = @"0000000001";
+        payType = QuickPayType;
+        
+    }
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title  = @"流量充值";
-    
+    _btn1.groupButtons = @[_btn1,_btn2];
+    _btn1.selected = YES;
+    _merchaID = @"0001000004";
+    _productID = @"0000000000";
+    payType = CardPayType;
+    request = [[Request alloc] initWithDelegate:self];
     [self createCollection];
+    
+    
     
 }
 
@@ -39,7 +75,7 @@
     
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, NEWWIDTH, NEWHEIGHT-50) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 180, NEWWIDTH, NEWHEIGHT-130) collectionViewLayout:layout];
     [_collectionView registerNib:[UINib nibWithNibName:@"JFFloewCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"JFFloewCollectionViewCell"];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
@@ -77,9 +113,49 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"00000000");
-
+    
+    if (payType == CardPayType){
+        [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo MerchanId:_merchaID productId:_productID orderAmt:@"100" orderDesc:_numbText.text orderRemark:@"" commodityIDs:@"" payTool:@"01"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderIsSubmitted")];
+    }else{
+        //快捷支付
+        [request applyOrderMobileNo:[AppDelegate getUserBaseData].mobileNo
+                          MerchanId:_merchaID
+                          productId:_productID
+                           orderAmt:@"100"
+                          orderDesc:_numbText.text
+                        orderRemark:@""
+                       commodityIDs:@""
+                            payTool:@"03"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:L(@"OrderIsSubmitted")];
+    }
 }
 
+
+- (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if ([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]) {
+        
+       if(type == REQUSET_ORDER){  // 申请订单成功
+           UIStoryboard *sto = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            OrderViewController *shopVc = [sto instantiateViewControllerWithIdentifier:@"OrderViewController"];
+            orderData = [[OrderData alloc]initWithData:dict];
+            orderData.orderAccount = [AppDelegate getUserBaseData].mobileNo;
+            orderData.orderPayType = payType;
+            orderData.merchantId = _merchaID;
+            orderData.productId = _productID;
+            //            orderData.mallOrder = YES;
+            shopVc.orderData = orderData;
+           NSLog(@"push push push push push push push push push");
+            [self.navigationController pushViewController:shopVc animated:YES];
+        }
+        
+    }else{
+        
+        [Common showMsgBox:@"" msg:[dict objectForKey:@"respDesc"] parentCtrl:self];
+    }
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -2081,7 +2081,6 @@
     refeshcardId = [[titleArray objectAtIndex:Btn.tag] objectForKey:@"cateId"];
     [request getTodyKillProductWithCardId:[[titleArray objectAtIndex:Btn.tag] objectForKey:@"cateId"]];
 
-
     NSLog(@"%@-----------------------------++++++++++++",request);
 
     self.shopCateView.hidden = YES;

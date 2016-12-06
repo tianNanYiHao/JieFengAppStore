@@ -174,6 +174,8 @@
 
 @property (nonatomic,strong) NSString *productId;
 
+@property (nonatomic,strong) NSString *cataId;
+
 
 
 @end
@@ -190,7 +192,7 @@
     [self createSegmented];
     [self creatRightBtn];
     
-    self.title = @"捷丰商城";
+    self.title = @"商城";
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBarHidden = NO;
     
@@ -211,18 +213,19 @@
     SearchMall.layer.cornerRadius = 5.0;
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getOrderFinish:) name:@"ClearShoppingCartNotification" object:nil];
     [self.segview1 setHidden:YES];
-    [self.segview2 setHidden:NO];
+    [self.segview2 setHidden:YES];
     [self.segview3 setHidden:YES];
     [self.Segview4 setHidden:YES];
     [self.segview5 setHidden:YES];
-    [self.mainView bringSubviewToFront:self.segview2];
+    [self.mainView bringSubviewToFront:self.shoplist1];
     
 //    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
     
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
     [request sendInfo];
- 
+    
+    [request getTodyKillProductWithCardId:self.cataId];
     
     NSLog(@"%@",request);
     
@@ -307,7 +310,7 @@
     _segmentedCtrl = [[UISegmentedControl alloc]init];
     _segmentedCtrl.layer.cornerRadius = 20;
     _segmentedCtrl.clipsToBounds = YES;
-    _segmentedCtrl = [[UISegmentedControl alloc]initWithItems:@[@"商城首页",@"订单查询",@"购物车"]];
+    _segmentedCtrl = [[UISegmentedControl alloc]initWithItems:@[@"新世界商城",@"我的店铺"]];
     _segmentedCtrl.frame = CGRectMake(10, 5, self.view.frame.size.width-20, 30);
     //修改颜色
     [_segmentedCtrl setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateNormal];
@@ -656,34 +659,18 @@
             [self.button2 setTitleColor:[UIColor lightGrayColor]  forState:UIControlStateNormal];
             [self.button3 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             [self.segview1 setHidden:YES];
-            [self.segview2 setHidden:NO];
+            [self.segview2 setHidden:YES];
             [self.segview3 setHidden:YES];
             [self.Segview4 setHidden:YES];
             [self.segview5 setHidden:YES];
-            [self.mainView bringSubviewToFront:self.segview2];
+            [self.mainView bringSubviewToFront:self.shoplist1];
             
             [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-            [request sendInfo];
+            [request getTodyKillProductWithCardId:self.cataId];
+            
+
         }
-            break;
-//        case 1:
-//        {
-//            
-//
-//            [self.segview1 setHidden:YES];
-//            [self.segview2 setHidden:YES];
-//            [self.segview3 setHidden:YES];
-//            [self.Segview4 setHidden:NO];
-//            [self.segview5 setHidden:YES];
-//            [self.mainView bringSubviewToFront:self.Segview4];
-//            
-//            [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-//
-//            [request sendInfo];
-//
-//            
-//        }
-//            break;
+        break;
         case 1:
         {
             [self.button1 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -695,37 +682,15 @@
                         [self.Segview4 setHidden:YES];
                         [self.segview5 setHidden:YES];
           
+            [self.mainView bringSubviewToFront:self.shoplist1];
             
-            [self.mainView bringSubviewToFront:self.shopCateView];
-//            [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载订单信息."];
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载订单信息."];
-            [hud hide:YES afterDelay:1];
-            [request getInfoWithMobile:@"18516032822"];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
+            [request getTodyKillProductWithCardId:self.cataId];
+            
 
            
         }
-            break;
-        case 2:
-        {
-            [self.button1 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-            [self.button2 setTitleColor:[UIColor redColor]  forState:UIControlStateNormal];
-            [self.button3 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-            
-            
-            [self.segview1 setHidden:YES];
-            [self.segview2 setHidden:YES];
-            [self.segview3 setHidden:NO];
-            [self.Segview4 setHidden:YES];
-            [self.segview5 setHidden:YES];
-            [self.mainView bringSubviewToFront:self.segview3];
-            [self.shopcarttable reloadData];
-            float total =0.0;
-            for (MallItem * item  in shopCartArr) {
-                total = total + [item.price floatValue]*[item.sum intValue];
-            }
-            self.totalMoneyLabel.text = [NSString stringWithFormat: @"合计（不含运费）：%.2f",total/100.0f];
-        }
-            break;
+        break;
         default:
             break;
     }
@@ -737,36 +702,23 @@
     [self.mainView bringSubviewToFront:self.shopCateView];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载订单信息."];
     [request getInfoWithMobile:@"18516032822"];
-//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     
-//    if (mallData.mallArr.count != 0) {
-//        FristId = [mallData.mallArr[0] commodityID];
-//        LastId = [mallData.mallArr[mallData.mallArr.count-1] commodityID];
-//    }
+
     self.navigationController.navigationBarHidden = NO;
-//    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-//    self.title = @"捷丰商城";
+    
+//    [request sendInfo];
 
     
     UIButton *rightbtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 65, 45)];
     [rightbtn setTitle:@"订单查询" forState:UIControlStateNormal];
     [rightbtn addTarget:self action:@selector(orderSearch) forControlEvents:UIControlEventTouchUpInside];
     rightbtn.titleLabel.font = [UIFont systemFontOfSize:14];
-//    UIBarButtonItem *rightbar = [[UIBarButtonItem alloc]initWithCustomView:rightbtn];
-//    self.navigationItem.rightBarButtonItem = rightbar;
-//    self.navigationItem.rightBarButtonItem = nil;
-    
-//    if (!mallData.mallArr.count) {
-//        [self setUpCollection];
-//    }
-//    else
-//    {
-//        [self.mallCollectionView headerBeginRefreshing];
-//    }
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -811,13 +763,13 @@
     NSString *imageStr = [st stringByReplacingOccurrencesOfString:@" " withString:@""];
     return imageStr;
 }
-//下拉
+#pragma mark ------下拉刷新
 -(void)headerRereshing
 {
     getDataType = 1;
-//    [request getMallListmobile:mobileNO firstData:FristId lastData:@"0" dataSize:@"20" requestType:@"02"];
     
-    [request getProductWithCardId:refeshcardId];
+//    [request getProductWithCardId:refeshcardId];
+    [request getTodyKillProductWithCardId:self.cataId];
 }
 //上拉
 - (void)footerRereshing
@@ -839,7 +791,7 @@
 #pragma mark 网络数据返回
 - (void)responseWithDict:(NSDictionary *)dict requestType:(NSInteger)type
 {
-    NSLog(@"%i",type);
+  
     if (type == REQUSET_AD) {
 
 
@@ -921,10 +873,16 @@
         if([[[dict objectForKey:@"REP_HEAD"] objectForKey:@"TRAN_CODE"] isEqualToString:@"000000"]){
             
             titleArray = [[NSMutableArray alloc] initWithArray:[[dict objectForKey:@"REP_BODY"] objectForKey:@"MainCateInfs"]];
+            
+            for (NSDictionary *item in titleArray) {
+                self.cataId = [item objectForKey:@"cateId"];
+                NSLog(@"%@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",self.cataId);
+            }
+            
      
              mallData = [[MallData alloc]initWithData:productListArray];
             [self.mallCollectionView1 reloadData];
-            
+             [self cancelFristResponder];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             
         }
@@ -954,8 +912,7 @@
     else if(type == REQUSET_GETORIGIN){//溯源查询
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailOriginOfGoodsViewController *DetailOriginVc = [mainStoryboard instantiateViewControllerWithIdentifier:@"DetailOriginOfGoodsViewController"];
-        //        if([[[dict objectForKey:@"REQ_HEAD"] objectForKey:@"TransCode"] isEqualToString:@"Tx000001"]){
-        //            detailDic = [[[NSDictionary alloc] initWithDictionary:[dict objectForKey:@"REQ_BODY"]]objectForKey:@"data"];
+
         
         DetailOriginVc.titleName = [dict  objectForKey:@"name"];
         DetailOriginVc.producerName = [dict  objectForKey:@"producerName"];
@@ -994,7 +951,6 @@
         else{
             [MBProgressHUD showHUDAddedTo:self.view WithString:@"查询失败！"];
         }
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
     else if (type == REQUSET_GETTODAYKILL){//今日秒杀
 
@@ -1009,7 +965,6 @@
         }else{
             [MBProgressHUD showHUDAddedTo:self.view WithString:@"查询失败！"];
         }
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
     else if (type == REQUEST_GETCROSSBORDER){//跨境电商
         _isMallCollection = YES;
@@ -1019,7 +974,7 @@
                         mallData = [[MallData alloc]initWithData:productDicArray];
             
             
-//                        refeshcardId = [productDicArray[0] objectForKey:@"cateId"];
+
             [self.mallCollectionView1 reloadData];
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -1027,7 +982,6 @@
         }else{
             [MBProgressHUD showHUDAddedTo:self.view WithString:@"查询失败！"];
         }
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
     
     //合计
@@ -1050,9 +1004,6 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
     //申请订单
-    
-//    else  if ([[dict objectForKey:@"respCode"]isEqualToString:@"1001"]) {
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     else if([[dict objectForKey:@"respCode"]isEqualToString:@"0000"]){
         
@@ -1082,14 +1033,11 @@
             }
             
             [self.navigationController pushViewController:shopVc animated:YES];
-            //            [self.navigationController presentViewController:shopVc animated:YES completion:nil];
+       
         }
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
-    //    else{
-    //        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    //    }
+
     
     
     //商城订单
@@ -1126,14 +1074,8 @@
                 orderData.orderPayType = payType;
                 orderData.merchantId = merchantId;
                 orderData.productId = productId;
-                //                [self toordViewwith:orderData];
+           
             }
-            
-            
-            //        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            
-            
-            
         }else{
             
             [MBProgressHUD showHUDAddedTo:self.view WithString:@"提交失败！"];
@@ -1171,7 +1113,6 @@
                             {
                                 [MerchandiseArr removeObjectAtIndex:j];
                             }
-                            //                        NSLog(@"%@",[MerchandiseArr[i]  objectForKey:@"commodityID"]);
                         }
                     }
                     mallData = [[MallData alloc]initWithData:MerchandiseArr];
@@ -1226,27 +1167,6 @@
     self.inventory.text = [NSString stringWithFormat:@"库存量：%@", [[[detailDic objectForKey:@"MODEL"] objectAtIndex:0] objectForKey:@"inventory"]];
     
     self.express.text = [NSString stringWithFormat:@"快递方式：%@  %@  ",[[[detailDic objectForKey:@"express"] objectAtIndex:0] objectForKey:@"expressName"],[[[detailDic objectForKey:@"express"] objectAtIndex:0] objectForKey:@"areaName"]];
-    
-    
-    
-//    int width =0;
-//    for (int i = 0; i < [[detailDic objectForKey:@"express"] count]; i++) {
-//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [button setTitle:[[[detailDic objectForKey:@"express"] objectAtIndex:0] objectForKey:@"expressName"] forState:UIControlStateNormal];
-//        
-//        NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:13]};
-//        [button.titleLabel setFont:[UIFont systemFontOfSize:13.0f]];
-//        CGSize size = [[[[detailDic objectForKey:@"express"] objectAtIndex:0] objectForKey:@"expressName"] boundingRectWithSize:CGSizeMake(MAXFLOAT, button.frame.size.height) options:NSStringDrawingTruncatesLastVisibleLine attributes:attribute context:nil].size;
-//        button.frame = CGRectMake(self.express.frame.origin.x + self.express.frame.size.width +5 +width /1.0f  , self.express.frame.origin.y , size.width +10 , self.express.frame.size.height);
-//        
-//        width = button.frame.size.width;
-//        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        button.layer.borderWidth = 0.5;
-//        button.layer.borderColor =[[UIColor redColor] CGColor];
-//        button.layer.cornerRadius = 3.0f;
-//        [self.prodetailView addSubview:button];
-//        [buttonArray addObject:button];
-//    }
     
     {
         int width = 0;
@@ -1464,7 +1384,7 @@
         }
         [buttonArray removeAllObjects];
         prodetailNum = 1;
-//        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
+
         [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
         
         oneProductDic = [[NSDictionary alloc] initWithDictionary:[productListArray objectAtIndex:indexPath.row]];
@@ -1488,12 +1408,12 @@
 
         [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
         
-//        self.mallCollectionView1.hidden = NO;
+
         if (_isMall) {
             _isMall = NO;
             [request getProductIdWithCardId:[[productDicArray objectAtIndex:indexPath.row] objectForKey:@"cateId"]];
             NSLog(@"%@",request);
-//            [self.mainView bringSubviewToFront:self.mallCollectionView];
+
 
 
             
@@ -1601,74 +1521,7 @@
 
 #pragma table
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView.tag == 50001) {
-
-        if (indexPath.row == 0) {
-            return 293;
-        }else if (indexPath.row == 1){
-            return 30;
-        }else if (indexPath.row == 2){
-            return 45;
-        }else if (indexPath.row == 3){
-            return 45;
-        }else if (indexPath.row == 4){
-            return 45;
-        }else if (indexPath.row == 5){
-            return 45;
-        }else if (indexPath.row == 6){
-            return 45;
-        }
-//        else if (indexPath.row == 7){
-//            return 45;
-//        }else if (indexPath.row == 8){
-//            return 45;
-//        }else if (indexPath.row == 9){
-//            return 110;
-//        }
-
-//        else if (indexPath.row == 9){
-//            return 110;
-//        }
-
-        else{
-            return 45;
-        }
-        
-        
-    }else if (tableView.tag == 50002) {
-        return 140;
-    }
-    else if (tableView.tag == 50003) {
-        return 140;
-    }
-    else if (tableView.tag == 50004) {
-        return 140;
-    }
-//    else if (tableView.tag == 50005){
-//        if (indexPath.row == 0) {
-//            return 100;
-//        }else if (indexPath.row == 1){
-//            return 100;
-//        }else if (indexPath.row == 2){
-//            return 100;
-//        }else if (indexPath.row == 3){
-//            return 100;
-//        }else if (indexPath.row == 4){
-//            return 100;
-//        }else if (indexPath.row == 5){
-//            return 100;
-//        }else if (indexPath.row == 6){
-//            return 100;
-//        }
-//        else{
-//            return 110;
-//        }
-//    }
-    else{
-        return tableCellHeight;
-    }
-        return 45;
-    
+    return 45;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -1686,485 +1539,16 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (tableView.tag == 50001) {
-        
-        return 6;
-        
-    }else if (tableView.tag == 50002) {
-        return [shopCartArr count];
-    }else if (tableView.tag == 50003) {
-        return [shopCartArr count];
-    }else if (tableView.tag == 50004) {
-        return [orderListArray count];
-    }
-//    else if (tableView.tag == 50005){
-//        return 7;
-//    }
-    else{
-        return [titleArray count];
-    }
-    
+   return [titleArray count];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *CellIdentifier = @"cell";
-    
-    CGFloat width = CGRectGetWidth(self.view.frame);
-    
-    if (tableView.tag == 50001) {
-        
-        UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 
-                if (indexPath.row == 0) {
-                    //广告图
-//                    NSArray *imageArrays = @[[UIImage imageNamed:@"banner1"],[UIImage imageNamed:@"banner2"]];
-//                    
-//                    SDCycleScrollView * sdcycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, width, 120) imagesGroup:imageArrays];
-//                    sdcycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-//                    sdcycleScrollView.delegate = self;
-//                    sdcycleScrollView.placeholderImage = [UIImage imageNamed:@"placeholder"];
-//                    [cell addSubview:sdcycleScrollView];
-                    
-                    //百步商城
-                    UIButton *MastmallBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 320, 94)];
-                    [MastmallBtn setImage:[UIImage imageNamed:@"Mast_mall"] forState:UIControlStateNormal];
-                    MastmallBtn.tag = 0;
-                    [MastmallBtn addTarget:self action:@selector(selectMastmallButton:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell  addSubview:MastmallBtn];
-                    
-                    //今日秒杀
-                    UIButton *TodaySpikeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 97, 320, 94)];
-                    [TodaySpikeBtn setImage:[UIImage imageNamed:@"Today_spike"] forState:UIControlStateNormal];
-                    TodaySpikeBtn.tag = 1;
-                    [TodaySpikeBtn addTarget:self action:@selector(selectTodaySpikeButton:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell addSubview:TodaySpikeBtn];
-                    
-                    //跨境电商
-                    UIButton *CrossBorderBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 194, 320,94)];
-                    [CrossBorderBtn setImage:[UIImage imageNamed:@"Cross_border"] forState:UIControlStateNormal];
-                    CrossBorderBtn.tag = 2;
-                    [CrossBorderBtn addTarget:self action:@selector(CrossBorderButton:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell addSubview:CrossBorderBtn];
-                    
-                    //
-                    //            UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-                    //            if(cell == nil){
-                    //                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-                    //            }
-                    
-                }
-                if (indexPath.row == 1) {
-                    
-//                    UIImageView *iamgeView1 = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 120, 1)];
-//                    iamgeView1.backgroundColor = [Common hexStringToColor:@"46a7ec"];
-//                    [cell addSubview:iamgeView1];
-//                    
-//                    UILabel *lable1 = [[UILabel alloc]initWithFrame:CGRectMake(140, 0, 45, 20)];
-//                    lable1.text = @"更多分类";
-//                    lable1.font = [UIFont systemFontOfSize:11];
-//                    lable1.textColor = [Common hexStringToColor:@"46a7ec"];
-//                    //            lable1.textAlignment = UITextAlignmentCenter;
-//                    [cell addSubview:lable1];
-//                    
-//                    UIImageView *iamgeView2 = [[UIImageView alloc]initWithFrame:CGRectMake(190, 10, 120, 1)];
-//                    iamgeView2.backgroundColor = [Common hexStringToColor:@"46a7ec"];
-//                    [cell addSubview:iamgeView2];
-                    
-                    
-                    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, self.view.frame.size.width, 20)];
-                    
-                    label2.backgroundColor = [UIColor whiteColor];
-                    label2.text = @"更多分类";
-                    label2.font = [UIFont systemFontOfSize:14];
-                    label2.textColor = [Common hexStringToColor:@"#068bf4"];
-                    label2.textAlignment = UITextAlignmentCenter;
-                    
-                    [cell addSubview:label2];
 
-                    
-                   
-                }
-                if (indexPath.row == 2) {
-                    UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 5, 99, 40)];
-                    
-                    btn1.layer.cornerRadius = 5.0;
-                    btn1.backgroundColor = [Common hexStringToColor:@"#01bfa5"];
-                    [btn1 setTitle:@"健身器材" forState:UIControlStateNormal];
-                    btn1.titleLabel.adjustsFontSizeToFitWidth = YES;
-                    btn1.tag = 0;
-                    [btn1 addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.contentView addSubview:btn1];
-                    
-                    UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(110, 5, 99, 40)];
-                    btn2.layer.cornerRadius = 5.0;
-
-                    btn2.backgroundColor = [Common hexStringToColor:@"#03a9f5"];
-                    [btn2 setTitle:@"家用电器" forState:UIControlStateNormal];
-                    btn2.titleLabel.adjustsFontSizeToFitWidth = YES;
-                    btn2.tag = 1;
-                    [btn2 addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell addSubview:btn2];
-                }
-        
-        //        cell.textLabel.text = [NSString stringWithFormat:@"%i、%@", [indexPath row]+1,[[titleArray objectAtIndex:indexPath.row] objectForKey:@"cateName"]];
-        //
-        //        if (indexPath.row % 2 ==0 ) {
-        //            cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:210/255.0f blue:210/255.0f alpha:1.0f];
-        //        }else{
-        //            cell.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1.0f];
-        //        }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
-        //
-        
-    }
-    else if (tableView.tag == 50002) {
-        ShopCartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopCartTableViewCell" forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        MallItem *item = shopCartArr[indexPath.row];
-        cell.indexLabel.text = [NSString stringWithFormat:@"%i、",[indexPath row] + 1];
-        
-        [cell.actor sd_setImageWithURL:[NSURL URLWithString:item.iconurl] placeholderImage:[UIImage imageNamed:@"banner_default_image"]];
-        cell.name.text = item.title;
-        cell.price2.text =[NSString stringWithFormat:@"%.2f", [item.price floatValue]/100.0f];
-        cell.num.text = [NSString stringWithFormat:@"%d",[item.sum integerValue]];
-        cell.totalprice.text = [NSString stringWithFormat:@"%.2f",[item.price floatValue] *[item.sum integerValue]/100.0f];
-        return cell;
-    }
-    else if (tableView.tag == 50003) {
-        ShopCartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopCartTableViewCell" forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        MallItem *item = shopCartArr[indexPath.row];
-        cell.indexLabel.text = [NSString stringWithFormat:@"%i、",[indexPath row] + 1];
-        
-        [cell.actor sd_setImageWithURL:[NSURL URLWithString:item.iconurl] placeholderImage:[UIImage imageNamed:@"banner_default_image"]];
-        cell.name.text = item.title;
-        cell.price2.text =[NSString stringWithFormat:@"%.2f", [item.price floatValue]/100.0f];
-        cell.num.text = [NSString stringWithFormat:@"%d",[item.sum integerValue]];
-        cell.totalprice.text = [NSString stringWithFormat:@"%.2f",[item.price floatValue] *[item.sum integerValue]/100.0f];
-        return cell;
-    }
-    else if (tableView.tag == 50004) {
-        ShopCartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopCartTableViewCell" forIndexPath:indexPath];
-        cell.indexLabel.text = [NSString stringWithFormat:@"%i、",[indexPath row] + 1];
-        NSDictionary *mallOrders = [[[[[orderListArray objectAtIndex:indexPath.row] objectForKey:@"mallOrders"] objectAtIndex:0] objectForKey:@"mallOrderItem"] objectAtIndex:0];
-        [cell.actor sd_setImageWithURL:[NSURL URLWithString:[mallOrders objectForKey:@"productImage"]] placeholderImage:[UIImage imageNamed:@"banner_default_image"]];
-        cell.name.text = [mallOrders objectForKey:@"productName"];
-        cell.price2.text =[NSString stringWithFormat:@"%.2f", [[mallOrders objectForKey:@"price"] floatValue]];
-        cell.num.text = [NSString stringWithFormat:@"%d",[[mallOrders objectForKey:@"num"] integerValue]];
-        cell.totalprice.text = [[[[orderListArray objectAtIndex:indexPath.row] objectForKey:@"mallOrders"] objectAtIndex:0] objectForKey:@"amount"];
-        if (indexPath.row % 2 ==0 ) {
-            cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:210/255.0f blue:210/255.0f alpha:1.0f];
-        }else{
-            cell.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1.0f];
-        }
-        
-        return cell;
-    }
-//    else if (tableView.tag == 50005){//产品分类
-//        
-//        NSString *CellIdentifier1 = @"cell";
-//        
-//        UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier1];
-//        if(cell == nil){
-//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier1];
-//        }
-//        if (indexPath.row == 0) {
-//            
-//            UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 5, 95, 95)];
-//            [btn1 setImage:[UIImage imageNamed:@"Agricultural_machinery"] forState:UIControlStateNormal];
-//            btn1.tag = 0;
-//            [btn1 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//
-//            [cell.contentView addSubview:btn1];
-//            
-//            
-//            UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+3, 5, 95, 95)];
-//            [btn2 setImage:[UIImage imageNamed:@"Agricultural_products"] forState:UIControlStateNormal];
-//            btn2.tag = 1;
-//            [btn2 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//
-//            [cell.contentView addSubview:btn2];
-//            
-//            UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+105, 5, 95, 95)];
-//            [btn3 setImage:[UIImage imageNamed:@"Agricultural_machinery"] forState:UIControlStateNormal];
-//            btn3.tag = 2;
-//            [btn3 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//
-//            [cell.contentView addSubview:btn3];
-//            
-//        }
-//        if (indexPath.row == 1) {
-//            UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 5, 95, 95)];
-//            [btn1 setImage:[UIImage imageNamed:@"package"] forState:UIControlStateNormal];
-//            btn1.tag = 3;
-//            [btn1 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn1];
-//            
-//            
-//            UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+3, 5, 95, 95)];
-//            [btn2 setImage:[UIImage imageNamed:@"Every_day"] forState:UIControlStateNormal];
-//            btn2.tag = 4;
-//            [btn2 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn2];
-//            
-//            UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+105, 5, 95, 95)];
-//            [btn3 setImage:[UIImage imageNamed:@"bookstore"] forState:UIControlStateNormal];
-//            btn3.tag = 5;
-//            [btn3 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn3];
-//
-//            
-//        }
-//        
-//        if (indexPath.row == 2) {
-//            UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 5, 95, 95)];
-//            [btn1 setImage:[UIImage imageNamed:@"Grain"] forState:UIControlStateNormal];
-//            btn1.tag = 6;
-//            [btn1 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn1];
-//            
-//            
-//            UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+3, 5, 95, 95)];
-//            [btn2 setImage:[UIImage imageNamed:@"drinks"] forState:UIControlStateNormal];
-//            btn2.tag = 7;
-//            [btn2 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn2];
-//            
-//            UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+105, 5, 95, 95)];
-//            [btn3 setImage:[UIImage imageNamed:@"Snack_food"] forState:UIControlStateNormal];
-//            btn3.tag = 8;
-//            [btn3 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn3];
-//            
-//        }
-//        if (indexPath.row == 3) {
-//            UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 5, 95, 95)];
-//            [btn1 setImage:[UIImage imageNamed:@"Underwear_accessories"] forState:UIControlStateNormal];
-//            btn1.tag = 9;
-//            [btn1 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn1];
-//            
-//            
-//            UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+3, 5, 95, 95)];
-//            [btn2 setImage:[UIImage imageNamed:@"Computer_office"] forState:UIControlStateNormal];
-//            btn2.tag = 10;
-//            [btn2 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn2];
-//            
-//            UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+105, 5, 95, 95)];
-//            [btn3 setImage:[UIImage imageNamed:@"guard_makeup"] forState:UIControlStateNormal];
-//            btn3.tag = 11;
-//            [btn3 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn3];
-//        }
-//        if (indexPath.row == 4) {
-//            UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 5, 95, 95)];
-//            [btn1 setImage:[UIImage imageNamed:@"child_channel"] forState:UIControlStateNormal];
-//            btn1.tag = 12;
-//            [btn1 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn1];
-//            
-//            
-//            UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+3, 5, 95, 95)];
-//            [btn2 setImage:[UIImage imageNamed:@"Household_textile"] forState:UIControlStateNormal];
-//            btn2.tag = 13;
-//            [btn2 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn2];
-//            
-//            UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+105, 5, 95, 95)];
-//            [btn3 setImage:[UIImage imageNamed:@"Clean_area"] forState:UIControlStateNormal];
-//            btn3.tag = 14;
-//            [btn3 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn3];
-//            
-//        }
-//        if (indexPath.row == 5) {
-//            UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 5, 95, 95)];
-//            [btn1 setImage:[UIImage imageNamed:@"Nutrition_care"] forState:UIControlStateNormal];
-//            btn1.tag = 15;
-//            [btn1 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn1];
-//            
-//            
-//            UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+3, 5, 95, 95)];
-//            [btn2 setImage:[UIImage imageNamed:@"Healthy_mall"] forState:UIControlStateNormal];
-//            btn2.tag = 16;
-//            [btn2 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn2];
-//            
-//            UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(width/3+105, 5, 95, 95)];
-//            [btn3 setImage:[UIImage imageNamed:@"educational"] forState:UIControlStateNormal];
-//            btn3.tag = 17;
-//            [btn3 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn3];
-//            
-//        }
-//        if (indexPath.row == 6) {
-//            UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 5, 95, 95)];
-//            [btn1 setImage:[UIImage imageNamed:@"Annual_supermarket"] forState:UIControlStateNormal];
-//            btn1.tag = 18;
-//            [btn1 addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [cell.contentView addSubview:btn1];
-//            
-//        }
-//        
-//
-////               cell.textLabel.text = [NSString stringWithFormat:@"%i、%@", [indexPath row]+1,[[titleArray objectAtIndex:indexPath.row] objectForKey:@"cateName"]];
-//        //
-//        //        if (indexPath.row % 2 ==0 ) {
-//        //            cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:210/255.0f blue:210/255.0f alpha:1.0f];
-//        //        }else{
-//        //            cell.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1.0f];
-//        //        }
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        return cell;
-//        //
-//        
-//        
-//    }
-    else{
-        UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        if(cell == nil){
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        }
-        if (indexPath.row % 2 ==0 ) {
-            cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:210/255.0f blue:210/255.0f alpha:1.0f];
-        }else{
-            cell.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1.0f];
-        }
-        return cell;
-        
-        
-    }
+
 }
-
-//百步商城点击Btn
--(void)selectMastmallButton:(UIButton *)Btn
-{
-    self.mallCollectionView1.hidden = NO;
-    _isMall = YES;
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-
-    refeshcardId = [[titleArray objectAtIndex:Btn.tag] objectForKey:@"cateId"];
-    
-    [request getMastmallProductWithCardId:[[titleArray objectAtIndex:Btn.tag]objectForKey:@"cateId"]];
-    self.segview2.hidden = YES;
-    self.shopCateView.hidden = YES;
-    [self.mallCollectionView1 reloadData];
-    [self.mainView bringSubviewToFront:self.shoplist2];
-    
-    _segmentedCtrl.selectedSegmentIndex = 0;
-    
-}
-
-//今日秒杀点击Btn
-- (void)selectTodaySpikeButton:(UIButton *)Btn
-{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-
-    refeshcardId = [[titleArray objectAtIndex:Btn.tag] objectForKey:@"cateId"];
-    [request getTodyKillProductWithCardId:[[titleArray objectAtIndex:Btn.tag] objectForKey:@"cateId"]];
-
-
-    NSLog(@"%@-----------------------------++++++++++++",request);
-
-    self.shopCateView.hidden = YES;
-    
-    self.segview2.hidden = YES;
-    [self.mainView bringSubviewToFront:self.shoplist1];
-    
-}
-
-//跨境电商点击Btn
-- (void)CrossBorderButton:(UIButton *)Btn
-{
-    
-    
-    [Common showMsgBox:nil msg:@"查询商品不存在" parentCtrl:self];
-    
-//    self.mallCollectionView1.hidden = NO;
-//    _isMall = YES;
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-//    refeshcardId = [[titleArray objectAtIndex:Btn.tag] objectForKey:@"cateId"];
-//    
-//    [request getCrossBorderProductWithCardId:[[titleArray objectAtIndex:Btn.tag]objectForKey:@"cateId"]];
-//    NSLog(@"%@++++++",request);
-////    [MBProgressHUD hideHUDForView:self.view animated:YES];
-//    self.segview2.hidden = YES;
-//    self.shopCateView.hidden = YES;
-//    [self.mainView bringSubviewToFront:self.shoplist2];
-//    _segmentedCtrl.selectedSegmentIndex = 0;
-    
-//    self.mallCollectionView1.hidden = NO;
-//    _isMall = YES;
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-//    
-//    refeshcardId = [[titleArray objectAtIndex:Btn.tag] objectForKey:@"cateId"];
-//    
-//    [request getCrossBorderProductWithCardId:[[titleArray objectAtIndex:Btn.tag]objectForKey:@"cateId"]];
-////    [request getMastmallProductWithCardId:[[titleArray objectAtIndex:Btn.tag]objectForKey:@"cateId"]];
-//    self.segview2.hidden = YES;
-//    self.shopCateView.hidden = YES;
-//    [self.mallCollectionView1 reloadData];
-//    [self.mainView bringSubviewToFront:self.shoplist2];
-//    
-//    _segmentedCtrl.selectedSegmentIndex = 0;
-//    
-}
-
-- (void)selectButton:(UIButton *)btn{
-
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-    refeshcardId = [[titleArray objectAtIndex:btn.tag] objectForKey:@"cateId"];
-    [request getProductWithCardId:[[titleArray objectAtIndex:btn.tag] objectForKey:@"cateId"]];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    self.segview2.hidden = YES;
-    self.shopCateView.hidden = YES;
-    [self.mainView bringSubviewToFront:self.shoplist1];
-}
-
-- (void)clickButton:(UIButton *)btn
-{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-    refeshcardId = [[titleArray objectAtIndex:btn.tag] objectForKey:@"cateId"];
-    [request getProductWithCardId:[[titleArray objectAtIndex:btn.tag] objectForKey:@"cateId"]];
-    self.segview2.hidden = YES;
-    self.shopCateView.hidden = YES;
-    [self.mallCollectionView reloadData];
-    [self.mainView bringSubviewToFront:self.shoplist1];
-    
-}
-
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (tableView.tag == 50001) {
-//        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES WithString:@"正在加载商品数据."];
-//        [hud hide:YES afterDelay:1];
-//        refeshcardId = [[titleArray objectAtIndex:indexPath.row] objectForKey:@"cateId"];
-//        [request getProductWithCardId:[[titleArray objectAtIndex:indexPath.row] objectForKey:@"cateId"]];
-//        self.segview2.hidden = YES;
-//        [self.mainView bringSubviewToFront:self.shoplist1];
-//       
-//    }
-//}
-
-
 
 - (IBAction)seg1tap:(id)sender{
     [self.mainView bringSubviewToFront:self.shoplist1];

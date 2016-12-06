@@ -58,9 +58,9 @@
 #define REQUESTURL @"http://120.26.232.137:8089/forward_jt/service"
 
 // 版本识别标识
-#define APPUSER             @"bmjfsh"
+#define APPUSER             @"bmtaowj"
 
-#define SIGN                @"1sml1e47mdq3m6l8bci5rm0ffjekfjx3"
+#define SIGN                @"1sml1e47mdq3m6l8bci5rm0ffjekyxtg"
 
 // 网络请求地址
 

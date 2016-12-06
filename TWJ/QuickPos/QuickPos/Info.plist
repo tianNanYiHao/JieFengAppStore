@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
-	<string>捷丰生活</string>
+	<string>淘五金</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFiles</key>
@@ -104,7 +104,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.0.8</string>
+	<string>2.0.6</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fb-messenger</string>

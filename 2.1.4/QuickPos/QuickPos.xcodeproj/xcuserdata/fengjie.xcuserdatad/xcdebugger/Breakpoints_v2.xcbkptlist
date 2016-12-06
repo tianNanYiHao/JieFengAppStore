@@ -944,7 +944,7 @@
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "-init"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -960,7 +960,7 @@
             startingLineNumber = "108"
             endingLineNumber = "108"
             landmarkName = "-telephone:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
